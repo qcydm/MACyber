@@ -1,0 +1,1614 @@
+[
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "System"
+    },
+    "json": {
+      "timestamp": "Aug 12 10:01:21",
+      "hostname": "combo",
+      "process_name": "/sbin/mingetty",
+      "pid": 20388,
+      "device": "tty2",
+      "message": "invalid character 0x1b in login name"
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "The log indicates an attempt to use an invalid control character (0x1b, the ASCII Escape character) in a login name at a TTY console prompt.",
+        "This type of input is not typical of human users and is often associated with automated scripts, vulnerability scanning, or attempts to trigger terminal-based vulnerabilities."
+      ],
+      "analysis": "First check the context of the event, which is a login attempt via 'mingetty' on a local terminal (tty2); then verify the specific error, which is an 'invalid character' in the login name; finally confirm the nature of the character, '0x1b', which is the non-printable ASCII Escape character used for control sequences. Because the injection of control characters into a login prompt is a common technique for probing system vulnerabilities, classify the event as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "This is a single failed login attempt, but the use of a control character warrants monitoring for further similar or escalating activity."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "system_log"
+    },
+    "json": {
+      "raw_log": "Jun  9 06:06:40 combo sendmail: sendmail startup succeeded\nJun  9 06:06:41 combo sendmail: sm-client startup succeeded\nJun 10 11:32:01 combo sendmail: sendmail startup succeeded\nJun 10 11:32:01 combo sendmail: sm-client startup succeeded\nJul 27 14:42:15 combo sendmail: sendmail startup succeeded\nJul 27 14:42:15 combo sendmail: sm-client startup succeeded\nSep 19 05:57:54 combo sendmail: sendmail startup succeeded\nSep 19 05:57:54 combo sendmail: sm-client startup succeeded\nSep 28 09:03:45 combo sendmail: sendmail shutdown failed\nSep 28 09:03:55 combo sendmail: sm-client shutdown succeeded\nSep 28 09:08:58 combo sendmail: sendmail shutdown failed\nSep 28 09:11:09 combo sendmail: sendmail startup succeeded\nSep 28 09:11:09 combo sendmail: sm-client startup succeeded\nSep 29 12:28:40 combo sendmail: sendmail shutdown failed\nSep 29 12:28:40 combo sendmail: sm-client shutdown failed\nSep 29 12:32:04 combo sendmail: sendmail startup succeeded\nSep 29 12:32:04 combo sendmail: sm-client startup succeeded\nOct 25 10:06:55 combo sendmail: sendmail shutdown succeeded\nOct 25 10:06:55 combo sendmail: sm-client shutdown succeeded\nOct 25 10:09:09 combo sendmail: sendmail startup succeeded\nOct 25 10:09:10 combo sendmail: sm-client startup succeeded\nNov 22 12:25:54 combo kernel: sendmail: page allocation failure. order:0, mode:0x1d2\nNov 22 12:25:57 combo kernel: sendmail: page allocation failure. order:0, mode:0x1d2\nNov 22 14:32:24 combo kernel: sendmail: page allocation failure. order:0, mode:0x1d2\nNov 22 14:32:27 combo kernel: sendmail: page allocation failure. order:0, mode:0x1d2\nNov 22 14:32:31 combo kernel: sendmail: page allocation failure. order:0, mode:0x1d2\nNov 25 02:10:36 combo kernel: sendmail: page allocation failure. order:0, mode:0x1d2\nNov 25 02:10:43 combo kernel: sendmail: page allocation failure. order:0, mode:0x1d2\nNov 25 02:10:47 combo kernel: sendmail: page allocation failure. order:0, mode:0x1d2\nNov 25 02:10:51 combo kernel: sendmail: page allocation failure. order:0, mode:0x50\nNov 25 02:11:01 combo kernel: sendmail: page allocation failure. order:0, mode:0x50\nDec  4 03:48:54 combo kernel: sendmail: page allocation failure. order:0, mode:0x1d2\nDec  6 12:20:50 combo sendmail: sendmail shutdown succeeded\nDec  6 12:20:50 combo sendmail: sm-client shutdown failed\nDec  6 12:23:19 combo sendmail: sendmail startup succeeded\nDec  6 12:23:19 combo sendmail: sm-client startup succeeded\nJan 26 11:53:05 combo sendmail: sendmail shutdown failed\nJan 26 11:53:06 combo sendmail: sm-client shutdown failed\nJan 26 12:20:17 combo sendmail: sendmail shutdown failed\nJan 26 12:22:30 combo sendmail: sendmail startup succeeded\nJan 26 12:22:30 combo sendmail: sm-client startup succeeded\nJan 26 12:55:20 combo sendmail: sendmail shutdown succeeded\nJan 26 12:55:20 combo sendmail: sm-client shutdown succeeded"
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple kernel-level 'page allocation failure' errors are reported for the 'sendmail' process.",
+        "The 'page allocation failure' messages indicate a severe memory exhaustion or fragmentation issue on the system.",
+        "Numerous 'sendmail shutdown failed' and 'sm-client shutdown failed' log entries coincide with the period of kernel errors, suggesting the service is unstable and not responding correctly.",
+        "The combination of service instability and critical kernel memory errors points to a potential resource exhaustion condition, such as a memory leak or a Denial of Service (DoS) attack."
+      ],
+      "analysis": "First check for critical system-level errors in the logs, which are identified as 'kernel: sendmail: page allocation failure'. Then verify the process associated with these errors, which is consistently 'sendmail'. Finally, confirm the health of the associated application by observing the corresponding service logs, which show multiple 'shutdown failed' messages. Because the combination of critical kernel memory errors and repeated application failures strongly indicates a severe resource exhaustion problem, possibly induced by a memory leak or a denial-of-service attack, I classify this activity as suspicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The sendmail process is causing critical kernel errors and system instability; it should be stopped to prevent a full system crash."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "application_log"
+    },
+    "json": {
+      "raw_log": "Jun  9 06:07:23 combo rsyncd[2360]: rsyncd version 2.6.2 starting, listening on port 873 \nJun 10 11:32:46 combo rsyncd[2394]: rsyncd version 2.6.2 starting, listening on port 873 \nJul 27 14:42:58 combo rsyncd[2373]: rsyncd version 2.6.2 starting, listening on port 873 \nSep 19 05:58:37 combo rsyncd[2390]: rsyncd version 2.6.2 starting, listening on port 873 \nSep 28 09:12:20 combo rsyncd[2369]: rsyncd version 2.6.2 starting, listening on port 873 \nOct 23 12:39:46 combo rsyncd[22517]: rsync: connection unexpectedly closed (0 bytes read so far) \nOct 23 12:39:46 combo rsyncd[22517]: rsync error: error in rsync protocol data stream (code 12) at io.c(342) \nOct 25 10:09:57 combo rsyncd[2360]: rsyncd version 2.6.2 starting, listening on port 873 \nDec  6 12:24:33 combo rsyncd[2386]: rsyncd version 2.6.2 starting, listening on port 873 \nJan 26 12:23:29 combo rsyncd[2373]: rsyncd version 2.6.2 starting, listening on port 873 "
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "The rsync daemon reported a 'connection unexpectedly closed' error.",
+        "The error log indicates a client connected but sent no data, which is characteristic of a port scan.",
+        "The running service is rsync version 2.6.2, which is significantly outdated and likely contains known vulnerabilities."
+      ],
+      "analysis": "First check for anomalous connection events in the rsync logs; then verify the context of the service, noting the 'connection unexpectedly closed' error and the outdated 'rsyncd version 2.6.2'; finally confirm that this pattern is a common tactic for network reconnaissance or service probing; because a probe against an obsolete and potentially vulnerable service is a clear indicator of malicious intent, classify as suspicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The log indicates reconnaissance activity against an outdated service, so blocking the source IP is advised to prevent a potential follow-up attack."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "system_log"
+    },
+    "json": {
+      "raw_log": "Jun  9 06:06:20 combo portmap: portmap startup succeeded\nJun 10 11:31:44 combo portmap: portmap startup succeeded\nJul 27 14:41:57 combo portmap: portmap startup succeeded\nSep 19 05:57:37 combo portmap: portmap startup succeeded\nSep 28 09:09:17 combo portmap: portmap shutdown succeeded\nSep 28 09:10:49 combo portmap: portmap startup succeeded\nOct 25 10:07:11 combo portmap: portmap shutdown succeeded\nOct 25 10:08:47 combo portmap: portmap startup succeeded\nDec  6 12:21:21 combo portmap: portmap shutdown failed\nDec  6 12:22:57 combo portmap: portmap startup succeeded\nJan 26 12:20:31 combo portmap: portmap shutdown succeeded\nJan 26 12:22:07 combo portmap: portmap startup succeeded"
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "The log shows a 'portmap shutdown failed' event, which is a significant anomaly for a core system service.",
+        "The `portmap` (rpcbind) service is a known target for reconnaissance and exploitation by attackers.",
+        "There is a recurring pattern of the service being shut down and restarted within a one-to-two-minute window, which is unusual for normal operations."
+      ],
+      "analysis": "First check the service being manipulated, which is `portmap` (rpcbind), a service often targeted by attackers for reconnaissance and exploitation. Then verify the sequence of events, noting multiple rapid restarts and a critical anomaly: a `shutdown failed` event. Finally confirm the context; the failure of a critical system service to shut down cleanly is a common indicator of process hooking or interference by malware attempting to maintain persistence. Because the combination of targeting a sensitive service, frequent restarts, and a shutdown failure is highly indicative of a system issue or potential compromise, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The activity is suspicious due to the 'shutdown failed' event and frequent restarts of the `portmap` service, warranting investigation but not an immediate block without further evidence."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "xinetd"
+    },
+    "json": {
+      "raw_log": "Jun  9 06:06:38 combo xinetd: xinetd startup succeeded\nJun  9 06:06:40 combo xinetd[2003]: No such internal service: services/stream - DISABLING\nJun  9 06:06:41 combo xinetd[2003]: bind failed (Address already in use (errno = 98)). service = telnet\nJun  9 06:06:41 combo xinetd[2003]: Service telnet failed to start and is deactivated.\nJun  9 06:06:41 combo xinetd[2003]: xinetd Version 2.3.13 started with libwrap loadavg options compiled in.\nJun  9 06:06:41 combo xinetd[2003]: Started working: 30 available services\nJun 10 04:02:23 combo xinetd[2003]: file descriptor of service comsat has been closed\nJun 10 04:02:23 combo xinetd[2003]: select reported EBADF but no bad file descriptors were found\nJun 10 11:32:00 combo xinetd: xinetd startup succeeded\nJun 10 11:32:02 combo xinetd[2034]: No such internal service: services/stream - DISABLING\nJun 10 11:32:03 combo xinetd[2034]: bind failed (Address already in use (errno = 98)). service = telnet\nJun 10 11:32:03 combo xinetd[2034]: Service telnet failed to start and is deactivated.\nJun 10 11:32:03 combo xinetd[2034]: xinetd Version 2.3.13 started with libwrap loadavg options compiled in.\nJun 10 11:32:03 combo xinetd[2034]: Started working: 30 available services\nJun 11 04:02:32 combo xinetd[2034]: file descriptor of service comsat has been closed\nJun 11 04:02:32 combo xinetd[2034]: select reported EBADF but no bad file descriptors were found\nJul 25 23:23:13 combo xinetd[26482]: warning: can't get client address: Connection reset by peer\nJul 25 23:23:13 combo xinetd[26484]: warning: can't get client address: Connection reset by peer\nJul 27 14:42:13 combo xinetd: xinetd startup succeeded\nJul 27 14:42:16 combo xinetd[2016]: No such internal service: services/stream - DISABLING\nJul 27 14:42:17 combo xinetd[2016]: bind failed (Address already in use (errno = 98)). service = telnet\nJul 27 14:42:17 combo xinetd[2016]: Service telnet failed to start and is deactivated.\nJul 27 14:42:17 combo xinetd[2016]: xinetd Version 2.3.13 started with libwrap loadavg options compiled in.\nJul 27 14:42:17 combo xinetd[2016]: Started working: 30 available services\nJul 28 04:03:02 combo xinetd[2016]: file descriptor of service comsat has been closed\nJul 28 04:03:02 combo xinetd[2016]: select reported EBADF but no bad file descriptors were found\nSep 12 16:39:42 combo xinetd[25297]: warning: can't get client address: Connection reset by peer\nSep 19 05:57:53 combo xinetd: xinetd startup succeeded\nSep 19 05:57:55 combo xinetd[2034]: No such internal service: services/stream - DISABLING\nSep 19 05:57:56 combo xinetd[2034]: bind failed (Address already in use (errno = 98)). service = telnet\nSep 19 05:57:56 combo xinetd[2034]: Service telnet failed to start and is deactivated.\nSep 19 05:57:56 combo xinetd[2034]: xinetd Version 2.3.13 started with libwrap loadavg options compiled in.\nSep 19 05:57:56 combo xinetd[2034]: Started working: 30 available services\nSep 20 04:03:30 combo xinetd[2034]: file descriptor of service comsat has been closed\nSep 20 04:03:30 combo xinetd[2034]: select reported EBADF but no bad file descriptors were found\nSep 28 09:09:13 combo xinetd[2034]: Exiting...\nSep 28 09:09:14 combo xinetd: xinetd shutdown succeeded\nSep 28 09:11:06 combo xinetd: xinetd startup succeeded\nSep 28 09:11:09 combo xinetd[2006]: No such internal service: services/stream - DISABLING\nSep 28 09:11:10 combo xinetd[2006]: bind failed (Address already in use (errno = 98)). service = telnet\nSep 28 09:11:10 combo xinetd[2006]: Service telnet failed to start and is deactivated.\nSep 28 09:11:10 combo xinetd[2006]: xinetd Version 2.3.13 started with libwrap loadavg options compiled in.\nSep 28 09:11:10 combo xinetd[2006]: Started working: 30 available services\nSep 28 14:39:55 combo xinetd[2006]: file descriptor of service comsat has been closed\nSep 28 14:39:55 combo xinetd[2006]: select reported EBADF but no bad file descriptors were found\nOct 25 10:07:06 combo xinetd[2006]: Exiting...\nOct 25 10:07:07 combo xinetd: xinetd shutdown succeeded\nOct 25 10:09:06 combo xinetd: xinetd startup succeeded\nOct 25 10:09:09 combo xinetd[2003]: No such internal service: services/stream - DISABLING\nOct 25 10:09:10 combo xinetd[2003]: bind failed (Address already in use (errno = 98)). service = telnet\nOct 25 10:09:10 combo xinetd[2003]: Service telnet failed to start and is deactivated.\nOct 25 10:09:10 combo xinetd[2003]: xinetd Version 2.3.13 started with libwrap loadavg options compiled in.\nOct 25 10:09:10 combo xinetd[2003]: Started working: 30 available services\nOct 26 04:03:30 combo xinetd[2003]: file descriptor of service comsat has been closed\nOct 26 04:03:30 combo xinetd[2003]: select reported EBADF but no bad file descriptors were found\nDec  6 12:21:15 combo xinetd[2003]: Exiting...\nDec  6 12:21:16 combo xinetd: xinetd shutdown succeeded\nDec  6 12:23:16 combo xinetd: xinetd startup succeeded\nDec  6 12:23:18 combo xinetd[2006]: No such internal service: services/stream - DISABLING\nDec  6 12:23:19 combo xinetd[2006]: bind failed (Address already in use (errno = 98)). service = telnet\nDec  6 12:23:19 combo xinetd[2006]: Service telnet failed to start and is deactivated.\nDec  6 12:23:19 combo xinetd[2006]: xinetd Version 2.3.13 started with libwrap loadavg options compiled in.\nDec  6 12:23:20 combo xinetd[2006]: Started working: 30 available services\nDec  6 12:23:38 combo xinetd[2006]: file descriptor of service comsat has been closed\nDec  6 12:23:38 combo xinetd[2006]: select reported EBADF but no bad file descriptors were found\nJan 11 22:10:31 combo xinetd[16823]: warning: can't get client address: Connection reset by peer\nJan 11 22:10:33 combo xinetd[16825]: warning: can't get client address: Connection reset by peer\nJan 12 02:01:15 combo xinetd[17166]: warning: can't get client address: Connection reset by peer\nJan 12 02:01:21 combo xinetd[17168]: warning: can't get client address: Connection reset by peer\nJan 16 11:23:38 combo xinetd[2736]: warning: can't get client address: Connection reset by peer\nJan 26 12:20:27 combo xinetd[2006]: Exiting...\nJan 26 12:20:28 combo xinetd: xinetd shutdown succeeded\nJan 26 12:22:28 combo xinetd: xinetd startup succeeded\nJan 26 12:22:40 combo xinetd[2013]: No such internal service: services/stream - DISABLING\nJan 26 12:22:41 combo xinetd[2013]: bind failed (Address already in use (errno = 98)). service = telnet\nJan 26 12:22:41 combo xinetd[2013]: Service telnet failed to start and is deactivated.\nJan 26 12:22:41 combo xinetd[2013]: xinetd Version 2.3.13 started with libwrap loadavg options compiled in.\nJan 26 12:22:42 combo xinetd[2013]: Started working: 30 available services\nJan 26 12:23:50 combo xinetd[2013]: file descriptor of service comsat has been closed\nJan 26 12:23:58 combo xinetd[2013]: select reported EBADF but no bad file descriptors were found\nFeb 10 21:52:19 combo xinetd[4600]: warning: can't get client address: Connection reset by peer\nFeb 12 13:11:14 combo xinetd[4760]: warning: can't get client address: Connection reset by peer\nFeb 12 13:11:14 combo xinetd[4761]: warning: can't get client address: Connection reset by peer\nFeb 12 13:11:15 combo xinetd[4762]: warning: can't get client address: Connection reset by peer\nFeb 12 13:11:15 combo xinetd[4763]: warning: can't get client address: Connection reset by peer\nFeb 12 13:11:15 combo xinetd[4764]: warning: can't get client address: Connection reset by peer\nFeb 12 13:11:15 combo xinetd[4765]: warning: can't get client address: Connection reset by peer\nFeb 12 13:11:15 combo xinetd[4766]: warning: can't get client address: Connection reset by peer\nFeb 12 13:11:15 combo xinetd[4767]: warning: can't get client address: Connection reset by peer\nFeb 12 13:11:15 combo xinetd[4768]: warning: can't get client address: Connection reset by peer"
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple log entries show `warning: can't get client address: Connection reset by peer`.",
+        "These warnings occur in rapid succession, particularly on Feb 12, indicating automated activity.",
+        "The log repeatedly shows `xinetd` failing to start the `telnet` service due to `Address already in use`, indicating a misconfiguration and the intended use of an insecure protocol."
+      ],
+      "analysis": "First check for repeated connection error messages; then verify the presence of multiple 'warning: can't get client address: Connection reset by peer' entries; finally confirm that these messages indicate a client is connecting and immediately disconnecting without sending data. Because this behavior is a classic signature of network port scanning used for reconnaissance, classify as suspicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The log indicates network scanning activity, and blocking the source IP addresses (once identified via other tools) is necessary to prevent further reconnaissance and subsequent attacks."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "system_log"
+    },
+    "json": {
+      "log_entries": [
+        {
+          "timestamp": "Jun  9 06:06:52",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus startup succeeded"
+        },
+        {
+          "timestamp": "Jun 10 11:32:14",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus startup succeeded"
+        },
+        {
+          "timestamp": "Jul 27 14:42:27",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus startup succeeded"
+        },
+        {
+          "timestamp": "Sep 19 05:58:07",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus startup succeeded"
+        },
+        {
+          "timestamp": "Sep 28 09:08:35",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus -TERM succeeded"
+        },
+        {
+          "timestamp": "Sep 28 09:11:32",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus startup succeeded"
+        },
+        {
+          "timestamp": "Oct 25 10:06:09",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus -TERM succeeded"
+        },
+        {
+          "timestamp": "Oct 25 10:09:24",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus startup succeeded"
+        },
+        {
+          "timestamp": "Dec  6 12:20:20",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus shutdown failed"
+        },
+        {
+          "timestamp": "Dec  6 12:23:47",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus startup succeeded"
+        },
+        {
+          "timestamp": "Jan 26 12:20:03",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus -TERM succeeded"
+        },
+        {
+          "timestamp": "Jan 26 12:22:52",
+          "hostname": "combo",
+          "process_name": "messagebus",
+          "pid": null,
+          "message": "messagebus startup succeeded"
+        }
+      ]
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "A log entry indicates a failure during the shutdown of the 'messagebus' service.",
+        "The 'messagebus' service (D-Bus) is a critical system component for inter-process communication.",
+        "The failed shutdown is an anomalous event compared to other logs showing successful startups and terminations."
+      ],
+      "analysis": "First check the operational logs for the critical system service 'messagebus'; then verify the status messages, noting multiple successful startups and graceful terminations; finally confirm the anomalous entry 'messagebus shutdown failed'. Because a failed shutdown of a fundamental service like D-Bus indicates system instability and is a significant deviation from normal behavior that could be a symptom of a deeper issue, including a security compromise, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The system should be monitored for further anomalies as a critical service shutdown failure indicates instability that requires investigation."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "authentication"
+    },
+    "json": {
+      "log_entries": [
+        {
+          "timestamp": "Jul  7 08:06:15",
+          "hostname": "combo",
+          "process_name": "root",
+          "pid": "2421",
+          "message": "ROOT LOGIN ON tty2"
+        },
+        {
+          "timestamp": "Aug  2 08:01:32",
+          "hostname": "combo",
+          "process_name": "root",
+          "pid": "2400",
+          "message": "ROOT LOGIN ON tty2"
+        },
+        {
+          "timestamp": "Aug  2 08:05:44",
+          "hostname": "combo",
+          "process_name": "root",
+          "pid": "24997",
+          "message": "ROOT LOGIN ON tty2"
+        },
+        {
+          "timestamp": "Sep 28 09:03:14",
+          "hostname": "combo",
+          "process_name": "root",
+          "pid": "2417",
+          "message": "ROOT LOGIN ON tty2"
+        },
+        {
+          "timestamp": "Sep 29 12:28:13",
+          "hostname": "combo",
+          "process_name": "root",
+          "pid": "2402",
+          "message": "ROOT LOGIN ON tty2"
+        },
+        {
+          "timestamp": "Dec  9 09:40:22",
+          "hostname": "combo",
+          "process_name": "root",
+          "pid": "2420",
+          "message": "ROOT LOGIN ON tty3"
+        },
+        {
+          "timestamp": "Dec  9 09:41:52",
+          "hostname": "combo",
+          "process_name": "root",
+          "pid": "2419",
+          "message": "ROOT LOGIN ON tty2"
+        }
+      ]
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple root user logins were recorded.",
+        "Logins occurred directly on console terminals (tty2, tty3), not via standard remote protocols like SSH.",
+        "The events indicate the highest level of system privilege being accessed."
+      ],
+      "analysis": "First check for high-privilege account activity; then verify the access method, which is direct console login (TTY); finally confirm the repetition of this high-privilege access over time; because direct root logins on console terminals are unusual and represent complete system control, bypassing many standard security monitoring points, classify as suspicious activity requiring investigation."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "These events indicate high-privilege access which could be legitimate administrative activity, so monitoring and investigation are required before taking any blocking action."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "selinux_log"
+    },
+    "json": {
+      "timestamp": "Jan 26 12:22:44",
+      "hostname": "combo",
+      "process_name": "PAM-rootok",
+      "pid": 2089,
+      "message": "pam_check_access failed, user does not have proper access: system_u:system_r:kernel_t"
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.9
+    },
+    "reasoning": {
+      "evidence": [
+        "An access check by PAM (Pluggable Authentication Modules) failed.",
+        "The failure was due to an SELinux (Security-Enhanced Linux) policy violation.",
+        "The process attempted to use the SELinux context 'system_u:system_r:kernel_t', which is typically reserved for the kernel itself."
+      ],
+      "analysis": "First check the log source, identifying it as a PAM module reporting a failed access check. Then verify the failure reason, which is an SELinux access denial. Finally, confirm the specific context involved is 'system_u:system_r:kernel_t', which is a highly privileged context reserved for the kernel. Because a user-space process attempting to operate under a kernel-level security context is a significant security anomaly and a violation of Mandatory Access Control (MAC) policy, classify as suspicious, potentially indicating a misconfiguration or privilege escalation attempt."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The log indicates a potential security policy violation or system misconfiguration that requires further investigation before taking a blocking action."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "database_log"
+    },
+    "json": {
+      "log_entries": [
+        {
+          "timestamp": "Jun  9 06:07:22",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Starting MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Jun 10 11:32:45",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Starting MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Jul 27 14:42:58",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Starting MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Aug  2 07:46:28",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Stopping MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Aug  2 07:46:32",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Starting MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Sep 19 05:58:36",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Starting MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Sep 28 09:08:42",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Stopping MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Sep 28 09:12:20",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Starting MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Oct 25 10:06:15",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Stopping MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Oct 25 10:09:57",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Starting MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Dec  6 12:20:31",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Stopping MySQL:  failed"
+        },
+        {
+          "timestamp": "Dec  6 12:24:32",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Starting MySQL:  succeeded"
+        },
+        {
+          "timestamp": "Jan 26 12:20:09",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Stopping MySQL:  failed"
+        },
+        {
+          "timestamp": "Jan 26 12:23:28",
+          "hostname": "combo",
+          "process_name": "mysqld",
+          "message": "Starting MySQL:  succeeded"
+        }
+      ]
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.6
+    },
+    "reasoning": {
+      "evidence": [
+        "The log shows multiple instances of the MySQL service failing to stop gracefully (`Stopping MySQL:  failed`).",
+        "Each shutdown failure is followed by a successful startup a few minutes later.",
+        "This pattern occurred on two separate occasions (Dec 6 and Jan 26), indicating a recurring issue rather than a single random glitch."
+      ],
+      "analysis": "First check for service management events in the logs; then verify the status of these events, specifically looking for failures; finally confirm the repetition of the failure pattern for a critical service like MySQL. Because the inability to gracefully stop a core database service can be an indicator of a process compromise, resource exhaustion, or an intentional denial-of-service attempt, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The action is to monitor because the repeated service failures are suspicious and require investigation to determine the root cause, which could range from an operational issue to a security compromise."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "system_log"
+    },
+    "json": {
+      "raw_log": "Sep 28 09:08:41 combo FreeWnn: jserver shutdown succeeded\nOct 25 10:06:14 combo FreeWnn: jserver shutdown succeeded\nDec  6 12:20:29 combo FreeWnn: jserver shutdown failed\nJan 26 12:20:08 combo FreeWnn: jserver shutdown succeeded"
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.1
+    },
+    "reasoning": {
+      "evidence": [
+        "A log entry indicates a service shutdown failure ('jserver shutdown failed').",
+        "The failing service, 'FreeWnn', is a legitimate Japanese Input Method Editor.",
+        "The failure is an isolated event, occurring once over a period of several months, with other logs showing successful shutdowns."
+      ],
+      "analysis": "First check the process name and message; then verify that 'FreeWnn' is a legitimate system service and a 'shutdown failed' message indicates a service error; finally confirm that this is an isolated incident among multiple successful shutdowns over a long period; because a single, non-recurring service failure is more likely a transient system issue or software bug than a malicious attack, classify as suspicious with low confidence."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The action is monitor because an isolated service failure is a low-risk anomaly that warrants observation for recurrence rather than an immediate block."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "system_log"
+    },
+    "json": {
+      "log_entries": [
+        {
+          "timestamp": "Jun  9 06:06:50",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs startup succeeded"
+        },
+        {
+          "timestamp": "Jun 10 11:32:12",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs startup succeeded"
+        },
+        {
+          "timestamp": "Jul 27 14:42:25",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs startup succeeded"
+        },
+        {
+          "timestamp": "Sep 19 05:58:05",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs startup succeeded"
+        },
+        {
+          "timestamp": "Sep 28 09:08:39",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "pid": "2183",
+          "message": "terminating"
+        },
+        {
+          "timestamp": "Sep 28 09:08:40",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs shutdown succeeded"
+        },
+        {
+          "timestamp": "Sep 28 09:11:30",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs startup succeeded"
+        },
+        {
+          "timestamp": "Oct 25 10:06:13",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "pid": "2155",
+          "message": "terminating"
+        },
+        {
+          "timestamp": "Oct 25 10:06:14",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs shutdown succeeded"
+        },
+        {
+          "timestamp": "Oct 25 10:09:22",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs startup succeeded"
+        },
+        {
+          "timestamp": "Dec  6 12:20:29",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs shutdown failed"
+        },
+        {
+          "timestamp": "Dec  6 12:23:45",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs startup succeeded"
+        },
+        {
+          "timestamp": "Jan 26 12:20:06",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "pid": "2168",
+          "message": "terminating"
+        },
+        {
+          "timestamp": "Jan 26 12:20:07",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs shutdown succeeded"
+        },
+        {
+          "timestamp": "Jan 26 12:22:50",
+          "hostname": "combo",
+          "process_name": "xfs",
+          "message": "xfs startup succeeded"
+        }
+      ]
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.2
+    },
+    "reasoning": {
+      "evidence": [
+        "A log entry indicates a system service, the X Font Server (xfs), failed to shut down: 'xfs shutdown failed'.",
+        "This failure is an isolated anomaly, occurring once amidst numerous successful startups and shutdowns over several months.",
+        "The service successfully started again shortly after the shutdown failure, suggesting a transient issue."
+      ],
+      "analysis": "First check for anomalous system service behavior in the logs; then verify the context of the anomaly, noting it's an isolated 'shutdown failed' event for the X Font Server (xfs); finally confirm that the service recovered and started successfully shortly after the failure; because a single, self-recovering service failure is more indicative of a transient system bug or resource issue than a persistent malicious attack, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The isolated service failure warrants investigation, but lacks direct evidence of malicious intent, so monitoring for further anomalies is the most appropriate action."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "daemon_log"
+    },
+    "json": {
+      "timestamp": "Jan 26 12:23:31",
+      "hostname": "combo",
+      "process_name": "mdmpd",
+      "message": "mdmpd failed"
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "A system daemon, 'mdmpd', repeatedly failed over a period of several months.",
+        "The failing daemon 'mdmpd' is associated with Mobile Device Management (MDM) services, which are often used for enforcing security policies on devices."
+      ],
+      "analysis": "First check the identity of the failing process, 'mdmpd', which is the Mobile Device Management daemon; then verify the frequency of the failure, noting that it is a recurring event over several months; finally confirm the security implications, as the failure of MDM services can weaken a device's security posture and oversight; because the persistent failure of a security-related system service is a potential indicator of compromise or system instability that could be exploited, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The action is to monitor because the repeated failure of a system daemon requires investigation to determine the root cause, which could range from a software bug to malicious activity."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "Authentication"
+    },
+    "json": {
+      "events": [
+        {
+          "timestamp": "Jun 13 05:27:11",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2803,
+          "message": "bad username [;;]"
+        },
+        {
+          "timestamp": "Jun 13 05:27:30",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2803,
+          "message": "bad username []"
+        },
+        {
+          "timestamp": "Jul 11 11:33:13",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2803,
+          "message": "check pass; user unknown"
+        },
+        {
+          "timestamp": "Jul 11 11:33:13",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2803,
+          "message": "authentication failure; logname= uid=0 euid=0 tty=:0 ruser= rhost= "
+        },
+        {
+          "timestamp": "Aug  1 09:33:45",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2782,
+          "message": "bad username []"
+        },
+        {
+          "timestamp": "Aug  1 11:23:36",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2782,
+          "message": "bad username []"
+        },
+        {
+          "timestamp": "Aug  2 08:01:22",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2782,
+          "message": "bad username []"
+        },
+        {
+          "timestamp": "Sep 28 09:03:07",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2799,
+          "message": "bad username []"
+        },
+        {
+          "timestamp": "Sep 29 12:27:57",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2813,
+          "message": "bad username []"
+        },
+        {
+          "timestamp": "Sep 29 12:28:06",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2813,
+          "message": "bad username []"
+        },
+        {
+          "timestamp": "Dec  9 09:40:59",
+          "hostname": "combo",
+          "process_name": "gdm(pam_unix)",
+          "pid": 2828,
+          "message": "bad username [\\]"
+        }
+      ]
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple authentication failure events logged by the GNOME Display Manager (gdm) via PAM.",
+        "Repeated login attempts using invalid usernames, including empty strings (`[]`) and special characters (`[;;]`, `[\\]`).",
+        "Explicit log messages such as `bad username` and `user unknown`.",
+        "The attempts are persistent and distributed over several months, indicating an automated and ongoing effort."
+      ],
+      "analysis": "First check the log source, which is `gdm(pam_unix)`, indicating login attempts at the graphical user interface. Then verify the content of the messages, which repeatedly show `bad username`, `user unknown`, and `authentication failure`. Finally confirm the pattern of activity, which involves multiple attempts with invalid or empty usernames spread across several months. Because this pattern is a hallmark of automated brute-force or credential-stuffing attacks trying to guess valid user accounts, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The logs indicate a persistent, automated brute-force attack, which should be blocked to prevent potential unauthorized system access."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "sshd_authentication"
+    },
+    "json": {
+      "log_data": "Jun 10 17:16:34 combo sshd(pam_unix)[3353]: check pass; user unknown\nJun 10 17:16:34 combo sshd(pam_unix)[3353]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=itsc.iasi.astral.ro \nJun 11 09:45:45 combo sshd(pam_unix)[6472]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:45:55 combo sshd(pam_unix)[6474]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:45:58 combo sshd(pam_unix)[6476]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:01 combo sshd(pam_unix)[6478]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:05 combo sshd(pam_unix)[6480]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:08 combo sshd(pam_unix)[6482]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:11 combo sshd(pam_unix)[6484]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:15 combo sshd(pam_unix)[6486]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:18 combo sshd(pam_unix)[6488]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:21 combo sshd(pam_unix)[6490]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:25 combo sshd(pam_unix)[6492]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:28 combo sshd(pam_unix)[6494]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:31 combo sshd(pam_unix)[6496]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:34 combo sshd(pam_unix)[6498]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:35 combo sshd(pam_unix)[6500]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:38 combo sshd(pam_unix)[6502]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:38 combo sshd(pam_unix)[6504]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:41 combo sshd(pam_unix)[6506]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:44 combo sshd(pam_unix)[6508]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:45 combo sshd(pam_unix)[6510]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:47 combo sshd(pam_unix)[6512]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:48 combo sshd(pam_unix)[6514]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 11 09:46:48 combo sshd(pam_unix)[6516]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=unknown.sagonet.net  user=root\nJun 12 01:12:13 combo sshd(pam_unix)[7822]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:13 combo sshd(pam_unix)[7823]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:13 combo sshd(pam_unix)[7821]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:14 combo sshd(pam_unix)[7826]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:14 combo sshd(pam_unix)[7828]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:17 combo sshd(pam_unix)[7831]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:18 combo sshd(pam_unix)[7832]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:21 combo sshd(pam_unix)[7835]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:22 combo sshd(pam_unix)[7837]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:22 combo sshd(pam_unix)[7839]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:12:27 combo sshd(pam_unix)[7841]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:15:17 combo sshd(pam_unix)[7847]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 01:15:23 combo sshd(pam_unix)[7849]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4  user=test\nJun 12 02:30:22 combo sshd(pam_unix)[7954]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.46.241.200  user=guest\nJun 12 05:21:33 combo sshd(pam_unix)[12286]: session opened for user test by (uid=509)\nJun 12 05:24:13 combo sshd(pam_unix)[12286]: session closed for user test\nJun 12 14:10:40 combo sshd(pam_unix)[13105]: check pass; user unknown\nJun 12 14:10:40 combo sshd(pam_unix)[13105]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:40 combo sshd(pam_unix)[13107]: check pass; user unknown\nJun 12 14:10:40 combo sshd(pam_unix)[13107]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:42 combo sshd(pam_unix)[13109]: check pass; user unknown\nJun 12 14:10:42 combo sshd(pam_unix)[13109]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:44 combo sshd(pam_unix)[13112]: check pass; user unknown\nJun 12 14:10:44 combo sshd(pam_unix)[13112]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:44 combo sshd(pam_unix)[13111]: check pass; user unknown\nJun 12 14:10:44 combo sshd(pam_unix)[13111]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:46 combo sshd(pam_unix)[13115]: check pass; user unknown\nJun 12 14:10:46 combo sshd(pam_unix)[13115]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:46 combo sshd(pam_unix)[13116]: check pass; user unknown\nJun 12 14:10:46 combo sshd(pam_unix)[13116]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:49 combo sshd(pam_unix)[13119]: check pass; user unknown\nJun 12 14:10:49 combo sshd(pam_unix)[13119]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:50 combo sshd(pam_unix)[13121]: check pass; user unknown\nJun 12 14:10:50 combo sshd(pam_unix)[13121]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:50 combo sshd(pam_unix)[13122]: check pass; user unknown\nJun 12 14:10:50 combo sshd(pam_unix)[13122]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:52 combo sshd(pam_unix)[13125]: check pass; user unknown\nJun 12 14:10:52 combo sshd(pam_unix)[13125]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:52 combo sshd(pam_unix)[13126]: check pass; user unknown\nJun 12 14:10:52 combo sshd(pam_unix)[13126]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 12 14:10:54 combo sshd(pam_unix)[13129]: check pass; user unknown\nJun 12 14:10:54 combo sshd(pam_unix)[13129]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.38.14.205 \nJun 13 10:18:09 combo sshd(pam_unix)[16509]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 10:18:09 combo sshd(pam_unix)[16510]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 10:18:09 combo sshd(pam_unix)[16511]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 10:18:09 combo sshd(pam_unix)[16514]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 10:18:09 combo sshd(pam_unix)[16518]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 10:18:09 combo sshd(pam_unix)[16515]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 10:18:09 combo sshd(pam_unix)[16519]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 10:18:09 combo sshd(pam_unix)[16516]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 10:18:09 combo sshd(pam_unix)[16513]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 10:18:09 combo sshd(pam_unix)[16517]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.153.202.254  user=root\nJun 13 15:03:36 combo sshd(pam_unix)[16950]: check pass; user unknown\nJun 13 15:03:36 combo sshd(pam_unix)[16950]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:03:36 combo sshd(pam_unix)[16949]: check pass; user unknown\nJun 13 15:03:36 combo sshd(pam_unix)[16949]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:03:37 combo sshd(pam_unix)[16954]: check pass; user unknown\nJun 13 15:03:37 combo sshd(pam_unix)[16954]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:03:37 combo sshd(pam_unix)[16953]: check pass; user unknown\nJun 13 15:03:37 combo sshd(pam_unix)[16953]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:03:38 combo sshd(pam_unix)[16959]: check pass; user unknown\nJun 13 15:03:38 combo sshd(pam_unix)[16959]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:03:39 combo sshd(pam_unix)[16960]: check pass; user unknown\nJun 13 15:03:39 combo sshd(pam_unix)[16960]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:03:39 combo sshd(pam_unix)[16957]: check pass; user unknown\nJun 13 15:03:39 combo sshd(pam_unix)[16957]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:03:40 combo sshd(pam_unix)[16963]: check pass; user unknown\nJun 13 15:03:40 combo sshd(pam_unix)[16963]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:03:41 combo sshd(pam_unix)[16965]: check pass; user unknown\nJun 13 15:03:41 combo sshd(pam_unix)[16965]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:03:41 combo sshd(pam_unix)[16966]: check pass; user unknown\nJun 13 15:03:41 combo sshd(pam_unix)[16966]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:05:15 combo sshd(pam_unix)[16973]: check pass; user unknown\nJun 13 15:05:15 combo sshd(pam_unix)[16973]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:05:18 combo sshd(pam_unix)[16975]: check pass; user unknown\nJun 13 15:05:18 combo sshd(pam_unix)[16975]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 13 15:10:30 combo sshd(pam_unix)[16984]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 15:10:30 combo sshd(pam_unix)[16992]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 15:10:30 combo sshd(pam_unix)[16990]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 15:10:30 combo sshd(pam_unix)[16987]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 15:10:30 combo sshd(pam_unix)[16986]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 15:10:30 combo sshd(pam_unix)[16995]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 15:10:30 combo sshd(pam_unix)[16985]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 15:10:30 combo sshd(pam_unix)[16996]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 15:10:30 combo sshd(pam_unix)[16989]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 15:10:30 combo sshd(pam_unix)[16997]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr  user=root\nJun 13 20:13:11 combo sshd(pam_unix)[17422]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17422]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 13 20:13:11 combo sshd(pam_unix)[17432]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17432]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 13 20:13:11 combo sshd(pam_unix)[17421]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17421]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 13 20:13:11 combo sshd(pam_unix)[17423]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17423]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 13 20:13:11 combo sshd(pam_unix)[17428]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17428]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 13 20:13:11 combo sshd(pam_unix)[17420]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17420]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 13 20:13:11 combo sshd(pam_unix)[17427]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17427]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 13 20:13:11 combo sshd(pam_unix)[17431]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17431]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 13 20:13:11 combo sshd(pam_unix)[17433]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17433]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 13 20:13:11 combo sshd(pam_unix)[17429]: check pass; user unknown\nJun 13 20:13:11 combo sshd(pam_unix)[17429]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=under-eepc58.kaist.ac.kr \nJun 14 02:59:55 combo sshd(pam_unix)[18004]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 02:59:56 combo sshd(pam_unix)[18008]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 02:59:56 combo sshd(pam_unix)[18007]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 02:59:57 combo sshd(pam_unix)[18009]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:00 combo sshd(pam_unix)[18014]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:02 combo sshd(pam_unix)[18015]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:03 combo sshd(pam_unix)[18019]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:05 combo sshd(pam_unix)[18018]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:06 combo sshd(pam_unix)[18022]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:10 combo sshd(pam_unix)[18026]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:12 combo sshd(pam_unix)[18029]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:13 combo sshd(pam_unix)[18038]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:15 combo sshd(pam_unix)[18028]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 03:00:15 combo sshd(pam_unix)[18042]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.101.42.106  user=root\nJun 14 11:56:36 combo sshd(pam_unix)[19594]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 11:56:36 combo sshd(pam_unix)[19593]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 11:56:36 combo sshd(pam_unix)[19595]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 11:56:36 combo sshd(pam_unix)[19599]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 11:56:36 combo sshd(pam_unix)[19601]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 11:56:36 combo sshd(pam_unix)[19603]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 11:56:37 combo sshd(pam_unix)[19604]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 11:56:37 combo sshd(pam_unix)[19607]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 11:56:37 combo sshd(pam_unix)[19606]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 11:56:37 combo sshd(pam_unix)[19608]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.233.12.249  user=root\nJun 14 15:14:53 combo sshd(pam_unix)[19913]: check pass; user unknown\nJun 14 15:14:53 combo sshd(pam_unix)[19913]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:14:54 combo sshd(pam_unix)[19916]: check pass; user unknown\nJun 14 15:14:54 combo sshd(pam_unix)[19916]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:14:54 combo sshd(pam_unix)[19917]: check pass; user unknown\nJun 14 15:14:54 combo sshd(pam_unix)[19917]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:14:54 combo sshd(pam_unix)[19918]: check pass; user unknown\nJun 14 15:14:54 combo sshd(pam_unix)[19918]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:14:54 combo sshd(pam_unix)[19920]: check pass; user unknown\nJun 14 15:14:54 combo sshd(pam_unix)[19920]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:14:55 combo sshd(pam_unix)[19925]: check pass; user unknown\nJun 14 15:14:55 combo sshd(pam_unix)[19925]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:14:55 combo sshd(pam_unix)[19915]: check pass; user unknown\nJun 14 15:14:55 combo sshd(pam_unix)[19915]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:14:56 combo sshd(pam_unix)[19927]: check pass; user unknown\nJun 14 15:14:56 combo sshd(pam_unix)[19927]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:14:56 combo sshd(pam_unix)[19929]: check pass; user unknown\nJun 14 15:14:56 combo sshd(pam_unix)[19929]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:14:57 combo sshd(pam_unix)[19928]: check pass; user unknown\nJun 14 15:14:57 combo sshd(pam_unix)[19928]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:16:01 combo sshd(pam_unix)[19939]: check pass; user unknown\nJun 14 15:16:01 combo sshd(pam_unix)[19939]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nJun 14 15:16:02 combo sshd(pam_unix)[19937]: check pass; user unknown\nJun 14 15:16:02 combo sshd(pam_unix)[19937]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.188.2.4 \nAug 02 07:40:04 combo sshd(pam_unix)[24613]: session opened for user root by (uid=0)\nAug 02 07:40:35 combo sshd(pam_unix)[24613]: session closed for user root\nAug 07 08:58:56 combo sshd(pam_unix)[16455]: 7 more authentication failures; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ned.gcdtech.com  user=root\nAug 07 08:58:56 combo sshd(pam_unix)[16455]: service(sshd) ignoring max retries; 8 > 3\nAug 30 10:58:42 combo sshd(pam_unix)[4071]: session opened for user root by (uid=0)\nAug 30 11:30:24 combo sshd(pam_unix)[4071]: session closed for user root"
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "The log file contains an extremely high volume of SSH `authentication failure` and `check pass; user unknown` messages over several months.",
+        "Login attempts originate from a wide variety of geographically diverse and unrelated remote hosts and IP addresses.",
+        "The attacks consistently target common usernames such as `root`, `test`, `guest`, `nobody`, `admin`, etc., which is indicative of a dictionary or brute-force attack.",
+        "Multiple log entries explicitly state a successful login for the `root` user, such as `session opened for user root by (uid=0)`.",
+        "Some log entries show aggregated failures like `7 more authentication failures`, confirming high-frequency attack patterns from a single source."
+      ],
+      "analysis": "First check the log for patterns of authentication activity. The file is overwhelmingly composed of failed SSH login attempts. Then verify the characteristics of these failures; they originate from numerous external hosts and target common, default, and non-existent usernames, a clear signature of a distributed SSH brute-force attack. Finally confirm the outcome of the attacks; multiple entries such as `Aug 02 07:40:04 combo sshd(pam_unix)[24613]: session opened for user root by (uid=0)` and `Aug 30 10:58:42 combo sshd(pam_unix)[4071]: session opened for user root by (uid=0)` provide definitive proof of successful system compromise at the highest privilege level. Because the logs show both a sustained brute-force campaign and a successful root compromise, classify the activity as malicious with high severity."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The system has been successfully compromised at the root level, requiring immediate isolation from the network to prevent further malicious activity and lateral movement."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "auth"
+    },
+    "json": {
+      "timestamp": "Oct 23 12:40:19",
+      "hostname": "combo",
+      "process_name": "rlogind",
+      "process_id": 22512,
+      "message": "Connection from 81.181.213.88 on illegal port",
+      "source_ip": "81.181.213.88"
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "Connection attempt to `rlogind`, an insecure and obsolete remote login service.",
+        "Connection originated from an external, untrusted IP address.",
+        "The connection used an 'illegal port', which is a characteristic of network scanning or reconnaissance tools rather than legitimate clients."
+      ],
+      "analysis": "First check the service being targeted, which is `rlogind`, a known insecure and outdated remote access protocol that should not be exposed to the internet. Then verify the source of the connection, which is an external IP address, not a trusted internal host. Finally, confirm the event detail, 'illegal port', which signifies a protocol violation typical of scanning tools probing for vulnerable services. Because an external entity is actively probing a highly insecure service using non-standard methods, classify this as malicious reconnaissance."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The source IP should be blocked as it is performing reconnaissance against a highly insecure service (`rlogind`), indicating malicious intent."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "authentication"
+    },
+    "json": {
+      "raw_log": "Aug  5 05:01:30 combo login[25160]: FAILED LOGIN 1 FROM (null) FOR    , Authentication failure\nAug  5 05:01:30 combo login[25160]: FAILED LOGIN 2 FROM (null) FOR , Authentication failure\nAug  8 06:26:26 combo login[2831]: FAILED LOGIN 1 FROM (null) FOR root, Authentication failure\nAug  8 06:26:32 combo login[2831]: FAILED LOGIN 2 FROM (null) FOR nf, Authentication failure\nAug  8 06:26:44 combo login[2831]: FAILED LOGIN 3 FROM (null) FOR root, Authentication failure\nAug  8 06:26:50 combo login[2831]: FAILED LOGIN SESSION FROM (null) FOR root, Authentication failure\nAug  8 09:57:43 combo login[19993]: FAILED LOGIN 1 FROM (null) FOR   , Authentication failure\nAug  8 09:57:43 combo login[19993]: FAILED LOGIN 2 FROM (null) FOR , Authentication failure"
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple 'FAILED LOGIN' and 'Authentication failure' messages occurred in a short time frame.",
+        "Login attempts targeted the privileged 'root' user.",
+        "A 'FAILED LOGIN SESSION' message appeared after several consecutive failed attempts from the same process ID (2831).",
+        "Attempts were made with both valid usernames ('root', 'nf') and invalid/blank usernames."
+      ],
+      "analysis": "First check for keywords indicating authentication problems, such as 'FAILED LOGIN' and 'Authentication failure'. Then verify the pattern of these failures, noting the rapid succession of attempts and the targeting of high-value accounts like 'root'. Finally, confirm the automated nature by observing multiple attempts from the same process ID (e.g., pid 2831) against different users within seconds. Because this behavior is a classic signature of a brute-force attack trying to guess credentials and gain unauthorized system access, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The log indicates a sustained brute-force attack, which should be blocked to prevent potential system compromise."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "authentication_log"
+    },
+    "json": {
+      "log_data": "Jul  7 08:06:15 combo login(pam_unix)[2421]: session opened for user root by LOGIN(uid=0)\nJul  7 08:09:10 combo login(pam_unix)[2421]: session closed for user root\nAug  2 08:01:32 combo login(pam_unix)[2400]: session opened for user root by LOGIN(uid=0)\nAug  2 08:04:10 combo login(pam_unix)[2400]: session closed for user root\nAug  2 08:05:44 combo login(pam_unix)[24997]: session opened for user root by LOGIN(uid=0)\nAug  2 08:06:03 combo login(pam_unix)[24997]: session closed for user root\nAug  5 05:01:30 combo login(pam_unix)[25160]: bad username [   ]\nAug  5 05:01:30 combo login(pam_unix)[25160]: bad username []\nAug  8 06:26:24 combo login(pam_unix)[2831]: authentication failure; logname=LOGIN uid=0 euid=0 tty=tty2 ruser= rhost=  user=root\nAug  8 06:26:30 combo login(pam_unix)[2831]: check pass; user unknown\nAug  8 06:26:30 combo login(pam_unix)[2831]: authentication failure; logname=LOGIN uid=0 euid=0 tty=tty2 ruser= rhost= \nAug  8 06:26:50 combo login(pam_unix)[2831]: 2 more authentication failures; logname=LOGIN uid=0 euid=0 tty=tty2 ruser= rhost=  user=root\nAug  8 09:57:43 combo login(pam_unix)[19993]: bad username [  ]\nAug  8 09:57:43 combo login(pam_unix)[19993]: bad username []\nSep 28 09:03:14 combo login(pam_unix)[2417]: session opened for user root by LOGIN(uid=0)\nSep 28 09:08:29 combo login(pam_unix)[2417]: session closed for user root\nSep 29 12:28:13 combo login(pam_unix)[2402]: session opened for user root by LOGIN(uid=0)\nSep 29 12:32:48 combo login(pam_unix)[2402]: session closed for user root\nDec  9 09:40:20 combo login(pam_unix)[2420]: session opened for user root by LOGIN(uid=0)\nDec  9 09:41:51 combo login(pam_unix)[2419]: session opened for user root by LOGIN(uid=0)\nDec  9 09:45:49 combo login(pam_unix)[2419]: session closed for user root\nDec  9 09:48:07 combo login(pam_unix)[2420]: session closed for user root\nDec  9 09:48:33 combo login(pam_unix)[2418]: session closed for user root"
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple 'authentication failure' messages for the 'root' user within a short time frame.",
+        "A log entry explicitly states '2 more authentication failures', indicating a repeated attempt.",
+        "The presence of 'bad username' attempts with empty or whitespace-only inputs, which is characteristic of scanning or attack tools."
+      ],
+      "analysis": "First check the system login logs for authentication events; then verify the presence of multiple 'authentication failure' messages in a short time span; finally confirm the target user is a high-privilege account like 'root' and that the failures are clustered together (at least 3 failures within 26 seconds on Aug 8). Because these actions are the definitive signature of an automated attempt to guess the root password, classify as a malicious brute-force attack."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The log indicates an active brute-force attack against the root user, which must be blocked to prevent system compromise."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "authentication_log"
+    },
+    "json": [
+      {
+        "timestamp": "Oct  7 18:53:39",
+        "hostname": "combo",
+        "process_name": "passwd",
+        "pam_module": "pam_unix",
+        "pid": "3275",
+        "message": "password changed for test"
+      },
+      {
+        "timestamp": "Oct 10 03:40:15",
+        "hostname": "combo",
+        "process_name": "passwd",
+        "pam_module": "pam_unix",
+        "pid": "16110",
+        "message": "password changed for test"
+      },
+      {
+        "timestamp": "Oct 10 07:42:17",
+        "hostname": "combo",
+        "process_name": "passwd",
+        "pam_module": "pam_unix",
+        "pid": "17569",
+        "message": "authentication failure; logname=test uid=509 euid=0 tty= ruser= rhost=  user=test"
+      },
+      {
+        "timestamp": "Oct 10 07:42:29",
+        "hostname": "combo",
+        "process_name": "passwd",
+        "pam_module": "pam_unix",
+        "pid": "17571",
+        "message": "authentication failure; logname=test uid=509 euid=0 tty= ruser= rhost=  user=test"
+      },
+      {
+        "timestamp": "Oct 10 07:43:11",
+        "hostname": "combo",
+        "process_name": "passwd",
+        "pam_module": "pam_unix",
+        "pid": "17573",
+        "message": "password changed for test"
+      },
+      {
+        "timestamp": "Oct 12 01:42:34",
+        "hostname": "combo",
+        "process_name": "passwd",
+        "pam_module": "pam_unix",
+        "pid": "26078",
+        "message": "password changed for test"
+      }
+    ],
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple password changes occurred for the user 'test' within a very short period (4 times in 5 days).",
+        "Two authentication failures were logged immediately before a successful password change on October 10th.",
+        "The sequence of 'authentication failure' followed by 'password changed' is a strong indicator of a successful brute-force or credential-guessing attack leading to account takeover."
+      ],
+      "analysis": "First check for high-frequency, security-sensitive events related to a single user account; then verify the timeline, noting multiple password changes and authentication failures for user 'test' in rapid succession; finally confirm the pattern of failed attempts immediately preceding a successful password change. Because this sequence is a classic indicator of an attacker successfully guessing credentials and taking over an account, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The user account 'test' shows definitive signs of a successful compromise and must be disabled immediately to prevent further malicious activity."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "ftp_brute_force"
+    },
+    "json": {
+      "log_file": "Jun 11 03:28:22 combo ftpd[4301]: connection from 209.184.7.130 () at Sat Jun 11 03:28:22 2005 \nJun 11 03:28:22 combo ftpd[4305]: connection from 209.184.7.130 () at Sat Jun 11 03:28:22 2005 \nJun 11 03:28:22 combo ftpd[4304]: connection from 209.184.7.130 () at Sat Jun 11 03:28:22 2005 \nJun 11 03:28:22 combo ftpd[4308]: connection from 209.184.7.130 () at Sat Jun 11 03:28:22 2005 \nJun 11 03:28:22 combo ftpd[4303]: connection from 209.184.7.130 () at Sat Jun 11 03:28:22 2005 \nJun 11 03:28:22 combo ftpd[4306]: connection from 209.184.7.130 () at Sat Jun 11 03:28:22 2005 \nJun 11 03:28:22 combo ftpd[4302]: connection from 209.184.7.130 () at Sat Jun 11 03:28:22 2005 \nJun 11 03:28:22 combo ftpd[4307]: connection from 209.184.7.130 () at Sat Jun 11 03:28:22 2005 \nJun 11 03:28:23 combo ftpd[4309]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4310]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4311]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4312]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4313]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4314]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4315]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4317]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4318]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4319]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4316]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:23 combo ftpd[4320]: connection from 209.184.7.130 () at Sat Jun 11 03:28:23 2005 \nJun 11 03:28:24 combo ftpd[4321]: connection from 209.184.7.130 () at Sat Jun 11 03:28:24 2005 \nJun 11 03:28:24 combo ftpd[4322]: connection from 209.184.7.130 () at Sat Jun 11 03:28:24 2005 \nJun 11 03:28:25 combo ftpd[4323]: connection from 209.184.7.130 () at Sat Jun 11 03:28:25 2005 \nJun 12 00:07:45 combo ftpd[7722]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7724]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7725]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7723]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7726]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7718]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7721]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7719]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7720]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7714]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7709]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7711]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7710]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7712]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7713]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7716]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7717]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:45 combo ftpd[7715]: connection from 222.33.90.199 () at Sun Jun 12 00:07:45 2005 \nJun 12 00:07:46 combo ftpd[7728]: connection from 222.33.90.199 () at Sun Jun 12 00:07:46 2005 \nJun 12 00:07:46 combo ftpd[7729]: connection from 222.33.90.199 () at Sun Jun 12 00:07:46 2005 \nJun 12 00:07:46 combo ftpd[7730]: connection from 222.33.90.199 () at Sun Jun 12 00:07:46 2005 \nJun 12 00:07:46 combo ftpd[7727]: connection from 222.33.90.199 () at Sun Jun 12 00:07:46 2005 \nJun 12 00:07:46 combo ftpd[7731]: connection from 222.33.90.199 () at Sun Jun 12 00:07:46 2005 \nJun 13 02:01:27 combo ftpd[14124]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14123]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14122]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14125]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14119]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14120]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14114]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14116]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14117]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14121]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14115]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14118]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14110]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14109]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14111]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14112]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:27 combo ftpd[14113]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:27 2005 \nJun 13 02:01:28 combo ftpd[14126]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:28 2005 \nJun 13 02:01:28 combo ftpd[14127]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:28 2005 \nJun 13 02:01:28 combo ftpd[14129]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:28 2005 \nJun 13 02:01:28 combo ftpd[14128]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:28 2005 \nJun 13 02:01:28 combo ftpd[14131]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:28 2005 \nJun 13 02:01:28 combo ftpd[14130]: connection from 61.218.67.60 (mail.net-star.com.tw) at Mon Jun 13 02:01:28 2005 \nJun 13 09:09:44 combo ftpd[16389]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16382]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16383]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16377]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16387]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16388]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16391]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16390]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16379]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16375]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16386]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16376]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16374]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16373]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16372]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16371]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16370]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16384]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16385]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16378]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16380]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16392]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 09:09:44 combo ftpd[16381]: connection from 212.5.120.141 (host-141.STSK.macomnet.net) at Mon Jun 13 09:09:44 2005 \nJun 13 12:49:32 combo ftpd[16730]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16736]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16734]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16745]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16738]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16739]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16744]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16732]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16740]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16731]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16735]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16733]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16737]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16741]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16742]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16743]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16746]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16747]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16748]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16749]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16750]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16751]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 \nJun 13 12:49:32 combo ftpd[16752]: connection from 65.35.73.251 (251-73.35-65.tampabay.res.rr.com) at Mon Jun 13 12:49:32 2005 "
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple source IPs are observed making a high volume of rapid, consecutive connection attempts to the FTP server.",
+        "The connection attempts are often followed by 'User unknown timed out' messages, indicating failed authentication attempts.",
+        "The activity is persistent over a long period (months) and originates from a diverse set of global IP addresses, characteristic of a distributed scan or botnet activity.",
+        "Error messages like 'getpeername (ftpd): Transport endpoint is not connected' are interspersed with connection attempts, suggesting the server is being overwhelmed or connections are being improperly terminated by the client, which is common with scanning tools."
+      ],
+      "analysis": "First, I check for the frequency and source of FTP connection attempts. The log shows an extremely high rate of connections from the same IP addresses in short bursts, a pattern repeated across dozens of different source IPs over several months. Then, I verify the outcome of these connections. The logs predominantly show either simple connection events with no follow-up, or 'User unknown timed out after 900 seconds' errors, with very few successful logins. Finally, I confirm the distributed nature of the sources and the persistence of the activity. Because the combination of high-frequency connections, authentication timeouts, and distributed sources is a classic signature of an automated FTP brute-force or reconnaissance attack, I classify this activity as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The log file shows clear evidence of a distributed brute-force attack from multiple IP addresses, which should be blocked to prevent unauthorized access and reduce server load."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "authentication_service"
+    },
+    "json": {
+      "log_entries": [
+        {
+          "timestamp": "Jun 30 20:53:04",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 19272,
+          "message": "Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code",
+          "source_ip": "163.27.187.39"
+        },
+        {
+          "timestamp": "Jun 30 20:53:04",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 19272,
+          "message": "Kerberos authentication failed",
+          "source_ip": null
+        },
+        {
+          "timestamp": "Jun 30 20:53:04",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 19287,
+          "message": "Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code",
+          "source_ip": "163.27.187.39"
+        },
+        {
+          "timestamp": "Jun 30 20:53:04",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 19286,
+          "message": "Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code",
+          "source_ip": "163.27.187.39"
+        },
+        {
+          "timestamp": "Jun 30 20:53:04",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 19271,
+          "message": "Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code",
+          "source_ip": "163.27.187.39"
+        },
+        {
+          "timestamp": "Jun 30 20:53:04",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 19269,
+          "message": "Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code",
+          "source_ip": "163.27.187.39"
+        },
+        {
+          "timestamp": "Jun 30 20:53:04",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 19274,
+          "message": "Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort",
+          "source_ip": "163.27.187.39"
+        },
+        {
+          "timestamp": "Jun 30 20:53:06",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 19266,
+          "message": "Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort",
+          "source_ip": "163.27.187.39"
+        },
+        {
+          "timestamp": "Oct 23 12:40:02",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 22519,
+          "message": "Authentication failed from 81.181.213.88 (88-213-181-81-cable.canals.ro): Software caused connection abort",
+          "source_ip": "81.181.213.88",
+          "source_hostname": "88-213-181-81-cable.canals.ro"
+        },
+        {
+          "timestamp": "Oct 23 12:40:10",
+          "hostname": "combo",
+          "process_name": "klogind",
+          "pid": 22527,
+          "message": "Authentication failed from 81.181.213.88 (88-213-181-81-cable.canals.ro): Software caused connection abort",
+          "source_ip": "81.181.213.88",
+          "source_hostname": "88-213-181-81-cable.canals.ro"
+        }
+      ]
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple Kerberos authentication failures are logged from the same source IPs (163.27.187.39, 81.181.213.88).",
+        "A high volume of attempts occurred in an extremely short time frame (e.g., dozens of failures within two seconds from 163.27.187.39).",
+        "The target service is `klogind`, a remote login authentication daemon.",
+        "Error messages like 'Permission denied in replay cache code' and 'Software caused connection abort' are indicative of automated scanning or brute-force tools."
+      ],
+      "analysis": "First check the repeated 'Authentication failed' and 'Kerberos authentication failed' messages associated with the 'klogind' process; then verify the high frequency of these failures originating from a small number of IP addresses within a very short time span; finally confirm the error types, 'Permission denied in replay cache code' and 'Software caused connection abort', which are characteristic of automated attack tools. Because this pattern of high-volume, rapid, failed login attempts against an authentication service is a definitive indicator of a brute-force or credential stuffing attack, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The logs show a clear and active brute-force attack from specific IP addresses, which must be blocked at the network perimeter to prevent unauthorized access."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "system_log"
+    },
+    "json": {
+      "timestamp": "Jun 13 11:55:04",
+      "hostname": "combo",
+      "process_name": "rpc.statd",
+      "pid": 1636,
+      "message": "gethostbyname error for ^X^X^Z^Z%8x%8x%8x%8x%8x%8x%8x%8x%8x%62716x%hn%51859x%hn\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220\\220"
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "Log entries show the `rpc.statd` service failing to process a malformed hostname string.",
+        "The string contains multiple format string specifiers (`%8x`, `%hn`), which are used to read from and write to the process's memory stack.",
+        "The `%hn` specifier is specifically used to write to arbitrary memory locations, a key component of format string exploits.",
+        "The string is padded with a large number of `\\220` characters, a common representation of a NOP (No-Operation) sled used to ensure the successful execution of injected shellcode.",
+        "The combination of these elements is a classic signature for a format string vulnerability exploit (e.g., CVE-2000-0666) targeting `rpc.statd`."
+      ],
+      "analysis": "First check for errors in standard system services; then verify the input causing the error; finally confirm the components of the input string. The log shows `rpc.statd` failing on a `gethostbyname` call with a specifically crafted string. This string contains format string specifiers (`%x` and `%hn`) and a NOP sled (`\\220` characters), which are hallmark components of a format string exploit. Because this is a clear attempt to achieve remote code execution by exploiting a known vulnerability in a network-facing daemon, classify as a malicious attack."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The system is under an active and repeated attack attempting to exploit a critical remote code execution vulnerability in the rpc.statd service."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "system_service"
+    },
+    "json": {
+      "log_entries": [
+        {
+          "timestamp": "Jun  9 06:07:17",
+          "hostname": "combo",
+          "process_name": "ntpd",
+          "pid": "2296",
+          "message": "ntpd 4.2.0@1.1161-r Thu Mar 11 11:46:39 EST 2004 (1)"
+        },
+        {
+          "timestamp": "Jun  9 06:07:17",
+          "hostname": "combo",
+          "process_name": "ntpd",
+          "message": "ntpd startup succeeded"
+        },
+        {
+          "timestamp": "Jun  9 06:07:21",
+          "hostname": "combo",
+          "process_name": "ntpd",
+          "pid": "2296",
+          "message": "configure: keyword \"authenticate\" unknown, line ignored"
+        },
+        {
+          "timestamp": "Jun  9 06:10:35",
+          "hostname": "combo",
+          "process_name": "ntpd",
+          "pid": "2296",
+          "message": "synchronized to LOCAL(0), stratum=10"
+        },
+        {
+          "timestamp": "Sep 28 09:09:15",
+          "hostname": "combo",
+          "process_name": "ntpd",
+          "pid": "2326",
+          "message": "ntpd exiting on signal 15"
+        },
+        {
+          "timestamp": "Sep 28 09:09:15",
+          "hostname": "combo",
+          "process_name": "ntpd",
+          "message": "ntpd shutdown succeeded"
+        },
+        {
+          "timestamp": "Jan 26 12:23:22",
+          "hostname": "combo",
+          "process_name": "ntpd",
+          "message": "ntpd startup succeeded"
+        },
+        {
+          "timestamp": "Jan 26 12:23:28",
+          "hostname": "combo",
+          "process_name": "ntpd",
+          "pid": "2309",
+          "message": "configure: keyword \"authenticate\" unknown, line ignored"
+        },
+        {
+          "timestamp": "Jan 26 12:26:42",
+          "hostname": "combo",
+          "process_name": "ntpd",
+          "pid": "2309",
+          "message": "synchronized to LOCAL(0), stratum=10"
+        }
+      ]
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "The NTP daemon (ntpd) version is extremely old, compiled in 2004, which implies it is unpatched and has known vulnerabilities.",
+        "The NTP service is synchronizing to its own local clock (`synchronized to LOCAL(0)`) instead of a reliable external time source.",
+        "There is a configuration error (`keyword \"authenticate\" unknown, line ignored`) which suggests authentication is disabled or misconfigured.",
+        "The service is being restarted repeatedly over a period of several months, indicating potential instability or frequent manual intervention."
+      ],
+      "analysis": "First check the software version and configuration status; the logs show an extremely outdated ntpd version from 2004 and a configuration error ignoring the 'authenticate' keyword. Then verify the time synchronization source; the log explicitly states `synchronized to LOCAL(0)`, confirming the system is using its own unreliable clock. Finally confirm the operational pattern; the service is restarting frequently over months. Because running an outdated, unauthenticated NTP service that syncs to its own local clock makes a system vulnerable to time manipulation attacks and can disrupt time-sensitive applications and security logging, classify this as a low-severity risk."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The log indicates a severe system misconfiguration (outdated NTP service, syncing to local clock) that requires investigation and remediation, not blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "dns"
+    },
+    "json": {
+      "service": {
+        "name": "named",
+        "version": "BIND 9.2.3"
+      },
+      "host": {
+        "name": "combo"
+      },
+      "command_line": "-u named -t /var/named/chroot",
+      "config_path": "/etc/named.conf",
+      "events": [
+        {
+          "timestamp": "Jun  9 10:07:13",
+          "pid": 2275,
+          "type": "startup",
+          "message": "starting BIND 9.2.3"
+        },
+        {
+          "timestamp": "Jun  9 10:07:21",
+          "pid": 2275,
+          "type": "error",
+          "message": "couldn't add command channel 127.0.0.1#953: not found"
+        },
+        {
+          "timestamp": "Jun  9 10:07:22",
+          "pid": 2275,
+          "type": "error",
+          "message": "couldn't add command channel ::1#953: not found"
+        },
+        {
+          "timestamp": "Jun 10 15:32:33",
+          "pid": 2306,
+          "type": "startup",
+          "message": "starting BIND 9.2.3"
+        },
+        {
+          "timestamp": "Jun 10 15:32:45",
+          "pid": 2306,
+          "type": "error",
+          "message": "couldn't add command channel 127.0.0.1#953: not found"
+        },
+        {
+          "timestamp": "Jul 25 12:09:06",
+          "pid": 2306,
+          "type": "error",
+          "message": "notify question section contains no SOA"
+        },
+        {
+          "timestamp": "Jul 25 16:29:20",
+          "pid": 2306,
+          "type": "error",
+          "message": "notify question section contains no SOA (16 occurrences)"
+        },
+        {
+          "timestamp": "Jul 27 18:42:48",
+          "pid": 2288,
+          "type": "startup",
+          "message": "starting BIND 9.2.3"
+        },
+        {
+          "timestamp": "Jul 27 18:42:58",
+          "pid": 2288,
+          "type": "error",
+          "message": "couldn't add command channel 127.0.0.1#953: not found"
+        },
+        {
+          "timestamp": "Sep 19 09:58:25",
+          "pid": 2305,
+          "type": "startup",
+          "message": "starting BIND 9.2.3"
+        },
+        {
+          "timestamp": "Sep 19 09:58:35",
+          "pid": 2305,
+          "type": "error",
+          "message": "couldn't add command channel 127.0.0.1#953: not found"
+        },
+        {
+          "timestamp": "Sep 28 13:09:04",
+          "pid": 2305,
+          "type": "shutdown",
+          "message": "shutting down, exiting"
+        },
+        {
+          "timestamp": "Sep 28 13:12:04",
+          "pid": 2281,
+          "type": "startup",
+          "message": "starting BIND 9.2.3"
+        },
+        {
+          "timestamp": "Oct 25 14:07:01",
+          "pid": 2281,
+          "type": "shutdown",
+          "message": "shutting down, exiting"
+        },
+        {
+          "timestamp": "Oct 25 14:09:46",
+          "pid": 2275,
+          "type": "startup",
+          "message": "starting BIND 9.2.3"
+        },
+        {
+          "timestamp": "Dec  6 12:21:10",
+          "type": "error",
+          "message": "named shutdown failed"
+        },
+        {
+          "timestamp": "Dec  6 17:24:19",
+          "pid": 2298,
+          "type": "startup",
+          "message": "starting BIND 9.2.3"
+        },
+        {
+          "timestamp": "Jan 26 12:20:22",
+          "type": "error",
+          "message": "named shutdown failed"
+        },
+        {
+          "timestamp": "Jan 26 17:23:17",
+          "pid": 2288,
+          "type": "startup",
+          "message": "starting BIND 9.2.3"
+        }
+      ]
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "The server is running BIND 9.2.3, a critically outdated version from 2003 with numerous known vulnerabilities.",
+        "The log shows multiple instances of the error 'notify question section contains no SOA', indicating the server is receiving malformed DNS NOTIFY packets.",
+        "The service exhibits instability, with multiple restarts and logged shutdown failures over several months."
+      ],
+      "analysis": "First check the service version, which is BIND 9.2.3, an extremely outdated and vulnerable version; then verify repeated network errors, specifically 'notify question section contains no SOA', which indicates the service is processing malformed packets from an external source; finally confirm a pattern of service instability from multiple restarts and explicit 'shutdown failed' messages. Because running critically outdated software combined with receiving anomalous packets and service instability is a strong indicator of a compromised or targeted system, classify the activity as suspicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The source of the malformed DNS NOTIFY packets should be blocked to prevent potential reconnaissance or denial-of-service attacks against the vulnerable server."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "authentication"
+    },
+    "json": {
+      "events": [
+        {
+          "timestamp": "Jun 13 05:27:12",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2803",
+          "message": "Couldn't authenticate user"
+        },
+        {
+          "timestamp": "Jun 13 05:27:31",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2803",
+          "message": "Couldn't authenticate user"
+        },
+        {
+          "timestamp": "Jul 11 11:33:17",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2803",
+          "message": "Couldn't authenticate user"
+        },
+        {
+          "timestamp": "Aug  1 09:33:47",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2782",
+          "message": "Couldn't authenticate user"
+        },
+        {
+          "timestamp": "Aug  1 11:23:37",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2782",
+          "message": "Couldn't authenticate user"
+        },
+        {
+          "timestamp": "Aug  2 08:01:23",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2782",
+          "message": "Couldn't authenticate user"
+        },
+        {
+          "timestamp": "Sep 28 09:03:10",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2799",
+          "message": "Couldn't authenticate user"
+        },
+        {
+          "timestamp": "Sep 29 12:27:59",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2813",
+          "message": "Couldn't authenticate user"
+        },
+        {
+          "timestamp": "Sep 29 12:28:07",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2813",
+          "message": "Couldn't authenticate user"
+        },
+        {
+          "timestamp": "Dec  9 09:41:01",
+          "hostname": "combo",
+          "process_name": "gdm-binary",
+          "pid": "2828",
+          "message": "Couldn't authenticate user"
+        }
+      ]
+    },
+    "label": {
+      "official": "suspicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "Multiple authentication failure messages ('Couldn't authenticate user') originating from the GNOME Display Manager ('gdm-binary').",
+        "The failed login attempts are persistent, occurring sporadically over a long period of several months (June to December)."
+      ],
+      "analysis": "First check the log message 'Couldn't authenticate user' and source process 'gdm-binary', which indicate failed user login attempts at the graphical user interface. Then verify the timestamps of these failures, noting they are spread across multiple months. Finally confirm the persistent pattern of failures, which is uncharacteristic of typical user error (e.g., a forgotten password) and more indicative of an automated process. Because this pattern strongly suggests a low-and-slow brute-force or password-spraying attack attempting to evade detection, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The activity suggests a potential low-and-slow brute-force attack, which requires investigation to identify the source and target account before a specific blocking rule can be implemented."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "system_log"
+    },
+    "json": {
+      "timestamp": "Oct 23 12:39:50",
+      "hostname": "combo",
+      "process_name": "in.rexecd",
+      "pid": 22511,
+      "message": "connect from 88-213-181-81-cable.canals.ro",
+      "source_hostname": "88-213-181-81-cable.canals.ro"
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.98
+    },
+    "reasoning": {
+      "evidence": [
+        "Connection attempt made to the 'in.rexecd' service.",
+        "The 'rexec' (Remote Execution) protocol is obsolete, insecure, and transmits credentials in cleartext.",
+        "The connection originates from an external, residential ISP in Romania ('canals.ro')."
+      ],
+      "analysis": "First check the service being accessed, which is 'in.rexecd'; then verify the security posture of this service, noting that 'rexec' is a deprecated and highly insecure protocol; finally confirm the origin of the connection is an untrusted, external source. Because any connection attempt from the public internet to the 'rexec' service is a strong indicator of malicious activity such as scanning or brute-force attacks, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Block the connection as it targets a highly insecure and deprecated service from an untrusted external source, indicating a likely attack."
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "kernel_log"
+    },
+    "json": {
+      "log_file": "Jun  9 06:06:20 combo kernel: klogd 1.4.1, log source = /proc/kmsg started.\nJun  9 06:06:20 combo kernel: Linux version 2.6.5-1.358 (bhcompile@bugs.build.redhat.com) (gcc version 3.3.3 20040412 (Red Hat Linux 3.3.3-7)) #1 Sat May 8 09:04:50 EDT 2004\nJun  9 06:06:20 combo kernel: BIOS-provided physical RAM map:\nJun  9 06:06:20 combo kernel:  BIOS-e820: 0000000000000000 - 00000000000a0000 (usable)\nJun  9 06:06:20 combo kernel:  BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)\nJun  9 06:06:20 combo kernel:  BIOS-e820: 0000000000100000 - 0000000007eae000 (usable)\nJun  9 06:06:20 combo kernel:  BIOS-e820: 0000000007eae000 - 0000000008000000 (reserved)\nJun  9 06:06:20 combo kernel:  BIOS-e820: 00000000ffb00000 - 0000000100000000 (reserved)\nJun  9 06:06:20 combo kernel: 0MB HIGHMEM available.\nJun  9 06:06:20 combo kernel: 126MB LOWMEM available.\nJun  9 06:06:20 combo kernel: zapping low mappings.\nJun  9 06:06:20 combo kernel: On node 0 totalpages: 32430\nJun  9 06:06:20 combo kernel:   DMA zone: 4096 pages, LIFO batch:1\nJun  9 06:06:20 combo kernel:   Normal zone: 28334 pages, LIFO batch:6\nJun  9 06:06:20 combo kernel:   HighMem zone: 0 pages, LIFO batch:1\nJun  9 06:06:20 combo kernel: DMI 2.3 present.\nJun  9 06:06:20 combo kernel: ACPI disabled because your bios is from 2000 and too old\nJun  9 06:06:20 combo kernel: You can enable it with acpi=force\nJun  9 06:06:20 combo kernel: Built 1 zonelists\nJun  9 06:06:20 combo kernel: Kernel command line: ro root=LABEL=/ rhgb quiet\nJun  9 06:06:20 combo kernel: mapped 4G/4G trampoline to ffff3000.\nJun  9 06:06:20 combo kernel: Initializing CPU#0\nJun  9 06:06:20 combo kernel: CPU 0 irqstacks, hard=02345000 soft=02344000\nJun  9 06:06:20 combo kernel: PID hash table entries: 512 (order 9: 4096 bytes)\nJun  9 06:06:20 combo kernel: Detected 731.214 MHz processor.\nJun  9 06:06:20 combo kernel: Using tsc for high-res timesource\nJun  9 06:06:20 combo kernel: Console: colour VGA+ 80x25\nJun  9 06:06:20 combo kernel: Memory: 125312k/129720k available (1540k kernel code, 3860k reserved, 599k data, 144k init, 0k highmem)\nJun  9 06:06:20 combo kernel: Calibrating delay loop... 1441.79 BogoMIPS\nJun  9 06:06:20 combo kernel: Security Scaffold v1.0.0 initialized\nJun  9 06:06:20 combo kernel: SELinux:  Initializing.\nJun  9 06:06:20 combo kernel: SELinux:  Starting in permissive mode\nJun  9 06:06:20 combo kernel: There is already a security framework initialized, register_security failed.\nJun  9 06:06:20 combo kernel: Failure registering capabilities with the kernel\nJun  9 06:06:20 combo kernel: selinux_register_security:  Registering secondary module capability\nJun  9 06:06:20 combo kernel: Capability LSM initialized\n..."
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "The log shows a massive number of 'Out of Memory: Killed process' events, indicating severe and persistent memory exhaustion.",
+        "The OOM (Out of Memory) killer is repeatedly terminating critical services, most frequently 'httpd' (web server), but also 'mysqld' (database), 'python', and 'sendmail'.",
+        "The OOM kills are directly preceded by kernel-level 'page allocation failure' messages, which confirms the system is genuinely out of physical and swap memory.",
+        "The activity is sustained over a period of many days, ruling out a transient glitch and pointing towards a persistent problem like a memory leak or a sustained Denial of Service (DoS) attack."
+      ],
+      "analysis": "First check for critical system error messages, revealing hundreds of 'Out of Memory' and 'page allocation failure' logs. Then, verify the affected processes, which are consistently critical services like `httpd`, `mysqld`, and `python`, indicating a system-wide failure, not an isolated application crash. Finally, confirm the impact by observing the continuous and rapid succession of process kills, which renders the server's primary functions (web and database services) unavailable. Because the system is experiencing a sustained resource exhaustion event that cripples its core functionality, this is classified as a malicious Denial of Service (DoS) attack.",
+      "response": {
+        "action": "block",
+        "reason": "The system is under a sustained resource exhaustion attack; blocking the malicious traffic source at the network perimeter is necessary to restore service availability."
+      }
+    }
+  },
+  {
+    "meta": {
+      "category": "log",
+      "subcategory": "system_service"
+    },
+    "json": {
+      "log_entries": [
+        {
+          "timestamp": "Jun  9 06:06:20",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd startup succeeded"
+        },
+        {
+          "timestamp": "Jun 10 11:31:44",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd startup succeeded"
+        },
+        {
+          "timestamp": "Jul 27 14:41:58",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd startup succeeded"
+        },
+        {
+          "timestamp": "Sep 19 05:57:37",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd startup succeeded"
+        },
+        {
+          "timestamp": "Sep 28 09:09:17",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd shutdown succeeded"
+        },
+        {
+          "timestamp": "Sep 28 09:10:49",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd startup succeeded"
+        },
+        {
+          "timestamp": "Oct 25 10:07:11",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd shutdown succeeded"
+        },
+        {
+          "timestamp": "Oct 25 10:08:47",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd startup succeeded"
+        },
+        {
+          "timestamp": "Dec  6 12:21:21",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd shutdown failed"
+        },
+        {
+          "timestamp": "Dec  6 12:22:58",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd startup succeeded"
+        },
+        {
+          "timestamp": "Jan 26 12:20:30",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd shutdown succeeded"
+        },
+        {
+          "timestamp": "Jan 26 12:22:07",
+          "hostname": "combo",
+          "process_name": "nfslock",
+          "message": "rpc.statd startup succeeded"
+        }
+      ]
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "The log shows standard lifecycle events (startup, shutdown) for the `nfslock` (rpc.statd) service.",
+        "Service restarts (shutdown followed by a startup) are normal administrative or automated maintenance actions.",
+        "A single instance of a 'shutdown failed' event occurred, but it was immediately followed by a 'startup succeeded', indicating a transient, non-critical error that was resolved."
+      ],
+      "analysis": "First check the service in question, which is `nfslock`/`rpc.statd`, a standard component for NFS file locking; then verify the logged events, which consist of routine startup and shutdown messages; finally confirm the context of the single 'shutdown failed' message, which was immediately followed by a successful startup, indicating a temporary system issue rather than a persistent attack. Because the log entries reflect normal system administration and a minor, self-recovering error, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "The logs indicate normal system service activity and a transient, non-malicious error, which does not require any security response."
+    }
+  }
+]

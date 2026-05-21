@@ -1,0 +1,47 @@
+{
+  "Network Traffic Security": [
+    "NF-UNSW-NB15-v2",
+    "NF-CSE-CIC-IDS2018-v2",
+    "NF-UQ-NIDS-v2",
+    "iscxids2012",
+    "CIC-IDS-2017"
+  ],
+  "IoT Security": [
+    "NF-ToN-IoT-v2",
+    "NF-BoT-IoT-v2",
+    "CIC-ToN-IoT",
+    "CIC-BoT-IoT",
+    "CIC-IoT-DIAD2024",
+    "CIC-BCCC-NRC2024",
+    "CICADA-IIoT2024",
+    "CICEVSE2024",
+    "CICIoMT 2024",
+    "CIC_IOT_2023"
+  ],
+  "System Log Security": [
+    "supercomputer",
+    "log-anroid",
+    "log-HDFS",
+    "log-linux",
+    "log-proxifier"
+  ],
+  "DNS Security Threat": [
+    "dns-doh",
+    "dns-exf",
+    "dns-mal"
+  ],
+  "Web Security Threat": [
+    "ISCX-URL2016",
+    "Malicious-URLs",
+    "Feodo-Tracker-ipblocklist"
+  ],
+  "Vulnerability Intelligence": [
+    "aliyun",
+    "exploit-db",
+    "talos"
+  ],
+  "Threat Intelligence": [
+    "sabu-alert",
+    "Pulsedive-Threats"
+  ]
+}

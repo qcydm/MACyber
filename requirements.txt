@@ -1,0 +1,10 @@
+openai
+dashscope
+pandas
+tqdm
+numpy
+mmh3
+matplotlib
+transformers
+torch
+vllm

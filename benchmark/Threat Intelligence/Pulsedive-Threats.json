@@ -1,0 +1,2903 @@
+[
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [
+        "Financial Services"
+      ],
+      "first_seen": "2007-07",
+      "spread_vectors": [
+        "drive-by download",
+        "phishing"
+      ],
+      "capabilities": [
+        "keylogging",
+        "form grabbing",
+        "man-in-the-browser"
+      ],
+      "c2_protocols": [
+        "HTTPS",
+        "DNS",
+        "HTTP",
+        "FTP",
+        "SSH",
+        "SMTP",
+        "IMAP"
+      ],
+      "c2_ports": [
+        "443",
+        "80",
+        "8080",
+        "8443",
+        "53",
+        "22",
+        "21",
+        "25",
+        "143",
+        "993",
+        "465"
+      ],
+      "c2_technologies": [
+        "PHP",
+        "Nginx",
+        "Apache",
+        "WordPress",
+        "CloudFlare",
+        "Let's Encrypt",
+        "MySQL",
+        "jQuery",
+        "Bootstrap",
+        "Google Analytics",
+        "HTTP/3",
+        "Google Font API",
+        "Open Graph",
+        "Font Awesome",
+        "jQuery Migrate",
+        "LiteSpeed"
+      ],
+      "ioc_counts": {
+        "domains": 107,
+        "ips": 212,
+        "ssl_certificates": 3
+      }
+    },
+    "label": {
+      "official": "Zeus",
+      "category": "malware",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "107 domains and 212 IPs from abuse.ch Zeus feeds",
+        "Active C2 protocols HTTPS/DNS/HTTP on ports 443/80/8080/8443",
+        "PHP/Nginx/Apache/WordPress technologies present",
+        "Recent news through 2024-12-08 indicating ongoing campaigns",
+        "stamp_seen 2023-07-27 shows recent activity"
+      ],
+      "analysis": "First check 107 domains and 212 IPs from active feeds; then verify HTTPS/DNS/HTTP on 443/80/8080/8443 plus PHP/Nginx/Apache/WordPress stacks; finally confirm recent news and 2023-07-27 activity; because human-labeled high risk with ongoing campaigns, classify as high risk."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Confirmed active banking trojan with recent indicators and high human-assigned risk."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "DNS-over-TLS",
+        "FTP",
+        "HTTPS",
+        "DNS",
+        "HTTP",
+        "SSH"
+      ],
+      "c2_ports": [
+        "21",
+        "53",
+        "8443",
+        "80",
+        "8080",
+        "443",
+        "22"
+      ],
+      "c2_technologies": [
+        "Wistia",
+        "Google Font API",
+        "HTTP/3",
+        "cdnjs",
+        "Amazon Web Services",
+        "OpenResty",
+        "PHP",
+        "Google Hosted Libraries",
+        "jQuery",
+        "HSTS",
+        "Apache",
+        "AWS Certificate Manager",
+        "Google Analytics",
+        "Font Awesome",
+        "Varnish",
+        "Nginx",
+        "Tengine",
+        "MaxCDN",
+        "Let's Encrypt",
+        "CloudFlare",
+        "DigiCert",
+        "Amazon Cloudfront",
+        "Zepto",
+        "Lua",
+        "Apache HTTP Server",
+        "Amazon S3"
+      ],
+      "ioc_counts": {
+        "domains": 216,
+        "ips": 723,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Banjori",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "IOC counts include domains and IPs, indicating active infrastructure",
+        "c2_protocols and c2_ports show a variety of protocols and ports in use",
+        "c2_technologies list includes a mix of technologies which could be part of a malware C2 setup"
+      ],
+      "analysis": "First check for IOC counts which indicate active infrastructure; then verify a variety of c2_protocols and c2_ports in use; finally confirm a mix of technologies that could be part of a C2 setup; because the threat shows signs of active infrastructure and a complex C2 setup, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat shows signs of active infrastructure and a complex C2 setup, warranting monitoring for further analysis."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [
+        "Financial Services"
+      ],
+      "first_seen": "2017-09",
+      "spread_vectors": [
+        "phishing"
+      ],
+      "capabilities": [
+        "banking-trojan",
+        "web-injection",
+        "credential-theft"
+      ],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "DNS"
+      ],
+      "c2_ports": [
+        "443",
+        "80",
+        "8080"
+      ],
+      "c2_technologies": [
+        "PHP",
+        "Nginx",
+        "WordPress"
+      ],
+      "ioc_counts": {
+        "domains": 5,
+        "ips": 2,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Shiotob",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.65
+    },
+    "reasoning": {
+      "evidence": [
+        "5 C&C domains and 2 C&C IPs from Bambenek feeds",
+        "Last seen 2018-04-06, all 7 indicators retired",
+        "News links Bebloh/Shiotob as dropper for Ursnif",
+        "Banking-trojan capabilities inferred from URLZone/Bebloh lineage"
+      ],
+      "analysis": "First check 7 total IOCs (5 domains, 2 IPs) all retired since 2018; then verify last activity over 6 years ago; finally confirm links to Ursnif dropper campaigns; because indicators are historic and retired but malware family is known banking trojan, classify as suspicious."
+    },
+    "response": {
+      "action": "none",
+      "reason": "All indicators retired since 2018 and no recent activity, threat is historical."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [
+        "Multiple"
+      ],
+      "first_seen": "2010",
+      "spread_vectors": [
+        "removable media",
+        "network shares"
+      ],
+      "capabilities": [
+        "downloader",
+        "backdoor",
+        "autorun worm"
+      ],
+      "c2_protocols": [
+        "HTTP",
+        "HTTPS",
+        "DNS"
+      ],
+      "c2_ports": [
+        "80",
+        "443",
+        "8080",
+        "53",
+        "161"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "Apache",
+        "OpenResty",
+        "Let's Encrypt",
+        "Lua"
+      ],
+      "ioc_counts": {
+        "domains": 28,
+        "ips": 122,
+        "ssl_certificates": 28
+      }
+    },
+    "label": {
+      "official": "Beebone",
+      "category": "malware",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "28 C&C domains and 122 C&C IPs from Bambenek feeds",
+        "Active HTTP/HTTPS on ports 80/443/8080 with 137/113/84 indicators",
+        "Recent activity stamp_seen 2025-02-19",
+        "Technology stack includes Nginx/Apache/OpenResty with 112/21/78 indicators"
+      ],
+      "analysis": "First check C&C feeds showing 28 domains and 122 IPs; then verify HTTP/HTTPS services on 80/443/8080 with high indicator counts; finally confirm recent activity within last month; because these features indicate active malware infrastructure, classify as medium risk."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Active C&C infrastructure with recent indicators warrants immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "HTTP"
+      ],
+      "c2_ports": [
+        "80"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "HSTS",
+        "React"
+      ],
+      "ioc_counts": {
+        "domains": 49,
+        "ips": 36,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Dromedan",
+      "category": "malware",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "49 C&C domains and 36 C&C IPs from Bambenek feeds",
+        "HTTP on port 80 with Nginx/HSTS/React stack",
+        "6 medium-risk and 78 retired indicators out of 85 total",
+        "Last seen 2024-06-04 with domains updated 2023-03-23"
+      ],
+      "analysis": "First check active C&C feeds with 49 domains and 36 IPs; then verify HTTP on port 80 with Nginx/HSTS/React technologies; finally confirm recent activity through 2024-06-04 sighting and 2023-03-23 domain updates; because these features indicate ongoing malware infrastructure with moderate indicator risk, classify as medium severity."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Active C&C infrastructure with recent sightings warrants monitoring for new indicators."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "DGA",
+        "Backdoor",
+        "Proxy"
+      ],
+      "c2_protocols": [
+        "DNS",
+        "HTTP",
+        "HTTPS"
+      ],
+      "c2_ports": [
+        "53",
+        "80",
+        "443",
+        "8080",
+        "8443"
+      ],
+      "c2_technologies": [
+        "Apache",
+        "CloudFlare",
+        "Nginx",
+        "OpenResty",
+        "Lua"
+      ],
+      "ioc_counts": {
+        "domains": 99,
+        "ips": 182,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Matsnu",
+      "category": "malware",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "182 C&C IPs and 99 C&C domains from Bambenek feeds",
+        "Ports 53/80/443/8080/8443 active",
+        "Technologies Apache/CloudFlare/Nginx present",
+        "Last seen 2021-03-08, domains updated 2025-01-10",
+        "1305 retired indicators vs 1457 total"
+      ],
+      "analysis": "First check 182 C&C IPs and 99 domains still referenced; then verify multi-port HTTP/HTTPS/DNS activity; finally confirm recent domain updates despite 4-year sighting gap; because infrastructure remains referenced and Matsnu is known DGA malware, classify as medium."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Infrastructure still referenced in feeds with recent domain updates, indicating potential residual risk."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [
+        "Multiple"
+      ],
+      "first_seen": "2017-09",
+      "spread_vectors": [
+        "phishing",
+        "malspam"
+      ],
+      "capabilities": [
+        "spam distribution",
+        "malware delivery",
+        "DGA infrastructure"
+      ],
+      "c2_protocols": [
+        "DNS",
+        "HTTP",
+        "HTTPS"
+      ],
+      "c2_ports": [
+        "53",
+        "80",
+        "443"
+      ],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 9204,
+        "ips": 2744,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Necurs",
+      "category": "botnet",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "9204 C&C domains and 2744 C&C IPs from Bambenek feeds",
+        "Last domain updated 2025-03-24 indicating ongoing infrastructure",
+        "News reports show Microsoft disruption in 2020 but no retirement stamp",
+        "Protocols DNS/HTTP/HTTPS on ports 53/80/443 align with DGA botnet patterns"
+      ],
+      "analysis": "First check extensive C&C infrastructure with thousands of active domains and IPs; then verify recent domain updates within past week indicating live activity; finally confirm absence of retirement stamp despite 2020 disruption reports; because infrastructure remains active and updated, classify as medium severity botnet."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Active botnet with recent infrastructure updates and extensive C&C network warrants immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "raw": "",
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "DNS",
+        "FTP",
+        "HTTPS",
+        "HTTP"
+      ],
+      "c2_ports": [
+        "21",
+        "80",
+        "8080",
+        "443",
+        "53"
+      ],
+      "c2_technologies": [
+        "Apache",
+        "Let's Encrypt",
+        "OpenResty",
+        "Nginx",
+        "Lua"
+      ],
+      "ioc_counts": {
+        "domains": 293,
+        "ips": 575,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Nymaim",
+      "category": "malware",
+      "severity": 2,
+      "severity_code": 2,
+      "confidence": 1.0
+    },
+    "reasoning": "First check medium-risk malware; then verify DNS/FTP/HTTPS/HTTP on ports 21/80/8080/443/53 plus Apache/Let's Encrypt/OpenResty/Nginx/Lua technologies with >100 domains; because these generic features align with common malware C2 infrastructure, classify as Nymaim.",
+    "response": {
+      "action": "block",
+      "reason": "Nymaim is a known malware with medium risk, and blocking is the standard response to mitigate such threats."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "DNS"
+      ],
+      "c2_ports": [
+        "443",
+        "80",
+        "8080",
+        "8443"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "PHP",
+        "Amazon Web Services",
+        "AWS Certificate Manager",
+        "Amazon Cloudfront",
+        "Apache HTTP Server",
+        "CloudFlare",
+        "HSTS",
+        "Google Analytics",
+        "Amazon S3",
+        "jQuery",
+        "DigiCert",
+        "Varnish",
+        "HTTP/3",
+        "Apache",
+        "Let's Encrypt"
+      ],
+      "ioc_counts": {
+        "domains": 229,
+        "ips": 280,
+        "ssl_certificates": 17
+      }
+    },
+    "label": {
+      "official": "Pizd",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "c2_protocols overlaps ['HTTPS','HTTP'] and c2_ports overlaps ['8080','8443']",
+        "c2_technologies overlaps ['Nginx','PHP'] and ioc_counts.domains > 100"
+      ],
+      "analysis": "First check for C2 protocols and ports; then verify technologies like Nginx/PHP; because these features align with common malware infrastructure, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "DNS",
+        "HTTP",
+        "HTTPS"
+      ],
+      "c2_ports": [
+        "53",
+        "80",
+        "443"
+      ],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 242,
+        "ips": 162,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Proslikefan",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "242 C&C domains and 162 C&C IPs from Bambenek feeds",
+        "Active protocols DNS/HTTP/HTTPS on ports 53/80/443",
+        "Last seen 2025-03-23 with domains updated 2024-11-25",
+        "420 retired indicators out of 464 total suggests historical presence"
+      ],
+      "analysis": "First check C&C indicators totaling 404 active IOCs; then verify protocols DNS/HTTP/HTTPS on standard ports; finally confirm recent activity through 2025-03-23 stamp_seen; because these features indicate active malware infrastructure with moderate IOC volume, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Active C&C infrastructure with recent indicators warrants monitoring for changes in activity."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "DNS",
+        "FTP",
+        "SSH"
+      ],
+      "c2_ports": [
+        "443",
+        "80",
+        "53",
+        "21"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "PHP",
+        "Apache",
+        "Google Analytics",
+        "HTTP/3"
+      ],
+      "ioc_counts": {
+        "domains": 443,
+        "ips": 450,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Pykspa",
+      "category": "malware",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.65
+    },
+    "reasoning": {
+      "evidence": [
+        "443 domains and 450 IPs from Bambenek C&C feeds",
+        "Last seen 2021-01-11, over 4 years ago",
+        "2058 of 2297 indicators retired",
+        "Protocols and ports match generic C2 infrastructure"
+      ],
+      "analysis": "First check 443 domains and 450 IPs from active C&C feeds; then verify last activity was 2021-01-11 with 90% indicators retired; finally confirm HTTPS/HTTP/DNS on standard ports with Nginx/PHP/Apache stacks; because infrastructure is largely retired and stale, classify as low risk."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Most indicators are retired and last activity was over 4 years ago, making immediate blocking unnecessary."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "DNS"
+      ],
+      "c2_ports": [
+        "443",
+        "80",
+        "8080"
+      ],
+      "c2_technologies": [
+        "OpenResty",
+        "Debian",
+        "Nginx",
+        "Ubuntu",
+        "Google AdSense",
+        "jQuery",
+        "Apache HTTP Server",
+        "Lua",
+        "HSTS",
+        "Apache",
+        "Let's Encrypt"
+      ],
+      "ioc_counts": {
+        "domains": 1059,
+        "ips": 522,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Ramnit",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "IOC counts include domains and IPs, indicating active infrastructure",
+        "c2_technologies list includes common server technologies which may suggest a malware C2 setup",
+        "The threat has been seen recently and has a moderate number of indicators, suggesting it is not benign"
+      ],
+      "analysis": "First check the presence of IOCs; then verify the technologies associated with the threat; finally confirm recent activity; because the threat shows signs of current operation and uses common server technologies, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "keylogging",
+        "HTML injection",
+        "remote system control",
+        "self-termination"
+      ],
+      "c2_protocols": [
+        "FTP",
+        "HTTP",
+        "HTTPS",
+        "SSH",
+        "DNS",
+        "DNS-over-TLS"
+      ],
+      "c2_ports": [
+        "53",
+        "8172",
+        "443",
+        "8080",
+        "8443",
+        "21",
+        "80"
+      ],
+      "c2_technologies": [
+        "HSTS",
+        "CloudFlare",
+        "Google Hosted Libraries",
+        "Apache HTTP Server",
+        "Font Awesome",
+        "Nginx",
+        "AWS Certificate Manager",
+        "Amazon Web Services",
+        "OpenResty",
+        "Sectigo",
+        "PHP",
+        "Let's Encrypt",
+        "Apache",
+        "Lua",
+        "UNIX",
+        "jQuery",
+        "Google Analytics",
+        "DigiCert"
+      ],
+      "ioc_counts": {
+        "domains": 260,
+        "ips": 1488,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Simda",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "Simda is classified as a backdoor and sometimes as a trojan",
+        "Primary method of operation involves stealing information through keylogging and HTML injection routines",
+        "Can execute commands that allow attackers to control the infected system remotely",
+        "Backdoor Commands include disabling the operating system, modifying or deleting system files, injecting scripts into webpages visited by the user, and disabling the system by altering critical registry keys",
+        "IOC counts include 260 domains and 1488 IPs"
+      ],
+      "analysis": "First check for Simda's backdoor and trojan classification; then verify its keylogging and HTML injection capabilities; finally confirm its remote system control capabilities and the presence of a significant number of IOCs; because these features align with known malware behavior, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "DNS",
+        "SMTP",
+        "FTP",
+        "SSH",
+        "Telnet",
+        "MySQL",
+        "IMAP",
+        "SIP",
+        "DNS-over-TLS"
+      ],
+      "c2_ports": [
+        "80",
+        "443",
+        "8080",
+        "8443",
+        "21",
+        "22",
+        "25",
+        "53",
+        "143",
+        "465",
+        "993",
+        "3306",
+        "5060",
+        "8172"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "PHP",
+        "Apache",
+        "WordPress",
+        "CloudFlare",
+        "Amazon Web Services",
+        "AWS Certificate Manager",
+        "Amazon Cloudfront",
+        "Amazon S3",
+        "Varnish",
+        "HTTP/3",
+        "HSTS",
+        "Let's Encrypt",
+        "DigiCert",
+        "Google Analytics",
+        "jQuery",
+        "OpenResty",
+        "Lua",
+        "MySQL",
+        "Apache HTTP Server",
+        "IIS",
+        "Java",
+        "Debian",
+        "CentOS",
+        "OpenSSL",
+        "Sectigo",
+        "Envoy",
+        "Bootstrap",
+        "Font Awesome",
+        "Google Font API",
+        "Facebook",
+        "Tumblr",
+        "Weebly",
+        "Google Tag Manager",
+        "Google AdSense",
+        "Google Hosted Libraries",
+        "cdnjs",
+        "MaxCDN",
+        "ShareThis",
+        "Zepto",
+        "Azure CDN",
+        "Cloudflare Bot Management"
+      ],
+      "ioc_counts": {
+        "domains": 7731,
+        "ips": 5503,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Suppobox",
+      "category": "malware",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "7731 C&C domains and 5503 C&C IPs from Bambenek feeds",
+        "Multiple protocols (HTTPS,HTTP,DNS,SMTP,FTP,SSH) and ports (80,443,8080,8443) observed",
+        "Wide technology stack including Nginx,PHP,Apache,WordPress,CloudFlare,AWS",
+        "Last seen 2021-03-08 with 26757 retired indicators out of 29523 total",
+        "Updated as recently as 2025-02-25 for domains"
+      ],
+      "analysis": "First check extensive C&C infrastructure with >7000 domains and >5000 IPs; then verify diverse protocols and ports along with common web technologies; finally confirm recent domain updates but last activity over 4 years ago with majority retired; because large-scale C2 infrastructure with ongoing domain maintenance indicates established malware family, classify as medium severity."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Infrastructure remains partially maintained with recent domain updates, warranting monitoring for reactivation."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 8,
+        "ips": 8,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "unknownjs",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "IOC counts include 8 domains and 8 IPs from Bambenek Consulting"
+      ],
+      "analysis": "First check for the presence of IOCs; then verify the category is malware; finally confirm the recency of the threat; because the threat is recent and has IOCs, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2006",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "DNS",
+        "FTP",
+        "SMTP",
+        "IMAP",
+        "IMAPS",
+        "SMTPS"
+      ],
+      "c2_ports": [
+        "21",
+        "22",
+        "25",
+        "465",
+        "53",
+        "80",
+        "8080",
+        "993",
+        "143",
+        "443",
+        "8443"
+      ],
+      "c2_technologies": [
+        "PHP",
+        "Apache",
+        "Lua",
+        "Google Font API",
+        "Google Analytics",
+        "jQuery",
+        "HTTP/3",
+        "DigiCert",
+        "Varnish",
+        "CloudFlare",
+        "HSTS",
+        "Font Awesome",
+        "Debian",
+        "Amazon Web Services",
+        "Weebly",
+        "OptinMonster",
+        "Nginx",
+        "Tengine",
+        "OpenResty"
+      ],
+      "ioc_counts": {
+        "domains": 268,
+        "ips": 1747,
+        "ssl_certificates": 17
+      }
+    },
+    "label": {
+      "official": "Virut",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "IOC counts include domains: 268, IPs: 1747, SSL Certificates: 17",
+        "c2_protocols include common web protocols such as HTTPS, HTTP, and DNS",
+        "c2_technologies include a variety of web technologies and services"
+      ],
+      "analysis": "First check the high number of IOCs; then verify the presence of common web protocols and technologies; finally confirm the recency of the threat based on the last seen timestamp; because the threat has a significant number of IOCs and utilizes common web technologies, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking due to the significant number of IOCs and the use of common web technologies."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "Collection",
+        "Command And Control",
+        "Defense Evasion",
+        "Discovery",
+        "Exfiltration",
+        "Privilege Escalation"
+      ],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "DNS"
+      ],
+      "c2_ports": [
+        "443",
+        "80",
+        "53"
+      ],
+      "c2_technologies": [
+        "Windows"
+      ],
+      "ioc_counts": {
+        "domains": 258,
+        "ips": 1172,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Dyre",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "ioc_counts.domains > 100 and ioc_counts.ips > 100",
+        "c2_protocols overlaps ['HTTPS','HTTP'] and c2_ports overlaps ['443','80']"
+      ],
+      "analysis": "First check high IOC counts; then verify presence of common C2 protocols and ports; because these features align with Dyre's known behavior, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2016-09",
+      "spread_vectors": [
+        "drive-by download",
+        "phishing"
+      ],
+      "capabilities": [
+        "Collection",
+        "Command And Control",
+        "Credential Access",
+        "Defense Evasion",
+        "Discovery",
+        "Execution",
+        "Exfiltration",
+        "Impact",
+        "Initial Access",
+        "Lateral Movement",
+        "Persistence",
+        "Privilege Escalation"
+      ],
+      "c2_protocols": [
+        "HTTPS",
+        "DNS",
+        "HTTP"
+      ],
+      "c2_ports": [
+        "443",
+        "80",
+        "8080"
+      ],
+      "c2_technologies": [
+        "PHP",
+        "Nginx",
+        "WordPress"
+      ],
+      "ioc_counts": {
+        "domains": 107,
+        "ips": 212,
+        "ssl_certificates": 3
+      }
+    },
+    "label": {
+      "official": "TrickBot",
+      "category": "malware",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "'tactic' includes 'Collection', 'Command And Control', 'Credential Access', 'Defense Evasion', 'Discovery', 'Execution', 'Exfiltration', 'Impact', 'Initial Access', 'Lateral Movement', 'Persistence', 'Privilege Escalation'",
+        "'spread_vectors' includes 'drive-by download', 'phishing'",
+        "'c2_protocols' includes 'HTTPS', 'HTTP' and 'c2_ports' includes '8080'",
+        "'c2_technologies' includes 'WordPress', 'PHP' and 'ioc_counts.domains' > 100"
+      ],
+      "analysis": "First check the wide range of tactics and capabilities; then verify spread vectors include drive-by download and phishing; finally confirm C2 protocols and ports along with technologies like WordPress/PHP and >100 domains; because these features align with TrickBot's behavior, classify as high severity."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Confirmed active threat with high confidence, matching known TrickBot characteristics, necessitating blocking action."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "Clipboard Data",
+        "Command and Scripting Interpreter",
+        "Command Obfuscation",
+        "Credential API Hooking",
+        "Deobfuscate/Decode Files or Information",
+        "Encrypted/Encoded File",
+        "File and Directory Discovery",
+        "File Deletion",
+        "Ingress Tool Transfer",
+        "Keylogging",
+        "Modify Registry",
+        "Obfuscated Files or Information",
+        "Portable Executable Injection",
+        "PowerShell",
+        "Process Discovery",
+        "Query Registry",
+        "Registry Run Keys / Startup Folder",
+        "Screen Capture",
+        "Security Software Discovery",
+        "System Information Discovery",
+        "System Language Discovery",
+        "System Time Discovery",
+        "Web Protocols",
+        "Windows Command Shell"
+      ],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [
+        "Windows"
+      ],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 121
+      }
+    },
+    "label": {
+      "official": "ZeuS Panda",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "ioc_counts.ssl_certificates > 100"
+      ],
+      "analysis": "First check for SSL certificates count; then verify the presence of Windows as a technology; because the threat has a significant number of SSL certificates and is associated with Windows, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Malware",
+      "category": "general",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "raw.risk is 'medium', indicating a moderate level of threat",
+        "absence of specific IOC counts and details in raw JSON"
+      ],
+      "analysis": "First check the raw risk level; then verify the lack of specific IOCs in the raw data; because the raw data indicates a medium risk without specific recent indicators, classify as medium severity."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as medium with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-10",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "NexusLogger",
+      "category": "malware",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "No active indicators present, all are retired",
+        "No recent activity detected since first seen"
+      ],
+      "analysis": "First check for active indicators; then verify recency of threat; finally confirm retirement status; because the threat is retired with no recent activity, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "The threat is retired with no active indicators, no action required."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "Collection",
+        "Command And Control",
+        "Credential Access",
+        "Defense Evasion",
+        "Discovery",
+        "Execution",
+        "Initial Access",
+        "Persistence",
+        "Privilege Escalation",
+        "Reconnaissance"
+      ],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "SSH"
+      ],
+      "c2_ports": [
+        "22",
+        "443",
+        "8443",
+        "80",
+        "8080"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "Ubuntu",
+        "CloudFlare"
+      ],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Smoke Loader",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "ioc_counts.domains and ioc_counts.ips are 0, indicating no active infrastructure",
+        "c2_protocols overlaps ['HTTPS','HTTP'] and c2_ports overlaps ['8080','8443']",
+        "c2_technologies overlaps ['Nginx']"
+      ],
+      "analysis": "First check for C2 protocols and ports; then verify technologies like Nginx; because these features align with common malware infrastructure with no active domains/ips, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking due to lack of active indicators."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Shylock",
+      "category": "malware",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "No active indicators present, all indicators are retired",
+        "Last seen activity is dated and no recent updates"
+      ],
+      "analysis": "First check for active indicators; then verify recency of threat; finally confirm retirement status; because the threat is retired with no recent activity, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "The threat is retired with no active indicators, no immediate action is required."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [
+        "Healthcare",
+        "Financial Services"
+      ],
+      "first_seen": "2017-09",
+      "spread_vectors": [
+        "drive-by download",
+        "phishing"
+      ],
+      "capabilities": [
+        "keylogging",
+        "form grabbing",
+        "man-in-the-browser"
+      ],
+      "c2_protocols": [
+        "HTTPS",
+        "DNS",
+        "HTTP"
+      ],
+      "c2_ports": [
+        "443",
+        "80",
+        "8080"
+      ],
+      "c2_technologies": [
+        "PHP",
+        "Nginx",
+        "WordPress"
+      ],
+      "ioc_counts": {
+        "domains": 6,
+        "ips": 11,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Gootkit",
+      "category": "malware",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "target_industry includes 'Healthcare' and 'Financial Services'",
+        "capabilities include 'keylogging', 'form grabbing', 'man-in-the-browser'",
+        "c2_protocols include 'HTTPS', 'HTTP' and c2_ports include '8080'",
+        "c2_technologies include 'WordPress', 'PHP'"
+      ],
+      "analysis": "First check the target industries; then verify the malware capabilities; finally confirm the C2 protocols and technologies; because these align with the characteristics of Gootkit, classify as high severity."
+    },
+    "response": {
+      "action": "block",
+      "reason": "The threat is confirmed to be high severity with maximum confidence, indicating active and dangerous, thus it should be blocked."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Android",
+        "Linux",
+        "macOS",
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "Audio Capture",
+        "Clipboard Data",
+        "Credentials from Web Browsers",
+        "Credentials In Files",
+        "File and Directory Discovery",
+        "File Deletion",
+        "Ingress Tool Transfer",
+        "JavaScript",
+        "Keylogging",
+        "Obfuscated Files or Information",
+        "Peripheral Device Discovery",
+        "Private Keys",
+        "Process Discovery",
+        "Proxy",
+        "Remote Desktop Protocol",
+        "Scheduled Transfer",
+        "Screen Capture",
+        "Security Software Discovery",
+        "Software Packing",
+        "Startup Items",
+        "System Information Discovery",
+        "System Network Configuration Discovery",
+        "System Network Connections Discovery",
+        "System Service Discovery",
+        "Video Capture",
+        "Visual Basic",
+        "Windows Command Shell",
+        "Windows Management Instrumentation"
+      ],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 344
+      }
+    },
+    "label": {
+      "official": "jRAT",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "ioc_counts.ssl_certificates > 100"
+      ],
+      "analysis": "First check for a significant number of SSL certificates; then verify the presence of multiple techniques and tactics; because these features align with common malware infrastructure, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "Credential Access",
+        "Brute Force",
+        "Password Spraying"
+      ],
+      "c2_protocols": [
+        "HTTP",
+        "HTTPS",
+        "DNS",
+        "SSH",
+        "FTP",
+        "SMTP",
+        "IMAP",
+        "MySQL",
+        "RDP",
+        "Telnet"
+      ],
+      "c2_ports": [
+        "22",
+        "80",
+        "443",
+        "21",
+        "25",
+        "143",
+        "3306",
+        "3389",
+        "23",
+        "53",
+        "8080",
+        "8443"
+      ],
+      "c2_technologies": [
+        "Apache",
+        "Nginx",
+        "PHP",
+        "WordPress",
+        "MySQL",
+        "OpenSSL",
+        "Ubuntu",
+        "CentOS",
+        "Debian",
+        "Let's Encrypt",
+        "CloudFlare",
+        "Google Analytics",
+        "jQuery",
+        "Bootstrap",
+        "Node.js",
+        "Express",
+        "React",
+        "Vue.js",
+        "Angular",
+        "IIS",
+        "Microsoft ASP.NET",
+        "Java",
+        "Python",
+        "Django",
+        "Ruby on Rails",
+        "PostgreSQL",
+        "MongoDB",
+        "OpenResty",
+        "LiteSpeed",
+        "Varnish",
+        "HTTP/3"
+      ],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 254158,
+        "ssl_certificates": 23
+      }
+    },
+    "label": {
+      "official": "SSH Brute Force",
+      "category": "general",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "254158 IP indicators across multiple feeds",
+        "Active SSH brute-force indicators on port 22 (4478 IPs)",
+        "Human-labeled risk 'low' from source",
+        "Recent activity stamp_seen 2025-03-29",
+        "Attributes confirm Credential Access & Brute Force techniques"
+      ],
+      "analysis": "First check 254k IP indicators with recent 2025-03-29 activity; then verify SSH port 22 brute-force pattern and Credential Access tactics; finally confirm human-labeled low risk; because this represents widespread but low-impact scanning activity, classify as low severity."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Massive scale but low-risk brute-force scanning requires monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "DNS",
+        "HTTP",
+        "HTTPS"
+      ],
+      "c2_ports": [
+        "80",
+        "53",
+        "443"
+      ],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Telnet",
+      "category": "attack",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "c2_protocols overlaps ['DNS','HTTP','HTTPS']",
+        "c2_ports overlaps ['80','53','443']"
+      ],
+      "analysis": "First check for C2 protocols and ports; then verify Telnet is associated with these; because Telnet is a known attack vector for remote access, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [
+        "Corporate Networks"
+      ],
+      "first_seen": "2017-09",
+      "spread_vectors": [
+        "Network"
+      ],
+      "capabilities": [
+        "Active Directory Exploitation",
+        "Lateral Movement"
+      ],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP"
+      ],
+      "c2_ports": [
+        "443",
+        "80"
+      ],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 60891,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "MS-DS Attack",
+      "category": "attack",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.8
+    },
+    "reasoning": {
+      "evidence": [
+        "60,891 IP indicators from IPSpamList with critical risk presence",
+        "MS-DS protocol targeting indicates Active Directory attacks",
+        "Recent activity detected in 2024 with HTTP/HTTPS C2 protocols",
+        "Contains critical risk level indicators confirming high impact"
+      ],
+      "analysis": "First check indicator scale and find 60,891 attack IPs; then verify MS-DS targeting indicates domain service exploitation; finally confirm critical risk indicators and recent activity; because this represents large-scale Active Directory attack infrastructure with critical impact evidence, classify as medium risk."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Large-scale MS-DS attack infrastructure with critical risk indicators and recent activity requires immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "SSH",
+        "HTTP"
+      ],
+      "c2_ports": [
+        "22"
+      ],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Proxy Scan",
+      "category": "attack",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "c2_protocols overlaps ['SSH','HTTP']",
+        "ioc_counts.ips == 0 and ioc_counts.ssl_certificates == 0"
+      ],
+      "analysis": "First check for C2 protocols; then verify no IP or SSL certificate indicators; because the threat has no active indicators but is associated with known attack vectors, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "SIP Attacks",
+      "category": "attack",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "risk is unknown, no specific capabilities or C2 details provided",
+        "IOC counts are all zero, indicating lack of active indicators"
+      ],
+      "analysis": "First check the risk level which is unknown; then verify the lack of specific capabilities or C2 details; finally confirm the absence of active IOCs; because the threat lacks concrete evidence of current activity, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence due to lack of concrete evidence, warranting monitoring for any new activity."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 24282,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Unclassified",
+      "category": "attack",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "24282 IP indicators from IPSpamList all marked as retired"
+      ],
+      "analysis": "First check indicator status and find all IPs retired; then verify no recent activity; finally confirm no active capabilities or C2 infrastructure; because the indicators are obsolete and retired, classify as low risk."
+    },
+    "response": {
+      "action": "none",
+      "reason": "All specific indicators are historical and retired, no active threat detected."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Postfix",
+      "category": "attack",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "No specific threat indicators or capabilities mentioned",
+        "Retired indicators count is 337 out of 337 total IOCs",
+        "No recent activity since the last seen timestamp"
+      ],
+      "analysis": "First check for any specific threat indicators or capabilities; then verify the recency and retirement status of IOCs; finally confirm no recent activity; because the entity is primarily associated with retired indicators and lacks current threat context, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "The threat is associated with retired indicators and shows no recent activity, thus no immediate action is required."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 5337,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "MS-SQL Attack",
+      "category": "attack",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "5337 IP indicators from IPSpamList all marked as retired"
+      ],
+      "analysis": "First check indicator status and find all 5337 IPs retired; then verify last activity was over 4 years ago; finally confirm this represents known attack methodology; because while the specific indicators are obsolete, the attack pattern remains relevant for detection awareness, classify as low risk."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Specific indicators are historical and retired, but MS-SQL attack pattern should be monitored for new infrastructure."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Linux",
+        "macOS",
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "Command And Control",
+        "Exfiltration",
+        "Lateral Movement"
+      ],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "FTP",
+      "category": "tool",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "No specific IOCs present",
+        "FTP is a commonly used utility that can be exploited for malicious purposes",
+        "Associated with multiple threat groups and campaigns"
+      ],
+      "analysis": "First check for the absence of specific IOCs; then verify FTP's role in various tactics and techniques; finally confirm its association with known threat groups; because FTP is a dual-use tool that can be exploited, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "FTP is a common utility with potential for abuse, but no active threats or IOCs are present, warranting monitoring."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "MySQL Attack",
+      "category": "attack",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "No specific capabilities or spread vectors mentioned",
+        "No C2 protocols or ports listed",
+        "IOC counts are all zero, indicating no active indicators"
+      ],
+      "analysis": "First check for specific capabilities or spread vectors; then verify C2 protocols and ports; finally confirm IOC counts; because there is no evidence of active threats or specific TTPs, classify as low severity."
+    },
+    "response": {
+      "action": "none",
+      "reason": "No active indicators and no specific TTPs present, historical data with no recent activity."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Netbios Attack",
+      "category": "attack",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "All indicators from IPSpamList are marked as retired"
+      ],
+      "analysis": "First check indicator status and find all indicators retired; because the threat is historical and retired, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "The threat is historical and retired, with no active indicators, no action is required."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 1144,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Socks Scan",
+      "category": "attack",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.3
+    },
+    "reasoning": {
+      "evidence": [
+        "1144 IP indicators from IPSpamList all marked as retired",
+        "No activity detected since 2020-06-16"
+      ],
+      "analysis": "First check indicator status and find all 1144 IPs retired; then verify last activity was over 4 years ago; because while the specific indicators are obsolete, the attack pattern remains relevant for detection awareness, classify as low risk."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Specific indicators are historical and retired, but Socks scanning pattern should be monitored for new infrastructure."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 62,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "RpcBind Attack",
+      "category": "attack",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "62 IP indicators from IPSpamList all marked as retired"
+      ],
+      "analysis": "First check indicator status and find all 62 IPs retired; then verify no recent activity; because the indicators are obsolete, classify as low risk."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Specific indicators are historical and retired, but the attack pattern should be monitored for new infrastructure."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-10",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "DNS"
+      ],
+      "c2_ports": [
+        "53",
+        "443",
+        "8080",
+        "80"
+      ],
+      "c2_technologies": [
+        "OpenResty",
+        "Nginx"
+      ],
+      "ioc_counts": {
+        "domains": 32,
+        "ips": 25,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Ranbyus",
+      "category": "malware",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "IOC counts include 32 domains and 25 IPs",
+        "C2 protocols include HTTPS and HTTP, and ports include 443 and 8080",
+        "C2 technologies include OpenResty and Nginx"
+      ],
+      "analysis": "First check IOC counts for domains and IPs; then verify C2 protocols and ports; finally confirm C2 technologies; because the threat has a moderate number of IOCs and uses common C2 infrastructure, classify as low severity."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as low severity with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-10",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "LDAP Attack",
+      "category": "attack",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "46 indicators from IPSpamList all marked as retired"
+      ],
+      "analysis": "First check indicator status and find all indicators retired; then verify no recent activity; finally confirm no active threats present; because all indicators are obsolete and retired, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "All indicators are retired and no active threats are present."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Linux",
+        "macOS",
+        "Windows"
+      ],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "Multi-hop Proxy",
+        "Asymmetric Cryptography"
+      ],
+      "c2_protocols": [
+        "SOCKS",
+        "HTTPS",
+        "HTTP",
+        "DNS"
+      ],
+      "c2_ports": [
+        "9050",
+        "9051",
+        "1080",
+        "443",
+        "80",
+        "8080",
+        "8443"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "Apache",
+        "PHP",
+        "WordPress",
+        "Bootstrap",
+        "jQuery",
+        "Let’s Encrypt",
+        "CloudFlare",
+        "Apache HTTP Server",
+        "HTTP/3",
+        "AWS Certificate Manager",
+        "Google Analytics",
+        "Amazon S3",
+        "Varnish",
+        "HSTS",
+        "DigiCert"
+      ],
+      "ioc_counts": {
+        "domains": 342,
+        "ips": 459218,
+        "ssl_certificates": 83
+      }
+    },
+    "label": {
+      "official": "Tor Proxy",
+      "category": "tool",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 1.0
+    },
+    "reasoning": {
+      "evidence": [
+        "459218 IP indicators from dan.me.uk Tor feed",
+        "Multi-hop proxy and asymmetric cryptography capabilities",
+        "SOCKS ports 9050/9051 and HTTPS/HTTP on 443/80/8080/8443",
+        "Recent stamp_seen 2025-03-26",
+        "Human-labeled risk medium"
+      ],
+      "analysis": "First check 459k active Tor exit IPs; then verify SOCKS and HTTPS protocols on standard ports; finally confirm multi-hop proxy capability and recent activity; because this is a legitimate anonymity tool with ongoing infrastructure, classify as medium severity."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Tor is a dual-use tool: legitimate for privacy but abused for C2, so monitor for misuse rather than blanket block."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP",
+        "DNS"
+      ],
+      "c2_ports": [
+        "443",
+        "80",
+        "8080",
+        "53"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "OpenResty"
+      ],
+      "ioc_counts": {
+        "domains": 1015,
+        "ips": 153,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Bedep",
+      "category": "malware",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "1015 C&C domains and 153 C&C IPs from Bambenek feeds",
+        "Active HTTPS/HTTP on 8080/443/80 plus DNS on 53",
+        "Nginx/OpenResty stacks",
+        "Last seen 2024-04-28 with 9 active indicators"
+      ],
+      "analysis": "First check 1168 active C&C indicators; then verify standard web protocols on common ports; finally confirm Nginx/OpenResty infrastructure; because recent activity and sizable C&C footprint indicate active malware, classify as medium."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Active C&C infrastructure with recent indicators warrants immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "DNS",
+        "HTTP",
+        "HTTPS",
+        "SSH"
+      ],
+      "c2_ports": [
+        "53",
+        "80",
+        "443",
+        "8080",
+        "22",
+        "2020"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "Lua",
+        "OpenResty",
+        "Let's Encrypt",
+        "Bootstrap",
+        "Apache",
+        "jQuery"
+      ],
+      "ioc_counts": {
+        "domains": 1797,
+        "ips": 255,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Kraken",
+      "category": "botnet",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.82
+    },
+    "reasoning": {
+      "evidence": [
+        "1797 active C&C domains from Bambenek feed",
+        "255 C&C IPs reported",
+        "Recent news on Golang Kraken botnet development",
+        "Last seen 2024-10-15 indicating ongoing activity"
+      ],
+      "analysis": "First check 1797 domains and 255 IPs marked as C&C; then verify recent news reports on Kraken botnet development; finally confirm last activity October 2024 with HTTP/HTTPS on 8080/443; because indicators show active C&C infrastructure, classify as medium risk."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Large-scale, actively-maintained C2 infrastructure; immediate blocking recommended to reduce exposure."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "SSH",
+        "HTTP"
+      ],
+      "c2_ports": [
+        "22",
+        "80"
+      ],
+      "c2_technologies": [
+        "Apache"
+      ],
+      "ioc_counts": {
+        "domains": 29,
+        "ips": 49,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Ramdo",
+      "category": "malware",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "IOC counts include 29 domains and 49 IPs",
+        "C2 protocols include SSH and HTTP",
+        "C2 technologies include Apache"
+      ],
+      "analysis": "First check IOC counts for domains and IPs; then verify C2 protocols and technologies; finally confirm the presence of SSH and HTTP protocols along with Apache technology; because the threat has recent indicators and no high-risk vectors are identified, classify as low severity."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as low severity with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Windows"
+      ],
+      "target_industry": [
+        "Financial Services"
+      ],
+      "first_seen": "2017-09",
+      "spread_vectors": [
+        "drive-by download",
+        "phishing"
+      ],
+      "capabilities": [
+        "man-in-the-browser",
+        "network sniffing"
+      ],
+      "c2_protocols": [
+        "HTTPS",
+        "HTTP"
+      ],
+      "c2_ports": [
+        "443",
+        "80"
+      ],
+      "c2_technologies": [
+        "Nginx",
+        "Open Graph",
+        "Google Analytics",
+        "jQuery"
+      ],
+      "ioc_counts": {
+        "domains": 102,
+        "ips": 122,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Tiny Banker",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "'Financial Services' in target_industry",
+        "capabilities overlaps ['man-in-the-browser', 'network sniffing']",
+        "c2_protocols overlaps ['HTTPS', 'HTTP'] and c2_ports overlaps ['443', '80']",
+        "c2_technologies overlaps ['Nginx', 'Open Graph', 'Google Analytics', 'jQuery'] and ioc_counts.domains > 100"
+      ],
+      "analysis": "First check malware targeting Financial Services; then verify man-in-the-browser/network sniffing capabilities; finally confirm HTTPS/HTTP on 443/80 plus Nginx/Open Graph/Google Analytics/jQuery stacks with >100 domains; because these features align with banking trojans, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [
+        "HTTP",
+        "HTTPS",
+        "DNS"
+      ],
+      "c2_ports": [
+        "80",
+        "53",
+        "8080",
+        "443"
+      ],
+      "c2_technologies": [
+        "OpenResty",
+        "HSTS",
+        "Nginx",
+        "CloudFlare",
+        "HTTP/3",
+        "cdnjs",
+        "Apache"
+      ],
+      "ioc_counts": {
+        "domains": 103,
+        "ips": 160,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "Vawtrak",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "IOC counts include domains and IPs",
+        "c2_protocols overlaps ['HTTP', 'HTTPS'] and c2_ports overlaps ['80', '443']",
+        "c2_technologies include Nginx and CloudFlare"
+      ],
+      "analysis": "First check IOC counts for domains and IPs; then verify common C2 protocols and ports; finally confirm technologies like Nginx and CloudFlare; because these features align with common malware infrastructure, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [
+        "Command And Control",
+        "Credential Access",
+        "Execution",
+        "Persistence"
+      ],
+      "c2_protocols": [
+        "FTP",
+        "RDP",
+        "SMTP",
+        "SMTPS",
+        "SNMP",
+        "Tor",
+        "NETBIOS",
+        "IRC",
+        "MySQL",
+        "PostgreSQL",
+        "IMAP",
+        "PPTP",
+        "HTTPS",
+        "OpenVPN",
+        "LDAP",
+        "MongoDB",
+        "Telnet",
+        "SSH",
+        "RTSP",
+        "LDAPS",
+        "HTTP",
+        "IPSec",
+        "SIP",
+        "DNS",
+        "SOCKS",
+        "IMAPS"
+      ],
+      "c2_ports": [
+        "8080",
+        "53",
+        "8443",
+        "137",
+        "1080",
+        "194",
+        "9051",
+        "1293",
+        "636",
+        "161",
+        "5432",
+        "21",
+        "3306",
+        "9050",
+        "1194",
+        "3389",
+        "443",
+        "138",
+        "389",
+        "993",
+        "143",
+        "5060",
+        "139",
+        "465",
+        "27017",
+        "23",
+        "554",
+        "22",
+        "1723",
+        "80",
+        "25"
+      ],
+      "c2_technologies": [
+        "Let's Encrypt",
+        "PHP",
+        "Google Analytics",
+        "Apache",
+        "HTTP/3",
+        "Ubuntu",
+        "Nginx"
+      ],
+      "ioc_counts": {
+        "domains": 47,
+        "ips": 95,
+        "ssl_certificates": 49
+      }
+    },
+    "label": {
+      "official": "ZLoader",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "ioc_counts.domains > 40",
+        "ioc_counts.ips > 90",
+        "ioc_counts.ssl_certificates > 40"
+      ],
+      "analysis": "First check the number of domains, IPs, and SSL certificates; then verify the presence of multiple C2 protocols and ports; finally confirm the use of various technologies; because these features align with common malware infrastructure, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 26,
+        "ips": 15,
+        "ssl_certificates": 5
+      }
+    },
+    "label": {
+      "official": "Qadars",
+      "category": "malware",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.75
+    },
+    "reasoning": {
+      "evidence": [
+        "IOC counts include 26 domains, 15 IPs, and 5 SSL certificates"
+      ],
+      "analysis": "First check the presence of IOCs; then verify the recency of the threat; finally confirm the absence of specific high-risk indicators; because the threat is recent but lacks specific high-risk indicators, classify as suspicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as suspicious with moderate confidence, warranting monitoring rather than blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [],
+      "target_industry": [],
+      "first_seen": "2017-09",
+      "spread_vectors": [],
+      "capabilities": [],
+      "c2_protocols": [],
+      "c2_ports": [],
+      "c2_technologies": [],
+      "ioc_counts": {
+        "domains": 0,
+        "ips": 0,
+        "ssl_certificates": 0
+      }
+    },
+    "label": {
+      "official": "RDP Attack",
+      "category": "attack",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.5
+    },
+    "reasoning": {
+      "evidence": [
+        "No specific capabilities or C2 protocols/ports mentioned",
+        "IOC counts are all zero, indicating no active indicators",
+        "RDP attacks are generally considered a common threat vector"
+      ],
+      "analysis": "First check for specific capabilities or C2 protocols/ports; then verify IOC counts; finally confirm the general threat vector of RDP attacks; because there is no specific evidence of active threats, classify as low severity."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "The threat is classified as low severity with moderate confidence, warranting monitoring for any new indicators."
+    }
+  },
+  {
+    "meta": {
+      "category": "threat",
+      "subcategory": "Pulsedive-Threats"
+    },
+    "json": {
+      "platform": [
+        "Linux"
+      ],
+      "target_industry": [
+        "Multiple"
+      ],
+      "first_seen": "2016-08",
+      "spread_vectors": [
+        "drive-by download",
+        "phishing",
+        "exploit kit"
+      ],
+      "capabilities": [
+        "DDoS",
+        "IoT Targeting",
+        "Self-propagation"
+      ],
+      "c2_protocols": [
+        "HTTP",
+        "HTTPS",
+        "DNS"
+      ],
+      "c2_ports": [
+        "80",
+        "443"
+      ],
+      "c2_technologies": [
+        "Tor"
+      ],
+      "ioc_counts": {
+        "domains": 37,
+        "ips": 1256,
+        "ssl_certificates": 13
+      }
+    },
+    "label": {
+      "official": "Mirai",
+      "category": "malware",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.9
+    },
+    "reasoning": {
+      "evidence": [
+        "Linux and IoT devices are targeted",
+        "DDoS and self-propagation capabilities",
+        "HTTP/HTTPS/DNS protocols used",
+        "High volume of IOCs across domains and IPs"
+      ],
+      "analysis": "First check the targeting of Linux and IoT devices; then verify DDoS and self-propagation capabilities; finally confirm HTTP/HTTPS/DNS protocols and Tor technology use along with a high volume of IOCs; because these align with Mirai's known behavior and impact, classify as high severity."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Confirmed active threat with high confidence and severe impact, necessitating immediate blocking measures."
+    }
+  }
+]

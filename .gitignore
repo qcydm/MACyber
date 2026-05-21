@@ -1,0 +1,35 @@
+.DS_Store
+Thumbs.db
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Local environment and secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Local generated/intermediate files
+*_old.json
+*.old.json
+failed.json
+script/evaluation/outputs/*
+!script/evaluation/outputs/.gitkeep
