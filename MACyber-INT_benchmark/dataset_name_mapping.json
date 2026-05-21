@@ -17,7 +17,7 @@
   "Distributed Systems": "log-HDFS",
   "Super Computers": "supercomputer",
   "Operating Systems": "log-linux",
-  "Mobile Systems": "log-anroid",
+  "Mobile Systems": "log-android",
   "Server Applications": "log-proxifier",
   "CIC-Bell-EXF-DNS-2021": "dns-exf",
   "CIC-Bell-DNS-2021": "dns-mal",

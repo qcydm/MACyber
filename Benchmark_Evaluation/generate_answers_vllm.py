@@ -93,7 +93,7 @@ DATASET_THREAT_TYPES = {
     #-------------------------------------------------------------------------------------------------------------
     # log:日志数据集
     'log-HDFS':['benign','suspicious','malicious'],
-    'log-anroid':['benign', 'malicious', 'suspicious'],
+    'log-android':['benign', 'malicious', 'suspicious'],
     'log-linux':['benign', 'malicious', 'suspicious'],
     'log-proxifier':['benign', 'malicious', 'suspicious'],
     'supercomputer':['Hardware Failure', 'benign', 'high', 'low', 'malicious', 'suspicious'],
@@ -247,8 +247,8 @@ You must output in the following JSON format (output only JSON, no extra content
     "field2 = value2 (interpretation)"
   ],
   "analysis": "First check <key features>; then verify <key features>; finally confirm <key features>; because <comprehensive judgment reason>, classify as <threat type>.",
-  "action": "threat type label, must choose one from the following options: {threat_types_str}",
-  "official": "threat type label",
+  "action": "block/monitor/none",
+  "official": "threat type label, must choose one from the following options: {threat_types_str}",
   "severity": "benign/suspicious/low/medium/high"
 }}
 

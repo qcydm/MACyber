@@ -26466,7 +26466,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "HDFS_block_management"
+      "subcategory": "log-HDFS"
     },
     "json": {
       "log_entries": [
@@ -26767,7 +26767,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "HDFS Block Management"
+      "subcategory": "log-HDFS"
     },
     "json": {
       "log_entries": [
@@ -27041,7 +27041,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "HDFS_operations"
+      "subcategory": "log-HDFS"
     },
     "json": {
       "log_entries": [

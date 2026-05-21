@@ -20,7 +20,7 @@
   ],
   "System Log Security": [
     "supercomputer",
-    "log-anroid",
+    "log-android",
     "log-HDFS",
     "log-linux",
     "log-proxifier"

@@ -516,11 +516,11 @@
     "label": {
       "official": "Nymaim",
       "category": "malware",
-      "severity": 2,
+      "severity": "low",
       "severity_code": 2,
       "confidence": 1.0
     },
-    "reasoning": "First check medium-risk malware; then verify DNS/FTP/HTTPS/HTTP on ports 21/80/8080/443/53 plus Apache/Let's Encrypt/OpenResty/Nginx/Lua technologies with >100 domains; because these generic features align with common malware C2 infrastructure, classify as Nymaim.",
+    "reasoning": "First check low-risk malware; then verify DNS/FTP/HTTPS/HTTP on ports 21/80/8080/443/53 plus Apache/Let's Encrypt/OpenResty/Nginx/Lua technologies with >100 domains; because these generic features align with common malware C2 infrastructure, classify as Nymaim.",
     "response": {
       "action": "block",
       "reason": "Nymaim is a known malware with medium risk, and blocking is the standard response to mitigate such threats."

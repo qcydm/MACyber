@@ -2,7 +2,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "data_exfiltration"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 14:13:29.787",
@@ -49,7 +49,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "process_anomaly"
+      "subcategory": "log-android"
     },
     "json": {
       "process": {
@@ -103,7 +103,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -185,7 +185,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-18T08:04:14.391Z",
@@ -255,7 +255,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": "24593",
@@ -356,7 +356,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_authentication_bypass"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 15:27:49.232",
@@ -400,7 +400,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Sensitive Data Leakage"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 20:31:42.448",
@@ -475,7 +475,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_crash"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 07:30:44.779",
@@ -545,7 +545,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "data_upload"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 6673,
@@ -601,7 +601,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "data_exfiltration"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 15:33:24.144",
@@ -649,7 +649,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Data Exfiltration"
+      "subcategory": "log-android"
     },
     "json": {
       "process_name": "com.huawei.logupload",
@@ -718,7 +718,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "data_exfiltration"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 6673,
@@ -770,7 +770,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "data_exfiltration"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 08:23:41.299",
@@ -828,7 +828,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "secure_tunneling"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-17 23:10:17.572",
@@ -934,7 +934,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -1033,7 +1033,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -1130,7 +1130,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-17 23:34:29.161",
@@ -1207,7 +1207,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "log_file": "12-18 15:27:46.652  9161  9161 I         : power log dlsym ok\n12-18 15:27:46.671  9161  9161 D ActivityThread: ActivityThread,attachApplication\n12-18 15:27:46.697  9161  9161 W art     : JIT profile information will not be recorded: profile file does not exits.\n12-18 15:27:46.737  9161  9161 I HwOUC   : [main-1]HwOUCSearchIndexablesProvider onCreate(/HwOUCSearchIndexablesProvider.java:136)\n12-18 15:27:46.752  9161  9161 I HwOUC   : [main-1]HwOucApplication--onCreate, start(/HwOucApplication.java:52)\n12-18 15:27:46.753  9161  9161 I HwOUC   : [main-1]HwOucApplication--getProcessName, pid is 9161(/HwOucApplication.java:98)\n12-18 15:27:46.753  9161  9161 I HwOUC   : [main-1]HwOucApplication--onCreate, processName is com.huawei.android.hwouc; android.os.Process.myUid() is 10053(/HwOucApplication.java:54)\n12-18 15:27:46.754  9161  9161 I HwOUC   : [main-1]HwOucApplication--onCreate, isDefaultProcess true, init(/HwOucApplication.java:58)\n12-18 15:27:46.754  9161  9161 I HwOUC   : [main-1]----load default presets...(/HwOucConfig.java:2414)\n12-18 15:27:46.758  9161  9161 W CfgFilePolicy: No config file found for:xml/hwouc_presets.xml\n12-18 15:27:46.759  9161  9161 I HwOUC   : [main-1]loadOucConfig by HwCfgFilePolicy.getCfgFileList no exception(/HwOucConfig.java:2517)\n12-18 15:27:46.783  9161  9161 I HwCust  : Constructor found for class com.huawei.android.cust.cota.util.HwCustHwOucUtilityImpl, args = [Ljava.lang.Object;@c57b157\n12-18 15:27:46.783  9161  9161 D HwCust  : Create obj success use class com.huawei.android.cust.cota.util.HwCustHwOucUtilityImpl\n12-18 15:27:46.784  9161  9161 I HwOUC   : [main-1]enter detectStorage!!!(/HwOucUtility.java:476)\n12-18 15:27:46.787  9161  9161 I HwOUC   : [main-1]getCryptToUncryptDir dir is (/HwOucUtility.java:6762)\n12-18 15:27:46.788  9161  9161 I HwOUC   : [main-1]getCryptToUncryptDir return null(/HwOucUtility.java:6764)\n12-18 15:27:46.788  9161  9161 I HwOUC   : [main-1]enter detectStorage path is /storage/emulated/0(/HwOucUtility.java:493)\n12-18 15:27:46.789  9161  9161 I HwOUC   : [main-1]enter detectStorage isEmulated is true;isRemovable is false;isPrimary is true;uUid is null(/HwOucUtility.java:494)\n12-18 15:27:46.789  9161  9161 I HwOUC   : [main-1]enter detectStorage isPrimary or isEmulated true, set internal path: /storage/emulated/0(/HwOucUtility.java:496)\n12-18 15:27:46.791  9161  9161 E HwOUC   : [main-1]method invoke failed(/HwOucUtility.java:689)\n12-18 15:27:46.791  9161  9161 I HwOUC   : [main-1]isTablet() = false(/HwOucUtility.java:692)\n12-18 15:27:46.792  9161  9161 I HwOUC   : [main-1]getAutoDownloadValueOfStartupGuide(/HwOucUtility.java:4879)\n12-18 15:27:46.808  9161  9161 I HwOUC   : [main-1]getAutoDownloadValueOfStartupGuide autoDownloadValue is 1(/HwOucUtility.java:4887)\n12-18 15:27:46.810  9161  9161 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (/HwOucUtility.java:3159)\n12-18 15:27:46.810  9161  9161 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(/HwOucUtility.java:3162)\n12-18 15:27:46.810  9161  9161 I HwOUC   : [main-1]isInstallingStatus(/HwOucUtility.java:3207)\n12-18 15:27:46.811  9161  9161 I HwOUC   : [main-1]isAllFirmwareInstallingStatus(/HwOucUtility.java:3222)\n12-18 15:27:46.830  9161  9161 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-18 15:27:46.830  9161  9161 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(/HwOucUtility.java:4781)\n12-18 15:27:46.830  9161  9161 I HwOUC   : [main-1]isAllFirmwareInstallingStatus is false(/HwOucUtility.java:3224)\n12-18 15:27:46.831  9161  9161 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-18 15:27:46.831  9161  9161 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(/HwOucUtility.java:4781)\n12-18 15:27:46.832  9161  9161 I HwOUC   : [main-1]isAllFirmwareSwitchBeginUnderAB is false(/HwOucUtility.java:4744)\n12-18 15:27:46.832  9161  9161 I HwOUC   : [main-1]isInstallingStatus is false(/HwOucUtility.java:3211)\n12-18 15:27:46.832  9161  9161 I HwOUC   : [main-1]baseVersionOfNewVersion is MLA-AL00C00B316-log;isInstallingStatus is false(/HwOucUtility.java:3115)\n12-18 15:27:46.833  9161  9161 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta init beta type(/HwOucUtility.java:5637)\n12-18 15:27:46.847  9161  9161 E HwOUC   : [main-1]checkHwoucBetaApplicationExist NameNotFoundException is com.huawei.android.hwoucbeta(/HwOucUtility.java:5662)\n12-18 15:27:46.847  9161  9161 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta isBetaApplicationExist is false(/HwOucUtility.java:5641)\n12-18 15:27:46.847  9161  9161 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta BetaApplication not Exist(/HwOucUtility.java:5643)\n12-18 15:27:46.848  9161  9161 I HwOUC   : [main-1]initNewVersionRecord isLastUpdateAvailableForCurVersion false(/HwOucUtility.java:3077)\n12-18 15:27:46.850  9161  9161 I HwOUC   : [main-1]isDataExistInFirmwareTable cursor is null,return false(/HwOucUtility.java:3243)\n12-18 15:27:46.852  9161  9161 I HwOUC   : [main-1]initNewVersionRecord isDataExistInFirmwareTable false do not delete database record(/HwOucUtility.java:3091)\n12-18 15:27:46.854  9161  9161 I HwOUC   : [main-1]initNewVersionRecord systemTableValue is 0, do not process(/HwOucUtility.java:3099)\n12-18 15:27:46.854  9161  9161 I HwOUC   : [main-1]initSystemVersionInOmeInfo(/OemInfoUtil.java:130)\n12-18 15:27:46.855  9161  9161 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (/HwOucUtility.java:3159)\n12-18 15:27:46.855  9161  9161 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(/HwOucUtility.java:3162)\n12-18 15:27:46.855  9161  9161 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-18 15:27:46.856  9161  9161 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(/HwOucUtility.java:4850)\n12-18 15:27:46.856  9161  9161 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(/HwOucUtility.java:7048)\n12-18 15:27:46.857  9161  9161 I HwOUC   : [main-1]initSystemVersionInOmeInfo nextCheckNewVersionTime is 1482138594545; isABsystemSupport is false(/OemInfoUtil.java:133)\n12-18 15:27:46.857  9161  9161 I HwOUC   : [main-1]initSystemVersionInOmeInfo nextCheckNewVersionTime is not -1 and ABsystem not Support ,do not init system version in omeInfo : 1482138594545(/OemInfoUtil.java:159)\n12-18 15:27:46.857  9161  9161 I HwOUC   : [main-1]initTopActivityList.(/HwOucConfig.java:2876)\n12-18 15:27:46.858  9161  9161 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 15:27:46.858  9161  9161 E HwOUC   : [main-1]isSelfUpdateInstalling cacheContents is null(hwouc/HwOucUtility.java:7927)\n12-18 15:27:46.858  9161  9161 I HwOUC   : [main-1]HwOucApplication--onCreate, cacheCpuInfo is 8_2GHz(hwouc/HwOucApplication.java:69)\n12-18 15:27:46.859  9161  9161 I HwOUC   : [main-1]HwOucApplication--onCreate, end(hwouc/HwOucApplication.java:82)\n12-18 15:27:46.861  9161  9161 I OUC_COTA: [main-1]SilentDownload onReceive, action is:huawei.android.intent.action.SILENTDOWNLOAD_ALARM(/SilentDownloadReceiver.java:25)\n12-18 15:27:46.882  9161  9161 I HwOUC   : [main-1]isAlowUpdateCloud! 1networkAvailabletruenetworkRoamingfalsemobileNetworktrue(hwouc/CotaUtils.java:684)\n12-18 15:27:46.884  9161  9161 I HwOUC   : [main-1]needRequestPermission sdkInit is 24(hwouc/RequestPermissionsActivity.java:88)\n12-18 15:27:46.888  9161  9161 I HwOUC   : [main-1]needRequestPermission hasPermission return false(hwouc/RequestPermissionsActivity.java:94)\n12-18 15:27:46.889  9161  9161 I OUC_COTA: [main-1]SilentDownloadService-- service start(/SilentDownloadService.java:66)\n12-18 15:27:46.892  9161  9161 I OUC_COTA: [main-1]SilentDownloadService-- wifi start(/SilentDownloadService.java:75)\n12-18 15:27:47.270  9161  9161 I OUC_COTA: [main-1]DplmningParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:219)\n12-18 15:27:47.440  9161  9161 I OUC_COTA: [main-1]ApningParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:161)\n12-18 15:27:47.647  9161  9161 I OUC_COTA: [main-1]RoamingParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:104)\n12-18 15:27:47.816  9161  9161 I OUC_COTA: [main-1]wifiingParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:275)\n12-18 15:32:56.675  9161  9161 I HwCust  : Constructor found for class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl, args = [Ljava.lang.Object;@d6a50e5\n12-18 15:32:56.675  9161  9161 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 15:32:56.676  9161  9161 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 15:32:56.676  9161  9161 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 15:32:56.685  9161  9161 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-18 15:32:56.686  9161  9161 I HwOUC   : [main-1]Network not available(hwouc/DownloadReceiver.java:291)\n12-18 15:32:56.687  9161  9161 I SendBroadcastPermission: action:refreshComponent, mPermissionType:0\n12-18 15:33:21.499  9161  9161 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 15:33:21.500  9161  9161 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 15:33:21.501  9161  9161 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 15:33:21.507  9161  9161 I SendBroadcastPermission: action:huawei.android.intent.action.SILENTDOWNLOAD_ALARM, mPermissionType:0\n12-18 15:33:21.514  9161  9161 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-18 15:33:21.515  9161  9161 I HwOUC   : [main-1]Network available(hwouc/DownloadReceiver.java:206)\n12-18 15:33:21.515  9161  9161 I SendBroadcastPermission: action:refreshComponent, mPermissionType:0\n12-18 15:33:21.523  9161  9161 I HwOUC   : [main-1]checkRequestSendSuccessFlag is true(hwouc/DownloadReceiver.java:234)\n12-18 15:33:21.523  9161  9161 I HwOUC   : [main-1]is6HourReportedFlag is true(hwouc/DownloadReceiver.java:249)\n12-18 15:33:21.524  9161  9161 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (hwouc/HwOucUtility.java:3159)\n12-18 15:33:21.524  9161  9161 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(hwouc/HwOucUtility.java:3162)\n12-18 15:33:21.525  9161  9161 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 15:33:21.525  9161  9161 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(hwouc/HwOucUtility.java:4850)\n12-18 15:33:21.525  9161  9161 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(hwouc/HwOucUtility.java:7048)\n12-18 15:33:21.528  9161  9161 I HwOUC   : [main-1]initTopActivityList.(hwouc/HwOucConfig.java:2876)\n12-18 15:33:21.528  9161  9161 I HwOUC   : [main-1]initTopActivityList, mTopActivityList size = 9(hwouc/HwOucConfig.java:2882)\n12-18 15:33:21.530  9161  9161 I HwOUC   : [main-1]isTopActivitySelf, com.huawei.android.hwouc.ui.activities.firmware.FirmwareNewVersionDetailsActivity is topActivity false(hwouc/HwOucUtility.java:4341)\n12-18 15:33:21.530  9161  9161 I HwOUC   : [main-1]DownloadReceiver  isABsystemSupport is false; isAppUpgradeUnFinished is false; isFirmwareActivityTop is false(hwouc/DownloadReceiver.java:277)\n12-18 15:33:21.531  9161  9161 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 15:33:21.531  9161  9161 E HwOUC   : [main-1]isAllComponentsVerifySuccess--cacheContents is null(hwouc/UpdateAuthImpl.java:383)\n12-18 15:33:21.532  9161  9161 I HwOUC   : [main-1]/checkVersionPackageType/(hwouc/HwOucUtility.java:6680)\n12-18 15:33:21.557  9161  9161 I HwCust  : Constructor found for class com.huawei.android.cust.cota.protocol.HwCustKillMyselfProcessCheckThreadImpl, args = [Ljava.lang.Object;@40b066b\n12-18 15:33:21.557  9161  9161 D HwCust  : Create obj success use class com.huawei.android.cust.cota.protocol.HwCustKillMyselfProcessCheckThreadImpl\n"
@@ -1235,7 +1235,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 15:27:45.546",
@@ -1310,7 +1310,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "sdk_operation"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 20:18:54.032",
@@ -1372,7 +1372,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_sdk"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-18 10:39:47.181",
@@ -1444,7 +1444,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 19:25:15.617",
@@ -1520,7 +1520,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "device_log_upload"
+      "subcategory": "log-android"
     },
     "json": {
       "process": {
@@ -1581,7 +1581,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-17 23:11:31.001",
@@ -1649,7 +1649,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_logcat"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -1717,7 +1717,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 07:57:55.504",
@@ -1829,7 +1829,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "system_update"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": "10762",
@@ -1879,7 +1879,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "system_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 11:21:03.016",
@@ -1983,7 +1983,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "os_update"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -2108,7 +2108,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "file_upload"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": "20894",
@@ -2179,7 +2179,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "http_request"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 14:10:23.273",
@@ -2235,7 +2235,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "raw_log": "12-17 23:26:41.615   633 11628 I SDK     : <2016-12-17 23:26:41> [NOTICE] SDK: UE-SeC 2016-12-17 23:26:41:615 Level[NOTICE] magic[2316110112 1509]:sdkmdm: sdk mdm check start\n12-17 23:26:41.615   633 11628 I SDK     : \n12-17 23:26:41.615   633 11628 I SDK     : <2016-12-17 23:26:41> [NOTICE] SDK: UE-SeC 2016-12-17 23:26:41:615 Level[NOTICE] magic[2316110112 1382]:sdkmdm: enable\n12-17 23:26:41.615   633 11628 I SDK     : \n12-17 23:26:41.616   633 11628 I SDK     : <2016-12-17 23:26:41> [NOTICE] SDK: UE-SeC 2016-12-17 23:26:41:615 Level[NOTICE] magic[2316110112 2326]:FSM_OpenFile => [START],Mode[r]\n12-17 23:26:41.616   633 11628 I SDK     : \n12-17 23:26:41.616   633 11628 I SDK     : <2016-12-17 23:26:41> [NOTICE] SDK: UE-SeC 2016-12-17 23:26:41:616 Level[NOTICE] magic[2316110112 6458]:FSM_Tool_TreatFolderEncEx => [START]: pcFileName [cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult] \n12-17 23:26:41.616   633 11628 I SDK     : \n12-17 23:26:41.616   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:616 Level[ERR] magic[2316110112 10969]:FSM_Tool_LibcAccess ==> call access err path:</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/UppmQLksydF4jiPx7vvVu9V8mxcQz4u8FMyhVWeaf4oEyot2QtrRPxu0vWwa4WlizavfVwhJviOq7Vb4qM8FmQ==>, errno:<2>\n12-17 23:26:41.616   633 11628 E SDK     : \n12-17 23:26:41.616   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:616 Level[ERR] magic[2316110112 781]:AnyOffice_API_JudgePathCallBack111 /mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult /data/data/com.huawei.svn.hiwork/config/smime /mnt/sdcard/AnyOffice/MailContent/flags\n12-17 23:26:41.616   633 11628 E SDK     : \n12-17 23:26:41.617   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:616 Level[ERR] magic[2316110112 10969]:FSM_Tool_LibcAccess ==> call access err path:</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult>, errno:<2>\n12-17 23:26:41.617   633 11628 E SDK     : \n12-17 23:26:41.617   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:617 Level[ERR] magic[2316110112 200]:libcOpenFile => fopen[2]: path</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult>, mode<r>\n12-17 23:26:41.617   633 11628 E SDK     : \n12-17 23:26:41.617   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:617 Level[ERR] magic[2316110112 1818]:get =>FSM_Tool_CreateFileHandle error [-1000]\n12-17 23:26:41.617   633 11628 E SDK     : \n12-17 23:26:41.617   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:617 Level[ERR] magic[2316110112 1189]:FSM_Tool_TreatFolderKeyInfoNew =>GetKeyInfo  error[-1000]\n12-17 23:26:41.617   633 11628 E SDK     : \n12-17 23:26:41.617   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:617 Level[ERR] magic[2316110112 1552]:FSM_Tool_Tree_Enc_Path 1 fail(-1000) continue\n12-17 23:26:41.617   633 11628 E SDK     : \n12-17 23:26:41.617   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:617 Level[ERR] magic[2316110112 10969]:FSM_Tool_LibcAccess ==> call access err path:</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult>, errno:<2>\n12-17 23:26:41.617   633 11628 E SDK     : \n12-17 23:26:41.618   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:617 Level[ERR] magic[2316110112 10969]:FSM_Tool_LibcAccess ==> call access err path:</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult>, errno:<2>\n12-17 23:26:41.618   633 11628 E SDK     : \n12-17 23:26:41.618   633 11628 I SDK     : <2016-12-17 23:26:41> [NOTICE] SDK: UE-SeC 2016-12-17 23:26:41:618 Level[NOTICE] magic[2316110112 1564]:FSM_Tool_Tree_Enc_Path end [/mnt/sdcard/sandbox/AnyOfficeSDK/sdk/UppmQLksydF4jiPx7vvVu9V8mxcQz4u8FMyhVWeaf4oEyot2QtrRPxu0vWwa4WlizavfVwhJviOq7Vb4qM8FmQ==]\n12-17 23:26:41.618   633 11628 I SDK     : \n12-17 23:26:41.618   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:618 Level[ERR] magic[2316110112 200]:libcOpenFile => fopen[2]: path</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/UppmQLksydF4jiPx7vvVu9V8mxcQz4u8FMyhVWeaf4oEyot2QtrRPxu0vWwa4WlizavfVwhJviOq7Vb4qM8FmQ==>, mode<r>\n12-17 23:26:41.618   633 11628 E SDK     : \n12-17 23:26:41.618   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:618 Level[ERR] magic[2316110112 1992]:get =>FSM_Tool_CreateFileHandle error [-1000]\n12-17 23:26:41.618   633 11628 E SDK     : \n12-17 23:26:41.618   633 11628 I SDK     : <2016-12-17 23:26:41> [NOTICE] SDK: UE-SeC 2016-12-17 23:26:41:618 Level[NOTICE] magic[2316110112 2361]:FileSec: no bundle id in file tail.\n12-17 23:26:41.618   633 11628 I SDK     : \n12-17 23:26:41.618   633 11628 I SDK     : <2016-12-17 23:26:41> [NOTICE] SDK: UE-SeC 2016-12-17 23:26:41:618 Level[NOTICE] magic[2316110112 2421]:FileSec: have right to open file due to cur app sec level = 0 is higher than file app() sec level = 0.\n12-17 23:26:41.618   633 11628 I SDK     : \n12-17 23:26:41.619   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:619 Level[ERR] magic[2316110112 200]:libcOpenFile => fopen[2]: path</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/UppmQLksydF4jiPx7vvVu9V8mxcQz4u8FMyhVWeaf4oEyot2QtrRPxu0vWwa4WlizavfVwhJviOq7Vb4qM8FmQ==>, mode<rb>\n12-17 23:26:41.619   633 11628 E SDK     : \n12-17 23:26:41.619   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:619 Level[ERR] magic[2316110112 2503]:FSM_OpenFile => [ERROR] fname</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult> handle<00000000> err<-1000>\n12-17 23:26:41.619   633 11628 E SDK     : \n12-17 23:26:41.619   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:619 Level[ERR] magic[2316110112 116]:FSM_LibcOpenFile:FSM_OpenFile failed[/mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult]\n12-17 23:26:41.619   633 11628 E SDK     : \n12-17 23:26:41.619   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:619 Level[ERR] magic[2316110112 2493]:failed to read group with error code 1\n12-17 23:26:41.619   633 11628 E SDK     : \n12-17 23:26:41.619   633 11628 E SDK     : <2016-12-17 23:26:41> [ERR] SDK: UE-SeC 2016-12-17 23:26:41:619 Level[ERR] magic[2316110112 1523]:sdkmdm: NULL == pstHash\n12-17 23:26:41.619   633 11628 E SDK     : "
@@ -2263,7 +2263,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "device_log_upload"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 6673,
@@ -2319,7 +2319,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_system_update"
+      "subcategory": "log-android"
     },
     "json": {
       "log_data": "12-17 20:11:45.850 22206 22206 I HwOUC   : [main-1]HwOucApplication--onCreate, start(/HwOucApplication.java:52)\n12-17 20:11:45.852 22206 22206 I HwOUC   : [main-1]HwOucApplication--onCreate, processName is com.huawei.android.hwouc; android.os.Process.myUid() is 10053(/HwOucApplication.java:54)\n12-17 20:11:45.864 22206 22206 W CfgFilePolicy: No config file found for:xml/hwouc_presets.xml\n12-17 20:11:45.888 22206 22206 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(/HwOucUtility.java:3162)\n12-17 20:11:45.912 22206 22206 E HwOUC   : [main-1]checkHwoucBetaApplicationExist NameNotFoundException is com.huawei.android.hwoucbeta(/HwOucUtility.java:5662)\n12-17 20:11:45.928 22206 22206 I OUC_COTA: [main-1]SilentDownload onReceive, action is:huawei.android.intent.action.SILENTDOWNLOAD_ALARM(/SilentDownloadReceiver.java:25)\n12-17 20:11:45.942 22206 22206 I OUC_COTA: [main-1]SilentDownloadService-- service start(/SilentDownloadService.java:66)\n12-17 20:11:46.251 22206 22206 I OUC_COTA: [main-1]ApningParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:161)\n12-17 20:11:46.432 22206 22206 I OUC_COTA: [main-1]wifiingParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:275)\n12-17 21:26:09.139 22206 22206 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-17 21:26:09.140 22206 22206 I HwOUC   : [main-1]Network not available(hwouc/DownloadReceiver.java:291)\n12-17 21:27:05.492 22206 22206 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-17 21:27:05.493 22206 22206 I HwOUC   : [main-1]Network available(hwouc/DownloadReceiver.java:206)\n12-17 21:27:05.598 22206 22206 I HwOUC   : [main-1]DownloadReceiver  isABsystemSupport is false; isAppUpgradeUnFinished is false; isFirmwareActivityTop is false(hwouc/DownloadReceiver.java:277)\n12-17 21:27:05.604 22206 22206 E HwOUC   : [main-1]isAllComponentsVerifySuccess--cacheContents is null(hwouc/UpdateAuthImpl.java:383)"
@@ -2348,7 +2348,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "device_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 21:51:17.957",
@@ -2429,7 +2429,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 23:29:50.500",
@@ -2515,7 +2515,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Log"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -2619,7 +2619,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_client"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 14:15:20.799",
@@ -2719,7 +2719,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 07:29:23.689",
@@ -2804,7 +2804,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -2892,7 +2892,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 18:23:26.298",
@@ -3005,7 +3005,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -3058,7 +3058,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -3184,7 +3184,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 17:30:09.214",
@@ -3245,7 +3245,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "system_update"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": "7784",
@@ -3336,7 +3336,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 23:17:32.052",
@@ -3399,7 +3399,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 17:35:22.710",
@@ -3476,7 +3476,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "crash_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 08:10:56.998",
@@ -3536,7 +3536,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_system_log"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -3678,7 +3678,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-17 20:22:10.511",
@@ -3741,7 +3741,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 00:05:04.816",
@@ -3824,7 +3824,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "system_update"
+      "subcategory": "log-android"
     },
     "json": {
       "log_data": "12-18 19:25:15.624 24448 24448 I         : power log dlsym ok\n12-18 19:25:15.639 24448 24448 D ActivityThread: ActivityThread,attachApplication\n12-18 19:25:15.678 24448 24448 W art     : JIT profile information will not be recorded: profile file does not exits.\n12-18 19:25:15.709 24448 24448 I HwOUC   : [main-1]HwOUCSearchIndexablesProvider onCreate(/HwOUCSearchIndexablesProvider.java:136)\n12-18 19:25:15.717 24448 24448 I HwOUC   : [main-1]HwOucApplication--onCreate, start(/HwOucApplication.java:52)\n12-18 19:25:15.718 24448 24448 I HwOUC   : [main-1]HwOucApplication--getProcessName, pid is 24448(/HwOucApplication.java:98)\n12-18 19:25:15.718 24448 24448 I HwOUC   : [main-1]HwOucApplication--onCreate, processName is com.huawei.android.hwouc; android.os.Process.myUid() is 10053(/HwOucApplication.java:54)\n12-18 19:25:15.718 24448 24448 I HwOUC   : [main-1]HwOucApplication--onCreate, isDefaultProcess true, init(/HwOucApplication.java:58)\n12-18 19:25:15.719 24448 24448 I HwOUC   : [main-1]----load default presets...(/HwOucConfig.java:2414)\n12-18 19:25:15.723 24448 24448 W CfgFilePolicy: No config file found for:xml/hwouc_presets.xml\n12-18 19:25:15.723 24448 24448 I HwOUC   : [main-1]loadOucConfig by HwCfgFilePolicy.getCfgFileList no exception(/HwOucConfig.java:2517)\n12-18 19:25:15.732 24448 24448 I HwCust  : Constructor found for class com.huawei.android.cust.cota.util.HwCustHwOucUtilityImpl, args = [Ljava.lang.Object;@c57b157\n12-18 19:25:15.733 24448 24448 D HwCust  : Create obj success use class com.huawei.android.cust.cota.util.HwCustHwOucUtilityImpl\n12-18 19:25:15.734 24448 24448 I HwOUC   : [main-1]enter detectStorage!!!(/HwOucUtility.java:476)\n12-18 19:25:15.737 24448 24448 I HwOUC   : [main-1]getCryptToUncryptDir dir is (/HwOucUtility.java:6762)\n12-18 19:25:15.738 24448 24448 I HwOUC   : [main-1]getCryptToUncryptDir return null(/HwOucUtility.java:6764)\n12-18 19:25:15.738 24448 24448 I HwOUC   : [main-1]enter detectStorage path is /storage/emulated/0(/HwOucUtility.java:493)\n12-18 19:25:15.738 24448 24448 I HwOUC   : [main-1]enter detectStorage isEmulated is true;isRemovable is false;isPrimary is true;uUid is null(/HwOucUtility.java:494)\n12-18 19:25:15.739 24448 24448 I HwOUC   : [main-1]enter detectStorage isPrimary or isEmulated true, set internal path: /storage/emulated/0(/HwOucUtility.java:496)\n12-18 19:25:15.740 24448 24448 E HwOUC   : [main-1]method invoke failed(/HwOucUtility.java:689)\n12-18 19:25:15.741 24448 24448 I HwOUC   : [main-1]isTablet() = false(/HwOucUtility.java:692)\n12-18 19:25:15.741 24448 24448 I HwOUC   : [main-1]getAutoDownloadValueOfStartupGuide(/HwOucUtility.java:4879)\n12-18 19:25:15.744 24448 24448 I HwOUC   : [main-1]getAutoDownloadValueOfStartupGuide autoDownloadValue is 1(/HwOucUtility.java:4887)\n12-18 19:25:15.746 24448 24448 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (/HwOucUtility.java:3159)\n12-18 19:25:15.746 24448 24448 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(/HwOucUtility.java:3162)\n12-18 19:25:15.747 24448 24448 I HwOUC   : [main-1]isInstallingStatus(/HwOucUtility.java:3207)\n12-18 19:25:15.747 24448 24448 I HwOUC   : [main-1]isAllFirmwareInstallingStatus(/HwOucUtility.java:3222)\n12-18 19:25:15.788 24448 24448 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-18 19:25:15.788 24448 24448 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(/HwOucUtility.java:4781)\n12-18 19:25:15.788 24448 24448 I HwOUC   : [main-1]isAllFirmwareInstallingStatus is false(/HwOucUtility.java:3224)\n12-18 19:25:15.789 24448 24448 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-18 19:25:15.789 24448 24448 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(/HwOucUtility.java:4781)\n12-18 19:25:15.790 24448 24448 I HwOUC   : [main-1]isAllFirmwareSwitchBeginUnderAB is false(/HwOucUtility.java:4744)\n12-18 19:25:15.790 24448 24448 I HwOUC   : [main-1]isInstallingStatus is false(/HwOucUtility.java:3211)\n12-18 19:25:15.790 24448 24448 I HwOUC   : [main-1]baseVersionOfNewVersion is MLA-AL00C00B316-log;isInstallingStatus is false(/HwOucUtility.java:3115)\n12-18 19:25:15.791 24448 24448 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta init beta type(/HwOucUtility.java:5637)\n12-18 19:25:15.792 24448 24448 E HwOUC   : [main-1]checkHwoucBetaApplicationExist NameNotFoundException is com.huawei.android.hwoucbeta(/HwOucUtility.java:5662)\n12-18 19:25:15.792 24448 24448 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta isBetaApplicationExist is false(/HwOucUtility.java:5641)\n12-18 19:25:15.792 24448 24448 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta BetaApplication not Exist(/HwOucUtility.java:5643)\n12-18 19:25:15.793 24448 24448 I HwOUC   : [main-1]initNewVersionRecord isLastUpdateAvailableForCurVersion false(/HwOucUtility.java:3077)\n12-18 19:25:15.796 24448 24448 I HwOUC   : [main-1]isDataExistInFirmwareTable cursor is null,return false(/HwOucUtility.java:3243)\n12-18 19:25:15.797 24448 24448 I HwOUC   : [main-1]initNewVersionRecord isDataExistInFirmwareTable false do not delete database record(/HwOucUtility.java:3091)\n12-18 19:25:15.800 24448 24448 I HwOUC   : [main-1]initNewVersionRecord systemTableValue is 0, do not process(/HwOucUtility.java:3099)\n12-18 19:25:15.801 24448 24448 I HwOUC   : [main-1]initSystemVersionInOmeInfo(/OemInfoUtil.java:130)\n12-18 19:25:15.802 24448 24448 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (/HwOucUtility.java:3159)\n12-18 19:25:15.802 24448 24448 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(/HwOucUtility.java:3162)\n12-18 19:25:15.803 24448 24448 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-18 19:25:15.803 24448 24448 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(/HwOucUtility.java:4850)\n12-18 19:25:15.803 24448 24448 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(/HwOucUtility.java:7048)\n12-18 19:25:15.804 24448 24448 I HwOUC   : [main-1]initSystemVersionInOmeInfo nextCheckNewVersionTime is 1482138594545; isABsystemSupport is false(/OemInfoUtil.java:133)\n12-18 19:25:15.804 24448 24448 I HwOUC   : [main-1]initSystemVersionInOmeInfo nextCheckNewVersionTime is not -1 and ABsystem not Support ,do not init system version in omeInfo : 1482138594545(/OemInfoUtil.java:159)\n12-18 19:25:15.804 24448 24448 I HwOUC   : [main-1]initTopActivityList.(/HwOucConfig.java:2876)\n12-18 19:25:15.805 24448 24448 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 19:25:15.805 24448 24448 E HwOUC   : [main-1]isSelfUpdateInstalling cacheContents is null(hwouc/HwOucUtility.java:7927)\n12-18 19:25:15.805 24448 24448 I HwOUC   : [main-1]HwOucApplication--onCreate, cacheCpuInfo is 8_2GHz(hwouc/HwOucApplication.java:69)\n12-18 19:25:15.806 24448 24448 I HwOUC   : [main-1]HwOucApplication--onCreate, end(hwouc/HwOucApplication.java:82)\n12-18 19:25:15.808 24448 24448 I OUC_COTA: [main-1]SilentDownload onReceive, action is:huawei.android.intent.action.SILENTDOWNLOAD_ALARM(/SilentDownloadReceiver.java:25)\n12-18 19:25:15.816 24448 24448 I HwOUC   : [main-1]isAlowUpdateCloud! 1networkAvailabletruenetworkRoamingfalsemobileNetworktrue(hwouc/CotaUtils.java:684)\n12-18 19:25:15.837 24448 24448 I HwOUC   : [main-1]needRequestPermission sdkInit is 24(hwouc/RequestPermissionsActivity.java:88)\n12-18 19:25:15.843 24448 24448 I HwOUC   : [main-1]needRequestPermission hasPermission return false(hwouc/RequestPermissionsActivity.java:94)\n12-18 19:25:15.843 24448 24448 I OUC_COTA: [main-1]SilentDownloadService-- service start(/SilentDownloadService.java:66)\n12-18 19:25:15.850 24448 24448 I OUC_COTA: [main-1]SilentDownloadService-- wifi start(/SilentDownloadService.java:75)\n12-18 19:25:16.568 24448 24448 I OUC_COTA: [main-1]DplmningParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:219)\n12-18 19:25:16.772 24448 24448 I OUC_COTA: [main-1]ApningParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:161)\n12-18 19:25:16.998 24448 24448 I OUC_COTA: [main-1]RoamingParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:104)\n12-18 19:25:17.201 24448 24448 I OUC_COTA: [main-1]wifiingParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:275)\n12-18 19:49:28.872 24448 24448 I HwCust  : Constructor found for class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl, args = [Ljava.lang.Object;@d6a50e5\n12-18 19:49:28.872 24448 24448 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 19:49:28.873 24448 24448 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 19:49:28.873 24448 24448 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 19:49:28.877 24448 24448 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-18 19:49:28.878 24448 24448 I HwOUC   : [main-1]Network not available(hwouc/DownloadReceiver.java:291)\n12-18 19:49:28.879 24448 24448 I SendBroadcastPermission: action:refreshComponent, mPermissionType:0\n12-18 19:49:55.165 24448 24448 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 19:49:55.165 24448 24448 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 19:49:55.166 24448 24448 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 19:49:55.174 24448 24448 I SendBroadcastPermission: action:huawei.android.intent.action.SILENTDOWNLOAD_ALARM, mPermissionType:0\n12-18 19:49:55.197 24448 24448 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-18 19:49:55.198 24448 24448 I HwOUC   : [main-1]Network available(hwouc/DownloadReceiver.java:206)\n12-18 19:49:55.198 24448 24448 I SendBroadcastPermission: action:refreshComponent, mPermissionType:0\n12-18 19:49:55.228 24448 24448 I HwOUC   : [main-1]checkRequestSendSuccessFlag is true(hwouc/DownloadReceiver.java:234)\n12-18 19:49:55.228 24448 24448 I HwOUC   : [main-1]is6HourReportedFlag is true(hwouc/DownloadReceiver.java:249)\n12-18 19:49:55.229 24448 24448 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (hwouc/HwOucUtility.java:3159)\n12-18 19:49:55.229 24448 24448 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(hwouc/HwOucUtility.java:3162)\n12-18 19:49:55.230 24448 24448 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 19:49:55.230 24448 24448 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(hwouc/HwOucUtility.java:4850)\n12-18 19:49:55.230 24448 24448 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(hwouc/HwOucUtility.java:7048)\n12-18 19:49:55.234 24448 24448 I HwOUC   : [main-1]initTopActivityList.(hwouc/HwOucConfig.java:2876)\n12-18 19:49:55.234 24448 24448 I HwOUC   : [main-1]initTopActivityList, mTopActivityList size = 9(hwouc/HwOucConfig.java:2882)\n12-18 19:49:55.236 24448 24448 I HwOUC   : [main-1]isTopActivitySelf, com.huawei.android.hwouc.ui.activities.firmware.FirmwareNewVersionDetailsActivity is topActivity false(hwouc/HwOucUtility.java:4341)\n12-18 19:49:55.236 24448 24448 I HwOUC   : [main-1]DownloadReceiver  isABsystemSupport is false; isAppUpgradeUnFinished is false; isFirmwareActivityTop is false(hwouc/DownloadReceiver.java:277)\n12-18 19:49:55.237 24448 24448 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 19:49:55.237 24448 24448 E HwOUC   : [main-1]isAllComponentsVerifySuccess--cacheContents is null(hwouc/UpdateAuthImpl.java:383)\n12-18 19:49:55.237 24448 24448 I HwOUC   : [main-1]/checkVersionPackageType/(hwouc/HwOucUtility.java:6680)\n12-18 19:49:55.251 24448 24448 I HwCust  : Constructor found for class com.huawei.android.cust.cota.protocol.HwCustKillMyselfProcessCheckThreadImpl, args = [Ljava.lang.Object;@40b066b\n12-18 19:49:55.251 24448 24448 D HwCust  : Create obj success use class com.huawei.android.cust.cota.protocol.HwCustKillMyselfProcessCheckThreadImpl\n"
@@ -3853,7 +3853,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "System Update"
+      "subcategory": "log-android"
     },
     "json": {
       "process": {
@@ -3942,7 +3942,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "system_update"
+      "subcategory": "log-android"
     },
     "json": {
       "process_name": "com.huawei.android.hwouc",
@@ -4039,7 +4039,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "raw_log": "12-17 21:28:18.309   633 31727 I SDK     : <2016-12-17 21:28:18> [NOTICE] SDK: UE-SeC 2016-12-17 21:28:18:309 Level[NOTICE] magic[2444093728 1509]:sdkmdm: sdk mdm check start\n12-17 21:28:18.309   633 31727 I SDK     : \n12-17 21:28:18.309   633 31727 I SDK     : <2016-12-17 21:28:18> [NOTICE] SDK: UE-SeC 2016-12-17 21:28:18:309 Level[NOTICE] magic[2444093728 1382]:sdkmdm: enable\n12-17 21:28:18.309   633 31727 I SDK     : \n12-17 21:28:18.309   633 31727 I SDK     : <2016-12-17 21:28:18> [NOTICE] SDK: UE-SeC 2016-12-17 21:28:18:309 Level[NOTICE] magic[2444093728 2326]:FSM_OpenFile => [START],Mode[r]\n12-17 21:28:18.309   633 31727 I SDK     : \n12-17 21:28:18.310   633 31727 I SDK     : <2016-12-17 21:28:18> [NOTICE] SDK: UE-SeC 2016-12-17 21:28:18:310 Level[NOTICE] magic[2444093728 6458]:FSM_Tool_TreatFolderEncEx => [START]: pcFileName [cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult] \n12-17 21:28:18.310   633 31727 I SDK     : \n12-17 21:28:18.310   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:310 Level[ERR] magic[2444093728 10969]:FSM_Tool_LibcAccess ==> call access err path:</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/UppmQLksydF4jiPx7vvVu9V8mxcQz4u8FMyhVWeaf4oEyot2QtrRPxu0vWwa4WlizavfVwhJviOq7Vb4qM8FmQ==>, errno:<2>\n12-17 21:28:18.310   633 31727 E SDK     : \n12-17 21:28:18.310   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:310 Level[ERR] magic[2444093728 781]:AnyOffice_API_JudgePathCallBack111 /mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult /data/data/com.huawei.svn.hiwork/config/smime /mnt/sdcard/AnyOffice/MailContent/flags\n12-17 21:28:18.310   633 31727 E SDK     : \n12-17 21:28:18.310   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:310 Level[ERR] magic[2444093728 10969]:FSM_Tool_LibcAccess ==> call access err path:</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult>, errno:<2>\n12-17 21:28:18.310   633 31727 E SDK     : \n12-17 21:28:18.310   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:310 Level[ERR] magic[2444093728 200]:libcOpenFile => fopen[2]: path</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult>, mode<r>\n12-17 21:28:18.310   633 31727 E SDK     : \n12-17 21:28:18.310   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:310 Level[ERR] magic[2444093728 1818]:get =>FSM_Tool_CreateFileHandle error [-1000]\n12-17 21:28:18.310   633 31727 E SDK     : \n12-17 21:28:18.310   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:310 Level[ERR] magic[2444093728 1189]:FSM_Tool_TreatFolderKeyInfoNew =>GetKeyInfo  error[-1000]\n12-17 21:28:18.310   633 31727 E SDK     : \n12-17 21:28:18.311   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:310 Level[ERR] magic[2444093728 1552]:FSM_Tool_Tree_Enc_Path 1 fail(-1000) continue\n12-17 21:28:18.311   633 31727 E SDK     : \n12-17 21:28:18.311   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:311 Level[ERR] magic[2444093728 10969]:FSM_Tool_LibcAccess ==> call access err path:</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult>, errno:<2>\n12-17 21:28:18.311   633 31727 E SDK     : \n12-17 21:28:18.311   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:311 Level[ERR] magic[2444093728 10969]:FSM_Tool_LibcAccess ==> call access err path:</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult>, errno:<2>\n12-17 21:28:18.311   633 31727 E SDK     : \n12-17 21:28:18.311   633 31727 I SDK     : <2016-12-17 21:28:18> [NOTICE] SDK: UE-SeC 2016-12-17 21:28:18:311 Level[NOTICE] magic[2444093728 1564]:FSM_Tool_Tree_Enc_Path end [/mnt/sdcard/sandbox/AnyOfficeSDK/sdk/UppmQLksydF4jiPx7vvVu9V8mxcQz4u8FMyhVWeaf4oEyot2QtrRPxu0vWwa4WlizavfVwhJviOq7Vb4qM8FmQ==]\n12-17 21:28:18.311   633 31727 I SDK     : \n12-17 21:28:18.311   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:311 Level[ERR] magic[2444093728 200]:libcOpenFile => fopen[2]: path</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/UppmQLksydF4jiPx7vvVu9V8mxcQz4u8FMyhVWeaf4oEyot2QtrRPxu0vWwa4WlizavfVwhJviOq7Vb4qM8FmQ==>, mode<r>\n12-17 21:28:18.311   633 31727 E SDK     : \n12-17 21:28:18.311   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:311 Level[ERR] magic[2444093728 1992]:get =>FSM_Tool_CreateFileHandle error [-1000]\n12-17 21:28:18.311   633 31727 E SDK     : \n12-17 21:28:18.311   633 31727 I SDK     : <2016-12-17 21:28:18> [NOTICE] SDK: UE-SeC 2016-12-17 21:28:18:311 Level[NOTICE] magic[2444093728 2361]:FileSec: no bundle id in file tail.\n12-17 21:28:18.311   633 31727 I SDK     : \n12-17 21:28:18.311   633 31727 I SDK     : <2016-12-17 21:28:18> [NOTICE] SDK: UE-SeC 2016-12-17 21:28:18:311 Level[NOTICE] magic[2444093728 2421]:FileSec: have right to open file due to cur app sec level = 0 is higher than file app() sec level = 0.\n12-17 21:28:18.311   633 31727 I SDK     : \n12-17 21:28:18.311   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:311 Level[ERR] magic[2444093728 200]:libcOpenFile => fopen[2]: path</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/UppmQLksydF4jiPx7vvVu9V8mxcQz4u8FMyhVWeaf4oEyot2QtrRPxu0vWwa4WlizavfVwhJviOq7Vb4qM8FmQ==>, mode<rb>\n12-17 21:28:18.311   633 31727 E SDK     : \n12-17 21:28:18.311   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:311 Level[ERR] magic[2444093728 2503]:FSM_OpenFile => [ERROR] fname</mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult> handle<00000000> err<-1000>\n12-17 21:28:18.311   633 31727 E SDK     : \n12-17 21:28:18.312   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:312 Level[ERR] magic[2444093728 116]:FSM_LibcOpenFile:FSM_OpenFile failed[/mnt/sdcard/sandbox/AnyOfficeSDK/sdk/cffb628ad277b3e98d6e9ae9dceca2a7_AnyOfficeSDKMDMResult]\n12-17 21:28:18.312   633 31727 E SDK     : \n12-17 21:28:18.312   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:312 Level[ERR] magic[2444093728 2493]:failed to read group with error code 1\n12-17 21:28:18.312   633 31727 E SDK     : \n12-17 21:28:18.312   633 31727 E SDK     : <2016-12-17 21:28:18> [ERR] SDK: UE-SeC 2016-12-17 21:28:18:312 Level[ERR] magic[2444093728 1523]:sdkmdm: NULL == pstHash\n12-17 21:28:18.312   633 31727 E SDK     : "
@@ -4066,7 +4066,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 14:07:30.617",
@@ -4161,7 +4161,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_system_update"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 21618,
@@ -4266,7 +4266,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "system_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 21:26:38.689",
@@ -4356,7 +4356,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 23:01:07.081",
@@ -4445,7 +4445,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_system_log"
+      "subcategory": "log-android"
     },
     "json": {
       "raw_log": "12-17 22:30:34.791  5273  5273 I         : power log dlsym ok\n12-17 22:30:34.810  5273  5273 D ActivityThread: ActivityThread,attachApplication\n12-17 22:30:34.835  5273  5273 W art     : JIT profile information will not be recorded: profile file does not exits.\n12-17 22:30:34.854  5273  5273 I HwOUC   : [main-1]HwOUCSearchIndexablesProvider onCreate(/HwOUCSearchIndexablesProvider.java:136)\n12-17 22:30:34.862  5273  5273 I HwOUC   : [main-1]HwOucApplication--onCreate, start(/HwOucApplication.java:52)\n12-17 22:30:34.864  5273  5273 I HwOUC   : [main-1]HwOucApplication--getProcessName, pid is 5273(/HwOucApplication.java:98)\n12-17 22:30:34.864  5273  5273 I HwOUC   : [main-1]HwOucApplication--onCreate, processName is com.huawei.android.hwouc; android.os.Process.myUid() is 10053(/HwOucApplication.java:54)\n12-17 22:30:34.864  5273  5273 I HwOUC   : [main-1]HwOucApplication--onCreate, isDefaultProcess true, init(/HwOucApplication.java:58)\n12-17 22:30:34.865  5273  5273 I HwOUC   : [main-1]----load default presets...(/HwOucConfig.java:2414)\n12-17 22:30:34.869  5273  5273 W CfgFilePolicy: No config file found for:xml/hwouc_presets.xml\n12-17 22:30:34.870  5273  5273 I HwOUC   : [main-1]loadOucConfig by HwCfgFilePolicy.getCfgFileList no exception(/HwOucConfig.java:2517)\n12-17 22:30:34.879  5273  5273 I HwCust  : Constructor found for class com.huawei.android.cust.cota.util.HwCustHwOucUtilityImpl, args = [Ljava.lang.Object;@c57b157\n12-17 22:30:34.879  5273  5273 D HwCust  : Create obj success use class com.huawei.android.cust.cota.util.HwCustHwOucUtilityImpl\n12-17 22:30:34.881  5273  5273 I HwOUC   : [main-1]enter detectStorage!!!(/HwOucUtility.java:476)\n12-17 22:30:34.884  5273  5273 I HwOUC   : [main-1]getCryptToUncryptDir dir is (/HwOucUtility.java:6762)\n12-17 22:30:34.884  5273  5273 I HwOUC   : [main-1]getCryptToUncryptDir return null(/HwOucUtility.java:6764)\n12-17 22:30:34.885  5273  5273 I HwOUC   : [main-1]enter detectStorage path is /storage/emulated/0(/HwOucUtility.java:493)\n12-17 22:30:34.885  5273  5273 I HwOUC   : [main-1]enter detectStorage isEmulated is true;isRemovable is false;isPrimary is true;uUid is null(/HwOucUtility.java:494)\n12-17 22:30:34.885  5273  5273 I HwOUC   : [main-1]enter detectStorage isPrimary or isEmulated true, set internal path: /storage/emulated/0(/HwOucUtility.java:496)\n12-17 22:30:34.887  5273  5273 E HwOUC   : [main-1]method invoke failed(/HwOucUtility.java:689)\n12-17 22:30:34.888  5273  5273 I HwOUC   : [main-1]isTablet() = false(/HwOucUtility.java:692)\n12-17 22:30:34.888  5273  5273 I HwOUC   : [main-1]getAutoDownloadValueOfStartupGuide(/HwOucUtility.java:4879)\n12-17 22:30:34.892  5273  5273 I HwOUC   : [main-1]getAutoDownloadValueOfStartupGuide autoDownloadValue is 1(/HwOucUtility.java:4887)\n12-17 22:30:34.894  5273  5273 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (/HwOucUtility.java:3159)\n12-17 22:30:34.894  5273  5273 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(/HwOucUtility.java:3162)\n12-17 22:30:34.895  5273  5273 I HwOUC   : [main-1]isInstallingStatus(/HwOucUtility.java:3207)\n12-17 22:30:34.895  5273  5273 I HwOUC   : [main-1]isAllFirmwareInstallingStatus(/HwOucUtility.java:3222)\n12-17 22:30:34.918  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-17 22:30:34.918  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(/HwOucUtility.java:4781)\n12-17 22:30:34.919  5273  5273 I HwOUC   : [main-1]isAllFirmwareInstallingStatus is false(/HwOucUtility.java:3224)\n12-17 22:30:34.919  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-17 22:30:34.919  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(/HwOucUtility.java:4781)\n12-17 22:30:34.920  5273  5273 I HwOUC   : [main-1]isAllFirmwareSwitchBeginUnderAB is false(/HwOucUtility.java:4744)\n12-17 22:30:34.920  5273  5273 I HwOUC   : [main-1]isInstallingStatus is false(/HwOucUtility.java:3211)\n12-17 22:30:34.921  5273  5273 I HwOUC   : [main-1]baseVersionOfNewVersion is MLA-AL00C00B316-log;isInstallingStatus is false(/HwOucUtility.java:3115)\n12-17 22:30:34.921  5273  5273 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta init beta type(/HwOucUtility.java:5637)\n12-17 22:30:34.923  5273  5273 E HwOUC   : [main-1]checkHwoucBetaApplicationExist NameNotFoundException is com.huawei.android.hwoucbeta(/HwOucUtility.java:5662)\n12-17 22:30:34.924  5273  5273 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta isBetaApplicationExist is false(/HwOucUtility.java:5641)\n12-17 22:30:34.924  5273  5273 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta BetaApplication not Exist(/HwOucUtility.java:5643)\n12-17 22:30:34.925  5273  5273 I HwOUC   : [main-1]initNewVersionRecord isLastUpdateAvailableForCurVersion false(/HwOucUtility.java:3077)\n12-17 22:30:34.927  5273  5273 I HwOUC   : [main-1]isDataExistInFirmwareTable cursor is null,return false(/HwOucUtility.java:3243)\n12-17 22:30:34.928  5273  5273 I HwOUC   : [main-1]initNewVersionRecord isDataExistInFirmwareTable false do not delete database record(/HwOucUtility.java:3091)\n12-17 22:30:34.929  5273  5273 I HwOUC   : [main-1]initNewVersionRecord systemTableValue is 0, do not process(/HwOucUtility.java:3099)\n12-17 22:30:34.930  5273  5273 I HwOUC   : [main-1]initSystemVersionInOmeInfo(/OemInfoUtil.java:130)\n12-17 22:30:34.931  5273  5273 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (/HwOucUtility.java:3159)\n12-17 22:30:34.931  5273  5273 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(/HwOucUtility.java:3162)\n12-17 22:30:34.935  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-17 22:30:34.936  5273  5273 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(/HwOucUtility.java:4850)\n12-17 22:30:34.938  5273  5273 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(/HwOucUtility.java:7048)\n12-17 22:30:34.938  5273  5273 I HwOUC   : [main-1]initSystemVersionInOmeInfo nextCheckNewVersionTime is 1482138594545; isABsystemSupport is false(/OemInfoUtil.java:133)\n12-17 22:30:34.938  5273  5273 I HwOUC   : [main-1]initSystemVersionInOmeInfo nextCheckNewVersionTime is not -1 and ABsystem not Support ,do not init system version in omeInfo : 1482138594545(/OemInfoUtil.java:159)\n12-17 22:30:34.939  5273  5273 I HwOUC   : [main-1]initTopActivityList.(/HwOucConfig.java:2876)\n12-17 22:30:34.939  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-17 22:30:34.940  5273  5273 E HwOUC   : [main-1]isSelfUpdateInstalling cacheContents is null(hwouc/HwOucUtility.java:7927)\n12-17 22:30:34.940  5273  5273 I HwOUC   : [main-1]HwOucApplication--onCreate, cacheCpuInfo is 8_2GHz(hwouc/HwOucApplication.java:69)\n12-17 22:30:34.941  5273  5273 I HwOUC   : [main-1]HwOucApplication--onCreate, end(hwouc/HwOucApplication.java:82)\n12-17 22:30:34.943  5273  5273 I OUC_COTA: [main-1]SilentDownload onReceive, action is:huawei.android.intent.action.SILENTDOWNLOAD_ALARM(/SilentDownloadReceiver.java:25)\n12-17 22:30:34.953  5273  5273 I HwOUC   : [main-1]isAlowUpdateCloud! 1networkAvailabletruenetworkRoamingfalsemobileNetworktrue(hwouc/CotaUtils.java:684)\n12-17 22:30:34.956  5273  5273 I HwOUC   : [main-1]needRequestPermission sdkInit is 24(hwouc/RequestPermissionsActivity.java:88)\n12-17 22:30:34.958  5273  5273 I HwOUC   : [main-1]needRequestPermission hasPermission return false(hwouc/RequestPermissionsActivity.java:94)\n12-17 22:30:34.959  5273  5273 I OUC_COTA: [main-1]SilentDownloadService-- service start(/SilentDownloadService.java:66)\n12-17 22:30:34.962  5273  5273 I OUC_COTA: [main-1]SilentDownloadService-- wifi start(/SilentDownloadService.java:75)\n12-17 22:30:35.255  5273  5273 I OUC_COTA: [main-1]RoamingParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:104)\n12-17 22:30:35.431  5273  5273 I OUC_COTA: [main-1]ApningParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:161)\n12-17 22:30:35.621  5273  5273 I OUC_COTA: [main-1]DplmningParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:219)\n12-17 22:30:35.781  5273  5273 I OUC_COTA: [main-1]wifiingParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:275)\n12-17 22:33:44.208  5273  5273 I HwOUC   : [main-1]PowerConnectedReceiver receive ACTION_POWER_CONNECTED intent(hwouc/PowerConnectedReceiver.java:30)\n12-17 22:33:44.227  5273  5273 I HwOUC   : [main-1]WifiAutoDownloadManageService onCreate()(hwouc/WifiAutoDownloadManageService.java:41)\n12-17 22:33:44.230  5273  5273 E HwOUC   : [main-1]checkHwoucBetaApplicationExist NameNotFoundException is com.huawei.android.hwoucbeta(hwouc/HwOucUtility.java:5662)\n12-17 22:33:44.230  5273  5273 W Settings: Setting device_provisioned has moved from android.provider.Settings.Secure to android.provider.Settings.Global.\n12-17 22:33:44.231  5273  5273 I HwOUC   : [main-1]isStartupGuideFinished startupGuideStatus is 1(hwouc/HwOucUtility.java:4935)\n12-17 22:33:44.231  5273  5273 I HwOUC   : [main-1]isStartupGuideFinished true(hwouc/HwOucUtility.java:4943)\n12-17 22:33:44.232  5273  5273 E libc    : Access denied finding property \"huawei.check_root.hotapermit\"\n12-17 22:33:44.232  5273  5273 I HwOUC   : [main-1]isAutoDownloadAvailable isFeatureSupport is true;isRootedByUser is false(hwouc/HwOucUtility.java:5094)\n12-17 22:33:44.233  5273  5273 I HwOUC   : [main-1]isAutoDownloadAvailable return true(hwouc/HwOucUtility.java:5099)\n12-17 22:33:44.276  5273  5273 I HwOUC   : [main-1]isMeteredWifi is false(hwouc/HwOucUtility.java:3827)\n12-17 22:33:46.282  5273  5273 I HwOUC   : [main-1]WifiAutoDownloadManageService ServiceHandler(hwouc/WifiAutoDownloadManageService.java:233)\n12-17 22:33:46.283  5273  5273 I HwOUC   : [main-1]WifiAutoDownloadManageService ServiceHandler stop service(hwouc/WifiAutoDownloadManageService.java:236)\n12-17 22:33:46.287  5273  5273 I HwOUC   : [main-1]WifiAutoDownloadManageService, onDestroy(hwouc/WifiAutoDownloadManageService.java:151)\n12-17 22:51:14.156  5273  5273 I HwOUC   : [main-1]PowerConnectedReceiver receive ACTION_POWER_DISCONNECTED intent(hwouc/PowerConnectedReceiver.java:34)\n12-17 22:51:14.157  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-17 22:51:14.157  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(hwouc/HwOucUtility.java:4781)\n12-17 22:51:14.158  5273  5273 I HwOUC   : [main-1]isAllFirmwareVerifySuccess is false(hwouc/HwOucUtility.java:4721)\n12-17 22:51:14.158  5273  5273 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (hwouc/HwOucUtility.java:3159)\n12-17 22:51:14.159  5273  5273 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(hwouc/HwOucUtility.java:3162)\n12-17 22:51:14.160  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-17 22:51:14.161  5273  5273 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(hwouc/HwOucUtility.java:4850)\n12-17 22:51:14.162  5273  5273 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(hwouc/HwOucUtility.java:7048)\n12-17 22:51:14.162  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-17 22:51:14.163  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(hwouc/HwOucUtility.java:4781)\n12-17 22:51:14.196  5273  5273 I HwOUC   : [main-1]isAllFirmwareInstallSuccessUnderAB is false(hwouc/HwOucUtility.java:4732)\n12-17 22:51:14.198  5273  5273 I HwOUC   : [main-1]PowerConnectedReceiver nextInstallRemindTime is -1 or nextSwitchABSystemRemindTime is -1 not AllFirmwareVerifySuccess and not AllFirmwareInstallSuccessUnderAB, do noting(hwouc/PowerConnectedReceiver.java:123)\n12-17 22:51:19.169  5273  5273 I HwOUC   : [main-1]PowerConnectedReceiver receive ACTION_POWER_CONNECTED intent(hwouc/PowerConnectedReceiver.java:30)\n12-17 22:51:19.179  5273  5273 I HwOUC   : [main-1]WifiAutoDownloadManageService onCreate()(hwouc/WifiAutoDownloadManageService.java:41)\n12-17 22:51:19.181  5273  5273 E HwOUC   : [main-1]checkHwoucBetaApplicationExist NameNotFoundException is com.huawei.android.hwoucbeta(hwouc/HwOucUtility.java:5662)\n12-17 22:51:19.181  5273  5273 W Settings: Setting device_provisioned has moved from android.provider.Settings.Secure to android.provider.Settings.Global.\n12-17 22:51:19.183  5273  5273 I HwOUC   : [main-1]isStartupGuideFinished startupGuideStatus is 1(hwouc/HwOucUtility.java:4935)\n12-17 22:51:19.183  5273  5273 I HwOUC   : [main-1]isStartupGuideFinished true(hwouc/HwOucUtility.java:4943)\n12-17 22:51:19.185  5273  5273 E libc    : Access denied finding property \"huawei.check_root.hotapermit\"\n12-17 22:51:19.188  5273  5273 I HwOUC   : [main-1]isAutoDownloadAvailable isFeatureSupport is true;isRootedByUser is false(hwouc/HwOucUtility.java:5094)\n12-17 22:51:19.191  5273  5273 I HwOUC   : [main-1]isAutoDownloadAvailable return true(hwouc/HwOucUtility.java:5099)\n12-17 22:51:19.214  5273  5273 I HwOUC   : [main-1]isMeteredWifi is false(hwouc/HwOucUtility.java:3827)\n12-17 22:51:21.216  5273  5273 I HwOUC   : [main-1]WifiAutoDownloadManageService ServiceHandler(hwouc/WifiAutoDownloadManageService.java:233)\n12-17 22:51:21.216  5273  5273 I HwOUC   : [main-1]WifiAutoDownloadManageService ServiceHandler stop service(hwouc/WifiAutoDownloadManageService.java:236)\n12-17 22:51:21.219  5273  5273 I HwOUC   : [main-1]WifiAutoDownloadManageService, onDestroy(hwouc/WifiAutoDownloadManageService.java:151)\n12-18 00:04:58.998  5273  5273 I HwOUC   : [main-1]PowerConnectedReceiver receive ACTION_POWER_DISCONNECTED intent(hwouc/PowerConnectedReceiver.java:34)\n12-18 00:04:58.998  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 00:04:58.998  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(hwouc/HwOucUtility.java:4781)\n12-18 00:04:58.999  5273  5273 I HwOUC   : [main-1]isAllFirmwareVerifySuccess is false(hwouc/HwOucUtility.java:4721)\n12-18 00:04:58.999  5273  5273 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (hwouc/HwOucUtility.java:3159)\n12-18 00:04:58.999  5273  5273 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(hwouc/HwOucUtility.java:3162)\n12-18 00:04:59.000  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 00:04:59.001  5273  5273 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(hwouc/HwOucUtility.java:4850)\n12-18 00:04:59.001  5273  5273 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(hwouc/HwOucUtility.java:7048)\n12-18 00:04:59.001  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 00:04:59.002  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(hwouc/HwOucUtility.java:4781)\n12-18 00:04:59.002  5273  5273 I HwOUC   : [main-1]isAllFirmwareInstallSuccessUnderAB is false(hwouc/HwOucUtility.java:4732)\n12-18 00:04:59.003  5273  5273 I HwOUC   : [main-1]PowerConnectedReceiver nextInstallRemindTime is -1 or nextSwitchABSystemRemindTime is -1 not AllFirmwareVerifySuccess and not AllFirmwareInstallSuccessUnderAB, do noting(hwouc/PowerConnectedReceiver.java:123)\n12-18 00:24:23.291  5273  5273 I HwCust  : Constructor found for class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl, args = [Ljava.lang.Object;@3f41661\n12-18 00:24:23.291  5273  5273 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 00:24:23.303  5273  5273 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 00:24:23.304  5273  5273 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 00:24:23.328  5273  5273 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-18 00:24:23.331  5273  5273 I HwOUC   : [main-1]Network not available(hwouc/DownloadReceiver.java:291)\n12-18 00:24:23.334  5273  5273 I SendBroadcastPermission: action:refreshComponent, mPermissionType:0\n12-18 06:56:32.716  5273  5273 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 06:56:32.717  5273  5273 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 06:56:32.717  5273  5273 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 06:56:32.723  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED nextInstallRemindTime:Thu Jan 01 07:59:59 GMT+08:00 1970(hwouc/DownloadReceiver.java:474)\n12-18 06:56:32.724  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED alarmRegistTime:Thu Jan 01 07:59:59 GMT+08:00 1970(hwouc/DownloadReceiver.java:476)\n12-18 06:56:32.724  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 06:56:32.725  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(hwouc/HwOucUtility.java:4781)\n12-18 06:56:32.725  5273  5273 I HwOUC   : [main-1]isAllFirmwareVerifySuccess is false(hwouc/HwOucUtility.java:4721)\n12-18 06:56:32.726  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 06:56:32.726  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(hwouc/HwOucUtility.java:4781)\n12-18 06:56:32.726  5273  5273 I HwOUC   : [main-1]isAllFirmwareInstallSuccessUnderAB is false(hwouc/HwOucUtility.java:4732)\n12-18 06:56:32.727  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED nextSwitchSystemRemindTime:Thu Jan 01 07:59:59 GMT+08:00 1970(hwouc/DownloadReceiver.java:482)\n12-18 06:56:32.727  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED switchSystemRegistTime:Thu Jan 01 07:59:59 GMT+08:00 1970(hwouc/DownloadReceiver.java:484)\n12-18 06:56:32.728  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED nextCheckNewVersionTime:Mon Dec 19 17:09:54 GMT+08:00 2016(hwouc/DownloadReceiver.java:531)\n12-18 06:56:32.728  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED startTime:Mon Dec 12 17:09:54 GMT+08:00 2016(hwouc/DownloadReceiver.java:533)\n12-18 06:56:32.728  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED currentTime:Sun Dec 18 06:56:32 GMT+08:00 2016(hwouc/DownloadReceiver.java:535)\n12-18 07:26:38.918  5273  5273 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 07:26:38.919  5273  5273 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 07:26:38.919  5273  5273 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 07:26:38.920  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED nextInstallRemindTime:Thu Jan 01 07:59:59 GMT+08:00 1970(hwouc/DownloadReceiver.java:474)\n12-18 07:26:38.920  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED alarmRegistTime:Thu Jan 01 07:59:59 GMT+08:00 1970(hwouc/DownloadReceiver.java:476)\n12-18 07:26:38.921  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 07:26:38.921  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(hwouc/HwOucUtility.java:4781)\n12-18 07:26:38.921  5273  5273 I HwOUC   : [main-1]isAllFirmwareVerifySuccess is false(hwouc/HwOucUtility.java:4721)\n12-18 07:26:38.922  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 07:26:38.922  5273  5273 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(hwouc/HwOucUtility.java:4781)\n12-18 07:26:38.922  5273  5273 I HwOUC   : [main-1]isAllFirmwareInstallSuccessUnderAB is false(hwouc/HwOucUtility.java:4732)\n12-18 07:26:38.923  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED nextSwitchSystemRemindTime:Thu Jan 01 07:59:59 GMT+08:00 1970(hwouc/DownloadReceiver.java:482)\n12-18 07:26:38.923  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED switchSystemRegistTime:Thu Jan 01 07:59:59 GMT+08:00 1970(hwouc/DownloadReceiver.java:484)\n12-18 07:26:38.923  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED nextCheckNewVersionTime:Mon Dec 19 17:09:54 GMT+08:00 2016(hwouc/DownloadReceiver.java:531)\n12-18 07:26:38.924  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED startTime:Mon Dec 12 17:09:54 GMT+08:00 2016(hwouc/DownloadReceiver.java:533)\n12-18 07:26:38.924  5273  5273 I HwOUC   : [main-1]Intent.ACTION_TIME_CHANGED currentTime:Sun Dec 18 07:26:38 GMT+08:00 2016(hwouc/DownloadReceiver.java:535)\n12-18 07:29:38.046  5273  5273 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 07:29:38.047  5273  5273 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 07:29:38.047  5273  5273 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 07:29:38.068  5273  5273 I SendBroadcastPermission: action:huawei.android.intent.action.SILENTDOWNLOAD_ALARM, mPermissionType:0\n12-18 07:29:38.082  5273  5273 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-18 07:29:38.082  5273  5273 I HwOUC   : [main-1]Network available(hwouc/DownloadReceiver.java:206)\n12-18 07:29:38.083  5273  5273 I SendBroadcastPermission: action:refreshComponent, mPermissionType:0\n12-18 07:29:38.107  5273  5273 I HwOUC   : [main-1]checkRequestSendSuccessFlag is true(hwouc/DownloadReceiver.java:234)\n12-18 07:29:38.108  5273  5273 I HwOUC   : [main-1]is6HourReportedFlag is true(hwouc/DownloadReceiver.java:249)\n12-18 07:29:38.108  5273  5273 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (hwouc/HwOucUtility.java:3159)\n12-18 07:29:38.109  5273  5273 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(hwouc/HwOucUtility.java:3162)\n12-18 07:29:38.109  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 07:29:38.110  5273  5273 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(hwouc/HwOucUtility.java:4850)\n12-18 07:29:38.110  5273  5273 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(hwouc/HwOucUtility.java:7048)\n12-18 07:29:38.164  5273  5273 I HwOUC   : [main-1]initTopActivityList.(hwouc/HwOucConfig.java:2876)\n12-18 07:29:38.164  5273  5273 I HwOUC   : [main-1]initTopActivityList, mTopActivityList size = 9(hwouc/HwOucConfig.java:2882)\n12-18 07:29:38.165  5273  5273 I HwOUC   : [main-1]isTopActivitySelf, com.huawei.android.hwouc.ui.activities.firmware.FirmwareNewVersionDetailsActivity is topActivity false(hwouc/HwOucUtility.java:4341)\n12-18 07:29:38.166  5273  5273 I HwOUC   : [main-1]DownloadReceiver  isABsystemSupport is false; isAppUpgradeUnFinished is false; isFirmwareActivityTop is false(hwouc/DownloadReceiver.java:277)\n12-18 07:29:38.167  5273  5273 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 07:29:38.167  5273  5273 E HwOUC   : [main-1]isAllComponentsVerifySuccess--cacheContents is null(hwouc/UpdateAuthImpl.java:383)\n12-18 07:29:38.167  5273  5273 I HwOUC   : [main-1]/checkVersionPackageType/(hwouc/HwOucUtility.java:6680)\n12-18 07:29:38.315  5273  5273 I HwCust  : Constructor found for class com.huawei.android.cust.cota.protocol.HwCustKillMyselfProcessCheckThreadImpl, args = [Ljava.lang.Object;@3d19e47\n12-18 07:29:38.315  5273  5273 D HwCust  : Create obj success use class com.huawei.android.cust.cota.protocol.HwCustKillMyselfProcessCheckThreadImpl\n"
@@ -4473,7 +4473,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_error"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -4560,7 +4560,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 19:50:11.493",
@@ -4630,7 +4630,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "mobile_telephony"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 21:48:20.028",
@@ -4712,7 +4712,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 22:30:36.924",
@@ -4770,7 +4770,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-17 21:13:11.893",
@@ -4838,7 +4838,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 07:15:22.604",
@@ -4939,7 +4939,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "file_system_activity"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -5037,7 +5037,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Device Telemetry"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 19:34:57.890",
@@ -5127,7 +5127,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "secure_tunneling_sdk"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 19:25:17.532",
@@ -5198,7 +5198,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "events": [
@@ -5316,7 +5316,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-17 19:55:47.259",
@@ -5397,7 +5397,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -5465,7 +5465,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 22:30:33.915",
@@ -5553,7 +5553,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-18 10:51:55.777",
@@ -5609,7 +5609,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -5698,7 +5698,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "raw_log": "12-18 12:00:30.940  2825  2825 I         : power log dlsym ok\n12-18 12:00:30.961  2825  2825 D ActivityThread: ActivityThread,attachApplication\n12-18 12:00:30.989  2825  2825 W System  : ClassLoader referenced unknown path: /system/priv-app/CalendarProvider/lib/arm64\n12-18 12:00:30.992  2825  2825 W art     : JIT profile information will not be recorded: profile file does not exits.\n12-18 12:00:31.068  2825  2825 E CalendarProvider: Log error:error:getLogField--NoSuchFieldExceptionLog"
@@ -5727,7 +5727,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_log"
+      "subcategory": "log-android"
     },
     "json": {
       "log_source": "SDK",
@@ -5872,7 +5872,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_system_log"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": "15296",
@@ -5953,7 +5953,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-18 15:32:41.473",
@@ -6058,7 +6058,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 19970,
@@ -6165,7 +6165,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_telemetry"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 21:27:06.576",
@@ -6249,7 +6249,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 19:50:01.577",
@@ -6318,7 +6318,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 21:48:24.292",
@@ -6384,7 +6384,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 14:07:29.265",
@@ -6430,7 +6430,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 20:11:47.761",
@@ -6479,7 +6479,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Android System"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -6620,7 +6620,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -6809,7 +6809,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 19:49:14.092",
@@ -6884,7 +6884,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 08:14:14.125",
@@ -6932,7 +6932,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 17:56:01.077",
@@ -6976,7 +6976,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "diagnostic_failure"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 3168,
@@ -7051,7 +7051,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "dynamic_code_loading"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 24368,
@@ -7137,7 +7137,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "insecure_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 09:46:03.360",
@@ -7186,7 +7186,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_security"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -7239,7 +7239,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "dynamic_code_loading"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 21:23:16.945",
@@ -7333,7 +7333,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "secure_tunneling"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 20:31:05",
@@ -7421,7 +7421,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 16:01:09.195",
@@ -7483,7 +7483,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_crash_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 07:30:37.358",
@@ -7535,7 +7535,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 10:39:38.097",
@@ -7604,7 +7604,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_logcat"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": "25080",
@@ -7707,7 +7707,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "System Log"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 1795,
@@ -7776,7 +7776,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 14:11:34.709",
@@ -7846,7 +7846,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 15:33:22.437",
@@ -7930,7 +7930,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "log_data": "12-17 19:31:37.059  1795  2778 D StubTelephonyRegistry: uid:10028 pid:16628 PhoneStateListener.LISTEN_CELL_LOCATION:16 events:0\n12-17 19:31:38.377  1795  2778 I AlarmManager: remove(PendingIntent{ebb6119: PendingIntentRecord{601e5f3 com.huawei.indexsearch.observer broadcastIntent}}) changed bounds; rebatching\n12-17 19:31:41.236  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10102 does not hold REAL_GET_TASKS; limiting output\n12-17 19:31:41.403  1795  2778 D PowerManagerService: acquire lock=184063844, flags=0x1, tag=\"NetworkStats\", name=android, ws=null, uid=1000, pid=1795\n12-17 19:31:41.403  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=1,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:31:41.406  1795  2778 D NetdConnector: SND -> {11594 bandwidth gettetherstats}\n12-17 19:31:41.413  1795  2778 W NetworkStatsFactory: mStatsXtProcUid: /proc/net/comm/stats does not exist!\n12-17 19:31:41.413  1795  2778 D HwNetworkStatsService: mActiveIface: null\n12-17 19:31:41.414  1795  2778 I SendBroadcastPermission: action:com.android.server.action.NETWORK_STATS_UPDATED, mPermissionType:0\n12-17 19:31:41.418  1795  2778 I HwActivityManagerService: Split enqueueing broadcast [callerApp]:ProcessRecord{34bf34f 0:system/1000}\n12-17 19:31:41.418  1795  2778 D PowerManagerService: release:lock=184063844, flg=0x0, tag=\"NetworkStats\", name=android\", ws=null, uid=1000, pid=1795\n12-17 19:31:41.419  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=1,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:31:41.597  1795  2778 D HwWindowManagerService: imeVis=false\n12-17 19:31:43.351  1795  2778 I Security_fingerprint: FingerprintService authenticate\n12-17 19:31:45.021  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=3,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:31:45.233  1795  2778 I NotificationManager: onNotificationExpansionChanged called\n12-17 19:31:45.972  1795  2778 I NotificationManager: onNotificationExpansionChanged called\n12-17 19:31:46.276  1795  2778 D wifiserviceimpl: netmask =16580607\n12-17 19:31:51.626  1795  2778 I SendBroadcastPermission: action:android.intent.action.SIG_STR, mPermissionType:0\n12-17 19:31:55.741  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=1,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:31:56.680  1795  2778 I WindowManger_keyguard: Setting mDismissKeyguard true by win Window{e6a6b5e u0 com.android.incallui/com.android.incallui.InCallActivity}\n12-17 19:31:58.444  1795  2778 D StubTelephonyRegistry: uid:10028 pid:16628 PhoneStateListener.LISTEN_CELL_LOCATION:16 events:16\n12-17 19:31:58.444  1795  2778 D StubTelephonyRegistry: LISTEN_CELL_LOCATION uid:10028\n12-17 19:32:23.469  1795  2778 I SendBroadcastPermission: action:android.intent.action.SIG_STR, mPermissionType:0\n12-17 19:32:23.730  1795  2778 D PowerManagerService: acquire lock=184063844, flags=0x1, tag=\"NetworkStats\", name=android, ws=null, uid=1000, pid=1795\n12-17 19:32:23.730  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=1,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:32:23.733  1795  2778 D NetdConnector: SND -> {11614 bandwidth gettetherstats}\n12-17 19:32:23.741  1795  2778 W NetworkStatsFactory: mStatsXtProcUid: /proc/net/comm/stats does not exist!\n12-17 19:32:23.741  1795  2778 D HwNetworkStatsService: mActiveIface: null\n12-17 19:32:23.742  1795  2778 I SendBroadcastPermission: action:com.android.server.action.NETWORK_STATS_UPDATED, mPermissionType:0\n12-17 19:32:23.745  1795  2778 I HwActivityManagerService: Split enqueueing broadcast [callerApp]:ProcessRecord{34bf34f 0:system/1000}\n12-17 19:32:23.745  1795  2778 D PowerManagerService: release:lock=184063844, flg=0x0, tag=\"NetworkStats\", name=android\", ws=null, uid=1000, pid=1795\n12-17 19:32:23.746  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=1,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:32:30.435  1795  2778 I ActivityManager_activity: Moving to PAUSED: ActivityRecord{b46dc67 u0 com.android.incallui/.InCallActivity t310} (pause complete)\n12-17 19:32:30.647  1795  2778 D PowerManagerService: ready=true,policy=0,wakefulness=0,wksummary=0x11,uasummary=0x0,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:32:32.692  1795  2778 I NotificationManager: enqueueNotificationInternal: pkg=com.huawei.health id=10010 notification=Notification(pri=0 contentView=null vibrate=null sound=null defaults=0x0 flags=0x2 color=0x00000000 vis=PRIVATE)\n12-17 19:33:00.564  1795  2778 I ActivityManager_activity: Moving to PAUSED: ActivityRecord{b46dc67 u0 com.android.incallui/.InCallActivity t310} (pause complete)\n12-17 19:33:00.896  1795  2778 W FingerprintService: onAcquired 1\n12-17 19:33:02.483  1795  2778 I NotificationManager: onNotificationExpansionChanged called\n12-17 19:33:02.512  1795  2778 I AlarmManager: remove(PendingIntent{4d7c21a: PendingIntentRecord{7f86237 com.huawei.espacev2 broadcastIntent}}) changed bounds; rebatching\n12-17 19:33:03.553  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=1,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:33:04.209  1795  2778 D PowerManagerService: ready=true,policy=0,wakefulness=0,wksummary=0x11,uasummary=0x0,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:33:04.265  1795  2778 I Security_fingerprint: FingerprintService getEnrolledFingerprints\n12-17 19:33:04.369  1795  2778 I ActivityManager_broadcast: collectReceiverComponents, callerApp: ProcessRecord{6be12e7 4634:com.tencent.mm:push/u0a105}, intent:null, receiver size:1, flags: 10000400\n12-17 19:33:04.370  1795  2778 I HwActivityManagerService: keyAppBroadcastQueueForIntent intent Intent { flg=0x10 cmp=com.tencent.mm/.booter.NotifyReceiver (has extras) } on bgkeyapp queue\n12-17 19:33:04.370  1795  2778 I ActivityManager_broadcast: Enqueueing ordered broadcast[bgkeyapp] BroadcastRecord{ac5933b u0 null}: prev had 0\n12-17 19:33:05.364  1795  2778 D PowerManagerService: release:lock=171238858, flg=0x0, tag=\"WakerLock:192052083\", name=com.tencent.mm\", ws=null, uid=10105, pid=4634\n12-17 19:33:05.365  1795  2778 D PowerManagerService: ready=true,policy=0,wakefulness=0,wksummary=0x11,uasummary=0x0,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:33:05.480  1795  2778 D PowerManagerService: ready=true,policy=0,wakefulness=0,wksummary=0x11,uasummary=0x0,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:33:05.659  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10105 does not hold REAL_GET_TASKS; limiting output\n12-17 19:33:11.120  1795  2778 D StatusBarManagerService: manageDisableList userId=0 what=0x0 pkg=com.android.incallui\n12-17 19:33:11.207  1795  2778 I HwActivityManagerService: Split enqueueing broadcast [callerApp]:ProcessRecord{580cfb2 5224:com.huawei.health:DaemonService/u0a99}\n12-17 19:33:11.376  1795  2778 I NotificationManager: onNotificationExpansionChanged called\n12-17 19:33:43.047  1795  2778 I ActivityManager_activity: Moving to PAUSED: ActivityRecord{b46dc67 u0 com.android.incallui/.InCallActivity t310} (pause complete)\n12-17 19:33:43.328  1795  2778 I Security_fingerprint: FingerprintService getEnrolledFingerprints\n12-17 19:34:56.166  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=1,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:34:56.213  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=1,wksummary=0x11,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:34:57.751  1795  2778 D PowerManagerService: ready=true,policy=3,wakefulness=1,wksummary=0x1,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:34:58.625  1795  2778 I ActivityManager: moveTaskToBack: TaskRecord{da7d076 #370 A=com.huawei.espacev2 U=0 StackId=1 sz=1}\n12-17 19:34:58.625  1795  2778 I ActivityManager_activity: inValidate task: TaskRecord{35d0d96 #359 A=com.tencent.mm U=0 StackId=1 sz=0}\n12-17 19:34:58.631  1795  2778 I ActivityManager_activity: moveTaskToBack, setTaskToReturnTo: taskToReturnTo=1numTasks=7,isOnHomeDisplay=true,isOverHomeStack=true, prevIsHome=true\n12-17 19:34:58.631  1795  2778 I ActivityManager_activity: moveTaskToBack, resuming home stack\n12-17 19:34:58.631  1795  2778 I ActivityManager_activity: insertTaskAtTop, setTaskToReturnTo: fromHome=false,lastStackTop=TaskRecord{926b055 #383 A=com.tencent.mm U=0 StackId=1 sz=1}, isHomeStack=true, topTask=TaskRecord{37babfb #297 A=com.huawei.android.launcher U=0 StackId=0 sz=1}, task=TaskRecord{37babfb #297 A=com.huawei.android.launcher U=0 StackId=0 sz=1}\n12-17 19:34:58.635  1795  2778 V HwWindowManagerService: moveTaskToTop mTaskChanged:true\n12-17 19:34:58.635  1795  2778 V HwWindowManagerService: setFocusedApp update app ops, mTaskChanged set to:false\n12-17 19:34:58.635  1795  2778 I FreezeScreenScene: scheduleCheckFreezeScreen sendMessageDelayed\n12-17 19:34:58.635  1795  2778 I ActivityManager_activity: Start pausing: ActivityRecord{62a5344 u0 com.huawei.espacev2/com.huawei.espace.module.main.ui.MainActivity t370}\n12-17 19:34:58.636  1795  2778 D PowerManagerService: acquire lock=230301592, flags=0x1, tag=\"*launch*\", name=android, ws=WorkSource{10061}, uid=1000, pid=1795\n12-17 19:34:58.636  1795  2778 D PowerManagerService: ready=true,policy=3,wakefulness=1,wksummary=0x1,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:34:58.636  1795  2778 D PowerManagerService: Acquiring suspend blocker \"PowerManagerService.WakeLocks\".\n12-17 19:34:58.637  1795  2778 I ActivityManager_activity: resumeTopActivityLocked: Skip resume: need to start pausing\n12-17 19:35:00.195  1795  2778 W ActivityManager: getTasks: caller 10105 does not hold REAL_GET_TASKS; limiting output\n12-17 19:35:00.260  1795  2778 V HwPhoneWindowManager: updateSystemUiColorLw window=Window{4e22340 u0 com.tencent.mm/com.tencent.mm.ui.LauncherUI},EmuiStyle=0,StatusBarColor=0xff303135,NavigationBarColor=0xff000000, mLastIsEmuiLightStyle=-1\n12-17 19:35:00.261  1795  2778 I WindowManger_windowChange: oldFocusWindow: null, currentFocusWindow: Window{4e22340 u0 com.tencent.mm/com.tencent.mm.ui.LauncherUI}, currentFocusApp: AppWindowToken{b6efcd1 token=Token{a978b5b ActivityRecord{5f12a6a u0 com.tencent.mm/.ui.LauncherUI t383}}}\n12-17 19:35:17.336  1795  2778 V InputMethodManagerService: Client requesting input be hidden, pid=4492\n12-17 19:35:17.467  1795  2778 V InputMethodManagerService: Client requesting input be hidden, pid=4492\n12-17 19:35:25.768  1795  2778 I HwActivityManagerService: keyAppBroadcastQueueForIntent intent Intent { act=com.tencent.mm.ui.ACTION_DEACTIVE flg=0x10 (has extras) } on bgkeyapp queue\n12-17 19:35:30.550  1795  2778 I NotificationManager: enqueueNotificationInternal: pkg=com.tencent.mm id=4097 notification=Notification(pri=1 contentView=null vibrate=[] sound=null tick defaults=0x0 flags=0x101 color=0x00000000 category=msg vis=PRIVATE)\n12-17 19:35:30.628  1795  2778 I NotificationManager: onNotificationExpansionChanged called\n12-17 19:35:34.347  1795  2778 D wifiserviceimpl: netmask =16580607\n12-17 19:35:38.162  1795  2778 I AlarmManager: set(PendingIntent{2ccc6dd: PendingIntentRecord{1b63252 com.tencent.mm broadcastIntent}}) : type=2 triggerAtTime=443344524 win=202499 tElapsed=443344524 maxElapsed=443547023 interval=0 flags=0x8\n12-17 19:35:48.466  1795  2778 I NotificationManager: onNotificationVisibilityChanged called\n12-17 19:35:52.358  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10009 does not hold REAL_GET_TASKS; limiting output\n12-17 19:35:55.820  1795  2778 W FingerprintService: onAcquired 1\n12-17 19:36:03.550  1795  2778 E HsmCoreServiceImpl: onTransact in code is: 102\n12-17 19:36:03.550  1795  2778 I MediaProcessHandler: processOp opType: 1, uid: 10103, pid: 19598\n12-17 19:36:03.550  1795  2778 W MediaProcessHandler: remove target not exist, maybe the UI process: uid: 10103, pid: 19598\n12-17 19:36:03.888  1795  2778 D PowerManagerService: ready=true,policy=0,wakefulness=0,wksummary=0x0,uasummary=0x0,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:36:03.888  1795  2778 D PowerManagerService: Releasing suspend blocker \"PowerManagerService.WakeLocks\".\n12-17 19:36:56.049  1795  2778 I NotificationManager: cancelNotificationWithTag pid 2852,uid = 10033,tag = low_battery,pkg =com.android.systemui,id =2132017204\n12-17 19:37:26.031  1795  2778 I AppOpsResource: CallBack is Overload  id=10105 OverloadNumber=41 threshold=200\n12-17 19:40:06.538  1795  2778 D ApplicationPackageManager: queryIntentActivitiesAsUser size results:1, for package:com.tencent.mm\n12-17 19:40:23.331  1795  2778 D PowerManagerService: acquire lock=76530234, flags=0x1, tag=\"RILJ_ACK_WL\", name=com.android.phone, ws=null, uid=1001, pid=3218\n12-17 19:40:23.331  1795  2778 D PowerManagerService: ready=false,policy=3,wakefulness=1,wksummary=0x1,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=true,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:40:23.659  1795  2778 I PGManagerService: proxyBroadcast:[com.tencent.mm] proxy:false\n12-17 19:40:24.877  1795  2778 V HwPhoneWindowManager: updateSystemUiColorLw window=Window{4e22340 u0 com.tencent.mm/com.tencent.mm.ui.LauncherUI},EmuiStyle=0,StatusBarColor=0xff303135,NavigationBarColor=0xff000000, mLastIsEmuiLightStyle=-1\n12-17 19:40:24.877  1795  2778 I WindowManger_windowChange: oldFocusWindow: null, currentFocusWindow: Window{4e22340 u0 com.tencent.mm/com.tencent.mm.ui.LauncherUI}, currentFocusApp: AppWindowToken{b6efcd1 token=Token{a978b5b ActivityRecord{5f12a6a u0 com.tencent.mm/.ui.LauncherUI t383}}}\n12-17 19:40:25.819  1795  2778 I HwActivityManagerService: keyAppBroadcastQueueForIntent intent Intent { act=com.tencent.mm.ui.ACTION_ACTIVE flg=0x10 (has extras) } on bgkeyapp queue\n12-17 19:40:26.161  1795  2778 D HwInputMethodManagerService: ------------startInput--------------\n12-17 19:40:26.161  1795  2778 V SecInputMethodManagerService: Client requesting input be hidden, pid=4492\n12-17 19:40:26.162  1795  2778 D HwInputMethodManagerService: hideSecSoftInput = false\n12-17 19:40:29.458  1795  2778 E HsmCoreServiceImpl: onTransact in code is: 103\n12-17 19:40:29.458  1795  2778 I MediaProcessHandler: playingUids: \n12-17 19:40:31.827  1795  2778 D StubTelephonyRegistry: uid:10028 pid:16628 PhoneStateListener.LISTEN_CELL_LOCATION:16 events:0\n12-17 19:42:44.970  1795  2778 I ActivityManager_broadcast: collectReceiverComponents, callerApp: ProcessRecord{24cdca7 3218:com.android.phone/1001}, intent:huawei.intent.action.IMS_SERVICE_STATE_CHANGED, receiver size:1, flags: 10000400\n12-17 19:42:44.971  1795  2778 I HwActivityManagerService: Split enqueueing broadcast [callerApp]:ProcessRecord{24cdca7 3218:com.android.phone/1001}\n12-17 19:42:44.971  1795  2778 I HwActivityManagerService: Split enqueueing broadcast [callerApp]:ProcessRecord{24cdca7 3218:com.android.phone/1001}\n12-17 19:42:44.973  1795  2778 I ActivityManager_broadcast: Enqueueing ordered broadcast[background] BroadcastRecord{9e7c785 u0 huawei.intent.action.IMS_SERVICE_STATE_CHANGED}: prev had 0\n12-17 19:42:45.011  1795  2778 D PowerManagerService: acquire lock=207137242, flags=0x1, tag=\"ServiceStateTracker\", name=com.android.phone, ws=null, uid=1001, pid=3218\n12-17 19:42:45.011  1795  2778 D PowerManagerService: ready=true,policy=0,wakefulness=0,wksummary=0x1,uasummary=0x0,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:42:52.113  1795  2778 D PowerManagerService: release:lock=15081967, flg=0x0, tag=\"RILJ_ACK_WL\", name=com.android.phone\", ws=null, uid=1001, pid=3218\n12-17 19:42:52.114  1795  2778 D PowerManagerService: ready=true,policy=0,wakefulness=0,wksummary=0x0,uasummary=0x0,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:42:52.114  1795  2778 D PowerManagerService: Releasing suspend blocker \"PowerManagerService.WakeLocks\".\n12-17 19:45:27.744  1795  2778 I Sensor  : updateLightsLocked --> level:78, status:3\n12-17 19:45:27.744  1795  2778 I Sensor  : updateLightsLocked --> mBatteryLight.turnOff\n12-17 19:45:27.782  1795  2778 D SmartHeartBeat: setAlarmsPending ...\n12-17 19:55:46.710  1795  2778 I WindowManger_keyguard: **** SHOWN CALLED ****\n12-17 19:55:46.710  1795  2778 D WindowManager: mKeyguardDelegate.ShowListener.onDrawn.\n12-17 19:55:46.710  1795  2778 I WindowManger_keyguard: hideScrim()\n12-17 19:55:46.833  1795  2778 W FingerprintService: onAcquired 1\n12-17 19:55:46.833  1795  2778 D FpDataCollector: fingerprint capture completed\n12-17 19:55:47.210  1795  2778 I PGManagerService: proxyBroadcast:[com.huawei.espacev2] proxy:false\n12-17 19:55:49.320  1795  2778 I HwActivityManagerService: keyAppBroadcastQueueForIntent intent Intent { act=com.tencent.mm.ui.ACTION_ACTIVE flg=0x10 (has extras) } on bgkeyapp queue\n12-17 19:55:55.108  1795  2778 I HwActivityManagerService: keyAppBroadcastQueueForIntent intent Intent { act=com.tencent.mm.ui.ACTION_DEACTIVE flg=0x10 (has extras) } on bgkeyapp queue\n12-17 19:55:55.559  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10105 does not hold REAL_GET_TASKS; limiting output\n12-17 19:56:03.387  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10105 does not hold REAL_GET_TASKS; limiting output\n12-17 19:56:09.417  1795  2778 V SecInputMethodManagerService: Client requesting input be hidden, pid=4492\n12-17 19:56:20.616  1795  2778 I WindowManger_windowChange: oldFocusWindow: null, currentFocusWindow: Window{ffcb580 u0 com.tencent.mm/com.tencent.mm.plugin.wallet.pay.ui.WalletPayUI}, currentFocusApp: AppWindowToken{10af2b2 token=Token{134ccbd ActivityRecord{8d2ec14 u0 com.tencent.mm/.plugin.wallet.pay.ui.WalletPayUI t383}}}\n12-17 19:56:24.424  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10009 does not hold REAL_GET_TASKS; limiting output\n12-17 19:56:24.972  1795  2778 I ActivityManager_broadcast: dispatch ordered broadcast [background] BroadcastRecord{9627757 u0 com.tencent.mm.plugin.openapi.Intent.ACTION_HANDLE_APP_REGISTER}, has 1 receivers\n12-17 19:56:26.008  1795  2778 D PowerManagerService: release:lock=230301592, flg=0x0, tag=\"*launch*\", name=android\", ws=WorkSource{10105}, uid=1000, pid=1795\n12-17 19:56:26.009  1795  2778 D PowerManagerService: ready=true,policy=3,wakefulness=1,wksummary=0x0,uasummary=0x1,bootcompleted=true,boostinprogress=false,waitmodeenable=false,mode=true,manual=33,auto=-1,adj=0.0userId=0\n12-17 19:56:26.009  1795  2778 D PowerManagerService: Releasing suspend blocker \"PowerManagerService.WakeLocks\".\n12-17 19:56:28.586  1795  2778 V InputMethodManagerService: Client requesting input be hidden, pid=4492\n12-17 19:56:30.420  1795  2778 D wifiserviceimpl: netmask =16580607\n12-17 19:56:34.258  1795  2778 V SecInputMethodManagerService: Client requesting input be hidden, pid=4492\n12-17 19:56:42.437  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10105 does not hold REAL_GET_TASKS; limiting output\n12-17 19:56:43.760  1795  2778 I HwActivityManagerService: keyAppBroadcastQueueForIntent intent Intent { act=com.tencent.mm.ui.ACTION_ACTIVE flg=0x10 (has extras) } on bgkeyapp queue\n12-17 19:56:53.468  1795  2778 D wifiserviceimpl: netmask =16580607\n12-17 19:57:05.501  1795  2778 D Telecom : TelecomServiceImpl: isInCall callState is 0: TSI.iIC@Eu4\n12-17 19:57:07.236  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10102 does not hold REAL_GET_TASKS; limiting output\n12-17 19:57:14.895  1795  2778 I SendBroadcastPermission: action:android.intent.action.SIG_STR, mPermissionType:0\n12-17 19:57:15.302  1795  2778 W ActivityManager: Sending non-protected broadcast com.huawei.android.push.intent.SOCKET_INFO from system 7194:com.huawei.android.pushagent.PushService/1000 pkg android\n12-17 19:57:15.526  1795  2778 I ActivityManager_service: retrieveServiceLocked, callerApp: ProcessRecord{e68e93f 32607:com.huawei.betaclub/1000}, flags: 10000400\n12-17 19:57:15.526  1795  2778 I ActivityManager_service: bindServiceLocked, r: ServiceRecord{3243ec2 u0 euid: 0 com.huawei.betaclub/.receiver.RouteService}, euid: 0\n12-17 19:57:16.007  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10009 does not hold REAL_GET_TASKS; limiting output\n12-17 19:57:17.254  1795  2778 D SmartHeartBeat: setAlarmsPending ...\n12-17 19:57:21.795  1795  2778 W ActivityManager: getRunningAppProcesses: caller 10105 does not hold REAL_GET_TASKS; limiting output\n12-17 19:57:25.111  1795  2778 I HwActivityManagerService: Split enqueueing broadcast [callerApp]:ProcessRecord{580cfb2 5224:com.huawei.health:DaemonService/u0a99}\n12-17 19:57:31.984  1795  2778 I NotificationManager: enqueueNotificationInternal: pkg=com.huawei.health id=10010 notification=Notification(pri=0 contentView=null vibrate=null sound=null defaults=0x0 flags=0x2 color=0x00000000 vis=PRIVATE)\n..."
@@ -7958,7 +7958,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "sdk_error"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -8059,7 +8059,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-18 10:40:49.551",
@@ -8133,7 +8133,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_security_sdk"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-17 19:42:27",
@@ -8183,7 +8183,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Security"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 17:39:14.869",
@@ -8265,7 +8265,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "sdk_error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 10:45:04.734",
@@ -8341,7 +8341,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_fingerprint_daemon"
+      "subcategory": "log-android"
     },
     "json": {
       "raw_log": "12-17 19:31:36.788   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1002\n12-17 19:31:36.788   835   835 I fingerprintd: fingerprintd\n12-17 19:31:36.788   835   835 I fingerprintd: FingerprintDaemonProxyEx::setLivenessSwitch\n12-17 19:31:36.788   835   835 I fingerprintd: fingerprintdex--dev->need_liveness_authentication = false;\n12-17 19:31:36.789   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:7\n12-17 19:31:36.789   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id\n12-17 19:31:36.800   835   835 E libteec : begin\n12-17 19:31:36.804   835   835 E libteec : receive data len = 128\n12-17 19:31:36.804   835   835 E libteec : begin\n12-17 19:31:36.804   835   835 E libteec : qsc_decode end\n12-17 19:31:36.804   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id id 14657234628792947271\n12-17 19:31:36.805   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1\n12-17 19:31:36.805   835   835 V fingerprintd: authenticate(sid=0, gid=0)\n12-17 19:31:38.230   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:2\n12-17 19:31:38.230   835   835 V fingerprintd: stopAuthentication()\n12-17 19:31:38.230   835   835 D fpc_fingerprint_hal: fpc_cancel\n12-17 19:31:40.273   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1002\n12-17 19:31:40.273   835   835 I fingerprintd: fingerprintd\n12-17 19:31:40.273   835   835 I fingerprintd: FingerprintDaemonProxyEx::setLivenessSwitch\n12-17 19:31:40.273   835   835 I fingerprintd: fingerprintdex--dev->need_liveness_authentication = false;\n12-17 19:31:40.273   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:7\n12-17 19:31:40.273   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id\n12-17 19:31:40.288   835   835 E libteec : begin\n12-17 19:31:40.292   835   835 E libteec : receive data len = 128\n12-17 19:31:40.292   835   835 E libteec : begin\n12-17 19:31:40.292   835   835 E libteec : qsc_decode end\n12-17 19:31:40.292   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id id 14657234628792947271\n12-17 19:31:40.293   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1\n12-17 19:31:40.293   835   835 V fingerprintd: authenticate(sid=0, gid=0)\n12-17 19:31:40.979   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:2\n12-17 19:31:40.979   835   835 V fingerprintd: stopAuthentication()\n12-17 19:31:40.979   835   835 D fpc_fingerprint_hal: fpc_cancel\n12-17 19:31:43.352   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1002\n12-17 19:31:43.352   835   835 I fingerprintd: fingerprintd\n12-17 19:31:43.352   835   835 I fingerprintd: FingerprintDaemonProxyEx::setLivenessSwitch\n12-17 19:31:43.352   835   835 I fingerprintd: fingerprintdex--dev->need_liveness_authentication = false;\n12-17 19:31:43.353   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:7\n12-17 19:31:43.353   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id\n12-17 19:31:43.371   835   835 E libteec : begin\n12-17 19:31:43.379   835   835 E libteec : receive data len = 128\n12-17 19:31:43.379   835   835 E libteec : begin\n12-17 19:31:43.379   835   835 E libteec : qsc_decode end\n12-17 19:31:43.379   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id id 14657234628792947271\n12-17 19:31:43.380   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1\n12-17 19:31:43.380   835   835 V fingerprintd: authenticate(sid=0, gid=0)\n12-17 19:31:44.634   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:2\n12-17 19:31:44.634   835   835 V fingerprintd: stopAuthentication()\n12-17 19:31:44.634   835   835 D fpc_fingerprint_hal: fpc_cancel\n12-17 19:31:45.159   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1002\n12-17 19:31:45.159   835   835 I fingerprintd: fingerprintd\n12-17 19:31:45.159   835   835 I fingerprintd: FingerprintDaemonProxyEx::setLivenessSwitch\n12-17 19:31:45.159   835   835 I fingerprintd: fingerprintdex--dev->need_liveness_authentication = false;\n12-17 19:31:45.159   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:7\n12-17 19:31:45.159   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id\n12-17 19:31:45.171   835   835 E libteec : begin\n12-17 19:31:45.175   835   835 E libteec : receive data len = 128\n12-17 19:31:45.175   835   835 E libteec : begin\n12-17 19:31:45.175   835   835 E libteec : qsc_decode end\n12-17 19:31:45.175   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id id 14657234628792947271\n12-17 19:31:45.175   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1\n12-17 19:31:45.175   835   835 V fingerprintd: authenticate(sid=0, gid=0)\n12-17 19:31:45.184   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:2\n12-17 19:31:45.184   835   835 V fingerprintd: stopAuthentication()\n12-17 19:31:45.184   835   835 D fpc_fingerprint_hal: fpc_cancel\n12-17 19:31:46.087   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1002\n12-17 19:31:46.087   835   835 I fingerprintd: fingerprintd\n12-17 19:31:46.087   835   835 I fingerprintd: FingerprintDaemonProxyEx::setLivenessSwitch\n12-17 19:31:46.087   835   835 I fingerprintd: fingerprintdex--dev->need_liveness_authentication = false;\n12-17 19:31:46.088   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:7\n12-17 19:31:46.088   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id\n12-17 19:31:46.101   835   835 E libteec : begin\n12-17 19:31:46.107   835   835 E libteec : receive data len = 128\n12-17 19:31:46.107   835   835 E libteec : begin\n12-17 19:31:46.107   835   835 E libteec : qsc_decode end\n12-17 19:31:46.107   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id id 14657234628792947271\n12-17 19:31:46.109   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1\n12-17 19:31:46.109   835   835 V fingerprintd: authenticate(sid=0, gid=0)\n12-17 19:31:50.447   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:2\n12-17 19:31:50.448   835   835 V fingerprintd: stopAuthentication()\n12-17 19:31:50.448   835   835 D fpc_fingerprint_hal: fpc_cancel\n12-17 19:31:51.045   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1002\n12-17 19:31:51.045   835   835 I fingerprintd: fingerprintd\n12-17 19:31:51.045   835   835 I fingerprintd: FingerprintDaemonProxyEx::setLivenessSwitch\n12-17 19:31:51.045   835   835 I fingerprintd: fingerprintdex--dev->need_liveness_authentication = false;\n12-17 19:31:51.045   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:7\n12-17 19:31:51.045   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id\n12-17 19:31:51.055   835   835 E libteec : begin\n12-17 19:31:51.060   835   835 E libteec : receive data len = 128\n12-17 19:31:51.060   835   835 E libteec : begin\n12-17 19:31:51.060   835   835 E libteec : qsc_decode end\n12-17 19:31:51.060   835   835 D fpc_fingerprint_hal: fpc_get_authenticator_id id 14657234628792947271\n12-17 19:31:51.061   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:1\n12-17 19:31:51.061   835   835 V fingerprintd: authenticate(sid=0, gid=0)\n12-17 19:31:51.072   835   835 I fingerprintd: FingerprintDaemonProxyEx::onTransact, code:2\n12-17 19:31:51.072   835   835 V fingerprintd: stopAuthentication()\n12-17 19:31:51.072   835   835 D fpc_fingerprint_hal: fpc_cancel"
@@ -8369,7 +8369,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_crash"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 07:30:37.114",
@@ -8404,7 +8404,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "insecure_data_transmission"
+      "subcategory": "log-android"
     },
     "json": {
       "process_name": "com.huawei.logupload",
@@ -8467,7 +8467,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "android_log"
+      "subcategory": "log-android"
     },
     "json": {
       "process_name": "com.huawei.android.hwouc",
@@ -8565,7 +8565,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 21:25:54.871",
@@ -8625,7 +8625,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-18 19:01:10",
@@ -8703,7 +8703,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "mobile_security"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 17:30:15",
@@ -8773,7 +8773,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "file_access_error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 19:50:16.862",
@@ -8850,7 +8850,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_error"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -9007,7 +9007,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "system_telemetry"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 21:32:45.838",
@@ -9091,7 +9091,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 08:38:00.191",
@@ -9153,7 +9153,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "system_diagnostics"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 21:47:48.111",
@@ -9212,7 +9212,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -9300,7 +9300,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 08:38:01.883",
@@ -9365,7 +9365,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-17 23:24:04.427",
@@ -9410,7 +9410,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-17 23:13:48.210",
@@ -9491,7 +9491,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "file_system"
+      "subcategory": "log-android"
     },
     "json": {
       "log_entries": [
@@ -9628,7 +9628,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "SDK Activity"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-17 20:11:41.459",
@@ -9718,7 +9718,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "system_update_service"
+      "subcategory": "log-android"
     },
     "json": {
       "log_data": "12-18 14:07:30.053  5089  5089 I         : power log dlsym ok\n12-18 14:07:30.068  5089  5089 D ActivityThread: ActivityThread,attachApplication\n12-18 14:07:30.099  5089  5089 W art     : JIT profile information will not be recorded: profile file does not exits.\n12-18 14:07:30.119  5089  5089 I HwOUC   : [main-1]HwOUCSearchIndexablesProvider onCreate(/HwOUCSearchIndexablesProvider.java:136)\n12-18 14:07:30.139  5089  5089 I HwOUC   : [main-1]HwOucApplication--onCreate, start(/HwOucApplication.java:52)\n12-18 14:07:30.142  5089  5089 I HwOUC   : [main-1]HwOucApplication--getProcessName, pid is 5089(/HwOucApplication.java:98)\n12-18 14:07:30.143  5089  5089 I HwOUC   : [main-1]HwOucApplication--onCreate, processName is com.huawei.android.hwouc; android.os.Process.myUid() is 10053(/HwOucApplication.java:54)\n12-18 14:07:30.143  5089  5089 I HwOUC   : [main-1]HwOucApplication--onCreate, isDefaultProcess true, init(/HwOucApplication.java:58)\n12-18 14:07:30.143  5089  5089 I HwOUC   : [main-1]----load default presets...(/HwOucConfig.java:2414)\n12-18 14:07:30.150  5089  5089 W CfgFilePolicy: No config file found for:xml/hwouc_presets.xml\n12-18 14:07:30.150  5089  5089 I HwOUC   : [main-1]loadOucConfig by HwCfgFilePolicy.getCfgFileList no exception(/HwOucConfig.java:2517)\n12-18 14:07:30.168  5089  5089 I HwCust  : Constructor found for class com.huawei.android.cust.cota.util.HwCustHwOucUtilityImpl, args = [Ljava.lang.Object;@c57b157\n12-18 14:07:30.168  5089  5089 D HwCust  : Create obj success use class com.huawei.android.cust.cota.util.HwCustHwOucUtilityImpl\n12-18 14:07:30.170  5089  5089 I HwOUC   : [main-1]enter detectStorage!!!(/HwOucUtility.java:476)\n12-18 14:07:30.174  5089  5089 I HwOUC   : [main-1]getCryptToUncryptDir dir is (/HwOucUtility.java:6762)\n12-18 14:07:30.175  5089  5089 I HwOUC   : [main-1]getCryptToUncryptDir return null(/HwOucUtility.java:6764)\n12-18 14:07:30.175  5089  5089 I HwOUC   : [main-1]enter detectStorage path is /storage/emulated/0(/HwOucUtility.java:493)\n12-18 14:07:30.176  5089  5089 I HwOUC   : [main-1]enter detectStorage isEmulated is true;isRemovable is false;isPrimary is true;uUid is null(/HwOucUtility.java:494)\n12-18 14:07:30.176  5089  5089 I HwOUC   : [main-1]enter detectStorage isPrimary or isEmulated true, set internal path: /storage/emulated/0(/HwOucUtility.java:496)\n12-18 14:07:30.178  5089  5089 E HwOUC   : [main-1]method invoke failed(/HwOucUtility.java:689)\n12-18 14:07:30.178  5089  5089 I HwOUC   : [main-1]isTablet() = false(/HwOucUtility.java:692)\n12-18 14:07:30.178  5089  5089 I HwOUC   : [main-1]getAutoDownloadValueOfStartupGuide(/HwOucUtility.java:4879)\n12-18 14:07:30.185  5089  5089 I HwOUC   : [main-1]getAutoDownloadValueOfStartupGuide autoDownloadValue is 1(/HwOucUtility.java:4887)\n12-18 14:07:30.187  5089  5089 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (/HwOucUtility.java:3159)\n12-18 14:07:30.187  5089  5089 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(/HwOucUtility.java:3162)\n12-18 14:07:30.188  5089  5089 I HwOUC   : [main-1]isInstallingStatus(/HwOucUtility.java:3207)\n12-18 14:07:30.188  5089  5089 I HwOUC   : [main-1]isAllFirmwareInstallingStatus(/HwOucUtility.java:3222)\n12-18 14:07:30.206  5089  5089 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-18 14:07:30.206  5089  5089 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(/HwOucUtility.java:4781)\n12-18 14:07:30.206  5089  5089 I HwOUC   : [main-1]isAllFirmwareInstallingStatus is false(/HwOucUtility.java:3224)\n12-18 14:07:30.207  5089  5089 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-18 14:07:30.207  5089  5089 E HwOUC   : [main-1]isAllFirmwareInSameStatus cacheContents is null, return false(/HwOucUtility.java:4781)\n12-18 14:07:30.207  5089  5089 I HwOUC   : [main-1]isAllFirmwareSwitchBeginUnderAB is false(/HwOucUtility.java:4744)\n12-18 14:07:30.208  5089  5089 I HwOUC   : [main-1]isInstallingStatus is false(/HwOucUtility.java:3211)\n12-18 14:07:30.208  5089  5089 I HwOUC   : [main-1]baseVersionOfNewVersion is MLA-AL00C00B316-log;isInstallingStatus is false(/HwOucUtility.java:3115)\n12-18 14:07:30.208  5089  5089 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta init beta type(/HwOucUtility.java:5637)\n12-18 14:07:30.210  5089  5089 E HwOUC   : [main-1]checkHwoucBetaApplicationExist NameNotFoundException is com.huawei.android.hwoucbeta(/HwOucUtility.java:5662)\n12-18 14:07:30.210  5089  5089 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta isBetaApplicationExist is false(/HwOucUtility.java:5641)\n12-18 14:07:30.210  5089  5089 I HwOUC   : [main-1]processCancelAllVersinoLockForBeta BetaApplication not Exist(/HwOucUtility.java:5643)\n12-18 14:07:30.211  5089  5089 I HwOUC   : [main-1]initNewVersionRecord isLastUpdateAvailableForCurVersion false(/HwOucUtility.java:3077)\n12-18 14:07:30.214  5089  5089 I HwOUC   : [main-1]isDataExistInFirmwareTable cursor is null,return false(/HwOucUtility.java:3243)\n12-18 14:07:30.215  5089  5089 I HwOUC   : [main-1]initNewVersionRecord isDataExistInFirmwareTable false do not delete database record(/HwOucUtility.java:3091)\n12-18 14:07:30.217  5089  5089 I HwOUC   : [main-1]initNewVersionRecord systemTableValue is 0, do not process(/HwOucUtility.java:3099)\n12-18 14:07:30.217  5089  5089 I HwOUC   : [main-1]initSystemVersionInOmeInfo(/OemInfoUtil.java:130)\n12-18 14:07:30.218  5089  5089 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (/HwOucUtility.java:3159)\n12-18 14:07:30.218  5089  5089 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(/HwOucUtility.java:3162)\n12-18 14:07:30.218  5089  5089 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(/CacheDBManager.java:138)\n12-18 14:07:30.218  5089  5089 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(/HwOucUtility.java:4850)\n12-18 14:07:30.219  5089  5089 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(/HwOucUtility.java:7048)\n12-18 14:07:30.219  5089  5089 I HwOUC   : [main-1]initSystemVersionInOmeInfo nextCheckNewVersionTime is 1482138594545; isABsystemSupport is false(/OemInfoUtil.java:133)\n12-18 14:07:30.220  5089  5089 I HwOUC   : [main-1]initSystemVersionInOmeInfo nextCheckNewVersionTime is not -1 and ABsystem not Support ,do not init system version in omeInfo : 1482138594545(/OemInfoUtil.java:159)\n12-18 14:07:30.220  5089  5089 I HwOUC   : [main-1]initTopActivityList.(/HwOucConfig.java:2876)\n12-18 14:07:30.221  5089  5089 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 14:07:30.221  5089  5089 E HwOUC   : [main-1]isSelfUpdateInstalling cacheContents is null(hwouc/HwOucUtility.java:7927)\n12-18 14:07:30.221  5089  5089 I HwOUC   : [main-1]HwOucApplication--onCreate, cacheCpuInfo is 8_2GHz(hwouc/HwOucApplication.java:69)\n12-18 14:07:30.222  5089  5089 I HwOUC   : [main-1]HwOucApplication--onCreate, end(hwouc/HwOucApplication.java:82)\n12-18 14:07:30.225  5089  5089 I OUC_COTA: [main-1]SilentDownload onReceive, action is:huawei.android.intent.action.SILENTDOWNLOAD_ALARM(/SilentDownloadReceiver.java:25)\n12-18 14:07:30.233  5089  5089 I HwOUC   : [main-1]isAlowUpdateCloud! 1networkAvailabletruenetworkRoamingfalsemobileNetworktrue(hwouc/CotaUtils.java:684)\n12-18 14:07:30.235  5089  5089 I HwOUC   : [main-1]needRequestPermission sdkInit is 24(hwouc/RequestPermissionsActivity.java:88)\n12-18 14:07:30.237  5089  5089 I HwOUC   : [main-1]needRequestPermission hasPermission return false(hwouc/RequestPermissionsActivity.java:94)\n12-18 14:07:30.238  5089  5089 I OUC_COTA: [main-1]SilentDownloadService-- service start(/SilentDownloadService.java:66)\n12-18 14:07:30.242  5089  5089 I OUC_COTA: [main-1]SilentDownloadService-- wifi start(/SilentDownloadService.java:75)\n12-18 14:07:30.557  5089  5089 I OUC_COTA: [main-1]ApningParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:161)\n12-18 14:07:30.791  5089  5089 I OUC_COTA: [main-1]RoamingParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:104)\n12-18 14:07:31.006  5089  5089 I OUC_COTA: [main-1]DplmningParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:219)\n12-18 14:07:31.171  5089  5089 I OUC_COTA: [main-1]wifiingParaCheckNewVersionHandler-- New version not available(/SilentDownloadService.java:275)\n12-18 14:11:31.418  5089  5089 I HwCust  : Constructor found for class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl, args = [Ljava.lang.Object;@d6a50e5\n12-18 14:11:31.418  5089  5089 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 14:11:31.419  5089  5089 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 14:11:31.420  5089  5089 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 14:11:31.452  5089  5089 I SendBroadcastPermission: action:huawei.android.intent.action.SILENTDOWNLOAD_ALARM, mPermissionType:0\n12-18 14:11:31.454  5089  5089 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-18 14:11:31.455  5089  5089 I HwOUC   : [main-1]Network not available(hwouc/DownloadReceiver.java:291)\n12-18 14:11:31.456  5089  5089 I SendBroadcastPermission: action:refreshComponent, mPermissionType:0\n12-18 14:11:32.207  5089  5089 D HwCust  : Create obj success use class com.huawei.android.cust.cota.provider.HwCustDownloadReceiverImpl\n12-18 14:11:32.208  5089  5089 I HwOUC   : [main-1]isSupportsMultipleUsers is true(hwouc/HwOucUtility.java:5019)\n12-18 14:11:32.208  5089  5089 I HwOUC   : [main-1]isMainUser myUserId is 0;isMainUser is true(hwouc/HwOucUtility.java:5031)\n12-18 14:11:32.213  5089  5089 I SendBroadcastPermission: action:huawei.android.intent.action.SILENTDOWNLOAD_ALARM, mPermissionType:0\n12-18 14:11:32.215  5089  5089 I HwOUC   : [main-1]Network changed(hwouc/DownloadReceiver.java:202)\n12-18 14:11:32.215  5089  5089 I HwOUC   : [main-1]Network available(hwouc/DownloadReceiver.java:206)\n12-18 14:11:32.215  5089  5089 I SendBroadcastPermission: action:refreshComponent, mPermissionType:0\n12-18 14:11:32.243  5089  5089 I HwOUC   : [main-1]checkRequestSendSuccessFlag is true(hwouc/DownloadReceiver.java:234)\n12-18 14:11:32.243  5089  5089 I HwOUC   : [main-1]is6HourReportedFlag is true(hwouc/DownloadReceiver.java:249)\n12-18 14:11:32.244  5089  5089 I HwOUC   : [main-1]getRealFirmwareVersion(),send ro.build.product.real.id = (hwouc/HwOucUtility.java:3159)\n12-18 14:11:32.245  5089  5089 I HwOUC   : [main-1]getFirmwareVersion(), getDisplayFirmwareVersion MLA-AL00C00B318-log(hwouc/HwOucUtility.java:3162)\n12-18 14:11:32.245  5089  5089 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 14:11:32.246  5089  5089 E HwOUC   : [main-1]isMicroPatchOnly cacheContents is null, return false(hwouc/HwOucUtility.java:4850)\n12-18 14:11:32.246  5089  5089 I HwOUC   : [main-1]isABsystemSupport local swtich is closed, return false(hwouc/HwOucUtility.java:7048)\n12-18 14:11:32.258  5089  5089 I HwOUC   : [main-1]initTopActivityList.(hwouc/HwOucConfig.java:2876)\n12-18 14:11:32.258  5089  5089 I HwOUC   : [main-1]initTopActivityList, mTopActivityList size = 9(hwouc/HwOucConfig.java:2882)\n12-18 14:11:32.260  5089  5089 I HwOUC   : [main-1]isTopActivitySelf, com.huawei.android.hwouc.ui.activities.firmware.FirmwareNewVersionDetailsActivity is topActivity false(hwouc/HwOucUtility.java:4341)\n12-18 14:11:32.260  5089  5089 I HwOUC   : [main-1]DownloadReceiver  isABsystemSupport is false; isAppUpgradeUnFinished is false; isFirmwareActivityTop is false(hwouc/DownloadReceiver.java:277)\n12-18 14:11:32.261  5089  5089 I HwOUC   : [main-1]DBManager--getCacheContents data is null tableType is 4(hwouc/CacheDBManager.java:138)\n12-18 14:11:32.261  5089  5089 E HwOUC   : [main-1]isAllComponentsVerifySuccess--cacheContents is null(hwouc/UpdateAuthImpl.java:383)\n12-18 14:11:32.271  5089  5089 I HwOUC   : [main-1]/checkVersionPackageType/(hwouc/HwOucUtility.java:6680)\n12-18 14:11:32.302  5089  5089 I HwCust  : Constructor found for class com.huawei.android.cust.cota.protocol.HwCustKillMyselfProcessCheckThreadImpl, args = [Ljava.lang.Object;@40b066b\n12-18 14:11:32.302  5089  5089 D HwCust  : Create obj success use class com.huawei.android.cust.cota.protocol.HwCustKillMyselfProcessCheckThreadImpl\n"
@@ -9746,7 +9746,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 09:10:58.438",
@@ -9841,7 +9841,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "dynamic_code_loading"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-17 20:31:42.570",
@@ -9942,7 +9942,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "vpn_connection_failure"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 10:39:37.949",
@@ -10017,7 +10017,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "application_anomaly"
+      "subcategory": "log-android"
     },
     "json": {
       "process_id": 633,
@@ -10073,7 +10073,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "File Access Anomaly"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp_start": "12-17 23:21:04.633",
@@ -10156,7 +10156,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "Application Error"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "2016-12-17 23:25:35",
@@ -10231,7 +10231,7 @@
   {
     "meta": {
       "category": "log",
-      "subcategory": "security_sdk_log"
+      "subcategory": "log-android"
     },
     "json": {
       "timestamp": "12-18 09:17:27.655",

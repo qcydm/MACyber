@@ -88,7 +88,7 @@ DATASET_THREAT_TYPES = {
     # others
     # log:日志数据集
     'log-HDFS':['benign','suspicious','malicious'],
-    'log-anroid':['benign', 'malicious', 'suspicious'],
+    'log-android':['benign', 'malicious', 'suspicious'],
     'log-linux':['benign', 'malicious', 'suspicious'],
     'log-proxifier':['benign', 'malicious', 'suspicious'],
     'supercomputer':['Hardware Failure', 'benign', 'high', 'low', 'malicious', 'suspicious'],
