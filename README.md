@@ -1,12 +1,12 @@
 # MACyber
 
-MACyber is a cybersecurity benchmark and evaluation toolkit for structured security data. It provides benchmark data across seven cybersecurity domains, scripts for benchmark construction and model evaluation, paper result tables, and the threat-intelligence RAG resources used by MACyber-12B.
+MACyber is a cybersecurity benchmark and evaluation toolkit for structured security intelligence data. It provides the MACyber-INT benchmark, construction and evaluation scripts, finalized paper results, and the threat-intelligence RAG resources used by MACyber-12B.
 
 ## Repository Layout
 
 ```text
 MACyber/
-├── benchmark/                    # Benchmark datasets grouped by domain
+├── MACyber-INT_benchmark/        # Benchmark datasets grouped by domain
 │   ├── Network Traffic Security/
 │   ├── IoT Security/
 │   ├── System Log Security/
@@ -14,14 +14,14 @@ MACyber/
 │   ├── Web Security Threat/
 │   ├── Vulnerability Intelligence/
 │   ├── Threat Intelligence/
-│   └── taxonomy.json
+│   ├── taxonomy.json
+│   └── dataset_name_mapping.json
 ├── MACyber-12B/
+│   ├── CyberLoRA/
 │   └── Threat Intelligence RAG/   # Known/unknown attack retrieval resources
-├── results/                      # Final result tables used in the paper
-├── script/
-│   ├── benchmark_construction/    # Raw data conversion and schema validation
-│   ├── evaluation/                # Generation and evaluation scripts
-│   └── preprocessing/             # Data preprocessing utilities
+├── Benchmark_Construction/       # Raw data conversion and schema validation
+├── Benchmark_Evaluation/         # Generation and evaluation scripts
+├── Evaluation_Results/           # Final result tables used in the paper
 ├── requirements.txt
 └── README.md
 ```
@@ -41,19 +41,19 @@ The benchmark contains 31 datasets organized into seven high-level domains:
 Each benchmark file is a JSON list stored as:
 
 ```text
-benchmark/<domain>/<dataset>.json
+MACyber-INT_benchmark/<domain>/<dataset>.json
 ```
 
 The taxonomy is available at:
 
 ```text
-benchmark/taxonomy.json
+MACyber-INT_benchmark/taxonomy.json
 ```
 
 Formal paper dataset names and their corresponding internal `DATASET_THREAT_TYPES` keys are listed in:
 
 ```text
-benchmark/dataset_name_mapping.json
+MACyber-INT_benchmark/dataset_name_mapping.json
 ```
 
 ## Data Schema
@@ -71,7 +71,7 @@ Each sample follows the MACyber schema:
   },
   "label": {
     "official": "threat label",
-    "severity": "benign | suspicious | low | medium | high",
+    "severity": "benign | suspicious | low | medium | high"
   },
   "reasoning": {
     "evidence": ["feature = value (security interpretation)"],
@@ -120,9 +120,9 @@ export DASHSCOPE_MODEL="qwen3-max"
 Generate answers for one dataset:
 
 ```bash
-python script/evaluation/generate_answers.py \
-  --input "benchmark/DNS Security Threat/dns-doh.json" \
-  --output "script/evaluation/outputs/MyModel/DNS Security Threat/dns-doh/model_output.json" \
+python Benchmark_Evaluation/generate_answers.py \
+  --input "MACyber-INT_benchmark/DNS Security Threat/dns-doh.json" \
+  --output "Benchmark_Evaluation/outputs/MyModel/DNS Security Threat/dns-doh/model_output.json" \
   --type dns-doh \
   --api-model "$OPENAI_MODEL" \
   --base-url "$OPENAI_BASE_URL" \
@@ -132,10 +132,10 @@ python script/evaluation/generate_answers.py \
 Evaluate generated answers:
 
 ```bash
-python script/evaluation/evaluate_model.py \
-  --standard "benchmark/DNS Security Threat/dns-doh.json" \
-  --model "script/evaluation/outputs/MyModel/DNS Security Threat/dns-doh/model_output.json" \
-  --output "script/evaluation/outputs/MyModel/DNS Security Threat/dns-doh/eval_result.json" \
+python Benchmark_Evaluation/evaluate_model.py \
+  --standard "MACyber-INT_benchmark/DNS Security Threat/dns-doh.json" \
+  --model "Benchmark_Evaluation/outputs/MyModel/DNS Security Threat/dns-doh/model_output.json" \
+  --output "Benchmark_Evaluation/outputs/MyModel/DNS Security Threat/dns-doh/eval_result.json" \
   --judge-model qwen3-max \
   --api-key "$DASHSCOPE_API_KEY"
 ```
@@ -143,7 +143,7 @@ python script/evaluation/evaluate_model.py \
 Run batch evaluation:
 
 ```bash
-python script/evaluation/batch_eval.py \
+python Benchmark_Evaluation/batch_eval.py \
   --model MyModel \
   --api-model "$OPENAI_MODEL" \
   --base-url "$OPENAI_BASE_URL" \
@@ -159,9 +159,9 @@ Use `--tiny N` for a small debugging subset and `--datasets ...` to restrict eva
 Generation scripts support a threat-intelligence RAG mode:
 
 ```bash
-python script/evaluation/generate_answers.py \
-  --input "benchmark/IoT Security/CIC-BCCC-NRC2024.json" \
-  --output "script/evaluation/outputs/MyModel/IoT Security/CIC-BCCC-NRC2024/model_output.json" \
+python Benchmark_Evaluation/generate_answers.py \
+  --input "MACyber-INT_benchmark/IoT Security/CIC-BCCC-NRC2024.json" \
+  --output "Benchmark_Evaluation/outputs/MyModel/IoT Security/CIC-BCCC-NRC2024/model_output.json" \
   --type CIC-BCCC-NRC2024 \
   --use-rag \
   --rag-top-k 3
@@ -186,7 +186,7 @@ MACyber-12B/Threat Intelligence RAG/
 Convert raw CSV records into the MACyber JSON schema:
 
 ```bash
-python script/benchmark_construction/convert.py \
+python Benchmark_Construction/convert.py \
   --input-csv /path/to/raw.csv \
   --output-json /path/to/output.json \
   --category "Network Traffic Security" \
@@ -197,12 +197,12 @@ python script/benchmark_construction/convert.py \
 Validate benchmark files:
 
 ```bash
-python script/benchmark_construction/validate_schema.py --data-dir benchmark
+python Benchmark_Construction/validate_schema.py --data-dir MACyber-INT_benchmark
 ```
 
 ## Scoring
 
-`script/evaluation/evaluate_model.py` computes a weighted score over four dimensions:
+`Benchmark_Evaluation/evaluate_model.py` computes a weighted score over four dimensions:
 
 ```text
 reasoning: 40%
@@ -215,10 +215,10 @@ severity:  10%
 
 ## Results
 
-The `results/` directory contains the finalized Excel tables used in the paper. Newly generated evaluation outputs are written under:
+`Evaluation_Results/` contains the finalized Excel tables used in the paper. Newly generated outputs are written under:
 
 ```text
-script/evaluation/outputs/
+Benchmark_Evaluation/outputs/
 ```
 
-See `script/evaluation/README.md` for more detailed evaluation usage.
+See `Benchmark_Evaluation/README.md` for detailed evaluation usage.

@@ -104,7 +104,7 @@ def main():
     parser = argparse.ArgumentParser(description="Validate MACyber benchmark JSON schema.")
     parser.add_argument(
         "--data-dir",
-        default=str(Path(__file__).resolve().parents[2] / "data"),
+        default=str(Path(__file__).resolve().parents[1] / "MACyber-INT_benchmark"),
         help="MACyber data directory.",
     )
     parser.add_argument(

@@ -31,5 +31,5 @@ env/
 *_old.json
 *.old.json
 failed.json
-script/evaluation/outputs/*
-!script/evaluation/outputs/.gitkeep
+Benchmark_Evaluation/outputs/*
+!Benchmark_Evaluation/outputs/.gitkeep

@@ -103,5 +103,5 @@ if __name__ == "__main__":
 # python sample_csv.py --input-dir /path/to/your/source/csvs --output-file /path/to/your/output/combined.csv
 #
 # Example:
-# python sample_csv.py --input-dir ./data --output-file ./sampled_data/all_data_sampled.csv --sample-size 500
+# python sample_csv.py --input-dir ./raw_csv --output-file ./sampled_data/all_data_sampled.csv --sample-size 500
 #

@@ -6,8 +6,8 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-REPO_ROOT = SCRIPT_DIR.parents[1]
-DEFAULT_DATA_DIR = REPO_ROOT / "benchmark"
+REPO_ROOT = SCRIPT_DIR.parent
+DEFAULT_DATA_DIR = REPO_ROOT / "MACyber-INT_benchmark"
 DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "outputs"
 
 MODEL_LIST = [

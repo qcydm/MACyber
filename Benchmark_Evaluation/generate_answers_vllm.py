@@ -134,7 +134,7 @@ import json
 import os
 from pathlib import Path
 
-DEFAULT_RAG_ROOT = Path(__file__).resolve().parents[2] / "MACyber-12B" / "Threat Intelligence RAG"
+DEFAULT_RAG_ROOT = Path(__file__).resolve().parents[1] / "MACyber-12B" / "Threat Intelligence RAG"
 DEFAULT_RAG_DB = DEFAULT_RAG_ROOT / "known_attack_channel" / "known_attack_RAG.json"
 DEFAULT_UNKNOWN_RAG_DB_PREFIX = DEFAULT_RAG_ROOT / "unknown_attack_channel" / "known_attack_result"
 
