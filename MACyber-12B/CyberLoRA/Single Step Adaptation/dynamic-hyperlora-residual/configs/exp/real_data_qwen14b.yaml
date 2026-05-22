@@ -1,0 +1,30 @@
+base_config: ../base.yaml
+
+experiment:
+  name: real_data_qwen14b
+
+model:
+  base_model: /root/datas/Dynamic-HyperLoRA-Residual/models/Qwen2.5-14B-Instruct
+  use_mock_base_for_m2: false
+  local_files_only: true
+  device: cuda
+
+training:
+  max_seq_len: 4096
+
+data:
+  real:
+    # Requires alpaca-format JSON with instruction/input/output fields.
+    # Update this path once the new data is available.
+    source_json: /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/known_attack/Pulsedive-Threats/output_data_alpaca.json
+    output_dir: data/real
+    seed: 42
+    train_ratio: 0.74
+    val_ratio: 0.13
+    # test_id 取剩余约 13%
+    ood_source_jsons:
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/ICS/ICS.json
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/Log_unknown/Log_unknown.json
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/host/host.json
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/PhiUSIIL_URL_Dataset/PhiUSIIL_URL_Dataset.json
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/SDN-DDoS_Traffic_Dataset/SDN-DDoS_Traffic_Dataset.json

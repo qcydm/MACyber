@@ -1,0 +1,27 @@
+# Python 缓存 / 测试产物
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# 训练 / 评测输出
+checkpoints/
+outputs/
+runs/
+wandb/
+lightning_logs/
+
+# 大文件 / 中间数据
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+data/real_generative_merged/
+
+# 本地环境文件
+.env
+.env.*

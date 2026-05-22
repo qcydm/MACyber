@@ -1,0 +1,80 @@
+# Generative LM Loss experiment: HyperNet + Static LoRA trained with next-token CE loss.
+# Data format: alpaca-style JSON with instruction/input/output fields.
+# Evaluation: generate → parse JSON block → per-field accuracy + exact match.
+
+base_config: ../base.yaml
+
+experiment:
+  name: real_data_generative
+
+model:
+  base_model: /root/datas/Dynamic-HyperLoRA-Residual/models/cyber-sec-12b
+  trust_remote_code: true
+  use_mock_base_for_m2: false
+  local_files_only: true
+  device: cuda:0
+  device_map: auto
+  base_model_dtype: bf16
+  low_cpu_mem_usage: true
+  max_memory:
+    cuda:0: 78GiB
+    cuda:1: 78GiB
+
+  target_modules:
+    - early_q_proj
+    - mid_q_proj
+    - late_q_proj
+    - early_v_proj
+    - mid_v_proj
+    - late_v_proj
+  target_module_dims:
+    early_q_proj: { in_features: 3840, out_features: 2048 }
+    mid_q_proj: { in_features: 3840, out_features: 2048 }
+    late_q_proj: { in_features: 3840, out_features: 2048 }
+    early_v_proj: { in_features: 3840, out_features: 2048 }
+    mid_v_proj: { in_features: 3840, out_features: 2048 }
+    late_v_proj: { in_features: 3840, out_features: 2048 }
+
+  # sample_feature_dim: dimension for HyperNet input (and prompt_feature_proj output)
+  sample_feature_dim: 64
+
+  base_lora_source: peft
+  base_lora_path: /root/datas/Dynamic-HyperLoRA-Residual/lora_weights/lora_v4
+  base_lora_rank: 16
+
+training:
+  batch_size: 1
+  grad_accum_steps: 16
+  epochs: 2
+  lr: 1.0e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  grad_clip: 1.0
+  lambda_orth: 1.0e-3
+  lambda_rank: 5.0e-4
+  precision: bf16
+  prune_every_steps: 0
+  target_rank: 8
+  rank_tol: 2
+  # Total sequence length including prompt + response
+  max_seq_len: 4096
+
+eval:
+  baselines:
+    - static_lora
+    - residual_no_retriever
+    - residual_with_retriever
+  # Max tokens to generate per sample
+  max_new_tokens: 2048
+  # tiny mode (debug): only evaluate first N samples per split (0 = full)
+  tiny_first_n: 2
+
+data:
+  real:
+    # Update this path to the alpaca-format JSON with instruction/input/output fields
+    source_json: /root/datas/Dynamic-HyperLoRA-Residual/cybersec_merged_random_data.json
+    output_dir: data/real_generative_merged
+    seed: 42
+    train_ratio: 0.74
+    val_ratio: 0.13
+    # ood_source_jsons: disabled — OOD files use old format (meta/json/label/reasoning/response), not alpaca

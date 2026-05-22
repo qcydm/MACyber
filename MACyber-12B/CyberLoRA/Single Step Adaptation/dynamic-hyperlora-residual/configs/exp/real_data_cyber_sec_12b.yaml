@@ -1,0 +1,72 @@
+# cyber-sec-12b（Gemma3-12B 系）+ 真实流量数据 + 预训练 LoRA（lora_v4）
+# 基座须与 lora_v4 训练时一致；若需对比「未做 cyber 微调的官方 Gemma3-12B」，改用 models/gemma3-12b（与 v4 不完全对齐）
+
+base_config: ../base.yaml
+
+experiment:
+  name: real_data_cyber_sec_12b
+
+eval:
+  use_cls_head: true
+  cls_head_path: checkpoints/real_data_cyber_sec_12b/cls_head.pt
+
+model:
+  # 与 lora_weights/lora_v4/adapter_config.json 的 base_model_name_or_path 一致
+  base_model: /root/datas/Dynamic-HyperLoRA-Residual/models/cyber-sec-12b
+  trust_remote_code: true
+  use_mock_base_for_m2: false
+  local_files_only: true
+  device: cuda:0
+  device_map: auto
+  base_model_dtype: bf16
+  low_cpu_mem_usage: true
+  # 按实际 GPU 显存改；多卡时列出多块
+  max_memory:
+    cuda:0: 72GiB
+    cuda:1: 72GiB
+
+  # 固定 six-key segmented contract：early/mid/late × q/v
+  target_modules:
+    - early_q_proj
+    - mid_q_proj
+    - late_q_proj
+    - early_v_proj
+    - mid_v_proj
+    - late_v_proj
+  # 维度会在加载基座后从 Linear 自动推断；以下为 Gemma3 文本层常见形状，运行时会以实际权重为准
+  target_module_dims:
+    early_q_proj: { in_features: 3840, out_features: 3840 }
+    mid_q_proj: { in_features: 3840, out_features: 3840 }
+    late_q_proj: { in_features: 3840, out_features: 3840 }
+    early_v_proj: { in_features: 3840, out_features: 3840 }
+    mid_v_proj: { in_features: 3840, out_features: 3840 }
+    late_v_proj: { in_features: 3840, out_features: 3840 }
+
+  # PEFT 基 LoRA（lora_v4）：须与训练该 LoRA 时的 target_modules / 秩一致
+  base_lora_source: peft
+  peft_key_alignment: per_module
+  base_lora_path: /root/datas/Dynamic-HyperLoRA-Residual/lora_weights/lora_v4
+  # 与 adapter_config.json 中的 r 对齐；仅当 LoRA 加载失败回退随机初始化时强依赖
+  base_lora_rank: 16
+
+training:
+  batch_size: 2
+  grad_accum_steps: 8
+  max_seq_len: 4096
+  precision: bf16
+
+data:
+  real:
+    # Requires alpaca-format JSON with instruction/input/output fields.
+    # Update this path once the new data is available.
+    source_json: /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/known_attack/Pulsedive-Threats/output_data_alpaca.json
+    output_dir: data/real
+    seed: 42
+    train_ratio: 0.74
+    val_ratio: 0.13
+    ood_source_jsons:
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/ICS/ICS.json
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/Log_unknown/Log_unknown.json
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/host/host.json
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/PhiUSIIL_URL_Dataset/PhiUSIIL_URL_Dataset.json
+      - /root/datas/Dynamic-HyperLoRA-Residual/data_from_autodl/unkown_test/SDN-DDoS_Traffic_Dataset/SDN-DDoS_Traffic_Dataset.json

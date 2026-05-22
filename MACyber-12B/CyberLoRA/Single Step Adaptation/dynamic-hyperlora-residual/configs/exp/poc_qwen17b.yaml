@@ -1,0 +1,13 @@
+base_config: ../base.yaml
+
+experiment:
+  name: poc_qwen17b
+
+model:
+  base_model: Qwen/Qwen2.5-1.5B-Instruct
+  residual_rank: 6
+
+training:
+  batch_size: 32
+  grad_accum_steps: 2
+  max_seq_len: 4096

@@ -1,0 +1,39 @@
+{
+  "crop_size": null,
+  "data_format": "channels_first",
+  "default_to_square": true,
+  "device": null,
+  "disable_grouping": null,
+  "do_center_crop": null,
+  "do_convert_rgb": null,
+  "do_normalize": true,
+  "do_pad": null,
+  "do_pan_and_scan": null,
+  "do_rescale": true,
+  "do_resize": true,
+  "image_mean": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "image_processor_type": "Gemma3ImageProcessorFast",
+  "image_seq_length": 256,
+  "image_std": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "input_data_format": null,
+  "pad_size": null,
+  "pan_and_scan_max_num_crops": null,
+  "pan_and_scan_min_crop_size": null,
+  "pan_and_scan_min_ratio_to_activate": null,
+  "processor_class": "Gemma3Processor",
+  "resample": 2,
+  "rescale_factor": 0.00392156862745098,
+  "return_tensors": null,
+  "size": {
+    "height": 896,
+    "width": 896
+  }
+}

@@ -1,0 +1,14 @@
+base_config: ../base.yaml
+
+experiment:
+  name: poc_qwen06b
+
+model:
+  base_model: /root/datas/Dynamic-HyperLoRA-Residual/models/Qwen2.5-0.5B-Instruct
+  use_mock_base_for_m2: false
+  local_files_only: true
+  device: cuda
+
+training:
+  max_seq_len: 4096
+

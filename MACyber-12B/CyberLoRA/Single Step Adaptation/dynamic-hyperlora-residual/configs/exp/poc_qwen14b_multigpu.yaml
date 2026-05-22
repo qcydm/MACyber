@@ -1,0 +1,21 @@
+base_config: ../base.yaml
+
+experiment:
+  name: poc_qwen14b_multigpu
+
+model:
+  base_model: /root/datas/Dynamic-HyperLoRA-Residual/models/Qwen2.5-14B-Instruct
+  use_mock_base_for_m2: false
+  local_files_only: true
+  device: cuda:0
+  device_map: auto
+  base_model_dtype: bf16
+  low_cpu_mem_usage: true
+  max_memory:
+    cuda:0: 72GiB
+    cuda:1: 72GiB
+
+training:
+  batch_size: 2
+  grad_accum_steps: 8
+  max_seq_len: 4096

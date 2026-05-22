@@ -1,0 +1,106 @@
+project:
+  name: dynamic-hyperlora-residual
+  seed: 42
+  output_root: outputs
+  checkpoint_root: checkpoints
+
+data:
+  synthetic:
+    output_dir: data/synthetic
+    seed: 42
+    counts:
+      train: 400
+      val: 80
+      test_id: 80
+      test_ood: 120
+    old_families:
+      - prompt_injection
+      - policy_evasion
+      - roleplay_jailbreak
+    new_families:
+      - tool_misuse
+      - encoding_obfuscation
+    ood_families:
+      - multilingual_indirect_prompting
+      - long_context_distraction
+      - persona_confusion_chain
+
+model:
+  base_model: /root/datas/Dynamic-HyperLoRA-Residual/models/Qwen2.5-14B-Instruct
+  base_lora_path: null
+  base_lora_source: ckpt
+  peft_key_alignment: per_module
+  use_mock_base_for_m2: false
+  local_files_only: true
+  device: cuda
+  target_modules:
+    - early_q_proj
+    - mid_q_proj
+    - late_q_proj
+    - early_v_proj
+    - mid_v_proj
+    - late_v_proj
+  target_module_dims:
+    early_q_proj:
+      in_features: 64
+      out_features: 64
+    mid_q_proj:
+      in_features: 64
+      out_features: 64
+    late_q_proj:
+      in_features: 64
+      out_features: 64
+    early_v_proj:
+      in_features: 64
+      out_features: 64
+    mid_v_proj:
+      in_features: 64
+      out_features: 64
+    late_v_proj:
+      in_features: 64
+      out_features: 64
+  sample_feature_dim: 64
+  base_lora_rank: 8
+  residual_rank: 8
+  hyper_hidden_dim: 128
+  hyper_encoder_layers: 2
+  hyper_num_heads: 4
+  alpha_max: 1.5
+  alpha_init: 0.05
+  residual_a1_init_tau: 0.05
+
+retriever:
+  top_k: 4
+  sim_th: 0.35
+  simhash_bits: 64
+  prefilter_factor: 8
+  cache_enabled: true
+  stats_dim: 2
+
+training:
+  batch_size: 16
+  grad_accum_steps: 1
+  epochs: 5
+  lr: 3.0e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  grad_clip: 1.0
+  lambda_orth: 1.0e-3
+  lambda_rank: 5.0e-4
+  precision: bf16
+  prune_every_steps: 200
+  target_rank: 8
+  rank_tol: 2
+  max_seq_len: 256
+
+eval:
+  # show per-split eval progress bar
+  use_tqdm: true
+  baselines:
+    - static_lora
+    - residual_no_retriever
+    - residual_with_retriever
+  # max tokens to generate per sample during evaluation
+  max_new_tokens: 512
+  # tiny mode: if >0, only evaluate first N samples per split
+  tiny_first_n: 0
