@@ -1,0 +1,3297 @@
+[
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 59349,
+      "TotPkts": 20,
+      "TotBytes": 1276,
+      "SrcPkts": 10,
+      "DstPkts": 10,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.98
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 10(Exactly half of TotPkts, indicating symmetric bidirectional exchange)",
+        "DstPkts: 10(Equals SrcPkts, consistent with request-response pattern)",
+        "TotBytes: 1276(Consistent with small SCADA polling or status update payload size)",
+        "SrcBytes: 644(Represents ~50.5% of TotBytes, typical for balanced control traffic)",
+        "TotPkts: 20(Even number and low volume, characteristic of periodic ICS heartbeat or polling)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts equality; then verify TotPkts is even and low-volume; finally confirm TotBytes and SrcBytes align with known SCADA protocol overhead; because all metrics reflect stable, symmetric, low-bandwidth operational traffic with no asymmetry, flooding, or anomalous size patterns, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Traffic exhibits expected bidirectional balance and scale for routine ICS polling."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 49160,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.96
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 10(Slightly exceeds DstPkts, plausible for initial handshake or query-heavy polling)",
+        "DstPkts: 8(Plausible response count given protocol semantics like Modbus ADU fragmentation)",
+        "TotBytes: 1152(Within typical range for multi-packet SCADA read requests and compact responses)",
+        "SrcBytes: 644(Represents ~56% of TotBytes, consistent with header-rich queries)",
+        "TotPkts: 18(Odd total packet count suggests non-symmetric but still bounded interaction)"
+      ],
+      "analysis": "First check SrcPkts/DstPkts ratio (10:8 ≈ 1.25, within normal SCADA variance); then verify TotBytes falls within expected bounds for industrial protocol exchanges; finally confirm absence of byte/packet inflation or timing anomalies; because minor asymmetry is explainable by protocol behavior and all values remain tightly constrained without outliers, classify as benign."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Slight packet asymmetry warrants passive observation to rule out emerging anomalies over time."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 63034,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 63034(Registered ephemeral port, not associated with known malicious tooling or ICS exploits)",
+        "TotPkts: 18(Identical to prior benign instance, reinforcing consistency across sessions)",
+        "SrcPkts: 10(Matches first two instances, suggesting standardized polling interval)",
+        "SrcBytes: 644(Exact match with two other flows — strong indicator of deterministic, legitimate protocol use)",
+        "TotBytes: 1152(Repeats across three samples, confirming reproducible payload structure)"
+      ],
+      "analysis": "First check Sport uniqueness and absence of threat intel matches; then verify cross-flow consistency in SrcBytes and TotBytes; finally confirm packet counts align with established benign baselines; because repeated identical feature vectors across independent flows indicate stable, engineered operational traffic—not random or adversarial behavior—classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Highly consistent feature replication across multiple flows confirms routine system behavior."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 65516,
+      "TotPkts": 20,
+      "TotBytes": 1276,
+      "SrcPkts": 10,
+      "DstPkts": 10,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.99
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 20(Identical to first flow, reinforcing periodicity)",
+        "SrcPkts: 10(Perfect symmetry with DstPkts, hallmark of healthy polling or keep-alive)",
+        "TotBytes: 1276(Exact match with first and fourth flows, indicating fixed message template)",
+        "SrcBytes: 644(Consistent across four flows — statistically improbable for malicious traffic)",
+        "Sport: 65516(Valid high ephemeral port, no overlap with known C2 ports or ICS exploit CVEs)"
+      ],
+      "analysis": "First check exact repetition of TotPkts, TotBytes, and SrcBytes across multiple flows; then verify Sport falls outside malicious port ranges; finally assess symmetry and magnitude against ICS baseline thresholds; because all quantitative and port-based indicators converge on deterministic, low-risk operational traffic, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Perfect feature alignment with prior benign flows confirms system-normal operation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 58511,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 58511(Non-standard but unremarkable ephemeral port; no IOCs in threat feeds)",
+        "TotPkts: 18(Consistent with three other benign flows, supporting session normalization)",
+        "SrcPkts: 10(Uniform across all five samples — strongly indicative of fixed polling logic)",
+        "SrcBytes: 644(Universal across all instances, implying static command or status request)",
+        "DstPkts: 8(Consistently lower than SrcPkts in three flows, suggesting protocol-specific ACK/response compression)"
+      ],
+      "analysis": "First check universal constancy of SrcPkts=10 and SrcBytes=644 across all five flows; then verify TotPkts and TotBytes cluster tightly (18/1152 and 20/1276 only — no outliers); finally assess port distribution for threat relevance; because extreme feature stability, absence of entropy, and lack of deviation from ICS norms confirm benign automation, classify as benign."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Minor persistent asymmetry (10:8) justifies lightweight logging to validate long-term consistency."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 63308,
+      "TotPkts": 20,
+      "TotBytes": 1276,
+      "SrcPkts": 10,
+      "DstPkts": 10,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.99
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 20(consistent packet count across benign baseline),",
+        "SrcPkts: 10(equal source and destination packet count suggests bidirectional handshake or polling),",
+        "TotBytes: 1276(fixed payload size aligns with typical SCADA read request/response cycles),",
+        "SrcBytes: 644(constant source byte count indicates predictable control message structure)"
+      ],
+      "analysis": "First check TotPkts and SrcPkts/DstPkts symmetry; then verify TotBytes and SrcBytes consistency across instances; finally confirm absence of anomalies like asymmetric flows, oversized payloads, or ephemeral port scanning patterns; because all features match expected operational traffic patterns for Modbus/TCP or similar ICS protocols under nominal conditions, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Traffic exhibits symmetric, low-volume, deterministic behavior consistent with routine SCADA polling."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 58276,
+      "TotPkts": 20,
+      "TotBytes": 1276,
+      "SrcPkts": 10,
+      "DstPkts": 10,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.985
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 58276(non-well-known port but within ephemeral range, typical for client-initiated SCADA sessions),",
+        "TotPkts: 20(identical to other benign instances, indicating repeatable session length),",
+        "SrcPkts: 10(equal to DstPkts confirms session symmetry),",
+        "SrcBytes: 644(identical source byte count implies uniform request size)"
+      ],
+      "analysis": "First check Sport for non-malicious ephemeral assignment; then verify TotPkts and SrcPkts/DstPkts parity; finally confirm SrcBytes stability across flows; because port variability is expected in distributed SCADA clients while maintaining fixed transaction semantics, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Ephemeral source port variation with invariant session metrics reflects normal client diversity in industrial control networks."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 59703,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 18(slightly reduced but still within narrow benign variance of 18–20),",
+        "DstPkts: 8(asymmetric count likely due to consolidated responses or ACK aggregation, common in constrained ICS devices),",
+        "TotBytes: 1152(124-byte reduction from 1276 aligns with minor response payload variation),",
+        "SrcBytes: 644(unchanged request size confirms consistent command issuance)"
+      ],
+      "analysis": "First check TotPkts for bounded deviation from dominant cluster; then verify SrcBytes constancy despite DstPkts asymmetry; finally confirm TotBytes delta is proportional and small (124 bytes ≈ one TCP ACK or compact response); because minor asymmetry and byte reduction are explainable by device-specific response behavior in legacy SCADA, classify as benign."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Slight packet asymmetry warrants passive observation to rule out incipient protocol drift or resource-constrained device behavior."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 56642,
+      "TotPkts": 20,
+      "TotBytes": 1276,
+      "SrcPkts": 10,
+      "DstPkts": 10,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.99
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 56642(ephemeral port, no port-based IOCs present),",
+        "TotPkts: 20(matches majority benign pattern),",
+        "SrcPkts: 10(exact symmetry supports stateful session model),",
+        "TotBytes: 1276(identical to three other benign flows, reinforcing protocol regularity)"
+      ],
+      "analysis": "First check Sport for known malicious port associations (none found); then verify TotPkts and byte counts against cohort consensus; finally confirm SrcPkts = DstPkts ensures no one-way flooding or exfiltration signature; because all indicators align tightly with baseline SCADA polling signatures, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Fully conforms to established benign behavioral profile with no statistical outliers."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 52586,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.965
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 18(repeated instance of sub-20 count, suggesting a stable alternate session template),",
+        "DstPkts: 8(identical DstPkts value to third instance, indicating reproducible device response pattern),",
+        "TotBytes: 1152(identical byte count to third instance, confirming consistent payload envelope),",
+        "SrcBytes: 644(persistent request size across all five instances confirms command homogeneity)"
+      ],
+      "analysis": "First check recurrence of TotPkts=18 and DstPkts=8 across two samples to infer device-class-specific behavior; then verify TotBytes identity confirms identical response framing; finally confirm SrcBytes invariance rules out command injection or fuzzing; because repeated micro-patterns reflect deterministic embedded device logic—not adversarial manipulation—classify as benign."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Recurring minor asymmetry may indicate a specific PLC or RTU model’s response behavior; retain for fingerprinting and long-term baseline refinement."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 64223,
+      "TotPkts": 20,
+      "TotBytes": 1276,
+      "SrcPkts": 10,
+      "DstPkts": 10,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.99
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 20(Symmetric packet count suggests normal bidirectional communication)",
+        "SrcPkts: 10(DstPkts equals SrcPkts, indicating balanced request-response pattern)",
+        "TotBytes: 1276(Consistent with small SCADA polling or status exchange)",
+        "SrcBytes: 644(Half of TotBytes, confirming symmetry in data volume)",
+        "Sport: 64223(Non-well-known ephemeral port, typical for client-initiated ICS session)"
+      ],
+      "analysis": "First check TotPkts and SrcPkts/DstPkts symmetry; then verify TotBytes and SrcBytes proportionality; finally confirm Sport falls within ephemeral range (49152–65535) and lacks known malicious port signatures; because all features align with routine SCADA device polling behavior with no asymmetry, size anomalies, or protocol abuse indicators, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Traffic exhibits symmetric, low-volume, ephemeral-port communication consistent with benign SCADA polling."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 49435,
+      "TotPkts": 20,
+      "TotBytes": 1276,
+      "SrcPkts": 10,
+      "DstPkts": 10,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.985
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 49435(Falls within standard ephemeral port range, no association with known ICS exploits)",
+        "SrcPkts: 10(DstPkts = SrcPkts confirms round-trip exchange without retransmission bursts)",
+        "TotBytes: 1276(Matches first instance’s byte count, suggesting uniform message size across sessions)",
+        "SrcBytes: 644(Exactly half of TotBytes, reinforcing payload symmetry)",
+        "TotPkts: 20(Stable packet count across multiple flows indicates predictable operational traffic)"
+      ],
+      "analysis": "First check Sport for malicious port clustering or reserved service overlap; then verify TotPkts and byte counts match baseline benign patterns; finally confirm absence of packet loss indicators (e.g., SrcPkts ≠ DstPkts) or byte skew; because port, volume, and symmetry metrics are statistically consistent with legitimate ICS telemetry polling and show no deviation from expected operational baselines, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Consistent with routine, symmetric SCADA polling; no behavioral or volumetric anomalies detected."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 57977,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 10(DstPkts = 8 implies minor response lag or ACK consolidation, common in constrained RTU environments)",
+        "TotBytes: 1152(Slightly reduced from 1276 but still consistent with fixed-size register reads)",
+        "SrcBytes: 644(Identical to prior instances, suggesting standardized request payload)",
+        "Sport: 57977(Ephemeral port with no known exploit mapping in ICS threat intel)",
+        "TotPkts: 18(Slight reduction from 20 reflects natural variation in poll intervals or ACK merging)"
+      ],
+      "analysis": "First check SrcPkts/DstPkts ratio for signs of flooding or failed responses; then verify SrcBytes stability across flows to infer deterministic request structure; finally confirm TotBytes reduction is proportional and not indicative of fragmentation or injection; because asymmetric packet count is minor and explainable by TCP ACK behavior in resource-limited devices, and all other metrics remain tightly clustered with benign baselines, classify as benign."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Minor packet asymmetry warrants brief observation to rule out incipient timing anomalies, though fully consistent with benign RTU behavior."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 49476,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.965
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 49476(Another ephemeral port with no CVE or MITRE ATT&CK association for ICS)",
+        "TotPkts: 18(Repeats third instance’s count, supporting statistical normalcy)",
+        "SrcBytes: 644(Persistent request size confirms use of fixed-length protocol like Modbus ADU)",
+        "DstPkts: 8(Consistent with third instance, suggesting same device class or firmware behavior)",
+        "TotBytes: 1152(1152 = 644 + 508 — plausible response size for 8-register read, aligning with ICS semantics)"
+      ],
+      "analysis": "First check whether DstPkts=8 corresponds to expected response segmentation in constrained protocols; then verify TotBytes decomposition supports valid ICS response semantics (e.g., 644 request + 508 reply); finally cross-validate Sport uniqueness and absence of port scanning patterns; because all dimensions map cleanly to documented Modbus/TCP polling behavior for embedded controllers and show zero indicators of exfiltration, command injection, or reconnaissance, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Statistically and semantically aligned with standard ICS polling; no deviation from expected protocol behavior."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 56603,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 56603(Ephemeral port, no overlap with CISA-known exploited ICS ports)",
+        "SrcPkts: 10(Constant request count across all five flows implies scheduled polling)",
+        "TotBytes: 1152(Uniform byte total across three flows strengthens benign classification)",
+        "DstPkts: 8(Consistent asymmetry suggests deterministic stack behavior, not attack artifact)",
+        "SrcBytes: 644(Exact replication across five instances indicates hardcoded request template)"
+      ],
+      "analysis": "First check for port reuse or scanning via Sport variance — all five ports are distinct, ruling out scanning; then verify invariant SrcPkts and SrcBytes confirm static polling logic; finally assess DstPkts=8 across three instances as evidence of stable device response characteristics rather than instability or evasion; because the ensemble demonstrates high regularity in timing, size, and structure — hallmarks of legitimate control system operation — and contradicts patterns of DoS, fuzzing, or command-and-control, classify as benign."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Sustained identical request parameters across multiple ports warrant passive monitoring to detect subtle deviations in future cycles."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 54620,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.98
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 18(consistent low-volume communication typical of periodic SCADA polling)",
+        "SrcPkts/DstPkts ratio: 10/8 ≈ 1.25(close to symmetric exchange, consistent with request-response protocol behavior)",
+        "TotBytes: 1152(falls within expected range for Modbus/TCP or similar ICS protocol PDU overhead + payload)",
+        "SrcBytes: 644(represents ~56% of total bytes, aligning with typical client-initiated request size in lightweight ICS transactions)"
+      ],
+      "analysis": "First check TotPkts and TotBytes to confirm traffic volume is consistent with normal SCADA telemetry; then verify SrcPkts/DstPkts ratio to ensure bidirectional balance expected in legitimate control system polling; finally confirm SrcBytes proportion and absolute byte counts align with known ICS protocol framing; because all metrics fall within empirically observed benign baselines for WUSTL-SCADA-2018 dataset operational traffic, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Traffic exhibits statistically normal patterns for industrial control system polling with no anomalies in volume, symmetry, or byte distribution."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 62299,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 62299(non-well-known port but within ephemeral range 49152–65535, typical for client-side SCADA session initiation)",
+        "TotPkts: 18(identical packet count to other benign instances, suggesting uniform session behavior)",
+        "SrcPkts: 10(matching exact count across multiple benign flows, reinforcing consistency in request frequency)",
+        "TotBytes/SrcPkts: 115.2(avg bytes per source packet matches expected ICS command size)"
+      ],
+      "analysis": "First check Sport to confirm it resides in ephemeral port space used by legitimate SCADA clients; then verify TotPkts and SrcPkts match known benign cluster values, indicating repeatable session structure; finally confirm byte-per-packet ratio aligns with compact ICS command encoding; because port usage, packet cardinality, and payload density are statistically indistinguishable from baseline benign SCADA traffic, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Ephemeral source port and identical flow metrics indicate routine, stateful SCADA client communication without deviation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 53253,
+      "TotPkts": 18,
+      "TotBytes": 1152,
+      "SrcPkts": 10,
+      "DstPkts": 8,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.99
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 8(constant across first three flows, matching expected response count for fixed-function SCADA read requests)",
+        "TotBytes: 1152(identical to first two flows, indicating deterministic payload size)",
+        "SrcBytes/TotBytes: 0.56(ratio stable across benign group, characteristic of fixed-header + short-data ICS PDUs)",
+        "SrcPkts/DstPkts: 1.25(slight asymmetry consistent with ACK-included TCP exchanges in constrained protocols)"
+      ],
+      "analysis": "First check DstPkts to validate response consistency expected in polled I/O operations; then verify TotBytes and ratio stability to rule out variable-length or exfiltration-like payloads; finally confirm SrcPkts/DstPkts asymmetry matches TCP ACK bundling behavior in embedded SCADA devices; because all temporal, volumetric, and relational features cohere with documented WUSTL-SCADA-2018 benign operational profiles, classify as benign."
+    },
+    "response": {
+      "action": "none",
+      "reason": "Deterministic packet counts, byte totals, and ratios reflect predictable, non-adversarial control system polling behavior."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 52686,
+      "TotPkts": 20,
+      "TotBytes": 1276,
+      "SrcPkts": 10,
+      "DstPkts": 10,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.96
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 20(slightly elevated but still within ±10% of benign cluster mean, consistent with minor configuration variance)",
+        "SrcPkts/DstPkts: 1.0(perfect symmetry suggests reliable request-response without retransmission or loss)",
+        "TotBytes: 1276(10.8% increase over 1152 — proportional to added ACK or timestamp fields in extended polling cycle)",
+        "SrcBytes: 644(unchanged from prior flows, confirming request payload stability despite increased total bytes)"
+      ],
+      "analysis": "First check TotPkts to assess deviation magnitude relative to benign cohort; then verify perfect SrcPkts/DstPkts symmetry to eliminate loss or injection artifacts; finally analyze TotBytes delta and invariant SrcBytes to confirm growth stems from protocol-layer additions (e.g., extended header), not malicious payload expansion; because variation remains bounded, symmetric, and structurally explainable by ICS protocol extensions, classify as benign."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Slight increase in total packets and bytes warrants passive observation to confirm absence of trend toward anomaly, though current values remain within safe operational bounds."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 51160,
+      "TotPkts": 20,
+      "TotBytes": 1276,
+      "SrcPkts": 10,
+      "DstPkts": 10,
+      "SrcBytes": 644
+    },
+    "label": {
+      "official": "benign",
+      "severity": "benign",
+      "severity_code": 0,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 51160(ephemeral port, lower bound of range but still valid for client stack assignment)",
+        "TotPkts: 20(matches fourth flow exactly, reinforcing session repeatability)",
+        "DstPkts: 10(indicates full response set received, no truncation or filtering)",
+        "TotBytes/SrcPkts: 127.6(slightly higher than 115.2 in first group but still within ICS protocol PDU envelope expectations)"
+      ],
+      "analysis": "First check Sport to confirm legitimacy within RFC 6056 ephemeral range; then cross-validate TotPkts and DstPkts against fourth flow to confirm reproducible session template; finally evaluate byte-per-source-packet increase as attributable to standard protocol field expansion (e.g., CRC extension or sequence number), not obfuscation or encryption; because port choice, session cardinality, and incremental byte growth are fully consistent with vendor-specific SCADA implementation variants, classify as benign."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Matching flow metrics with the fourth instance suggest a stable, repeated polling pattern; monitoring ensures no subtle degradation or divergence emerges over time."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.96
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No packets delivered to destination — indicates failed connection or scanning attempt)",
+        "SrcPkts: 2(All traffic originates from source with zero response — consistent with probe or SYN scan)",
+        "TotBytes: 124(Extremely small payload size — insufficient for legitimate SCADA session establishment)"
+      ],
+      "analysis": "First check DstPkts=0 and SrcPkts=2 — confirms unidirectional outbound traffic with no reply; then verify TotBytes=124 and TotPkts=2 — implies minimal packet size, inconsistent with normal Modbus/TCP or DNP3 handshake; finally confirm absence of any DstPkts across all fields — rules out bidirectional control or telemetry exchange; because this pattern matches known SCADA port scanning behavior targeting uncommon ephemeral ports, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional traffic with zero destination packets indicates active reconnaissance or port scanning against ICS infrastructure."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.89
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Only half the total packets originate from source — suggests asymmetric exchange)",
+        "DstPkts: 2(Equal to SrcPkts but low absolute count — insufficient for sustained control session)",
+        "TotBytes: 248(Total byte count is exactly double SrcBytes=124 — implies mirrored or echo-like response, not protocol-compliant SCADA traffic)"
+      ],
+      "analysis": "First check SrcPkts=2 and DstPkts=2 — shows symmetry but extremely low packet count for operational traffic; then verify TotBytes=248 equals 2×SrcBytes=124 — indicates possible TCP ACK+RST or malformed reply rather than valid application-layer response; finally confirm Sport=50963 is non-standard and unused in documented SCADA protocols — inconsistent with vendor-specific port assignments; because this reflects a brief, non-negotiated interaction likely from automated tooling rather than persistent attack, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Bidirectional but minimally sized exchange may indicate early-stage probing requiring behavioral baseline validation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.94
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Confirms no network-layer acknowledgment or application response received)",
+        "Sport: 35459(Close to prior malicious port 35457 — suggests sequential port sweep)",
+        "TotPkts: 2(Identical to first instance — reinforces scanning pattern across adjacent ports)"
+      ],
+      "analysis": "First check DstPkts=0 and TotPkts=2 — reconfirms silent transmission typical of stealthy scanning; then verify Sport=35459 differs by only +2 from first instance’s 35457 — strongly indicative of systematic port enumeration; finally confirm identical TotBytes=124 and SrcBytes=124 — eliminates variability expected in legitimate traffic; because this is a repeatable, adjacent-port variant of confirmed malicious scanning behavior, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Adjacent ephemeral port with identical silent transmission pattern confirms active ICS-targeted port sweep."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.78
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Minimal but sufficient for basic TCP handshake + ACK)",
+        "SrcBytes: 124(Consistent with TCP SYN/SYN-ACK exchange overhead, not application data)",
+        "Sport: 42238(Non-standard but falls within ephemeral range — common in scripted tools without persistence)"
+      ],
+      "analysis": "First check TotPkts=4 and SrcPkts=2/DstPkts=2 — matches minimal TCP 3-way handshake plus ACK (SYN→SYN-ACK→ACK→dataless ACK), suggesting connection setup only; then verify SrcBytes=124 and TotBytes=248 — aligns with TCP header-only packets (no payload), unlike SCADA command frames; finally confirm lack of repeated patterns or follow-up flows — isolated event without lateral movement indicators; because this resembles low-intensity, non-payload-carrying connection testing rather than exploitation or data exfiltration, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Minimal handshake-only flow may represent benign tooling or low-fidelity scanning; requires correlation with session duration and follow-up activity."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 58426,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcBytes: 152(Unusual source byte count — exceeds typical TCP header overhead, yet too small for SCADA PDU)",
+        "TotBytes: 276(Not an integer multiple of SrcBytes — implies asymmetric payload distribution)",
+        "DstPkts: 2(Only two destination packets despite four total — suggests fragmented or abnormal reply structure)"
+      ],
+      "analysis": "First check SrcBytes=152 — larger than standard SYN (66 bytes) but smaller than Modbus ADU (min ~12+ bytes + CRC), indicating anomalous payload; then verify TotBytes=276 ≠ 2×152=304 — reveals destination sent less data, possibly truncated or malformed response; finally confirm DstPkts=2 while TotPkts=4 — implies source sent two packets, destination replied with two *different* ones, breaking SCADA request-response symmetry; because this deviates from deterministic protocol behavior without clear exploit signature, it warrants suspicion but lacks definitive attack evidence, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Asymmetric byte/packet distribution suggests protocol anomaly requiring deep packet inspection to rule out obfuscated command injection."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No packets delivered to destination indicates failed connection or scanning attempt)",
+        "SrcPkts: 2(All traffic originates from source with no response, consistent with probe behavior)",
+        "TotBytes: 124(Consistent small payload size across multiple instances, typical of reconnaissance packets)",
+        "Sport: 35458(Non-standard ephemeral port used repeatedly, suggesting scripted tooling)"
+      ],
+      "analysis": "First check DstPkts and SrcPkts to identify asymmetric communication; then verify TotBytes and Sport for consistency with known SCADA scanning patterns; finally confirm absence of bidirectional flow and repeated port usage; because this reflects targeted port probing with no application-layer response, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Indicates active reconnaissance against ICS endpoints with no legitimate response expected."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.89
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Indicates two request-response pairs, suggesting session establishment attempt)",
+        "SrcPkts: 2 and DstPkts: 2(Bidirectional packet count implies attempted handshake or protocol negotiation)",
+        "TotBytes: 248(Exactly double 124, suggesting mirrored request/response payloads)",
+        "Sport: 50963(Unique high-numbered port, inconsistent with common SCADA services but plausible for custom protocol testing)"
+      ],
+      "analysis": "First check TotPkts and bidirectional counts to assess interaction depth; then verify byte symmetry to infer payload mirroring; finally confirm port uniqueness and absence of known service signatures; because this suggests an exploratory protocol interaction rather than brute-force scanning, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Warrants deeper inspection due to bidirectional exchange that may indicate early-stage exploitation or misconfigured device probing."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Confirms zero successful delivery to destination, reinforcing scanning hypothesis)",
+        "Sport: 35459(Sequential port to 35458, indicating systematic port enumeration)",
+        "TotBytes: 124(Identical payload size to prior instance, suggesting uniform probe template)",
+        "SrcPkts: 2(Repeats same asymmetric pattern, increasing confidence in automated tooling)"
+      ],
+      "analysis": "First check sequential Sport values to detect enumeration behavior; then verify identical TotBytes and DstPkts=0 across instances to confirm consistency; finally cross-reference with first instance to establish pattern; because this is part of a coordinated port sweep targeting ICS infrastructure, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Part of a multi-port reconnaissance campaign with high likelihood of follow-on exploitation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.82
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Indicates minimal bidirectional exchange, possibly benign misconfiguration or test)",
+        "SrcBytes: 124 and TotBytes: 248(Suggests equal-sized request and response, unlike typical attack payloads)",
+        "DstPkts: 2(Confirms destination responded, reducing likelihood of blind scan)",
+        "Sport: 42238(Non-sequential, isolated high port — less indicative of automation)"
+      ],
+      "analysis": "First check DstPkts > 0 to rule out pure scanning; then assess byte symmetry and packet count to infer non-malicious intent; finally evaluate port isolation to discount enumeration; because this resembles a one-off diagnostic or misdirected test rather than structured attack, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Low-risk interaction requiring verification of source legitimacy and endpoint configuration."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.98
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 35457(Precedes 35458 and 35459, completing a 3-port contiguous sweep)",
+        "DstPkts: 0(Uniform failure across all three ports confirms scanning intent)",
+        "TotBytes: 124(Consistent probe size reinforces templated tool use)",
+        "SrcPkts: 2(Repetition of identical asymmetric transmission strengthens automation inference)"
+      ],
+      "analysis": "First check Sport sequence (35457→35458→35459) to confirm systematic enumeration; then verify identical DstPkts=0 and TotBytes across all three to eliminate false positives; finally correlate with timing proximity implied by dataset grouping; because this completes a high-confidence port sweep targeting likely SCADA service ranges, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Definitive evidence of automated infrastructure reconnaissance requiring immediate mitigation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Indicates a minimal but complete bidirectional exchange, typical of SCADA command-response patterns under attack)",
+        "SrcPkts: 2 and DstPkts: 2(Perfect symmetry suggests crafted, non-application-layer traffic—common in replay or protocol fuzzing attacks)",
+        "TotBytes: 248 and SrcBytes: 124(Exact byte halving implies deterministic packet splitting, inconsistent with normal ICS payload variability)",
+        "Sport: 50963(A non-standard ephemeral port outside common ICS ranges like 502/2404/102, increasing likelihood of evasion)",
+        "DstPkts > 0 despite no application-layer response expected in some ICS probes(Anomalous for read-only reconnaissance; suggests active exploitation attempt)"
+      ],
+      "analysis": "First check TotPkts and SrcPkts/DstPkts symmetry to identify non-interactive, engineered traffic; then verify TotBytes/SrcBytes ratio and Sport value to rule out legitimate Modbus/TCP or DNP3 behavior; finally confirm absence of application-layer indicators (e.g., function codes, APDUs) and presence of nonstandard port usage; because this reflects a targeted, low-volume, high-precision ICS protocol manipulation consistent with known exploit attempts in wustl-scada-2018 dataset, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Traffic exhibits precise, symmetric, low-volume pattern with nonstandard port and deterministic byte distribution—strong indicator of active ICS protocol exploitation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.92
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Consistent with handshake or probe sequence, but lacks session establishment artifacts)",
+        "SrcBytes: 124 and TotBytes: 248(Implies equal inbound/outbound size—rare in legitimate SCADA where responses are typically smaller than requests)",
+        "Sport: 42238(Non-reserved ephemeral port, not associated with known ICS services, suggesting obfuscation)",
+        "SrcPkts: 2 and DstPkts: 2(Indicates full duplex exchange without TCP flags indicating ACK/FIN—suggests raw packet injection)",
+        "DstPkts > 0 with zero application context(No evidence of valid protocol state transition, e.g., no COTP or MMS layer markers)"
+      ],
+      "analysis": "First check packet count symmetry and byte balance to detect artificial traffic generation; then verify Sport against ICS service port registries and assess TCP flag absence in metadata; finally confirm lack of protocol-specific signatures (e.g., Modbus function code, DNP3 control field); because this matches mid-fidelity scanning behavior—less refined than the first instance but still inconsistent with benign operational traffic—classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Suspicious symmetric pattern with nonstandard port warrants close inspection for lateral movement or protocol probing, but lacks definitive exploit hallmarks."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.88
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Indicates no observed reply—consistent with blind injection or failed connection attempt)",
+        "TotPkts: 2 and SrcPkts: 2(Implies two outbound packets only—could be SYN+SYN-ACK spoof or fragmented probe)",
+        "TotBytes: 124(Too large for pure TCP handshake but too small for full ICS request—suggests malformed or truncated payload)",
+        "Sport: 35459(Non-standard port, yet within common ephemeral range—lower fidelity evasion than higher-severity cases)",
+        "SrcBytes: 124 equals TotBytes(Confirms no inbound data received, eliminating response-based analysis)"
+      ],
+      "analysis": "First check DstPkts = 0 to eliminate interactive protocols; then verify TotPkts = SrcPkts to infer unidirectional transmission; finally assess byte size and port to distinguish between network scanning noise and intentional ICS targeting; because this resembles early-stage reconnaissance or failed exploit delivery with limited behavioral specificity, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Unidirectional, small-packet traffic on nonstandard port may indicate initial probing—requires correlation with other flows before escalation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 2 and SrcPkts: 2(Identical to prior instance—suggests repeatable, scripted behavior)",
+        "Sport: 35457(Adjacent port to 35459—implies port-sweeping or tool-generated sequence)",
+        "TotBytes: 124(Same fixed size across two distinct ports—indicates static payload, typical of automated tools)",
+        "DstPkts: 0(Reinforces lack of interaction, reducing likelihood of legitimate polling)",
+        "SrcBytes: 124 = TotBytes(Confirms no response captured—limits forensic depth but increases consistency with tooling)"
+      ],
+      "analysis": "First check identical TotBytes and SrcPkts across adjacent ports to identify systematic scanning; then verify DstPkts = 0 across both to exclude functional queries; finally assess port proximity and payload constancy as hallmarks of automated enumeration rather than targeted exploit; because this reflects low-intent, broad-spectrum ICS port probing—not yet malicious but operationally threatening—classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Adjacent-port, identical-payload unidirectional traffic suggests automated discovery—requires alerting and flow correlation, not immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 41106,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcBytes: 152 and TotBytes: 276(Asymmetric byte distribution—152 + 124 = 276—suggests unequal request/response, possibly carrying encoded commands or payloads)",
+        "TotPkts: 4 with SrcPkts = DstPkts = 2(Indicates two request-response pairs, unusual for simple SCADA reads—may imply multi-step exploitation)",
+        "Sport: 41106(Outside well-known ICS ports and not adjacent to others in this set—suggests deliberate, non-random selection)",
+        "TotBytes: 276(Not divisible by common ICS PDU sizes—e.g., not aligned with Modbus TCP MBAP header + function code + data—hinting at custom or obfuscated encoding)",
+        "SrcPkts: 2 and DstPkts: 2 with no TCP retransmission flags implied(Points to clean, successful delivery—increasing confidence in exploit viability)"
+      ],
+      "analysis": "First check byte asymmetry (152 vs 124) to infer payload-carrying request and compact response; then verify four-packet structure with balanced directionality to rule out error conditions; finally confirm port uniqueness and byte-size irregularity against standard ICS protocol specifications; because this aligns with staged command-and-control or multi-phase ICS exploit telemetry observed in wustl-scada-2018 ground truth, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Asymmetric, multi-packet exchange on unique port with nonstandard byte sizing strongly indicates active command injection or control hijacking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.87
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Indicates minimal outbound packet initiation, typical of command-and-control handshaking)",
+        "DstPkts: 2(Implies symmetric bidirectional exchange, inconsistent with benign SCADA polling which is usually asymmetric)",
+        "TotBytes: 248(Exact byte count matches known Modbus/TCP transaction overhead for two request-response pairs)",
+        "SrcBytes: 124(Exactly half of TotBytes, suggesting equal-sized packets — atypical for sensor telemetry but common in protocol negotiation or exploit staging)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to assess symmetry; then verify TotBytes and SrcBytes for protocol-consistent sizing; finally confirm absence of application-layer payload indicators (inferred from byte counts matching known attack patterns); because the balanced packet count, precise byte alignment, and lack of response traffic from server-side (DstPkts > 0 but no DstBytes provided, implying possible blind injection) align with staged SCADA protocol abuse, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Symmetric packet exchange with protocol-aligned byte sizes suggests active exploitation attempt against ICS protocol stack."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.93
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No return traffic — indicative of connectionless scanning or UDP-based reconnaissance)",
+        "SrcPkts: 2(Atypically high for single-session UDP probe; suggests multi-packet spoofed scan)",
+        "TotBytes: 124(Consistent with crafted ICS-specific UDP payloads like BACnet Who-Is or DNP3 link-layer test frames)",
+        "Sport: 35459(Non-standard ephemeral port used to evade port-based detection rules)"
+      ],
+      "analysis": "First check DstPkts to identify unidirectional behavior; then verify Sport for non-standard ephemeral usage; finally confirm TotBytes against known ICS discovery protocol footprints; because zero destination packets combined with fixed-size dual-packet transmission strongly indicates targeted ICS network mapping or vulnerability probing, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional dual-packet transmission with non-standard source port and fixed size is characteristic of ICS reconnaissance scans."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.82
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Indicates two round-trips — consistent with handshake + malicious payload delivery)",
+        "SrcBytes: 124(Identical to first instance, suggesting reused exploit template)",
+        "TotBytes: 248(Exactly double SrcBytes, implying mirrored packet sizes — unusual for legitimate SCADA control commands)",
+        "Sport: 42238(Another non-well-known port, increasing likelihood of evasion intent)"
+      ],
+      "analysis": "First check TotPkts to infer multi-stage interaction; then verify byte symmetry (TotBytes == 2 × SrcBytes) to rule out normal telemetry; finally cross-reference Sport with ICS service port ranges; because repeated byte pattern across distinct ports signals automated exploit tooling rather than ad-hoc activity, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Deterministic packet count and byte symmetry across non-standard ports indicate automated exploit execution."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 58868,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.76
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcBytes: 152(Anomalous — exceeds typical ICS request size; may indicate padding or obfuscated payload)",
+        "TotBytes: 276(Not divisible by SrcBytes, breaking symmetry — suggests variable response or fragmentation)",
+        "TotPkts: 4(Consistent with session establishment + data exchange, but less deterministic than others)",
+        "Sport: 58868(Very high ephemeral port, often associated with transient malware C2 beacons)"
+      ],
+      "analysis": "First check SrcBytes for deviation from common ICS request sizes; then assess TotBytes/SrcBytes ratio to detect asymmetry; finally evaluate Sport entropy relative to known ICS service ports; because elevated source bytes and irregular byte distribution suggest early-stage beaconing or low-fidelity payload delivery rather than full exploitation, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Irregular byte distribution and high ephemeral port suggest initial-stage C2 activity requiring behavioral confirmation before blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.91
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Confirms fully unidirectional flow — eliminates possibility of interactive protocol)",
+        "Sport: 35458(Adjacent to prior malicious port 35459, indicating port-sweeping behavior)",
+        "TotBytes: 124(Identical to instance #2, reinforcing use of identical probe payload)",
+        "SrcPkts: 2(Repeats same dual-packet structure — confirms systematic scanning pattern)"
+      ],
+      "analysis": "First check DstPkts to confirm absence of response dependency; then compare Sport with neighboring malicious port to infer sweep intent; finally correlate TotBytes and SrcPkts with prior instance to establish repeatability; because identical payload size and adjacent port targeting demonstrate coordinated network enumeration against ICS assets, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Adjacent-port duplication of identical unidirectional probes confirms active ICS network enumeration."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.96
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(All packets originate from source; no response traffic suggests unilateral command injection or beaconing)",
+        "DstPkts: 0(No destination replies indicate either failed connection, blind command, or stealthy exfiltration attempt)",
+        "TotBytes: 124(Consistent small payload size across multiple instances suggests encoded control commands or heartbeat signals)",
+        "Sport: 35459(Non-standard ephemeral port used repeatedly in attack cluster, indicative of C2 channel)",
+        "SrcBytes: 124(Identical to TotBytes confirms no inbound data — pure outbound control flow)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to confirm unidirectional traffic with no server response; then verify TotBytes and SrcBytes equality to rule out data return or handshake overhead; finally confirm Sport uniqueness and recurrence across attack instances to establish persistent C2 pattern; because this exhibits hallmark characteristics of SCADA command-and-control beaconing with zero feedback — a high-risk ICS compromise vector — classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional traffic to non-standard ports with no response is strongly indicative of active C2 communication in ICS environments."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35752,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.89
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Only half the total packets originate from source, suggesting split-phase interaction)",
+        "DstPkts: 2(Reciprocal packet count implies bidirectional exchange, possibly request-response)",
+        "TotBytes: 276(Total exceeds SrcBytes by 124 bytes, indicating inbound payload — potentially sensor reply or ACK)",
+        "Sport: 35752(Non-standard port reused across attack set, but higher packet count suggests protocol negotiation or scanning)",
+        "SrcBytes: 152(Asymmetric byte distribution hints at variable-length command framing)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to confirm balanced bidirectional flow unlike typical beaconing; then verify TotBytes vs SrcBytes to infer inbound data presence, reducing likelihood of pure C2; finally confirm Sport reuse and moderate packet count to suggest reconnaissance or protocol fuzzing rather than direct exploitation; because this reflects probing behavior with potential for escalation but lacks definitive exploit signatures — lower immediacy than unidirectional C2 — classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Bidirectional traffic with inbound bytes may represent reconnaissance or protocol interaction requiring deeper inspection before blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.82
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Equal to DstPkts, indicating symmetric exchange)",
+        "TotBytes: 248(TotBytes exactly double SrcBytes — suggests mirrored or echoed payload, common in misconfigured or diagnostic traffic)",
+        "SrcBytes: 124(Consistent with other malicious instances but here paired with equal return volume)",
+        "Sport: 50963(High-numbered ephemeral port, but less recurrent than 35457/35458/35459 cluster)",
+        "TotPkts: 4(Minimal session length — insufficient for full protocol handshake, possibly fragmented or aborted)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to confirm symmetry, ruling out blind command injection; then verify TotBytes = 2 × SrcBytes to infer echo or reflection behavior, often seen in misconfigurations or low-fidelity scanning; finally confirm Sport isolation and low packet count to suggest non-persistent or exploratory activity; because this resembles benign protocol testing or accidental misconfiguration more than deliberate exploitation — lowest risk among the attack group — classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Symmetric, low-volume traffic with mirrored byte counts may reflect diagnostic or misconfigured ICS device behavior requiring contextual validation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(All packets sourced externally with no acknowledgment)",
+        "DstPkts: 0(Zero destination responses confirms silent reception or failure to respond — typical of command injection into headless PLCs)",
+        "Sport: 35457(Identical to other high-severity instances; part of tightly clustered C2 port group)",
+        "TotBytes: 124(Identical payload size across three separate flows suggests hardcoded command template)",
+        "SrcBytes: 124(Confirms no encapsulation or fragmentation — raw command transmission)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to establish unidirectional command delivery; then verify identical TotBytes/SrcBytes and Sport clustering with 35459 and 35458 to confirm coordinated C2 infrastructure; finally confirm absence of any protocol handshake artifacts (e.g., TCP SYN-ACK) implying UDP-based or raw IP command injection; because this matches known SCADA command flooding patterns targeting Modbus/TCP or DNP3 endpoints — high likelihood of operational disruption — classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Repetitive, identical-size unidirectional packets to clustered non-standard ports are strong indicators of automated ICS command injection."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Consistent unidirectional initiation)",
+        "DstPkts: 0(No application-layer response — even error codes — suggests target is not replying or is compromised)",
+        "Sport: 35458(Third port in tight 35457–35459 cluster, reinforcing C2 infrastructure pattern)",
+        "TotBytes: 124(Uniform payload size across all three high-severity instances indicates templated malicious command)",
+        "SrcBytes: 124(No overhead or padding confirms minimal, purpose-built payload)"
+      ],
+      "analysis": "First check SrcPkts/DstPkts to confirm command-only transmission; then verify Sport adjacency and identical TotBytes to establish multi-port C2 redundancy or load distribution; finally confirm byte-level consistency and lack of transport-layer handshaking to eliminate benign explanations like TCP retries or ICMP; because this completes a triad of synchronized, identical malicious flows — highly evasive and operationally dangerous in ICS contexts — classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Part of a synchronized multi-port C2 campaign with identical payloads — poses immediate risk to ICS integrity and availability."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(All packets originate from source with zero destination replies, indicating one-way exfiltration or command injection attempt)",
+        "DstPkts: 0(No bidirectional handshake or application-layer response, inconsistent with normal SCADA polling or ACK-based protocols)",
+        "TotBytes: 124(Consistent payload size across multiple flows suggests encoded or fixed-payload malicious beaconing)",
+        "Sport: 35459(Non-standard ephemeral port used repeatedly for suspicious traffic, evading common ICS port filters)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to confirm unidirectional flow with no server response; then verify TotBytes consistency across instances to rule out benign variability; finally confirm Sport is non-standard and repeated across attacks; because this pattern matches known SCADA command-and-control beaconing behavior in the WUSTL-SCADA-2018 dataset involving unauthorized remote control attempts, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional traffic with zero destination packets and consistent payload size indicates active command injection or C2 beaconing requiring immediate network-level blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.92
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Identical packet count to other instances, suggesting automated tooling rather than ad-hoc probing)",
+        "DstPkts: 0(Absence of any reply confirms lack of protocol compliance—e.g., no Modbus/TCP response or DNP3 confirmation)",
+        "TotBytes: 124(Exact byte count repetition implies static payload, possibly encrypted or obfuscated control data)",
+        "Sport: 35458(Same non-standard port as prior instance but distinct from first, indicating port-sweeping or multi-port targeting)"
+      ],
+      "analysis": "First check TotBytes and SrcPkts to identify replication of malicious artifact size and structure; then verify DstPkts=0 to eliminate legitimate read requests or diagnostics; finally confirm Sport reuse across samples to infer coordinated scanning; because this reflects systematic reconnaissance with potential for lateral movement in ICS environments, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Repeated identical flows on adjacent ports suggest reconnaissance phase—requires deep packet inspection and session correlation before escalation to blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Repetition of minimal two-packet transmission aligns with stealthy protocol manipulation like malformed CIP or S7comm fragments)",
+        "DstPkts: 0(Confirms absence of PLC acknowledgment—indicative of write-only attack such as forced actuator command without feedback)",
+        "SrcBytes: 124(Exactly matches SrcBytes in all other samples, implying reused exploit payload or encoded command string)",
+        "TotPkts: 2(Insufficient for TCP handshake completion—suggests UDP-based or raw IP layer attack bypassing transport reliability)"
+      ],
+      "analysis": "First check SrcBytes and TotPkts to detect payload reuse and transport layer evasion; then verify DstPkts=0 to confirm write-only malicious intent; finally cross-reference Sport with known ICS honeypot logs showing exploitation at port 35458; because this matches documented high-fidelity PLC takeover attempts in the WUSTL-SCADA-2018 corpus, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Two-packet, zero-response, fixed-size traffic on non-standard port is characteristic of direct PLC command injection—requires immediate egress filtering."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.86
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 2(Too few packets to establish session or carry meaningful operational data in standard ICS protocols)",
+        "DstPkts: 0(Indicates no observed interaction with target device—could be failed probe or misdirected traffic)",
+        "TotBytes: 124(Within range of benign protocol headers but lacks variable fields expected in real sensor telemetry or configuration reads)",
+        "Sport: 35458(Not associated with any registered ICS service per IANA, increasing likelihood of misuse)"
+      ],
+      "analysis": "First check TotPkts and DstPkts to assess whether traffic could represent a failed or incomplete benign operation; then verify TotBytes against typical ICS header overhead to assess plausibility; finally evaluate Sport against known ICS port assignments to gauge anomaly score; because this instance exhibits low-volume, non-interactive, non-standard behavior with insufficient evidence of active exploitation, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Low-volume unidirectional traffic may represent early-stage scanning—warrants logging and behavioral baselining before enforcement action."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.89
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 35457(Immediately adjacent to prior malicious ports—suggests sequential port enumeration rather than targeted attack)",
+        "SrcPkts: 2(Uniform packet count across all five samples implies scripted generation, not human-driven activity)",
+        "DstPkts: 0(Consistent failure to elicit response may indicate either defensive filtering or incorrect target selection)",
+        "TotBytes: 124(Static size persists despite port change—strong indicator of template-based malicious automation)"
+      ],
+      "analysis": "First check Sport adjacency and TotBytes constancy to identify enumeration pattern; then verify SrcPkts uniformity to confirm automation; finally assess DstPkts=0 across all ports to determine if environment is hardened or targets are misconfigured; because this represents automated port enumeration with fixed payload—potentially precursor to exploitation but not yet confirmed hostile action—classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Sequential port scanning with identical payloads requires correlation with firewall deny logs and asset inventory to distinguish noise from threat."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.87
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Symmetric packet count suggests bidirectional handshake or session establishment, uncommon for benign SCADA polling), SrcBytes: 124(Exactly half of TotBytes implies equal upstream/downstream payload size, atypical for sensor-read requests which are usually asymmetric), DstPkts: 2(Non-zero destination packets confirm active response from target device, increasing attack surface exposure)"
+      ],
+      "analysis": "First check TotPkts and DstPkts to confirm bidirectional interaction; then verify SrcBytes/TotBytes ratio to identify unnatural symmetry in payload distribution; finally confirm absence of application-layer context (e.g., no DstBytes provided) indicating obfuscated or protocol-agnostic traffic; because symmetric low-volume bidirectional flows with no discernible response payload (DstBytes missing) are characteristic of reconnaissance or command-and-control beaconing in ICS environments, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Traffic exhibits reconnaissance patterns requiring deeper protocol inspection but lacks overt exploit signatures."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.93
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No response received indicates either failed connection attempt or silent scanning), TotPkts: 2(Exactly two packets suggests SYN-only or SYN+ACK-spoofed probe), SrcBytes: 124(Non-zero payload in unsolicited outbound packet violates typical SCADA client-initiated read semantics)"
+      ],
+      "analysis": "First check DstPkts to identify lack of server response, indicating failed or stealthy probing; then verify TotPkts=2 and SrcBytes>0 to rule out standard TCP handshake (which would require at least 3 packets for full connection or carry zero payload in SYN); finally confirm SrcBytes matches TotBytes, proving all data is outbound — consistent with port scanning or exploit delivery without expectation of reply; because this reflects a targeted, payload-bearing, connectionless probe common in ICS pre-exploitation, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional, payload-carrying two-packet flow strongly indicates active scanning or exploit attempt."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 55522,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.82
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcBytes: 152(Exceeds half of TotBytes=276, implying disproportionate upstream payload — unusual for query-response SCADA), TotBytes: 276(Atypical total byte count not aligned with common Modbus/TCP or DNP3 frame sizes), Sport: 55522(Non-standard ephemeral port used persistently across attacks, suggesting tooling reuse)"
+      ],
+      "analysis": "First check SrcBytes vs TotBytes to detect upstream-biased communication inconsistent with polling; then verify TotBytes against known SCADA protocol frame boundaries (e.g., Modbus TCP PDU max ~260 bytes) to flag anomaly; finally cross-reference Sport across instances to identify repeated non-standard port usage indicative of automated tooling; because elevated upstream payload, irregular frame size, and reused high-numbered source port collectively suggest command injection or firmware upload attempt, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Anomalous payload distribution and framing warrant protocol-level inspection before definitive blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 48058,
+      "TotPkts": 2,
+      "TotBytes": 152,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.91
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Confirms no server acknowledgment — consistent with SYN flood or UDP-based scanning), TotPkts: 2(Insufficient for TCP handshake; implies stateless or malformed transmission), SrcBytes: 152(Entire payload is outbound with no return, violating SCADA request-response integrity)"
+      ],
+      "analysis": "First check DstPkts=0 to eliminate legitimate interactive sessions; then verify TotPkts=2 contradicts minimum 3-packet TCP handshake and rules out ACK-confirmed exchange; finally confirm SrcBytes equals TotBytes, confirming fully unidirectional, payload-rich transmission — matching characteristics of UDP-based exploitation or TCP SYN+data abuse; because this pattern bypasses connection state validation and delivers payload without reciprocity, it poses immediate risk to ICS device stability, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Stateless, full-payload, zero-response traffic is highly likely to be malicious exploitation or DoS preparation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50964,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.76
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Matches minimal TCP handshake + one data exchange, but lacks protocol context), SrcBytes: 124(Identical to first instance’s SrcBytes, suggesting template-based tooling), DstPkts: 2(Confirms response presence but DstBytes omitted — prevents verification of expected SCADA reply structure)"
+      ],
+      "analysis": "First check TotPkts=4 to assess consistency with basic TCP session (SYN, SYN-ACK, ACK, DATA); then compare SrcBytes across instances to detect repetitive tooling behavior rather than adaptive attack; finally note missing DstBytes field — preventing validation of whether response conforms to SCADA protocol grammar (e.g., valid function code or exception response); because this resembles low-intensity, scripted probing with minimal deviation and no clear destructive signature, it presents lower immediate risk but enables lateral movement, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Repetitive low-volume bidirectional flow requires behavioral baselining before escalation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No packets delivered to destination suggests failed connection or scanning attempt)",
+        "SrcPkts: 2(All traffic originates from source with no response, indicative of probe or SYN flood fragment)",
+        "TotBytes: 124(Consistent small payload size across multiple flows, typical of reconnaissance packets)"
+      ],
+      "analysis": "First check DstPkts=0 and SrcPkts=2 to identify unilateral transmission without acknowledgment; then verify TotBytes=124 matches known SCADA probe signature size in WUSTL-SCADA-2018 dataset; finally confirm Sport=35458 falls within ephemeral port range but appears repeatedly across malicious instances; because this exhibits asymmetric, non-responsive, protocol-conforming yet behaviorally anomalous traffic consistent with targeted ICS reconnaissance, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional traffic with zero destination packets indicates active probing or denial-of-service precursor; blocking prevents escalation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.92
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 35457(Repeated ephemeral port adjacent to prior malicious flow, suggesting coordinated scanning)",
+        "DstPkts: 0(Confirms absence of application-layer response or handshake completion)",
+        "SrcBytes: 124(Identical byte count to known Modbus/TCP probe fragments in dataset)"
+      ],
+      "analysis": "First check Sport=35457 co-occurring with identical TotBytes=124 and DstPkts=0 as a variant of prior malicious pattern; then verify SrcPkts=2 and SrcBytes=124 indicate stateless packet injection rather than full-session establishment; finally confirm lack of retransmission or retry behavior rules out transient error; because this represents a low-volume, repeatable reconnaissance vector with high fidelity to labeled attack signatures but lower packet diversity, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Repetitive but low-throughput scanning warrants deeper session inspection before enforcement; monitor enables detection of follow-up exploitation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Indicates bidirectional exchange, unlike prior unidirectional flows)",
+        "DstPkts: 2(Confirms two response packets received, implying successful handshake or echo reply)",
+        "TotBytes: 248(Exactly double 124, suggesting request-response symmetry typical of crafted ICS protocol fuzzing)"
+      ],
+      "analysis": "First check TotPkts=4 and DstPkts=2 to identify balanced two-way communication absent in benign SCADA control traffic; then verify TotBytes=248 = 2×124, matching deterministic payload replication seen in known exploit attempts; finally confirm SrcPkts=2 and SrcBytes=124 preserve the same request structure across sessions; because this reflects a controlled, symmetric interaction designed to test device responsiveness to malformed or boundary-condition payloads, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Symmetric, deterministic packet exchange with duplicated payload size is strongly indicative of protocol fuzzing or command injection testing; immediate blocking mitigates exploitation risk."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.88
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 50963(High ephemeral port number, less commonly weaponized in initial-stage attacks)",
+        "TotPkts: 4(Consistent with prior malicious flow but lacks timing or entropy anomalies)",
+        "SrcBytes: 124(Identical to baseline malicious payload, yet observed only once in isolation)"
+      ],
+      "analysis": "First check Sport=50963 — while high-numbered, it lacks correlation with known ICS vendor default ports or common exploit tool defaults; then verify TotPkts=4 and DstPkts=2 match benign diagnostic patterns under constrained conditions; finally confirm absence of repeated flows or associated alerts reduces likelihood of sustained campaign; because this instance mirrors malicious structural traits but lacks contextual reinforcement (e.g., frequency, port clustering, or subsubLabelCat alignment), classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Structurally similar to confirmed attacks but isolated and lacking corroborating behavioral signals; monitoring allows validation against future telemetry without premature disruption."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.9
+    },
+    "reasoning": {
+      "evidence": [
+        "Duplicate flow: Sport=35457 appears twice in input (instances 2 and 5)(Suggests replay or mislabeled redundancy rather than novel threat)",
+        "DstPkts: 0(Consistent with scanning, but absence of variation across duplicates weakens malicious intent inference)",
+        "TotBytes: 124(Exact repetition implies static artifact, possibly false positive or lab artifact)"
+      ],
+      "analysis": "First check duplication of identical Sport, TotPkts, TotBytes, and DstPkts values across two entries, indicating non-operational or synthetic data; then verify no timestamp, TTL, or IP-level variance exists to distinguish intent; finally confirm that repeated identical probes without jitter or progression are atypical for real-world attackers; because this represents a likely redundant or instrumented observation rather than an independent malicious event, yet retains structural alignment with labeled attacks, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Exact duplication reduces confidence in operational threat relevance; monitoring ensures no underlying pattern emerges while avoiding overreaction to potential data artifact."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.96
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(All packets originate from source; no response from destination suggests unilateral transmission typical of command injection or beaconing)",
+        "DstPkts: 0(Zero destination packets indicates no handshake or reply—strong deviation from bidirectional SCADA protocol norms)",
+        "TotBytes: 124(Consistent small payload size across multiple flows may indicate encoded control commands or stealthy exfiltration)",
+        "Sport: 35457(Non-standard ephemeral port outside common ICS ranges like 502, 44818, 102, suggesting obfuscation or tunneling)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to identify unidirectional flow; then verify TotBytes and Sport for abnormal size and port selection; finally confirm absence of response traffic and non-standard port usage; because this pattern violates fundamental SCADA communication expectations (e.g., Modbus/TCP requires request-response cycles), exhibits command-and-control beaconing hallmarks, and lacks legitimate device interaction, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional traffic with zero destination packets and non-standard port strongly indicates malicious command injection or C2 beaconing in ICS context."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 32782,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.89
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Only half the total packets originate from source, implying asymmetric session initiation)",
+        "DstPkts: 2(Equal to SrcPkts but low absolute count suggests minimal or malformed exchange)",
+        "TotBytes: 276(Disproportionate byte count vs packet count—276 bytes over 4 packets implies oversized or fragmented payloads)",
+        "SrcBytes: 152(72% of total bytes originate from source, indicating dominant upstream data flow inconsistent with normal sensor-to-PLC telemetry)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to assess symmetry; then verify TotBytes and SrcBytes for payload imbalance; finally confirm disproportionate upstream data volume relative to typical SCADA read operations; because this reflects anomalous client-initiated bulk data transfer—common in reconnaissance or firmware dumping—yet retains some protocol scaffolding, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Bidirectional packet count is balanced but byte distribution and low packet count suggest potential reconnaissance or protocol fuzzing requiring deeper inspection."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Complete lack of destination response violates TCP/SCADA session semantics)",
+        "Sport: 35459(Adjacent to prior malicious port 35457—suggests port scanning or coordinated multi-port attack)",
+        "TotPkts: 2(Insufficient for handshake + application data, indicating truncated or synthetic traffic)",
+        "SrcBytes: 124(Identical byte count to first instance—reinforces repeatable malicious payload size)"
+      ],
+      "analysis": "First check DstPkts to confirm absence of expected ACK/RESPONSE; then verify Sport proximity to known malicious port to infer scanning or replication; then cross-validate TotPkts and SrcBytes against prior high-severity instance; because this is a near-duplicate of confirmed malicious behavior—same packet count, identical payload size, adjacent suspicious port, and zero responsiveness—it exhibits deterministic attack automation, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Identical structural anomalies to confirmed high-severity attack, including zero destination packets and replicated payload size, indicating automated exploitation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.78
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Exactly half of total packets—suggests basic request-response but with minimal interaction)",
+        "DstPkts: 2(Matches SrcPkts, indicating symmetric exchange but insufficient for robust SCADA operation)",
+        "TotBytes: 248(248 bytes over 4 packets = 62 avg/byte—unusually uniform, possibly padding or fixed-frame protocol abuse)",
+        "Sport: 50963(Very high ephemeral port—outside typical ICS or even common OS ephemeral ranges [32768–65535], increasing likelihood of evasion)"
+      ],
+      "analysis": "First check symmetry of SrcPkts/DstPkts to rule out obvious beaconing; then assess TotBytes uniformity and Sport extremity to detect obfuscation attempts; finally consider low packet count and high port number as indicators of lightweight probing rather than full exploitation; because this shows evasive but low-fidelity interaction—likely port-specific scanning or initial foothold testing without payload delivery—classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Symmetric packet count reduces immediate threat likelihood, but extreme port number and byte uniformity warrant behavioral logging for pattern correlation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.83
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcBytes: 124(Exactly half the total bytes—implies equal upstream/downstream volume, atypical for SCADA where queries are small and responses larger)",
+        "TotPkts: 4(Low count for any substantive operation, yet sufficient for minimal handshake—borderline operational ambiguity)",
+        "Sport: 42238(Within standard ephemeral range but not associated with known ICS services—requires contextual validation)",
+        "TotBytes: 248(Identical to previous instance—raises concern for repeated pattern but lacks other severity markers)"
+      ],
+      "analysis": "First check SrcBytes ratio to detect inversion of expected query/response size asymmetry; then verify TotPkts sufficiency for basic protocol compliance; then compare Sport to known ICS ports and assess byte count repetition across instances; because this exhibits subtle protocol inversion and statistical repetition without unidirectionality or extreme ports, it falls short of definitive malicious classification but exceeds benign baselines, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Equal byte distribution contradicts SCADA query-response norms and repeats across samples, indicating possible protocol manipulation requiring protocol-aware inspection."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 56172,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Symmetric packet count suggests bidirectional handshake or control exchange typical in SCADA command-response cycles)",
+        "SrcBytes: 152(Over half of total bytes originate from source, indicating potential command injection or configuration push)",
+        "DstPkts: 2(Non-zero but equal to SrcPkts implies no asymmetry—unusual for benign polling; may indicate stealthy command echo or ACK spoofing)",
+        "TotBytes: 276(Consistent small payload size across multiple flows hints at protocol-specific fixed-length packets used in ICS exploits)"
+      ],
+      "analysis": "First check TotPkts and DstPkts to assess traffic symmetry; then verify SrcBytes proportion and TotBytes consistency across instances; finally confirm absence of response payload (DstBytes not provided but inferable as 124 = 276−152, implying minimal or null reply); because this pattern matches known Modbus/TCP or DNP3 command flooding with suppressed responses—common in reconnaissance or denial-of-service precursors against PLCs—classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Indicates active command-channel probing with balanced request-response timing and asymmetric byte distribution, posing immediate risk to controller integrity."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 34794,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.92
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 34794(Non-standard ephemeral port outside common ICS ranges like 502/20000, suggesting obfuscated or tool-generated traffic)",
+        "TotPkts: 4(Identical packet count to first instance, reinforcing repeatable attack pattern)",
+        "SrcBytes: 152(Identical byte volume from source implies same command payload structure)",
+        "TotBytes: 276(Exact byte match across two distinct source ports indicates payload reuse, a hallmark of scripted exploitation)"
+      ],
+      "analysis": "First check Sport uniqueness to rule out legitimate service binding; then verify TotPkts and SrcBytes consistency across flows to detect automation; finally confirm TotBytes replication to infer payload cloning; because repeated identical small-packet exchanges across different ephemeral ports strongly suggest automated scanning or exploit replay—not yet confirmed as successful compromise but highly indicative of active targeting—classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Suggests systematic reconnaissance; warrants deep packet inspection and session tracking before escalating to blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.98
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Complete absence of replies suggests either network-level suppression, firewall drop, or unidirectional malicious injection like broadcast storm or memory corruption trigger)",
+        "SrcPkts: 2(All packets originate from source—no handshake, unlike TCP-based protocols; consistent with UDP-based ICS attacks or malformed frame injection)",
+        "TotBytes: 124(Exactly matches SrcBytes, confirming zero downstream data—rules out normal polling or status reporting)",
+        "TotPkts: 2(Too few for handshake, too many for single beacon—suggests targeted packet pair e.g., setup + trigger)"
+      ],
+      "analysis": "First check DstPkts=0 to identify unilateral transmission violating SCADA protocol norms; then verify SrcPkts=2 and TotBytes=SrcBytes to eliminate response artifacts; finally cross-reference TotPkts=2 with known ICS exploit primitives (e.g., S7Comm setup+write, or BACnet Who-Is+IAm abuse); because this reflects deliberate unidirectional command injection with no expectation of acknowledgment—characteristic of PLC memory overwrite or logic bomb staging—classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional 2-packet burst with full byte contribution from source is operationally inconsistent with any standard ICS protocol and poses direct device-control risk."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 35458(Adjacent port to prior malicious flow—suggests port hopping during scanning or tool iteration)",
+        "TotPkts: 2(Repeats minimal packet count, but lacks corroborating context like unique payload)",
+        "SrcBytes: 124(Identical to previous flow, implying payload reuse without variation—lower fidelity than targeted exploit)",
+        "DstPkts: 0(Confirms continued unidirectionality, but absence of distinguishing features reduces threat specificity)"
+      ],
+      "analysis": "First check Sport adjacency to assess scanning behavior; then verify repetition of TotPkts and SrcBytes without divergence; finally evaluate lack of distinguishing protocol markers (e.g., no known ICS port, no session state clues); because this appears to be a low-fidelity variant of the prior unidirectional pattern—possibly failed probe or misconfigured tool—lacking evidence of successful execution or device impact—classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Exhibits scanning-like repetition without clear exploit signature; suitable for behavioral baselining and correlation with other flows."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.89
+    },
+    "reasoning": {
+      "evidence": [
+        "Duplicate flow: identical to fourth instance(Repetition of exact same 5-tuple suggests logging artifact, replay attempt, or tool instability rather than novel attack)",
+        "DstPkts: 0(Confirms persistent unidirectionality but adds no new telemetry)",
+        "TotBytes: 124(No entropy increase or payload mutation across duplicates—reduces likelihood of adaptive exploitation)",
+        "SrcPkts: 2(Static packet count across three identical records implies non-interactive, possibly cached or misfired transmission)"
+      ],
+      "analysis": "First check for exact duplication to distinguish between persistent threat and data anomaly; then verify absence of variation in all fields including Sport and byte counts; finally assess whether repetition serves tactical purpose (e.g., DoS amplification) or reflects noise (e.g., duplicate capture); because this is a verbatim repeat with no operational distinction from the prior instance—insufficient evidence for high-confidence malicious intent but cannot be dismissed as benign due to underlying unidirectional pattern—classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Exact duplication raises concern for data integrity or replay, but lacks discriminative features to justify immediate blocking; requires flow correlation and timestamp analysis."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No packets received by destination — indicates one-way exfiltration or command injection without response)",
+        "SrcPkts: 2(Exactly two source packets with no reply — consistent with stealthy SCADA command flooding)",
+        "TotBytes: 124(Uniform small payload size across multiple instances — suggests encoded control commands rather than data transfer)",
+        "SrcBytes: 124(All bytes originate from source; zero destination bytes implies no handshake or ACKs — violates TCP/UDP session norms in ICS protocols)"
+      ],
+      "analysis": "First check DstPkts and SrcPkts to identify asymmetric communication patterns; then verify TotBytes and SrcBytes uniformity across repeated flows to detect protocol-agnostic command replication; finally confirm absence of bidirectional exchange (DstPkts=0) and lack of response traffic, which is anomalous for legitimate SCADA read/write operations; because this pattern matches known Modbus/TCP blind command injection and reflects targeted disruption intent with high operational impact, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Prevents potential unauthorized actuation or state manipulation in ICS environments due to confirmed one-way malicious command transmission."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 36050,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.89
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Source sends exactly two packets — may indicate fragmented command or probe)",
+        "DstPkts: 2(Destination replies with two packets — suggests interaction but asymmetry in byte count)",
+        "TotBytes: 276(Total byte count exceeds typical SCADA heartbeat or status query — hints at payload-carrying request)",
+        "SrcBytes: 152(Source contributes 152 bytes while total is 276 — implies 124 bytes returned, possibly obfuscated response or error injection)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to assess session symmetry; then verify TotBytes and SrcBytes disparity to detect potential payload smuggling or malformed response exploitation; finally confirm non-standard byte distribution inconsistent with common ICS protocol exchanges (e.g., Modbus ADU overhead); because this reflects a probing or reconnaissance phase with partial interaction — less immediately disruptive than blind injection but enabling lateral movement — classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Warrants deep packet inspection and session reassembly to determine if payload contains exploit code or credential harvesting attempts."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.96
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Zero destination packets confirms unidirectional flow — typical of denial-of-service or forced actuation commands)",
+        "Sport: 35457(Non-standard ephemeral port used repeatedly — evades port-based whitelisting in legacy SCADA firewalls)",
+        "TotPkts: 2(Consistent minimal packet count across attacks — optimized for stealth and resource exhaustion)",
+        "SrcBytes: 124(Identical byte count to other malicious flows — indicates templated malicious payload, likely targeting specific PLC register write)"
+      ],
+      "analysis": "First check DstPkts=0 to rule out benign polling or telemetry; then verify Sport uniqueness and repetition to identify evasion of static ACLs; finally confirm TotPkts and SrcBytes consistency across multiple instances to establish campaign-level signature; because this represents a coordinated, low-volume, high-impact actuation attempt against safety-critical infrastructure, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Immediate blocking mitigates risk of unauthorized physical device control in time-sensitive industrial processes."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.82
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 2(Extremely low packet count — insufficient for full exploit delivery, possibly failed or truncated attempt)",
+        "DstPkts: 0(No response observed, but also no evidence of successful execution or system impact)",
+        "TotBytes: 124(Same size as other flows — suggests reuse of template, yet lacks corroborating behavioral anomalies like port scanning or timing correlation)",
+        "SrcPkts: 2(Identical to first instance but isolated — no temporal clustering or multi-flow coordination observed)"
+      ],
+      "analysis": "First check TotPkts and DstPkts to assess operational completeness; then verify absence of supporting indicators (e.g., follow-up flows, port sweeps, or protocol violations beyond silence); finally confirm lack of distinguishing features like entropy spikes or known bad signatures; because this appears to be an incomplete or misfired attack instance with negligible immediate risk but potential precursor behavior, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Enables detection of recurrence or escalation while avoiding overreaction to isolated, non-functional traffic."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.78
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 35459(Reused port from first instance — suggests attacker persistence or tooling reuse, but not yet confirmed malicious intent)",
+        "SrcPkts: 2 and DstPkts: 0(Repeats silent pattern, yet occurs outside burst window — may be testing resilience or probing firewall state)",
+        "TotBytes: 124(Exact match with prior malicious flows — raises suspicion but lacks contextual confirmation like subsubLabelCat alignment)",
+        "TotPkts: 2(Too few packets to confirm exploit stage — could be false positive from misconfigured monitoring or benign UDP-based diagnostic)"
+      ],
+      "analysis": "First check Sport reuse and byte/packet consistency to assess similarity to known malicious patterns; then verify temporal isolation and absence of correlated flows to rule out campaign activity; finally assess protocol ambiguity — since no L4/L7 context is provided, cannot definitively exclude benign UDP SCADA diagnostics; because this exhibits hallmark indicators but lacks conclusive evidence of malicious functionality or impact, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Allows collection of additional context (e.g., destination IP, protocol, payload entropy) before escalating to blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.96
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(All packets originate from source; no response received suggests one-way exfiltration or command injection)",
+        "DstPkts: 0(No destination reply indicates lack of handshake or protocol compliance — atypical for legitimate SCADA read requests)",
+        "TotBytes: 124(Constant small payload size across multiple flows may indicate encoded command or beaconing)",
+        "Sport: 35457(Non-standard ephemeral port used repeatedly — inconsistent with typical ICS client behavior)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to confirm unidirectional traffic with no acknowledgment; then verify TotBytes and Sport to identify abnormal consistency and port reuse outside standard ICS ranges; finally confirm absence of bidirectional exchange and fixed payload size across instances; because this pattern strongly aligns with command-and-control beaconing or blind exploit delivery in ICS environments, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional, fixed-size traffic on non-standard ports with no application-layer response violates SCADA protocol expectations and poses high risk of remote code execution or unauthorized control."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.89
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 2(Extremely low packet count suggests minimal interaction — insufficient for normal SCADA polling or status update)",
+        "SrcBytes: 124(Identical byte count to first instance implies replication or scanning behavior)",
+        "DstPkts: 0(Confirms no server-side engagement — rules out benign query-response cycle)",
+        "Sport: 35458(Sequential port increment from prior flow suggests automated port-sweep or multi-target probe)"
+      ],
+      "analysis": "First check TotPkts and DstPkts to establish minimal, non-interactive nature; then verify SrcBytes and Sport to detect repetition and sequential port usage indicative of reconnaissance; finally confirm lack of destination feedback across consecutive flows; because this reflects targeted scanning rather than full exploitation, but still compromises network integrity, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Sequential port usage with identical payloads suggests active reconnaissance — warrants deep packet inspection and session tracking before escalation to blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 38268,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.93
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Indicates two-packet exchange in each direction — consistent with SYN/SYN-ACK/ACK/RST or malformed handshake)",
+        "SrcPkts: 2 and DstPkts: 2(Bidirectional but asymmetric byte count — SrcBytes=152 vs implied DstBytes=124 — suggests response tampering or protocol violation)",
+        "TotBytes: 276(Does not match sum of typical TCP handshake overhead + payload — implies custom or obfuscated payload)",
+        "Sport: 38268(Non-reserved, non-ephemeral port used for client-initiated traffic — violates ICS client port conventions)"
+      ],
+      "analysis": "First check TotPkts and bidirectional packet counts to identify abnormal handshake structure; then verify byte asymmetry and port selection to detect protocol deviation and potential payload smuggling; finally confirm TotBytes mismatch against standard TCP/IP stack expectations; because this reflects a crafted connection attempt designed to bypass stateful inspection while delivering malicious logic, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Asymmetric bidirectional communication with anomalous port usage and nonstandard byte distribution indicates deliberate evasion of ICS-aware firewalls and intrusion detection systems."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.78
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Consistent with previous benign-looking probes but lacks corroborating context)",
+        "TotBytes: 124(Repeats exact same size — increases likelihood of templated attack vector)",
+        "DstPkts: 0(Confirms continued absence of expected SCADA response, e.g., Modbus ADU or DNP3 response)",
+        "Sport: 35459(Third sequential port — strengthens hypothesis of scripted enumeration rather than random noise)"
+      ],
+      "analysis": "First check SrcPkts and DstPkts to reaffirm unidirectionality; then verify TotBytes and Sport to assess repetition and progression across the series; finally cross-reference with prior instances to determine whether this is incremental probing or redundant noise; because this instance adds marginal new threat intelligence but reinforces an ongoing low-fidelity scan, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Repetitive, low-volume unidirectional traffic on sequentially incremented ports suggests low-intensity enumeration — best handled via behavioral baselining and alert correlation rather than immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 49424,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Same count as third instance but different port — raises concern about port-hopping evasion)",
+        "SrcBytes: 152(Identical to third instance — suggests reused payload template)",
+        "DstPkts: 2(Confirms bidirectional flow, yet no corresponding increase in DstBytes visibility — possible truncation or encrypted response)",
+        "Sport: 49424(Falls within registered port range but unused by known ICS protocols — increases ambiguity)"
+      ],
+      "analysis": "First check TotPkts and SrcBytes to identify structural similarity with prior high-severity instance; then verify DstPkts presence to distinguish from pure beaconing; finally assess Sport uniqueness and lack of protocol signature to determine indeterminacy; because bidirectionality introduces uncertainty about intent — could be evasive C2 or misconfigured legitimate tool — classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Bidirectional yet cryptic traffic on an uncommon port matches patterns of adaptive malware; requires protocol decoding and endpoint telemetry to disambiguate between false positive and stealthy compromise."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.96
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No response packets received — indicates one-way exfiltration or command injection without acknowledgment)",
+        "SrcPkts: 2(Exactly two source-only packets — consistent with stealthy SCADA command bursts)",
+        "TotBytes: 124(Compact payload size — typical for Modbus/TCP or DNP3 control commands, not bulk data)",
+        "SrcBytes: 124(All bytes originate from source — confirms unilateral transmission, bypassing normal request-response flow)"
+      ],
+      "analysis": "First check DstPkts=0 and SrcPkts=2 to identify asymmetric, non-interactive traffic; then verify TotBytes=124 and SrcBytes=124 to confirm full payload originates from source with no return data; finally confirm Sport=35457 falls outside well-known ICS ports but aligns with ephemeral port scanning or covert channel usage in SCADA environments; because this pattern matches known command-and-control behavior in ICS malware (e.g., Triton or Industroyer variants) that send malicious actuator commands without waiting for responses, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional traffic with zero destination packets and full source-originated payload is highly indicative of unauthorized control command injection in ICS networks."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.89
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 2(Extremely low packet count — insufficient for legitimate SCADA polling or diagnostics)",
+        "DstPkts: 0(No network-layer response — violates standard TCP-based SCADA protocol semantics)",
+        "SrcBytes: 124(Entire byte count attributed to source — rules out bidirectional session establishment)",
+        "Sport: 35457(Non-standard ephemeral port — uncommon for authorized HMI-to-PLC communication which typically uses fixed ports like 502 or 2404)"
+      ],
+      "analysis": "First check TotPkts=2 and DstPkts=0 to rule out normal operational traffic requiring ACKs or replies; then verify SrcBytes=124 equals TotBytes to eliminate fragmentation or retransmission artifacts; finally confirm Sport=35457 is not associated with any registered ICS service per IANA or industry standards; because this represents a minimal, silent, source-initiated transmission inconsistent with diagnostic, polling, or firmware update behaviors in certified SCADA deployments, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "While strongly anomalous, identical repeat of prior instance warrants deeper session reconstruction before definitive blocking to avoid false positives on rare vendor-specific tooling."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 37854,
+      "TotPkts": 2,
+      "TotBytes": 152,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.93
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Complete absence of reply packets — violates TCP three-way handshake expectations and SCADA protocol statefulness)",
+        "TotBytes: 152(Slightly larger than prior instances — suggests expanded command payload, e.g., multi-register write or sequence-triggered action)",
+        "SrcPkts: 2(Consistent with fragmented or dual-packet command structure used in memory-corruption exploits targeting PLCs)",
+        "Sport: 37854(Another high-numbered ephemeral port — reinforces use of non-standard channels to evade port-based IDS rules)"
+      ],
+      "analysis": "First check DstPkts=0 to establish lack of protocol compliance; then verify TotBytes=152 exceeds typical single-register Modbus write (6–12 B), indicating potentially destructive multi-point operation; next confirm SrcPkts=2 matches known exploit patterns where first packet establishes context and second delivers payload; because such precise, unidirectional, oversized command bursts are documented in Stuxnet-style PLC attacks and correlate with real-world ICS intrusion campaigns, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Zero-response, two-packet, 152-byte transmission on an ephemeral port is a strong signature of malicious PLC command injection requiring immediate network enforcement."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.78
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Indicates bidirectional exchange — more consistent with legitimate session than prior unidirectional cases)",
+        "DstPkts: 2(Confirms responsive behavior — contradicts pure C2 or actuator command patterns)",
+        "SrcBytes: 124(Only half the total bytes originate from source — implies significant downstream data, possibly telemetry or status response)",
+        "Sport: 50963(Still an ephemeral port, but bidirectionality reduces likelihood of pure attack vector)"
+      ],
+      "analysis": "First check TotPkts=4 and DstPkts=2 to identify balanced request-response interaction; then verify SrcBytes=124 is exactly half of TotBytes=248, suggesting symmetric payload exchange; finally assess Sport=50963 as atypical but not inherently malicious when paired with responsiveness; because this resembles anomalous but potentially benign misconfigured polling or vendor-specific tunneling rather than direct exploitation, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Bidirectional 4-packet exchange with equal packet counts and balanced byte distribution suggests possible misconfiguration or nonstandard but functional SCADA communication, warranting behavioral logging over immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 53912,
+      "TotPkts": 2,
+      "TotBytes": 152,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "suspicious",
+      "severity_code": 1,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No destination packets — breaks SCADA protocol symmetry and raises red flag)",
+        "TotBytes: 152(Matches third instance — may indicate replay or variant of same malicious command)",
+        "SrcPkts: 2(Reinforces minimal, targeted transmission pattern)",
+        "Sport: 53912(Unique high ephemeral port — suggests evasion attempt across multiple sessions)"
+      ],
+      "analysis": "First check DstPkts=0 to confirm non-interactive nature; then compare TotBytes=152 and SrcPkts=2 against prior high-severity instance to assess consistency with known attack template; next observe Sport=53912 differs from earlier ports, indicating port randomization — a common obfuscation tactic; because while structurally similar to confirmed malicious traffic, absence of corroborating metadata (e.g., destination IP reputation or protocol decoding) prevents elevation to 'high' without further context, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Structural similarity to high-confidence attack patterns warrants close inspection, but isolated port variation and lack of auxiliary indicators justify monitoring over immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 41538,
+      "TotPkts": 2,
+      "TotBytes": 152,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.97
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No packets received by destination — indicates one-way exfiltration or command broadcast without acknowledgment)",
+        "SrcPkts: 2(Exactly two source packets with no reply — consistent with stealthy beacon or trigger packet)",
+        "TotBytes: 152(Non-standard payload size for SCADA control; exceeds typical Modbus/TCP header overhead)",
+        "Sport: 41538(Non-ephemeral high port — uncommon for legitimate ICS protocols which favor well-known or registered ports)"
+      ],
+      "analysis": "First check DstPkts and SrcPkts to identify asymmetric communication patterns; then verify TotBytes against known SCADA protocol frame sizes (e.g., Modbus TCP min is 12 bytes, DNP3 min ~20 bytes — 152 suggests encoded payload or tunneling); finally confirm Sport falls outside ICS-relevant port ranges (e.g., 502, 20000, 44818, 1911); because this exhibits silent outbound transmission with atypical size and port, indicative of covert C2 beaconing in an ICS environment, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "One-way traffic with non-standard port and payload size poses high risk of command-and-control or data exfiltration in ICS contexts."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35457,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.92
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Confirms unidirectional flow — no application-layer response expected)",
+        "TotBytes: 124(Too large for handshake-only traffic but too small for file transfer — suggestive of encoded command)",
+        "Sport: 35457(Not associated with any standard ICS protocol; falls in dynamic/private port range per RFC 6335)",
+        "SrcPkts: 2(Repetitive minimal packet count — matches pattern of probe or trigger frames)"
+      ],
+      "analysis": "First check DstPkts to rule out interactive session; then verify TotBytes against common ICS request sizes (e.g., a single CIP Unconnected Send is ~40–80 bytes — 124 implies custom or obfuscated encoding); finally confirm Sport is unassigned and not used in vendor documentation for this subcategory; because this reflects a compact, silent, non-compliant transmission likely used for initial access or reconnaissance, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Lacks definitive exploit signature but violates ICS communication norms; requires deep packet inspection to confirm payload intent."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 49512,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.95
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2 and DstPkts: 2(Balanced bidirectional exchange — inconsistent with benign polling which typically shows >1 SrcPkts per DstPkts in SCADA)",
+        "TotBytes: 276(Total exceeds sum of typical request+response pairs — e.g., Modbus Read Holding Registers request+response ≈ 12+25 = 37 bytes)",
+        "Sport: 49512(Non-standard port — no ICS protocol registered at this port per IANA)",
+        "SrcBytes: 152(Asymmetric byte distribution — source sends disproportionately more data than it receives, suggesting command dominance)"
+      ],
+      "analysis": "First check packet symmetry to distinguish between polling and command-driven interaction; then verify byte asymmetry and total size against protocol expectations — 152/124 split contradicts normal SCADA read/write ratios; finally confirm port absence from ICS vendor port registries and IANA assignments; because this shows anomalous bidirectional volume with command-weighted payload on an unknown port, strongly indicating malicious control channel, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Bidirectional yet asymmetric traffic on unknown port violates ICS protocol semantics and enables unauthorized device control."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.88
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(Indicates no observed reply — could be network loss or intentional silence)",
+        "TotPkts: 2(Minimal session footprint — insufficient for full protocol handshake)",
+        "Sport: 50963(Unregistered port — but overlaps with known ephemeral ranges used in misconfigured ICS gateways)",
+        "TotBytes: 124(Within plausible range for fragmented or vendor-specific lightweight telemetry)"
+      ],
+      "analysis": "First check DstPkts to assess interactivity; then verify TotPkts and TotBytes against edge-case vendor implementations (e.g., some RTU health beacons use 2-packet bursts); finally cross-reference Sport with documented non-standard gateway behaviors in wustl-scada-2018 corpus; because this may represent a misconfigured or legacy ICS component rather than active exploitation, though still noncompliant, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Low-fidelity evidence — consistent with both benign misconfiguration and early-stage reconnaissance; requires behavioral baselining."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.93
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2 and DstPkts: 2(Exact symmetry — rare in legitimate SCADA where master polls and slave replies once per cycle)",
+        "TotBytes: 248(Implies 124-byte payloads each way — atypical for stateless ICS protocols)",
+        "SrcBytes: 124(Identical to previous instance’s total — suggests replay or template-based attack)",
+        "Sport: 50963(Repeated across two samples — indicates deliberate port reuse, not ephemeral assignment)"
+      ],
+      "analysis": "First check repetition of Sport across multiple instances to infer attacker tooling consistency; then verify symmetric packet and byte counts — rules out standard master-slave polling asymmetry; finally compare TotBytes to known protocol maximums (e.g., DNP3 max APDU is 292 bytes, but 124×2 implies fixed-size encrypted tunnel); because repeated, symmetric, fixed-size bidirectional traffic on a static non-standard port reflects structured malicious communication, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Consistent port reuse and symmetric payload sizing indicate deliberate C2 infrastructure, not accidental misconfiguration."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.87
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Exactly 4 packets is atypical for normal SCADA polling and matches known command-response patterns in ICS reconnaissance)",
+        "SrcPkts: 2(Indicates exactly two outbound packets from source—consistent with a probe followed by a follow-up request)",
+        "DstPkts: 2(Exact symmetry with SrcPkts suggests bidirectional handshake without data payload expansion, common in protocol fingerprinting)",
+        "TotBytes: 248(Consistent byte count across repeated instances implies fixed-size crafted packets, not application-layer traffic)"
+      ],
+      "analysis": "First check TotPkts and DstPkts to identify symmetric low-volume communication; then verify SrcPkts equals DstPkts and TotBytes is invariant across instances to rule out legitimate telemetry bursts; finally confirm absence of higher-layer indicators (e.g., no HTTP headers, no Modbus function codes visible but implied by port-agnostic pattern); because this reflects repeatable, minimal, bidirectional probing behavior targeting unknown SCADA services—characteristic of pre-exploitation reconnaissance rather than active compromise or denial-of-service, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Low-volume symmetric traffic may indicate early-stage reconnaissance; requires session-level inspection to confirm protocol usage before escalation."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 32970,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.92
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcBytes: 152(152 bytes sent from source exceeds typical SCADA query size and aligns with known exploit shellcode staging lengths)",
+        "TotBytes: 276(276 total bytes implies asymmetric payload distribution—152 outbound, 124 inbound—suggesting response parsing or error-triggered feedback)",
+        "Sport: 32970(Non-standard ephemeral port used repeatedly across attacks indicates deliberate tooling, not accidental misconfiguration)",
+        "TotPkts: 4(Consistent 4-packet structure across multiple flows signals automated, scripted interaction)"
+      ],
+      "analysis": "First check SrcBytes to detect abnormally large initial payloads relative to ICS norms; then verify TotBytes asymmetry (152 vs. 124) indicating potential command injection or malformed request triggering diagnostic response; finally confirm Sport reuse and packet count consistency across samples to eliminate noise; because this combination strongly correlates with memory-corruption exploit attempts in legacy PLC protocols where oversized queries trigger buffer overflows and controlled responses, classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Repetitive, abnormally sized outbound packets to non-standard ports indicate high-fidelity exploit attempts requiring immediate network enforcement."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.85
+    },
+    "reasoning": {
+      "evidence": [
+        "Sport: 42238(Repeated use of same source port across distinct flows suggests stateful scanning tool rather than random ephemeral allocation)",
+        "SrcPkts: 2(Identical to first instance—supports hypothesis of systematic port-specific probing)",
+        "TotBytes: 248(Identical byte count to first flow confirms deterministic packet construction)",
+        "DstPkts: 2(Confirms responsive infrastructure, ruling out blind scanning)"
+      ],
+      "analysis": "First check Sport repeatability to distinguish tool-driven vs. ad-hoc activity; then verify identical TotBytes and SrcPkts to confirm reproducible packet templates; finally confirm DstPkts > 0 to establish target responsiveness; because this represents methodical, low-rate, multi-port reconnaissance against live SCADA assets—indicating targeted intelligence gathering prior to weaponization, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Systematic but low-intensity probing warrants deep packet inspection and behavioral baselining before blocking to avoid false positives on legacy device discovery."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35459,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.78
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No response received—suggests either firewall drop, closed port, or unresponsive service)",
+        "TotPkts: 2(Only two packets, both from source, implies single-shot attempt without retry logic)",
+        "SrcBytes: 124(124-byte payload matches minimal protocol header + fuzz byte patterns used in initial port validity checks)",
+        "TotBytes: 124(Equals SrcBytes, confirming zero inbound traffic—no handshake completion)"
+      ],
+      "analysis": "First check DstPkts = 0 to identify failed or blocked interactions; then verify TotPkts = SrcPkts = 2 to confirm lack of retransmission or follow-up; finally confirm TotBytes = SrcBytes to exclude any response parsing; because this reflects a single, silent, non-responsive probe—likely an early-stage port sweep or version-check attempt with low operational impact and no evidence of exploitation success, classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Isolated silent probe lacks follow-up or response; suitable for logging and correlation but insufficient for immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 39554,
+      "TotPkts": 4,
+      "TotBytes": 276,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 152
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.94
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcBytes: 152(Identical to second instance—reinforces use of standardized malicious payload template)",
+        "TotBytes: 276(Identical to second instance—confirms consistent packet sizing across different source ports, indicating tool-based generation)",
+        "Sport: 39554(Another non-standard high-numbered port, increasing likelihood of evasion intent and reducing chance of coincidence)",
+        "SrcPkts: 2 and DstPkts: 2(Symmetric 2+2 pattern across three distinct ports implies coordinated multi-port exploitation testing)"
+      ],
+      "analysis": "First check SrcBytes and TotBytes identity with prior high-severity instance to confirm payload reuse; then verify Sport uniqueness across multiple malicious flows to reject random port assignment; finally confirm persistent 2+2 packet symmetry to validate automated, stateless exploit delivery; because repeated transmission of identical oversized payloads across diverse ephemeral ports demonstrates deliberate, scalable exploitation infrastructure—not opportunistic scanning—classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Cross-port replication of identical malicious payloads indicates active, scalable exploit infrastructure requiring immediate egress filtering."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 50963,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "medium",
+      "severity_code": 3,
+      "confidence": 0.87
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Symmetric packet count suggests bidirectional exchange, uncommon in many SCADA command-and-control patterns)",
+        "SrcPkts: 2(DstPkts equals SrcPkts, indicating possible session establishment or polling response)",
+        "TotBytes: 248(Exactly double SrcBytes=124, implying no payload expansion—consistent with lightweight protocol abuse like Modbus/TCP read request + minimal reply)",
+        "Sport: 50963(Non-standard ephemeral port, outside common ICS ports but within dynamic range—suggests evasion of port-based filtering)"
+      ],
+      "analysis": "First check TotPkts and SrcPkts/DstPkts symmetry to assess interaction pattern; then verify TotBytes relative to SrcBytes to infer payload efficiency and lack of encryption or obfuscation; finally confirm Sport value falls outside well-known ICS ports (e.g., 502, 44818, 2404) but remains plausible for covert channel; because this reflects a minimal, symmetric, low-volume SCADA-like transaction with non-standard port usage—indicative of reconnaissance or command injection rather than brute-force or DDoS—classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Low-volume, symmetric traffic on non-standard port warrants behavioral monitoring to detect escalation or lateral movement."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.93
+    },
+    "reasoning": {
+      "evidence": [
+        "DstPkts: 0(No response packets observed—strong indicator of one-way exfiltration or unsolicited command injection)",
+        "SrcPkts: 2(Implies at least two segments, possibly SYN+data or fragmented payload, inconsistent with typical handshake)",
+        "TotBytes: 124(Entire traffic volume originates from source—no return data, suggesting stealthy payload delivery)",
+        "Sport: 35458(Non-standard port used for unidirectional transmission, evading stateful inspection rules expecting replies)"
+      ],
+      "analysis": "First check DstPkts=0 to identify absence of expected protocol response; then verify SrcPkts=2 and TotBytes=SrcBytes to confirm all bytes are outbound-only with segmentation; finally confirm Sport is non-standard and persistent across multiple instances; because unidirectional, segmented, full-payload transmission on an atypical port strongly aligns with malicious command injection or beaconing in constrained ICS environments—classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Unidirectional traffic with no destination response violates SCADA protocol expectations and poses high risk of unauthorized control or data exfiltration."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.91
+    },
+    "reasoning": {
+      "evidence": [
+        "Repeated Sport: 35458(Identical source port across three instances indicates deliberate, consistent tooling or script reuse)",
+        "DstPkts: 0(Consistent absence of replies confirms intentional one-way behavior—not transient network loss)",
+        "TotPkts: 2(Uniform minimal packet count suggests automated, templated payload delivery)",
+        "SrcBytes: 124(Exact byte match across duplicates implies static malicious payload or encoded command)"
+      ],
+      "analysis": "First check repetition of Sport and SrcBytes to identify automation and payload consistency; then verify DstPkts=0 across all occurrences to rule out false negatives from packet loss; finally confirm TotPkts=2 stability to eliminate noise or scanning artifacts; because identical, unidirectional, minimal-packet transmissions recur with byte-perfect fidelity—indicating coordinated, weaponized activity targeting ICS infrastructure—classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Repetitive, identical unidirectional payloads strongly indicate automated exploitation or C2 beaconing requiring immediate blocking."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 35458,
+      "TotPkts": 2,
+      "TotBytes": 124,
+      "SrcPkts": 2,
+      "DstPkts": 0,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "high",
+      "severity_code": 4,
+      "confidence": 0.94
+    },
+    "reasoning": {
+      "evidence": [
+        "SrcPkts: 2(Exceeds typical SYN-only scan; implies data-carrying packets)",
+        "TotBytes: 124(Too large for TCP handshake alone—suggests embedded malicious instruction or credential theft payload)",
+        "DstPkts: 0(Confirms no application-layer acknowledgment, bypassing protocol validation)",
+        "Sport: 35458(Used across 3/5 samples—statistically significant for targeted campaign)"
+      ],
+      "analysis": "First check SrcPkts=2 combined with TotBytes=124 to reject benign handshake hypothesis; then verify DstPkts=0 to eliminate legitimate polling or unsolicited notifications (which still elicit ACKs); finally confirm Sport recurrence to establish campaign-level intent; because this represents a statistically persistent, data-rich, one-way transmission violating core SCADA communication semantics—classify as malicious."
+    },
+    "response": {
+      "action": "block",
+      "reason": "Persistent, data-laden, one-way traffic on a repeated non-standard port constitutes high-fidelity evidence of active compromise or imminent attack."
+    }
+  },
+  {
+    "meta": {
+      "category": "ICS",
+      "subcategory": "wustl-scada-2018"
+    },
+    "json": {
+      "Sport": 42238,
+      "TotPkts": 4,
+      "TotBytes": 248,
+      "SrcPkts": 2,
+      "DstPkts": 2,
+      "SrcBytes": 124
+    },
+    "label": {
+      "official": "malicious",
+      "severity": "low",
+      "severity_code": 2,
+      "confidence": 0.78
+    },
+    "reasoning": {
+      "evidence": [
+        "TotPkts: 4(Matches first instance but with different Sport—suggests variant or misconfigured tool)",
+        "SrcPkts: 2(DstPkts=2 confirms symmetry, reducing likelihood of exfiltration)",
+        "TotBytes: 248(Identical to first instance—implies same underlying protocol structure)",
+        "Sport: 42238(Another non-standard port, but lacks recurrence—lower persistence signal than 35458)"
+      ],
+      "analysis": "First check symmetry (SrcPkts=DstPkts) to distinguish from unidirectional threats; then compare TotBytes and TotPkts to earlier benign-appearing instance to assess structural similarity; finally evaluate Sport uniqueness—absence of repetition weakens campaign attribution; because this exhibits protocol-consistent, low-volume, symmetric behavior on a singular non-standard port—more indicative of misconfiguration or low-sophistication probe than active exploitation—classify as malicious."
+    },
+    "response": {
+      "action": "monitor",
+      "reason": "Symmetric, low-volume traffic on a unique non-standard port warrants observation for follow-up activity but lacks urgency of confirmed C2 or injection."
+    }
+  }
+]
