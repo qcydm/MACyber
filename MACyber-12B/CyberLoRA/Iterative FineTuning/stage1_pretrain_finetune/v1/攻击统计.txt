@@ -1,0 +1,668 @@
+================================================================================
+分析文件: /data2/qcy/data_pattern/dns/converted/train/bccc_2024_mal_20251016_003244_train.json
+  攻击类型统计:
+    - benign: 820
+    - malware: 790
+    - phishing: 788
+    - spam: 801
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/dns/converted/train/DNS_exfiltration_benign_1000_train.json
+  攻击类型统计:
+    - benign: 800
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/dns/converted/train/CIRA_benign_1500_train.json
+  攻击类型统计:
+    - benign: 1200
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/dns/converted/train/DNS_exfiltration_light_1000_train.json
+  攻击类型统计:
+    - exfiltration_light: 797
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/dns/converted/train/CIRA_malicious_3500_train.json
+  攻击类型统计:
+    - malicious: 2800
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/dns/converted/train/DNS_exfiltration_heavy_1000_train.json
+  攻击类型统计:
+    - exfiltration_heavy: 797
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/dns/converted/train/bccc_2024_exf_20251016_103047_train.json
+  攻击类型统计:
+    - benign: 810
+    - exfiltration_heavy: 801
+    - exfiltration_light: 629
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/log/split-anroid/training-anroid/output_data_cleaned.json
+  攻击类型统计:
+    - benign: 74
+    - malicious: 14
+    - suspicious: 21
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/log/split-hdfs/training-hdfs-5007_cleaned.json
+  攻击类型统计:
+    - benign: 2394
+    - malicious: 1941
+    - suspicious: 672
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/log/split-linux/training-linux/output_data_cleaned.json
+  攻击类型统计:
+    - malicious: 9
+    - suspicious: 12
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/log/split-proxifier/test-proxifier/output_data_cleaned.json
+  攻击类型统计:
+    - benign: 2
+    - malicious: 1
+    - suspicious: 1
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/log/split-supercomputer/test-supercom-22/output_data_cleaned.json
+  攻击类型统计:
+    - benign: 3
+    - high: 1
+    - low: 1
+    - malicious: 11
+    - suspicious: 4
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/sft_workflow/threat/Pulsedive-Threats/training/Pulsedive-Threats.json
+  攻击类型统计:
+    - Banjori: 1
+    - Beebone: 1
+    - Dromedan: 1
+    - Dyre: 1
+    - FTP: 1
+    - Gootkit: 1
+    - LDAP Attack: 1
+    - MS-DS Attack: 1
+    - MS-SQL Attack: 1
+    - Malware: 1
+    - Matsnu: 1
+    - MySQL Attack: 1
+    - Necurs: 1
+    - Netbios Attack: 1
+    - NexusLogger: 1
+    - Nymaim: 1
+    - Pizd: 1
+    - Postfix: 1
+    - Proslikefan: 1
+    - Proxy Scan: 1
+    - Pykspa: 1
+    - Ramnit: 1
+    - Ranbyus: 1
+    - RpcBind Attack: 1
+    - SIP Attacks: 1
+    - SSH Brute Force: 1
+    - Shiotob: 1
+    - Shylock: 1
+    - Simda: 1
+    - Smoke Loader: 1
+    - Socks Scan: 1
+    - Suppobox: 1
+    - Telnet: 1
+    - TrickBot: 1
+    - Unclassified: 1
+    - Virut: 1
+    - ZeuS Panda: 1
+    - Zeus: 1
+    - jRAT: 1
+    - unknownjs: 1
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/threat/SABU-Alert/converted/SABU-Alert_train_no_answer.json
+  未找到攻击类型数据
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/NF-CSE-CIC-IDS2018-v2/NF-CSE-CIC-IDS2018-v2.json
+  攻击类型统计:
+    - Benign: 16
+    - Bot: 16
+    - Brute Force -Web: 16
+    - Brute Force -XSS: 16
+    - DDOS attack-HOIC: 16
+    - DDOS attack-LOIC-UDP: 16
+    - DDoS attacks-LOIC-HTTP: 16
+    - DoS attacks-GoldenEye: 16
+    - DoS attacks-Hulk: 16
+    - DoS attacks-SlowHTTPTest: 16
+    - DoS attacks-Slowloris: 16
+    - FTP-BruteForce: 16
+    - Infilteration: 16
+    - SQL Injection: 16
+    - SSH-Bruteforce: 16
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-ToN-IoT/CIC-ToN-IoT.json
+  攻击类型统计:
+    - Benign: 80
+    - backdoor: 80
+    - ddos: 76
+    - dos: 80
+    - injection: 79
+    - mitm: 79
+    - password: 79
+    - ransomware: 80
+    - scanning: 80
+    - xss: 80
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/CICIoMT 2024/CICIoMT 2024.json
+  攻击类型统计:
+    - ARP_Spoofing: 46
+    - Benign: 44
+    - MQTT-DDoS-Connect_Flood: 48
+    - MQTT-DDoS-Publish_Flood: 48
+    - MQTT-DoS-Connect_Flood: 48
+    - MQTT-DoS-Publish_Flood: 48
+    - MQTT-Malformed_Data: 48
+    - Recon-OS_Scan: 48
+    - Recon-Ping_Sweep: 47
+    - Recon-Port_Scan: 48
+    - Recon-VulScan: 48
+    - TCP_IP-DDoS-ICMP: 48
+    - TCP_IP-DDoS-SYN: 48
+    - TCP_IP-DDoS-TCP: 48
+    - TCP_IP-DDoS-UDP: 48
+    - TCP_IP-DoS-ICMP: 47
+    - TCP_IP-DoS-SYN: 48
+    - TCP_IP-DoS-TCP: 46
+    - TCP_IP-DoS-UDP: 48
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/CICADA-IIoT2024/CICADA-IIoT2024.json
+  攻击类型统计:
+    - benign: 240
+    - cleanup: 154
+    - collection: 240
+    - command and control: 45
+    - credential access: 47
+    - discovery: 111
+    - exfiltration: 34
+    - lateral movement: 12
+    - persistence: 36
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-IoT-DIAD2024/CIC-IoT-DIAD2024.json
+  攻击类型统计:
+    - ARP Spoofing: 80
+    - BruteForce: 80
+    - DDoS ACK Fragmentation: 80
+    - DDoS ICMP Flood: 80
+    - DDoS-HTTP Flood: 80
+    - DDoS-ICMP_Fragmentation: 80
+    - DNS Spoofing: 80
+    - DoS SYN Flood: 80
+    - DoS-HTTP_Flood: 79
+    - DoS-UDP_Flood: 80
+    - Mirai: 80
+    - Uploading_Attack: 80
+    - VulnerabilityScan: 80
+    - XSS: 80
+    - benign: 79
+    - sqlinjection: 79
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-IDS-2017/CIC-IDS-2017.json
+  攻击类型统计:
+    - BENIGN: 44
+    - Bot: 44
+    - DDoS: 44
+    - DoS GoldenEye: 44
+    - DoS Hulk: 33
+    - DoS Slowhttptest: 48
+    - DoS slowloris: 48
+    - FTP-Patator: 47
+    - Heartbleed: 9
+    - Infiltration: 21
+    - PortScan: 48
+    - SSH-Patator: 47
+    - Web Attack - Brute Force: 48
+    - Web Attack - Sql Injection: 17
+    - Web Attack - XSS: 48
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/CIC_IOT_2023/CIC_IOT_2023.json
+  攻击类型统计:
+    - Backdoor_Malware: 62
+    - Benign: 63
+    - BrowserHijacking: 64
+    - CommandInjection: 64
+    - DDoS: 64
+    - DNS_Spoofing: 64
+    - DictionaryBruteForce: 62
+    - DoS: 64
+    - MITM-ArpSpoofing: 64
+    - Mirai: 64
+    - Reconnaissance: 64
+    - SqlInjection: 64
+    - Uploading_Attack: 64
+    - VulnerabilityScan: 64
+    - XSS: 64
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/NF-UNSW-NB15-v2/NF-UNSW-NB15-v2.json
+  攻击类型统计:
+    - Analysis: 120
+    - Backdoor: 117
+    - Benign: 120
+    - DoS: 117
+    - Exploits: 118
+    - Fuzzers: 112
+    - Generic: 119
+    - Reconnaissance: 120
+    - Shellcode: 88
+    - Worms: 120
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-BCCC-NRC2024/CIC-BCCC-NRC2024.json
+  攻击类型统计:
+    - ACK Flood: 24
+    - Backdoor: 24
+    - Benign Traffic: 24
+    - DDoS ACK Fragmentation: 24
+    - DDoS HTTP Flood: 24
+    - DDoS ICMP Flood: 24
+    - DDoS ICMP Fragmentation: 24
+    - DDoS PSHACK Flood: 24
+    - DDoS RSTFIN Flood: 24
+    - DDoS TCP SYN Flood: 24
+    - DDoS UDP Flood: 24
+    - Dictionary Brute Force: 20
+    - DoS DNS Flood: 24
+    - DoS ICMP Flood: 24
+    - DoS SYN Flood: 24
+    - DoS TCP Flood: 24
+    - DoS UDP Flood: 24
+    - MITM: 24
+    - MITM ARP Spoofing: 24
+    - MQTT Brute Force: 24
+    - MQTT DDoS Publish Flood: 24
+    - MQTT DoS Connect Flood: 24
+    - MQTT DoS Publish Flood: 21
+    - MQTT Malformed: 24
+    - Mirai ACK Flood: 24
+    - Mirai HTTP Flood: 24
+    - Mirai Host Brute Force: 23
+    - Mirai UDP Flood: 24
+    - Mirai UDP Plain: 24
+    - OS Fingerprinting: 24
+    - Password Attack: 24
+    - Port Scanning: 24
+    - Ransomware: 24
+    - Recon Host Discovery: 24
+    - Recon OS Scan: 24
+    - Recon Ping Sweep: 24
+    - Recon Port Scan: 24
+    - Recon Vulnerability Scan: 24
+    - SQL Injection: 24
+    - SYN Flood: 24
+    - Scan Aggressive: 24
+    - Scan Host Port: 24
+    - Scan Port OS: 24
+    - Scan UDP Attack: 24
+    - Sparta SSH Brute Force: 24
+    - Telnet Brute Force: 24
+    - Uploading Attack: 24
+    - Vulnerability Scanner: 24
+    - XSS: 24
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/NF-ToN-IoT-v2/NF-ToN-IoT-v2.json
+  攻击类型统计:
+    - Benign: 80
+    - backdoor: 80
+    - ddos: 80
+    - dos: 80
+    - injection: 78
+    - mitm: 80
+    - password: 80
+    - ransomware: 78
+    - scanning: 80
+    - xss: 80
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/iscxids2012/iscxids2012.json
+  攻击类型统计:
+    - Attack: 400
+    - Normal: 256
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-BoT-IoT/CIC-BoT-IoT.json
+  攻击类型统计:
+    - Benign: 144
+    - DDoS: 160
+    - DoS: 156
+    - Reconnaissance: 160
+    - Theft: 160
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/NF-BoT-IoT-v2/NF-BoT-IoT-v2.json
+  攻击类型统计:
+    - Benign: 80
+    - DDoS: 80
+    - DoS: 80
+    - Reconnaissance: 80
+    - Theft: 76
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/NF-UQ-NIDS-v2/NF-UQ-NIDS-v2.json
+  攻击类型统计:
+    - Analysis: 40
+    - Backdoor: 40
+    - Benign: 40
+    - Bot: 40
+    - Brute Force: 39
+    - DDoS: 40
+    - DoS: 40
+    - Exploits: 40
+    - Fuzzers: 40
+    - Generic: 37
+    - Infilteration: 40
+    - Reconnaissance: 40
+    - Shellcode: 40
+    - Theft: 40
+    - Worms: 39
+    - injection: 40
+    - mitm: 40
+    - password: 40
+    - ransomware: 40
+    - scanning: 40
+    - xss: 40
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/traffic_and_iot/train/CICEVSE2024/CICEVSE2024.json
+  攻击类型统计:
+    - Aggressive-scan: 40
+    - aggressive-scan: 40
+    - benign: 39
+    - icmp-flood: 36
+    - icmp-fragmentation: 23
+    - os-fingerprinting: 38
+    - port-scan: 40
+    - portscan: 40
+    - push-ack-flood: 40
+    - service-detection: 40
+    - service-detection-scan: 40
+    - slowLoris-scan: 40
+    - slowloris-scan: 40
+    - syn-flood: 40
+    - syn-stealth: 40
+    - syn-stealth-scan: 40
+    - synonymous-ip: 40
+    - synonymous-ip-flood: 40
+    - tcp-flood: 40
+    - udp-flood: 40
+    - vulnerability-scan: 40
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/url_update/train/Feodo-Tracker-ipblocklist/Feodo-Tracker-ipblocklist.json
+  攻击类型统计:
+    - BazarLoader: 40
+    - Dridex: 503
+    - Emotet: 210
+    - QakBot: 330
+    - TrickBot: 587
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/url_update/train/ISCX-URL2016/ISCX-URL2016_no_class_evidence.json
+  攻击类型统计:
+    - Defacement: 8
+    - benign: 257
+    - malware: 220
+    - phishing: 710
+    - spam: 440
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/url_update/train/Malicious-URLs/Malicious-URLs.json
+  攻击类型统计:
+    - benign: 1141
+    - malicious: 835
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/vulnerablity/aliyun/converted/training/output_data.json
+  攻击类型统计:
+    - access_control_breach: 162
+    - authentication_failure: 87
+    - client_side_attack: 5
+    - code_execution: 511
+    - data_exposure: 50
+    - deserialization_exploit: 156
+    - file_manipulation: 68
+    - injection_attack: 146
+    - logic_flaw: 5
+    - resource_exhaustion: 44
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/vulnerablity/exploit-db/converted/training/output_data.json
+  攻击类型统计:
+    - access_control_breach: 282
+    - authentication_failure: 152
+    - client_side_attack: 411
+    - code_execution: 926
+    - data_exposure: 117
+    - deserialization_exploit: 28
+    - file_manipulation: 69
+    - injection_attack: 350
+    - logic_flaw: 14
+    - resource_exhaustion: 376
+--------------------------------------------------------------------------------
+分析文件: /data2/qcy/data_pattern/vulnerablity/talos/converted/training/output_data.json
+  攻击类型统计:
+    - access_control_breach: 132
+    - authentication_failure: 76
+    - client_side_attack: 44
+    - code_execution: 819
+    - data_exposure: 145
+    - deserialization_exploit: 12
+    - file_manipulation: 56
+    - injection_attack: 102
+    - logic_flaw: 9
+    - resource_exhaustion: 200
+--------------------------------------------------------------------------------
+
+总攻击类型统计:
+================================================================================
+benign: 7859
+malicious: 5611
+code_execution: 2256
+exfiltration_heavy: 1598
+phishing: 1498
+exfiltration_light: 1426
+spam: 1241
+malware: 1010
+suspicious: 710
+Benign: 667
+resource_exhaustion: 620
+injection_attack: 598
+TrickBot: 588
+access_control_breach: 576
+Dridex: 503
+Reconnaissance: 464
+client_side_attack: 460
+DoS: 457
+Attack: 400
+DDoS: 388
+QakBot: 330
+authentication_failure: 315
+data_exposure: 312
+Theft: 276
+Normal: 256
+collection: 240
+Emotet: 210
+scanning: 200
+xss: 200
+mitm: 199
+password: 199
+ransomware: 198
+injection: 197
+deserialization_exploit: 196
+file_manipulation: 193
+Backdoor: 181
+XSS: 168
+backdoor: 160
+dos: 160
+Analysis: 160
+Worms: 159
+Exploits: 158
+ddos: 156
+Generic: 156
+cleanup: 154
+Fuzzers: 152
+Mirai: 144
+Uploading_Attack: 144
+VulnerabilityScan: 144
+Shellcode: 128
+discovery: 111
+DDoS ACK Fragmentation: 104
+DDoS ICMP Flood: 104
+DoS SYN Flood: 104
+Bot: 100
+ARP Spoofing: 80
+BruteForce: 80
+DDoS-HTTP Flood: 80
+DDoS-ICMP_Fragmentation: 80
+DNS Spoofing: 80
+DoS-UDP_Flood: 80
+DoS-HTTP_Flood: 79
+sqlinjection: 79
+BrowserHijacking: 64
+CommandInjection: 64
+DNS_Spoofing: 64
+MITM-ArpSpoofing: 64
+SqlInjection: 64
+Backdoor_Malware: 62
+DictionaryBruteForce: 62
+Infilteration: 56
+MQTT-DDoS-Connect_Flood: 48
+MQTT-DDoS-Publish_Flood: 48
+MQTT-DoS-Connect_Flood: 48
+MQTT-DoS-Publish_Flood: 48
+MQTT-Malformed_Data: 48
+Recon-OS_Scan: 48
+Recon-Port_Scan: 48
+Recon-VulScan: 48
+TCP_IP-DDoS-ICMP: 48
+TCP_IP-DDoS-SYN: 48
+TCP_IP-DDoS-TCP: 48
+TCP_IP-DDoS-UDP: 48
+TCP_IP-DoS-SYN: 48
+TCP_IP-DoS-UDP: 48
+DoS Slowhttptest: 48
+DoS slowloris: 48
+PortScan: 48
+Web Attack - Brute Force: 48
+Web Attack - XSS: 48
+Recon-Ping_Sweep: 47
+TCP_IP-DoS-ICMP: 47
+credential access: 47
+FTP-Patator: 47
+SSH-Patator: 47
+ARP_Spoofing: 46
+TCP_IP-DoS-TCP: 46
+command and control: 45
+BENIGN: 44
+DoS GoldenEye: 44
+SQL Injection: 40
+Aggressive-scan: 40
+aggressive-scan: 40
+port-scan: 40
+portscan: 40
+push-ack-flood: 40
+service-detection: 40
+service-detection-scan: 40
+slowLoris-scan: 40
+slowloris-scan: 40
+syn-flood: 40
+syn-stealth: 40
+syn-stealth-scan: 40
+synonymous-ip: 40
+synonymous-ip-flood: 40
+tcp-flood: 40
+udp-flood: 40
+vulnerability-scan: 40
+BazarLoader: 40
+Brute Force: 39
+os-fingerprinting: 38
+persistence: 36
+icmp-flood: 36
+exfiltration: 34
+DoS Hulk: 33
+logic_flaw: 28
+ACK Flood: 24
+Benign Traffic: 24
+DDoS HTTP Flood: 24
+DDoS ICMP Fragmentation: 24
+DDoS PSHACK Flood: 24
+DDoS RSTFIN Flood: 24
+DDoS TCP SYN Flood: 24
+DDoS UDP Flood: 24
+DoS DNS Flood: 24
+DoS ICMP Flood: 24
+DoS TCP Flood: 24
+DoS UDP Flood: 24
+MITM: 24
+MITM ARP Spoofing: 24
+MQTT Brute Force: 24
+MQTT DDoS Publish Flood: 24
+MQTT DoS Connect Flood: 24
+MQTT Malformed: 24
+Mirai ACK Flood: 24
+Mirai HTTP Flood: 24
+Mirai UDP Flood: 24
+Mirai UDP Plain: 24
+OS Fingerprinting: 24
+Password Attack: 24
+Port Scanning: 24
+Ransomware: 24
+Recon Host Discovery: 24
+Recon OS Scan: 24
+Recon Ping Sweep: 24
+Recon Port Scan: 24
+Recon Vulnerability Scan: 24
+SYN Flood: 24
+Scan Aggressive: 24
+Scan Host Port: 24
+Scan Port OS: 24
+Scan UDP Attack: 24
+Sparta SSH Brute Force: 24
+Telnet Brute Force: 24
+Uploading Attack: 24
+Vulnerability Scanner: 24
+Mirai Host Brute Force: 23
+icmp-fragmentation: 23
+Infiltration: 21
+MQTT DoS Publish Flood: 21
+Dictionary Brute Force: 20
+Web Attack - Sql Injection: 17
+Brute Force -Web: 16
+Brute Force -XSS: 16
+DDOS attack-HOIC: 16
+DDOS attack-LOIC-UDP: 16
+DDoS attacks-LOIC-HTTP: 16
+DoS attacks-GoldenEye: 16
+DoS attacks-Hulk: 16
+DoS attacks-SlowHTTPTest: 16
+DoS attacks-Slowloris: 16
+FTP-BruteForce: 16
+SSH-Bruteforce: 16
+lateral movement: 12
+Heartbleed: 9
+Defacement: 8
+high: 1
+low: 1
+MySQL Attack: 1
+Simda: 1
+Virut: 1
+jRAT: 1
+Pykspa: 1
+Netbios Attack: 1
+Shiotob: 1
+Suppobox: 1
+Pizd: 1
+Nymaim: 1
+Ramnit: 1
+Ranbyus: 1
+NexusLogger: 1
+Telnet: 1
+Dyre: 1
+Proxy Scan: 1
+LDAP Attack: 1
+Socks Scan: 1
+Postfix: 1
+Matsnu: 1
+Necurs: 1
+ZeuS Panda: 1
+Malware: 1
+Dromedan: 1
+Banjori: 1
+Gootkit: 1
+Shylock: 1
+Smoke Loader: 1
+MS-DS Attack: 1
+Beebone: 1
+Zeus: 1
+SIP Attacks: 1
+Proslikefan: 1
+MS-SQL Attack: 1
+SSH Brute Force: 1
+RpcBind Attack: 1
+Unclassified: 1
+unknownjs: 1
+FTP: 1

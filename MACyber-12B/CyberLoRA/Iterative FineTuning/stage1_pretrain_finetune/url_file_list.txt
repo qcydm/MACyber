@@ -1,0 +1,10 @@
+json_files:
+    /data2/qcy/data_pattern/url/Feodo-Tracker-ipblocklist/converted_data/converted_ip_threat_intelligence_train.json
+    /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_All_BestFirst_train.json
+    /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_All_Infogain_train.json
+    /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_Defacement_BestFirst_train.json
+    /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_Malware_BestFirst_train.json
+    /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_Spam_Infogain_train.json
+    /data2/qcy/data_pattern/url/Malicious-URLs/converted_data/converted_url_day_train.json
+
+    2026-01-25 21:22:02,042 - INFO - 成功转换: /data2/qcy/data_pattern/url/Malicious-URLs/converted_data/converted_url_day_train.json -> /data2/qcy/data_pattern/url/Malicious-URLs/converted_data/converted_url_day_train_extracted.json

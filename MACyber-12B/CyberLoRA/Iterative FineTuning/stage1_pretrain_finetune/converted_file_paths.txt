@@ -1,0 +1,273 @@
+/data2/qcy/data_pattern_alpaca/dns/converted/train/bccc_2024_mal_20251016_003244_train.json
+/data2/qcy/data_pattern_alpaca/dns/converted/train/DNS_exfiltration_benign_1000_train.json
+/data2/qcy/data_pattern_alpaca/dns/converted/train/CIRA_benign_1500_train.json
+/data2/qcy/data_pattern_alpaca/dns/converted/train/DNS_exfiltration_light_1000_train.json
+/data2/qcy/data_pattern_alpaca/dns/converted/train/CIRA_malicious_3500_train.json
+/data2/qcy/data_pattern_alpaca/dns/converted/train/DNS_exfiltration_heavy_1000_train.json
+/data2/qcy/data_pattern_alpaca/dns/converted/train/bccc_2024_exf_20251016_103047_train.json
+/data2/qcy/data_pattern_alpaca/log/split-anroid/training-anroid/output_data_cleaned.json
+/data2/qcy/data_pattern_alpaca/log/split-hdfs/training-hdfs-5007_cleaned.json
+/data2/qcy/data_pattern_alpaca/log/split-linux/training-linux/output_data_cleaned.json
+/data2/qcy/data_pattern_alpaca/log/split-proxifier/test-proxifier/output_data_cleaned.json
+/data2/qcy/data_pattern_alpaca/log/split-supercomputer/test-supercom-22/output_data_cleaned.json
+/data2/qcy/data_pattern_alpaca/alpaca_fallback/Pulsedive-Threats.json
+/data2/qcy/data_pattern_alpaca/threat/SABU-Alert/converted/SABU-Alert_train_no_answer.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-CSE-CIC-IDS2018-v2/NF-CSE-CIC-IDS2018-v2.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-ToN-IoT/CIC-ToN-IoT.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CICIoMT 2024/CICIoMT 2024.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CICADA-IIoT2024/CICADA-IIoT2024.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-IoT-DIAD2024/CIC-IoT-DIAD2024.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-IDS-2017/CIC-IDS-2017.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC_IOT_2023/CIC_IOT_2023.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-UNSW-NB15-v2/NF-UNSW-NB15-v2.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-BCCC-NRC2024/CIC-BCCC-NRC2024.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-ToN-IoT-v2/NF-ToN-IoT-v2.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/iscxids2012/iscxids2012.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-BoT-IoT/CIC-BoT-IoT.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-BoT-IoT-v2/NF-BoT-IoT-v2.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-UQ-NIDS-v2/NF-UQ-NIDS-v2.json
+/data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CICEVSE2024/CICEVSE2024.json
+/data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_All_BestFirst_train_extracted_transformed.json
+/data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_All_Infogain_train_extracted_transformed.json
+/data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_Defacement_BestFirst_train_extracted_transformed.json
+/data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_Malware_BestFirst_train_extracted_transformed.json
+/data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_Spam_Infogain_train_extracted_transformed.json
+/data2/qcy/data_pattern_alpaca/url/Malicious-URLs/converted_data/converted_url_day_train_extracted_transformed.json
+/data2/qcy/data_pattern_alpaca/vulnerablity/aliyun/converted/training/output_data.json
+/data2/qcy/data_pattern_alpaca/vulnerablity/exploit-db/converted/training/output_data.json
+/data2/qcy/data_pattern_alpaca/vulnerablity/talos/converted/training/output_data.json
+/data2/qcy/data_pattern_alpaca/url/Feodo-Tracker-ipblocklist/converted_data/converted_ip_threat_intelligence_train_extracted_transformed.json
+
+
+
+qcy@bupt-R8428-G11:~/data_pattern_alpaca$ python alpaca_convert_new.py 
+Starting batch conversion for 39 files...
+
+   Created directory: /data2/qcy/data_pattern_alpaca/dns/converted/train
+Processing: /data2/qcy/data_pattern/dns/converted/train/bccc_2024_mal_20251016_003244_train.json
+   -> To: /data2/qcy/data_pattern_alpaca/dns/converted/train/bccc_2024_mal_20251016_003244_train.json
+   ✅ 数据集类型判定成功: DNS (匹配到预设领域)
+✅ Success. Saved 2000 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/dns/converted/train/DNS_exfiltration_benign_1000_train.json
+   -> To: /data2/qcy/data_pattern_alpaca/dns/converted/train/DNS_exfiltration_benign_1000_train.json
+   ✅ 数据集类型判定成功: DNS (匹配到预设领域)
+✅ Success. Saved 800 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/dns/converted/train/CIRA_benign_1500_train.json
+   -> To: /data2/qcy/data_pattern_alpaca/dns/converted/train/CIRA_benign_1500_train.json
+   ✅ 数据集类型判定成功: DNS (匹配到预设领域)
+✅ Success. Saved 1200 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/dns/converted/train/DNS_exfiltration_light_1000_train.json
+   -> To: /data2/qcy/data_pattern_alpaca/dns/converted/train/DNS_exfiltration_light_1000_train.json
+   ✅ 数据集类型判定成功: DNS (匹配到预设领域)
+✅ Success. Saved 797 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/dns/converted/train/CIRA_malicious_3500_train.json
+   -> To: /data2/qcy/data_pattern_alpaca/dns/converted/train/CIRA_malicious_3500_train.json
+   ✅ 数据集类型判定成功: DNS (匹配到预设领域)
+✅ Success. Saved 2000 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/dns/converted/train/DNS_exfiltration_heavy_1000_train.json
+   -> To: /data2/qcy/data_pattern_alpaca/dns/converted/train/DNS_exfiltration_heavy_1000_train.json
+   ✅ 数据集类型判定成功: DNS (匹配到预设领域)
+✅ Success. Saved 797 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/dns/converted/train/bccc_2024_exf_20251016_103047_train.json
+   -> To: /data2/qcy/data_pattern_alpaca/dns/converted/train/bccc_2024_exf_20251016_103047_train.json
+   ✅ 数据集类型判定成功: DNS (匹配到预设领域)
+✅ Success. Saved 2000 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/log/split-anroid/training-anroid
+Processing: /data2/qcy/data_pattern/log/split-anroid/training-anroid/output_data_cleaned.json
+   -> To: /data2/qcy/data_pattern_alpaca/log/split-anroid/training-anroid/output_data_cleaned.json
+   ✅ 数据集类型判定成功: Log (匹配到预设领域)
+✅ Success. Saved 109 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/log/split-hdfs
+Processing: /data2/qcy/data_pattern/log/split-hdfs/training-hdfs-5007_cleaned.json
+   -> To: /data2/qcy/data_pattern_alpaca/log/split-hdfs/training-hdfs-5007_cleaned.json
+   ✅ 数据集类型判定成功: Log (匹配到预设领域)
+✅ Success. Saved 2000 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/log/split-linux/training-linux
+Processing: /data2/qcy/data_pattern/log/split-linux/training-linux/output_data_cleaned.json
+   -> To: /data2/qcy/data_pattern_alpaca/log/split-linux/training-linux/output_data_cleaned.json
+   ✅ 数据集类型判定成功: Log (匹配到预设领域)
+✅ Success. Saved 21 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/log/split-proxifier/test-proxifier
+Processing: /data2/qcy/data_pattern/log/split-proxifier/test-proxifier/output_data_cleaned.json
+   -> To: /data2/qcy/data_pattern_alpaca/log/split-proxifier/test-proxifier/output_data_cleaned.json
+   ✅ 数据集类型判定成功: Log (匹配到预设领域)
+✅ Success. Saved 4 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/log/split-supercomputer/test-supercom-22
+Processing: /data2/qcy/data_pattern/log/split-supercomputer/test-supercom-22/output_data_cleaned.json
+   -> To: /data2/qcy/data_pattern_alpaca/log/split-supercomputer/test-supercom-22/output_data_cleaned.json
+   ✅ 数据集类型判定成功: Log (匹配到预设领域)
+✅ Success. Saved 23 records.
+--------------------------------------------------
+   ⚠️ Warning: Path keyword '/data_pattern/' not found in path. Saving to ./alpaca_fallback/
+   Created directory: /data2/qcy/data_pattern_alpaca/alpaca_fallback
+Processing: /data2/qcy/sft_workflow/threat/Pulsedive-Threats/training/Pulsedive-Threats.json
+   -> To: /data2/qcy/data_pattern_alpaca/alpaca_fallback/Pulsedive-Threats.json
+   ✅ 数据集类型判定成功: Threat (匹配到预设领域)
+✅ Success. Saved 40 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/threat/SABU-Alert/converted
+Processing: /data2/qcy/data_pattern/threat/SABU-Alert/converted/SABU-Alert_train_no_answer.json
+   -> To: /data2/qcy/data_pattern_alpaca/threat/SABU-Alert/converted/SABU-Alert_train_no_answer.json
+   ✅ 数据集类型判定成功: Threat (匹配到预设领域)
+✅ Success. Saved 2000 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-CSE-CIC-IDS2018-v2
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/NF-CSE-CIC-IDS2018-v2/NF-CSE-CIC-IDS2018-v2.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-CSE-CIC-IDS2018-v2/NF-CSE-CIC-IDS2018-v2.json
+   ✅ 数据集类型判定成功: Traffic (匹配到预设领域)
+✅ Success. Saved 240 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-ToN-IoT
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-ToN-IoT/CIC-ToN-IoT.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-ToN-IoT/CIC-ToN-IoT.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 793 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CICIoMT 2024
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/CICIoMT 2024/CICIoMT 2024.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CICIoMT 2024/CICIoMT 2024.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 902 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CICADA-IIoT2024
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/CICADA-IIoT2024/CICADA-IIoT2024.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CICADA-IIoT2024/CICADA-IIoT2024.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 919 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-IoT-DIAD2024
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-IoT-DIAD2024/CIC-IoT-DIAD2024.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-IoT-DIAD2024/CIC-IoT-DIAD2024.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 1277 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-IDS-2017
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-IDS-2017/CIC-IDS-2017.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-IDS-2017/CIC-IDS-2017.json
+   ✅ 数据集类型判定成功: Traffic (匹配到预设领域)
+✅ Success. Saved 590 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC_IOT_2023
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/CIC_IOT_2023/CIC_IOT_2023.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC_IOT_2023/CIC_IOT_2023.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 955 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-UNSW-NB15-v2
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/NF-UNSW-NB15-v2/NF-UNSW-NB15-v2.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-UNSW-NB15-v2/NF-UNSW-NB15-v2.json
+   ✅ 数据集类型判定成功: Traffic (匹配到预设领域)
+✅ Success. Saved 1151 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-BCCC-NRC2024
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-BCCC-NRC2024/CIC-BCCC-NRC2024.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-BCCC-NRC2024/CIC-BCCC-NRC2024.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 1168 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-ToN-IoT-v2
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/NF-ToN-IoT-v2/NF-ToN-IoT-v2.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-ToN-IoT-v2/NF-ToN-IoT-v2.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 796 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/iscxids2012
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/iscxids2012/iscxids2012.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/iscxids2012/iscxids2012.json
+   ✅ 数据集类型判定成功: Traffic (匹配到预设领域)
+✅ Success. Saved 656 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-BoT-IoT
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/CIC-BoT-IoT/CIC-BoT-IoT.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CIC-BoT-IoT/CIC-BoT-IoT.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 780 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-BoT-IoT-v2
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/NF-BoT-IoT-v2/NF-BoT-IoT-v2.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-BoT-IoT-v2/NF-BoT-IoT-v2.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 396 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-UQ-NIDS-v2
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/NF-UQ-NIDS-v2/NF-UQ-NIDS-v2.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/NF-UQ-NIDS-v2/NF-UQ-NIDS-v2.json
+   ✅ 数据集类型判定成功: Traffic (匹配到预设领域)
+✅ Success. Saved 835 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CICEVSE2024
+Processing: /data2/qcy/data_pattern/traffic_and_iot/train/CICEVSE2024/CICEVSE2024.json
+   -> To: /data2/qcy/data_pattern_alpaca/traffic_and_iot/train/CICEVSE2024/CICEVSE2024.json
+   ✅ 数据集类型判定成功: IoT (匹配到预设领域)
+✅ Success. Saved 816 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/url/Feodo-Tracker-ipblocklist/converted_data
+Processing: /data2/qcy/data_pattern/url/Feodo-Tracker-ipblocklist/converted_data/converted_ip_threat_intelligence_train_extracted_transformed.json
+   -> To: /data2/qcy/data_pattern_alpaca/url/Feodo-Tracker-ipblocklist/converted_data/converted_ip_threat_intelligence_train_extracted_transformed.json
+   ✅ 数据集类型判定成功: Threat (匹配到预设领域)
+✅ Success. Saved 1670 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data
+Processing: /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_All_BestFirst_train_extracted_transformed.json
+   -> To: /data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_All_BestFirst_train_extracted_transformed.json
+   ✅ 数据集类型判定成功: URL (匹配到预设领域)
+✅ Success. Saved 1765 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_All_Infogain_train_extracted_transformed.json
+   -> To: /data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_All_Infogain_train_extracted_transformed.json
+   ✅ 数据集类型判定成功: URL (匹配到预设领域)
+✅ Success. Saved 1635 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_Defacement_BestFirst_train_extracted_transformed.json
+   -> To: /data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_Defacement_BestFirst_train_extracted_transformed.json
+   ✅ 数据集类型判定成功: URL (匹配到预设领域)
+✅ Success. Saved 1499 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_Malware_BestFirst_train_extracted_transformed.json
+   -> To: /data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_Malware_BestFirst_train_extracted_transformed.json
+   ✅ 数据集类型判定成功: URL (匹配到预设领域)
+✅ Success. Saved 1801 records.
+--------------------------------------------------
+Processing: /data2/qcy/data_pattern/url/ISCX-URL2016/converted_data/converted_Spam_Infogain_train_extracted_transformed.json
+   -> To: /data2/qcy/data_pattern_alpaca/url/ISCX-URL2016/converted_data/converted_Spam_Infogain_train_extracted_transformed.json
+   ✅ 数据集类型判定成功: URL (匹配到预设领域)
+✅ Success. Saved 1906 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/url/Malicious-URLs/converted_data
+Processing: /data2/qcy/data_pattern/url/Malicious-URLs/converted_data/converted_url_day_train_extracted_transformed.json
+   -> To: /data2/qcy/data_pattern_alpaca/url/Malicious-URLs/converted_data/converted_url_day_train_extracted_transformed.json
+   ✅ 数据集类型判定成功: URL (匹配到预设领域)
+✅ Success. Saved 1976 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/vulnerablity/aliyun/converted/training
+Processing: /data2/qcy/data_pattern/vulnerablity/aliyun/converted/training/output_data.json
+   -> To: /data2/qcy/data_pattern_alpaca/vulnerablity/aliyun/converted/training/output_data.json
+   ✅ 数据集类型判定成功: Vulnerability (匹配到预设领域)
+✅ Success. Saved 1234 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/vulnerablity/exploit-db/converted/training
+Processing: /data2/qcy/data_pattern/vulnerablity/exploit-db/converted/training/output_data.json
+   -> To: /data2/qcy/data_pattern_alpaca/vulnerablity/exploit-db/converted/training/output_data.json
+   ✅ 数据集类型判定成功: Vulnerability (匹配到预设领域)
+✅ Success. Saved 2000 records.
+--------------------------------------------------
+   Created directory: /data2/qcy/data_pattern_alpaca/vulnerablity/talos/converted/training
+Processing: /data2/qcy/data_pattern/vulnerablity/talos/converted/training/output_data.json
+   -> To: /data2/qcy/data_pattern_alpaca/vulnerablity/talos/converted/training/output_data.json
+   ✅ 数据集类型判定成功: Vulnerability (匹配到预设领域)
+✅ Success. Saved 1595 records.
+--------------------------------------------------
+
+📄 Manifest saved: /data2/qcy/data_pattern_alpaca/converted_file_paths.txt
+Total converted files: 39
